@@ -87,6 +87,24 @@ const Testimonials = () => {
     }
   };
   
+  // Implement snap scrolling manually
+  const handleScrollEnd = () => {
+    const container = scrollContainerRef.current;
+    if (!container) return;
+    
+    const cardWidth = 350 + 24; // card width + gap
+    const scrollPosition = container.scrollLeft;
+    
+    // Calculate the nearest card
+    const cardIndex = Math.round(scrollPosition / cardWidth);
+    
+    // Scroll to the nearest card
+    container.scrollTo({
+      left: cardIndex * cardWidth,
+      behavior: 'smooth'
+    });
+  };
+  
   useEffect(() => {
     const container = scrollContainerRef.current;
     if (!container) return;
@@ -95,8 +113,26 @@ const Testimonials = () => {
     
     container.addEventListener('scroll', checkScrollPosition);
     
+    // Add event listeners for snap scrolling
+    let scrollTimeout: number | null = null;
+    
+    const handleScroll = () => {
+      if (scrollTimeout) {
+        window.clearTimeout(scrollTimeout);
+      }
+      
+      // Wait for the scroll to finish, then snap
+      scrollTimeout = window.setTimeout(handleScrollEnd, 150);
+    };
+    
+    container.addEventListener('scroll', handleScroll);
+    
     return () => {
       container.removeEventListener('scroll', checkScrollPosition);
+      container.removeEventListener('scroll', handleScroll);
+      if (scrollTimeout) {
+        window.clearTimeout(scrollTimeout);
+      }
     };
   }, []);
   
@@ -124,13 +160,13 @@ const Testimonials = () => {
           <div className="reveal-animation mb-12 overflow-hidden relative">
             <div 
               ref={scrollContainerRef}
-              className="testimonial-container overflow-x-auto pb-6"
+              className="testimonial-container overflow-x-auto pb-6 scroll-snap-x"
             >
               <div className="flex gap-6 px-4 pb-2 min-w-max">
                 {testimonialData.map((testimonial) => (
                   <div 
                     key={testimonial.id} 
-                    className="glass-card p-6 rounded-xl border border-gray-800 hover:border-dinero-red/40 transition-all duration-300 w-[350px] min-w-[350px] relative"
+                    className="glass-card p-6 rounded-xl border border-gray-800 hover:border-dinero-red/40 transition-all duration-300 w-[350px] min-w-[350px] relative scroll-snap-align-start"
                   >
                     <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-dinero-red/40 via-dinero-red to-dinero-red/40"></div>
                     
@@ -206,4 +242,3 @@ const Testimonials = () => {
 };
 
 export default Testimonials;
-
