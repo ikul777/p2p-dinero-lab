@@ -45,7 +45,7 @@ const Problems = () => {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 gap-8">
             <div className="glass-card p-6 md:p-8 rounded-xl relative reveal-animation">
               <div className="absolute -top-4 -left-4 h-12 w-12 rounded-full bg-dinero-red flex items-center justify-center">
                 <AlertTriangle size={24} className="text-white" />
@@ -53,6 +53,9 @@ const Problems = () => {
               <h3 className="text-xl font-semibold mb-4 mt-2">Купують хламові зв'язки</h3>
               <p className="text-gray-300">
                 Більшість початківців витрачають гроші на неперевірені або застарілі зв'язки, які реально не працюють.
+              </p>
+              <p className="text-gray-300 mt-4">
+                У результаті — вони не тільки не заробляють, але й втрачають початковий депозит, намагаючись змусити працювати непрацюючу схему.
               </p>
             </div>
             
@@ -64,15 +67,34 @@ const Problems = () => {
               <p className="text-gray-300">
                 Купили зв'язку — і залишились самі. Типова ситуація: щось не працює, а допомоги немає.
               </p>
+              <p className="text-gray-300 mt-4">
+                Без команди та актуальних даних від саппортів, які щодня в темі, новачок швидко втрачає орієнтацію і зливає гроші.
+              </p>
             </div>
             
             <div className="glass-card p-6 md:p-8 rounded-xl relative reveal-animation">
               <div className="absolute -bottom-4 -left-4 h-12 w-12 rounded-full bg-dinero-red flex items-center justify-center">
+                <DollarSign size={24} className="text-white" />
+              </div>
+              <h3 className="text-xl font-semibold mb-4 mt-2">Нереалістичні очікування</h3>
+              <p className="text-gray-300">
+                Багато хто думає, що P2P — це кнопка "заробити миллион", але це системна робота, яка потребує навичок.
+              </p>
+              <p className="text-gray-300 mt-4">
+                Без розуміння процесів, правильних інструментів та актуальних даних, новачки швидко розчаровуються і виходять в мінус.
+              </p>
+            </div>
+            
+            <div className="glass-card p-6 md:p-8 rounded-xl relative reveal-animation">
+              <div className="absolute -bottom-4 -right-4 h-12 w-12 rounded-full bg-dinero-red flex items-center justify-center">
                 <Shield size={24} className="text-white" />
               </div>
               <h3 className="text-xl font-semibold mb-4 mt-2">Потрапляють на скам</h3>
               <p className="text-gray-300">
                 Ринок переповнений шахраями, які продають "золоті схеми", а насправді надають непрацюючі зв'язки або їх загальний опис.
+              </p>
+              <p className="text-gray-300 mt-4">
+                Без доступу до перевіреного ком'юніті та реальних результатів, люди стають жертвами красивих обіцянок.
               </p>
             </div>
           </div>
