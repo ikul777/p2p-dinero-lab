@@ -1,12 +1,5 @@
 
 import { User } from 'lucide-react';
-import { 
-  Carousel, 
-  CarouselContent, 
-  CarouselItem, 
-  CarouselNext, 
-  CarouselPrevious 
-} from '@/components/ui/carousel';
 import { ScrollArea } from '@/components/ui/scroll-area';
 
 // Expanded testimonial data for carousel
@@ -86,53 +79,44 @@ const Testimonials = () => {
             </p>
           </div>
           
-          {/* Testimonials carousel */}
-          <div className="pb-10 reveal-animation">
-            <Carousel
-              className="w-full"
-              opts={{
-                align: "start",
-                loop: true,
-              }}
-            >
-              <CarouselContent className="-ml-2 md:-ml-4">
+          {/* Full-width scrollable testimonials */}
+          <div className="reveal-animation mb-12 overflow-hidden">
+            <ScrollArea orientation="horizontal" className="w-full pb-4">
+              <div className="flex gap-6 px-4 pb-6 min-w-max">
                 {testimonialData.map((testimonial) => (
-                  <CarouselItem key={testimonial.id} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
-                    <div className="glass-card p-6 rounded-xl border border-gray-800 hover:border-dinero-red/40 transition-all duration-300 h-full">
-                      {/* Top decorative element */}
-                      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-dinero-red/40 via-dinero-red to-dinero-red/40"></div>
-                      
-                      {/* Header with group name */}
-                      <div className="mb-4">
-                        <div className="bg-dinero-red/10 text-dinero-red px-3 py-1 rounded-md text-xs font-semibold inline-block">
-                          {testimonial.groupName}
-                        </div>
-                      </div>
-                      
-                      {/* Content */}
-                      <ScrollArea className="h-[200px] pr-4">
-                        <div className="text-gray-300">
-                          <p className="leading-relaxed text-sm">
-                            {testimonial.content}
-                          </p>
-                        </div>
-                      </ScrollArea>
-                      
-                      {/* User icon at the bottom */}
-                      <div className="flex items-center mt-4 pt-4 border-t border-gray-800">
-                        <div className="h-8 w-8 rounded-full bg-dinero-red/20 flex items-center justify-center">
-                          <User size={16} className="text-dinero-red" />
-                        </div>
+                  <div 
+                    key={testimonial.id} 
+                    className="glass-card p-6 rounded-xl border border-gray-800 hover:border-dinero-red/40 transition-all duration-300 w-[350px] min-w-[350px] relative"
+                  >
+                    {/* Top decorative element */}
+                    <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-dinero-red/40 via-dinero-red to-dinero-red/40"></div>
+                    
+                    {/* Header with group name */}
+                    <div className="mb-4">
+                      <div className="bg-dinero-red/10 text-dinero-red px-3 py-1 rounded-md text-xs font-semibold inline-block">
+                        {testimonial.groupName}
                       </div>
                     </div>
-                  </CarouselItem>
+                    
+                    {/* Content */}
+                    <ScrollArea className="h-[180px] pr-4">
+                      <div className="text-gray-300">
+                        <p className="leading-relaxed text-sm">
+                          {testimonial.content}
+                        </p>
+                      </div>
+                    </ScrollArea>
+                    
+                    {/* User icon at the bottom */}
+                    <div className="flex items-center mt-4 pt-4 border-t border-gray-800">
+                      <div className="h-8 w-8 rounded-full bg-dinero-red/20 flex items-center justify-center">
+                        <User size={16} className="text-dinero-red" />
+                      </div>
+                    </div>
+                  </div>
                 ))}
-              </CarouselContent>
-              <div className="flex justify-center gap-2 mt-8">
-                <CarouselPrevious className="relative inset-0 translate-y-0 bg-dinero-dark border-dinero-red/20 hover:bg-dinero-red/10 hover:border-dinero-red/30" />
-                <CarouselNext className="relative inset-0 translate-y-0 bg-dinero-dark border-dinero-red/20 hover:bg-dinero-red/10 hover:border-dinero-red/30" />
               </div>
-            </Carousel>
+            </ScrollArea>
           </div>
           
           {/* Call to action */}
