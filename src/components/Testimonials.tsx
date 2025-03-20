@@ -1,6 +1,6 @@
 
 import { useRef, useState, useEffect } from 'react';
-import { User, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Link } from 'lucide-react';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Button } from '@/components/ui/button';
 
@@ -159,11 +159,17 @@ const Testimonials = () => {
                       </div>
                     </ScrollArea>
                     
-                    {/* User icon at the bottom */}
+                    {/* Link instead of user icon */}
                     <div className="flex items-center mt-4 pt-4 border-t border-gray-800">
-                      <div className="h-8 w-8 rounded-full bg-dinero-red/20 flex items-center justify-center">
-                        <User size={16} className="text-dinero-red" />
-                      </div>
+                      <a 
+                        href={`#testimonial-${testimonial.id}`} 
+                        className="flex items-center text-dinero-red/90 hover:text-dinero-red transition-colors group"
+                      >
+                        <div className="h-8 w-8 rounded-full bg-dinero-red/20 flex items-center justify-center mr-2">
+                          <Link size={16} className="text-dinero-red" />
+                        </div>
+                        <span className="text-sm group-hover:underline">Посилання на цей відгук</span>
+                      </a>
                     </div>
                   </div>
                 ))}
@@ -204,7 +210,7 @@ const Testimonials = () => {
               rel="noopener noreferrer"
               className="inline-flex items-center text-dinero-light bg-dinero-red hover:bg-red-600 transition-colors px-6 py-3 rounded-md font-medium text-lg button-glow"
             >
-              Більше відгуків
+              Більше відгуків в P2P Feedback
             </a>
           </div>
         </div>
