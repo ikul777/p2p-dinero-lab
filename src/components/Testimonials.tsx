@@ -81,8 +81,8 @@ const Testimonials = () => {
           
           {/* Full-width scrollable testimonials */}
           <div className="reveal-animation mb-12 overflow-hidden">
-            <ScrollArea orientation="horizontal" className="w-full pb-4">
-              <div className="flex gap-6 px-4 pb-6 min-w-max">
+            <div className="testimonial-container overflow-x-auto pb-6">
+              <div className="flex gap-6 px-4 pb-2 min-w-max">
                 {testimonialData.map((testimonial) => (
                   <div 
                     key={testimonial.id} 
@@ -99,8 +99,8 @@ const Testimonials = () => {
                     </div>
                     
                     {/* Content */}
-                    <ScrollArea className="h-[180px] pr-4">
-                      <div className="text-gray-300">
+                    <ScrollArea className="h-[180px]">
+                      <div className="text-gray-300 pr-4">
                         <p className="leading-relaxed text-sm">
                           {testimonial.content}
                         </p>
@@ -116,7 +116,7 @@ const Testimonials = () => {
                   </div>
                 ))}
               </div>
-            </ScrollArea>
+            </div>
           </div>
           
           {/* Call to action */}
