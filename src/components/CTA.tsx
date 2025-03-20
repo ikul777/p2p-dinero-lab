@@ -86,7 +86,7 @@ const CTA = () => {
             
             <div className="text-center mt-6">
               <a 
-                href="https://t.me/ikul777" 
+                href="https://t.me/+iDCbfd3Bm8wxMzZi" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="inline-flex items-center bg-dinero-red text-white px-8 py-3 rounded-md font-medium text-lg hover:bg-red-600 transition-all button-glow"

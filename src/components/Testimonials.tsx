@@ -47,7 +47,9 @@ const Testimonials = () => {
           {/* Call to action */}
           <div className="text-center mt-12 reveal-animation">
             <a 
-              href="#join" 
+              href="https://t.me/+fsuDNjshEhplMGMy" 
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center text-dinero-light bg-dinero-red hover:bg-red-600 transition-colors px-6 py-3 rounded-md font-medium text-lg button-glow"
             >
               Більше кейсів
