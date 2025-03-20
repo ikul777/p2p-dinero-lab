@@ -9,7 +9,6 @@ import Testimonials from '../components/Testimonials';
 import FAQ from '../components/FAQ';
 import CTA from '../components/CTA';
 import Footer from '../components/Footer';
-import LifestyleShowcase from '../components/LifestyleShowcase';
 
 const Index = () => {
   useEffect(() => {
@@ -40,7 +39,6 @@ const Index = () => {
       <Hero />
       <About />
       <Problems />
-      <LifestyleShowcase />
       <Solution />
       <Testimonials />
       <FAQ />
