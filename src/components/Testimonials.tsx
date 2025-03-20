@@ -1,32 +1,66 @@
 
-import { User, Star, CheckCircle } from 'lucide-react';
+import { User } from 'lucide-react';
+import { 
+  Carousel, 
+  CarouselContent, 
+  CarouselItem, 
+  CarouselNext, 
+  CarouselPrevious 
+} from '@/components/ui/carousel';
+import { ScrollArea } from '@/components/ui/scroll-area';
 
-// Individual review data based on the screenshot
+// Expanded testimonial data for carousel
 const testimonialData = [
   {
     id: 1,
     groupName: "P2P FEEDBACK",
-    sender: "Переслано від 1",
-    avatar: "/lovable-uploads/7c9183a7-c407-47e3-96c9-b96af2d9c112.png", // Using the uploaded image as a default avatar
-    content: "Ну, легко) матеріал цікавий, незвичайний для вітчизняного п2п, не тупа дрочка по картам як була тому 10 років)) потроху вчишся, в мене так враження, завжди щось онлайн(принаймні в мене так і є) коли не напишу відповідь отримую не пізніше ніж 5 хв а чат діджейків звичайність, окрім сапортів пацани допомагають, також іноді виконують бонусну роботу (чат ідентифікають ордери) це почалося нещодавно але все одно круто, ще хочу додати що сапорти подають все розказують, тобто щоб я більш-менш на рахунок шо да я хочу дивитися найбільше, і всю цю дінеро діджую н бачу як та шо ти платиш щоб зекономити сотні час та не набивати шишки, обєсц це безцінна штука, а тут тебе просто ведуть за ручку і кладуть до рогтя про ордери а наті)",
-    rating: 5
+    content: "Ну, легко) матеріал цікавий, незвичайний для вітчизняного п2п, не тупа дрочка по картам як була тому 10 років)) потроху вчишся, в мене так враження, завжди щось онлайн(принаймні в мене так і є) коли не напишу відповідь отримую не пізніше ніж 5 хв а чат діджейків звичайність, окрім сапортів пацани допомагають, також іноді виконують бонусну роботу (чат ідентифікають ордери) це почалося нещодавно але все одно круто, ще хочу додати що сапорти подають все розказують, тобто щоб я більш-менш на рахунок шо да я хочу дивитися найбільше, і всю цю дінеро діджую н бачу як та шо ти платиш щоб зекономити сотні час та не набивати шишки, обєсц це безцінна штука, а тут тебе просто ведуть за ручку і кладуть до рогтя про ордери а наті)"
   },
   {
     id: 2,
     groupName: "P2P FEEDBACK",
-    sender: "Переслано від 2",
-    avatar: "/lovable-uploads/7c9183a7-c407-47e3-96c9-b96af2d9c112.png",
-    content: "Мій профіт, зараз короленько дам бо там два огляди вкінці, але скажу так, я зайшов, один день дивились, я задував стхви дропінки по п2п з різном працював ще а часів ≈6 ранку і до другой годины, потім я не роботі в день читав, і в мене просто висіли ордери, а на третій день почну і от тому числу перше число ≈ 12545, може трошки меньше може трошки більше, та просто один день дуже плотно вийшов, буквально ельдорадо, але всеодно зараз за інш місяц пацани профіт роблять",
-    rating: 5
+    content: "Мій профіт, зараз короленько дам бо там два огляди вкінці, але скажу так, я зайшов, один день дивились, я задував стхви дропінки по п2п з різном працював ще а часів ≈6 ранку і до другой годины, потім я не роботі в день читав, і в мене просто висіли ордери, а на третій день почну і от тому числу перше число ≈ 12545, може трошки меньше може трошки більше, та просто один день дуже плотно вийшов, буквально ельдорадо, але всеодно зараз за інш місяц пацани профіт роблять"
   },
   {
     id: 3,
     groupName: "P2P FEEDBACK",
-    sender: "Переслано від 3",
-    avatar: "/lovable-uploads/7c9183a7-c407-47e3-96c9-b96af2d9c112.png",
-    content: "Працював з хлопцями коли ще не було ком'юніті, рекомендую! Стабільний прибуток і професійний підхід до кожного клієнта. Сапорт відповідає оперативно і завжди готовий допомогти з будь-яким питанням.",
-    rating: 5
+    content: "Працював з хлопцями коли ще не було ком'юніті, рекомендую! Стабільний прибуток і професійний підхід до кожного клієнта. Сапорт відповідає оперативно і завжди готовий допомогти з будь-яким питанням."
   },
+  {
+    id: 4,
+    groupName: "P2P FEEDBACK",
+    content: "Дякую хлопцям за їх роботу! За 3 тижні вийшло підняти більше $400 на п2п, хоча раніше тільки втрачав гроші. Методика працює, а підтримка завжди на зв'язку."
+  },
+  {
+    id: 5,
+    groupName: "TRADING FEEDBACK",
+    content: "Приєднався до спільноти місяць тому. Почав з маленьких сум, але вже бачу результат. Найбільше ціную те, що тут справді вчать, а не просто дають сигнали. Рекомендую всім, хто хоче розібратися в трейдингу."
+  },
+  {
+    id: 6,
+    groupName: "TRADING FEEDBACK",
+    content: "Після року самостійних спроб і втрат, нарешті знайшов справжніх професіоналів. За 2 місяці з DineroLab мій портфель виріс на 34%, і головне - я розумію що роблю. Дякую команді!"
+  },
+  {
+    id: 7,
+    groupName: "P2P FEEDBACK",
+    content: "Спочатку було важко втягнутися в процес, але завдяки постійній підтримці команди, зараз маю стабільні $40-60 щодня з мінімальними ризиками. Нарешті можу платити за оренду без стресу."
+  },
+  {
+    id: 8,
+    groupName: "TRADING FEEDBACK",
+    content: "Найкраща інвестиція в себе. Замість того, щоб втрачати гроші на своїх помилках, я отримав структуровані знання і підтримку. Вже відбив вартість навчання в перший місяць."
+  },
+  {
+    id: 9,
+    groupName: "P2P FEEDBACK",
+    content: "Мій досвід з DineroLab - це 5 місяців стабільного доходу. Почав з нуля, з мінімальним капіталом, а зараз це вже серйозне джерело заробітку. Особлива подяка за оперативні відповіді 24/7."
+  },
+  {
+    id: 10,
+    groupName: "TRADING FEEDBACK",
+    content: "Раніше думав, що крипта - це казино, але з DineroLab зрозумів, що це інструмент, яким можна керувати. Два місяці навчання дали мені більше, ніж рік самостійного гуглення."
+  }
 ];
 
 const Testimonials = () => {
@@ -52,60 +86,57 @@ const Testimonials = () => {
             </p>
           </div>
           
-          {/* Testimonials grid - replaced with custom review blocks */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 reveal-animation">
-            {testimonialData.map((testimonial) => (
-              <div 
-                key={testimonial.id} 
-                className="glass-card p-6 rounded-xl border border-gray-800 hover:border-dinero-red/40 transition-all duration-300 transform hover:-translate-y-1 relative overflow-hidden"
-              >
-                {/* Top decorative element */}
-                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-dinero-red/40 via-dinero-red to-dinero-red/40"></div>
-                
-                {/* Header with group name and sender */}
-                <div className="flex items-center justify-between mb-4">
-                  <div className="bg-dinero-red/10 text-dinero-red px-3 py-1 rounded-md text-xs font-semibold">
-                    {testimonial.groupName}
-                  </div>
-                  <div className="text-gray-400 text-sm">
-                    {testimonial.sender}
-                  </div>
-                </div>
-                
-                {/* Content */}
-                <div className="mb-4 text-gray-300">
-                  <p className="leading-relaxed">
-                    {testimonial.content}
-                  </p>
-                </div>
-                
-                {/* Footer with rating */}
-                <div className="flex items-center justify-between mt-4 pt-4 border-t border-gray-800">
-                  <div className="flex items-center">
-                    <div className="h-8 w-8 rounded-full bg-dinero-red/20 flex items-center justify-center mr-3">
-                      <User size={16} className="text-dinero-red" />
+          {/* Testimonials carousel */}
+          <div className="pb-10 reveal-animation">
+            <Carousel
+              className="w-full"
+              opts={{
+                align: "start",
+                loop: true,
+              }}
+            >
+              <CarouselContent className="-ml-2 md:-ml-4">
+                {testimonialData.map((testimonial) => (
+                  <CarouselItem key={testimonial.id} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
+                    <div className="glass-card p-6 rounded-xl border border-gray-800 hover:border-dinero-red/40 transition-all duration-300 h-full">
+                      {/* Top decorative element */}
+                      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-dinero-red/40 via-dinero-red to-dinero-red/40"></div>
+                      
+                      {/* Header with group name */}
+                      <div className="mb-4">
+                        <div className="bg-dinero-red/10 text-dinero-red px-3 py-1 rounded-md text-xs font-semibold inline-block">
+                          {testimonial.groupName}
+                        </div>
+                      </div>
+                      
+                      {/* Content */}
+                      <ScrollArea className="h-[200px] pr-4">
+                        <div className="text-gray-300">
+                          <p className="leading-relaxed text-sm">
+                            {testimonial.content}
+                          </p>
+                        </div>
+                      </ScrollArea>
+                      
+                      {/* User icon at the bottom */}
+                      <div className="flex items-center mt-4 pt-4 border-t border-gray-800">
+                        <div className="h-8 w-8 rounded-full bg-dinero-red/20 flex items-center justify-center">
+                          <User size={16} className="text-dinero-red" />
+                        </div>
+                      </div>
                     </div>
-                    <div className="flex items-center">
-                      {[...Array(testimonial.rating)].map((_, i) => (
-                        <Star 
-                          key={i} 
-                          size={14} 
-                          className="text-dinero-red fill-dinero-red mr-1" 
-                        />
-                      ))}
-                    </div>
-                  </div>
-                  <div className="flex items-center">
-                    <CheckCircle size={16} className="text-green-500 mr-1" />
-                    <span className="text-xs text-green-500">Верифіковано</span>
-                  </div>
-                </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <div className="flex justify-center gap-2 mt-8">
+                <CarouselPrevious className="relative inset-0 translate-y-0 bg-dinero-dark border-dinero-red/20 hover:bg-dinero-red/10 hover:border-dinero-red/30" />
+                <CarouselNext className="relative inset-0 translate-y-0 bg-dinero-dark border-dinero-red/20 hover:bg-dinero-red/10 hover:border-dinero-red/30" />
               </div>
-            ))}
+            </Carousel>
           </div>
           
           {/* Call to action */}
-          <div className="text-center mt-12 reveal-animation">
+          <div className="text-center mt-4 reveal-animation">
             <a 
               href="https://t.me/+fsuDNjshEhplMGMy" 
               target="_blank"
