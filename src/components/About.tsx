@@ -1,4 +1,3 @@
-
 import { useEffect } from 'react';
 import { TrendingUp, Check, Star, User } from 'lucide-react';
 
@@ -25,7 +24,6 @@ const About = () => {
   
   return (
     <section id="about" className="py-20 bg-dinero-dark relative overflow-hidden">
-      {/* Background elements */}
       <div className="absolute -top-[30%] -right-[10%] w-[40%] h-[40%] bg-gradient-to-br from-dinero-red/20 to-transparent rounded-full filter blur-3xl opacity-10"></div>
       
       <div className="container mx-auto px-4 md:px-6">
@@ -40,7 +38,6 @@ const About = () => {
             <div className="w-16 h-1 bg-dinero-red mx-auto mb-6"></div>
           </div>
           
-          {/* Personal introduction */}
           <div className="glass-card p-6 md:p-8 rounded-xl mb-12 reveal-animation">
             <div className="flex flex-col md:flex-row items-start gap-6">
               <div className="flex-shrink-0 mb-4 md:mb-0">
@@ -64,7 +61,6 @@ const About = () => {
           </div>
           
           <div className="grid md:grid-cols-2 gap-10 items-center mb-12">
-            {/* Image */}
             <div className="reveal-animation">
               <div className="rounded-xl overflow-hidden shadow-xl shadow-dinero-red/10 transform hover:scale-[1.02] transition-all duration-300">
                 <img 
@@ -75,7 +71,6 @@ const About = () => {
               </div>
             </div>
             
-            {/* About text */}
             <div className="reveal-animation">
               <div className="glass-card p-6 md:p-8 rounded-xl relative mb-8">
                 <div className="absolute -top-4 -right-4 h-8 w-8 rounded-full bg-dinero-red flex items-center justify-center">
@@ -97,7 +92,7 @@ const About = () => {
                     <div className="h-6 w-6 rounded-full bg-dinero-red/20 flex items-center justify-center flex-shrink-0 mt-0.5">
                       <Check size={14} className="text-dinero-red" />
                     </div>
-                    <p className="text-gray-300 ml-3 text-sm">Більше 5 років досвіду в P2P-арбітражі в команди</p>
+                    <p className="text-gray-300 ml-3 text-sm">Команда сапотрів з досвідом більше 5 років в P2P-арбітражі</p>
                   </div>
                   
                   <div className="flex items-start">
