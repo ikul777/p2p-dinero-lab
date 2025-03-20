@@ -232,7 +232,7 @@ const Testimonials = () => {
               rel="noopener noreferrer"
               className="inline-flex items-center text-dinero-light bg-dinero-red hover:bg-red-600 transition-colors px-6 py-3 rounded-md font-medium text-lg button-glow"
             >
-              Більше відгуків P2P FEEDBACK
+              Більше відгуків в P2P FEEDBACK
             </a>
           </div>
         </div>
