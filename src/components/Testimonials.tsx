@@ -1,10 +1,9 @@
-
 import { useRef, useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, Link } from 'lucide-react';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Button } from '@/components/ui/button';
+import { useIsMobile } from '@/hooks/use-mobile';
 
-// Expanded testimonial data for carousel
 const testimonialData = [
   {
     id: 1,
@@ -62,26 +61,23 @@ const Testimonials = () => {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [showLeftButton, setShowLeftButton] = useState(false);
   const [showRightButton, setShowRightButton] = useState(true);
+  const isMobile = useIsMobile();
   
-  // Function to check scroll position and update button visibility
   const checkScrollPosition = () => {
     const container = scrollContainerRef.current;
     if (!container) return;
     
-    // Show left button if scrolled right
     setShowLeftButton(container.scrollLeft > 20);
     
-    // Show right button if not at the end
     const maxScrollLeft = container.scrollWidth - container.clientWidth;
     setShowRightButton(container.scrollLeft < maxScrollLeft - 20);
   };
   
-  // Handle scroll by one testimonial
   const scrollBy = (direction: 'left' | 'right') => {
     const container = scrollContainerRef.current;
     if (!container) return;
     
-    const scrollAmount = 350 + 24; // card width + gap
+    const scrollAmount = 350 + 24;
     
     if (direction === 'left') {
       container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
@@ -90,15 +86,12 @@ const Testimonials = () => {
     }
   };
   
-  // Initialize scroll position check
   useEffect(() => {
     const container = scrollContainerRef.current;
     if (!container) return;
     
-    // Check initial position
     checkScrollPosition();
     
-    // Add scroll event listener
     container.addEventListener('scroll', checkScrollPosition);
     
     return () => {
@@ -110,7 +103,6 @@ const Testimonials = () => {
     <section id="testimonials" className="py-20 bg-dinero-dark relative overflow-hidden">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-dinero-red/20 to-transparent"></div>
       
-      {/* Background elements */}
       <div className="absolute -bottom-[20%] right-[10%] w-[50%] h-[50%] bg-gradient-to-tl from-dinero-red/10 to-transparent rounded-full filter blur-3xl opacity-20"></div>
       
       <div className="container mx-auto px-4 md:px-6">
@@ -128,7 +120,6 @@ const Testimonials = () => {
             </p>
           </div>
           
-          {/* Full-width scrollable testimonials */}
           <div className="reveal-animation mb-12 overflow-hidden relative">
             <div 
               ref={scrollContainerRef}
@@ -140,17 +131,14 @@ const Testimonials = () => {
                     key={testimonial.id} 
                     className="glass-card p-6 rounded-xl border border-gray-800 hover:border-dinero-red/40 transition-all duration-300 w-[350px] min-w-[350px] relative"
                   >
-                    {/* Top decorative element */}
                     <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-dinero-red/40 via-dinero-red to-dinero-red/40"></div>
                     
-                    {/* Header with group name */}
                     <div className="mb-4">
                       <div className="bg-dinero-red/10 text-dinero-red px-3 py-1 rounded-md text-xs font-semibold inline-block">
                         {testimonial.groupName}
                       </div>
                     </div>
                     
-                    {/* Content */}
                     <ScrollArea className="h-[180px]">
                       <div className="text-gray-300 pr-4">
                         <p className="leading-relaxed text-sm">
@@ -159,7 +147,6 @@ const Testimonials = () => {
                       </div>
                     </ScrollArea>
                     
-                    {/* Link instead of user icon */}
                     <div className="flex items-center mt-4 pt-4 border-t border-gray-800">
                       <a 
                         href={`#testimonial-${testimonial.id}`} 
@@ -176,8 +163,7 @@ const Testimonials = () => {
               </div>
             </div>
             
-            {/* Navigation buttons */}
-            {showLeftButton && (
+            {!isMobile && showLeftButton && (
               <Button
                 variant="secondary"
                 size="icon"
@@ -189,7 +175,7 @@ const Testimonials = () => {
               </Button>
             )}
             
-            {showRightButton && (
+            {!isMobile && showRightButton && (
               <Button
                 variant="secondary"
                 size="icon"
@@ -202,7 +188,6 @@ const Testimonials = () => {
             )}
           </div>
           
-          {/* Call to action */}
           <div className="text-center mt-4 reveal-animation">
             <a 
               href="https://t.me/+fsuDNjshEhplMGMy" 
