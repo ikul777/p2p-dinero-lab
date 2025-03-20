@@ -18,36 +18,26 @@ const Hero = () => {
       <div className="absolute -top-[30%] -left-[10%] w-[60%] h-[60%] bg-gradient-to-br from-dinero-red/20 to-transparent rounded-full filter blur-3xl opacity-20 animate-pulse-subtle"></div>
       
       <div className="container mx-auto px-4 md:px-6 z-10">
-        <div className="max-w-4xl mx-auto">
-          <div className={`flex flex-col md:flex-row items-center gap-8 transition-all duration-1000 delay-300 transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-            <div className="w-full md:w-1/2 text-center md:text-left">
-              <h1 className="text-3xl md:text-5xl font-bold mb-4 leading-tight">
-                P2P-арбітраж, який приносить
-                <span className="text-gradient ml-2">кеш кожен день</span>
-              </h1>
-              
-              <p className="text-lg md:text-xl text-gray-300 mb-8">
-                Авторські P2P-зв'язки, реальні кейси, доступ до топового ком'юніті.
-              </p>
-              
-              <div className="mt-8 md:mt-4">
-                <a 
-                  href="#join" 
-                  className="inline-flex items-center bg-dinero-red text-white px-8 py-3 rounded-md font-medium text-lg hover:bg-red-600 transition-all button-glow"
-                >
-                  Увійти в ком'юніті
-                  <ArrowRight size={20} className="ml-2" />
-                </a>
-              </div>
-            </div>
+        <div className="max-w-4xl mx-auto text-center">
+          <div className={`transition-all duration-1000 delay-300 transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+            <h1 className="text-3xl md:text-5xl font-bold mb-4 leading-tight">
+              P2P-арбітраж, який приносить
+              <span className="text-gradient ml-2">кеш кожен день</span>
+            </h1>
             
-            <div className="w-full md:w-1/2 flex justify-center md:justify-end">
-              <img 
-                src="/lovable-uploads/61be801a-5db2-4c37-b7b8-5980d8b07377.png" 
-                alt="Luxury car representing financial success" 
-                className="rounded-xl shadow-2xl max-w-full md:max-w-sm transform transition-transform hover:scale-105 border-2 border-dinero-red/20"
-              />
-            </div>
+            <p className="text-lg md:text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+              Авторські P2P-зв'язки, реальні кейси, доступ до топового ком'юніті.
+            </p>
+          </div>
+          
+          <div className={`mt-8 transition-all duration-1000 delay-500 transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+            <a 
+              href="#join" 
+              className="inline-flex items-center bg-dinero-red text-white px-8 py-3 rounded-md font-medium text-lg hover:bg-red-600 transition-all button-glow"
+            >
+              Увійти в ком'юніті
+              <ArrowRight size={20} className="ml-2" />
+            </a>
           </div>
           
           <div className={`mt-16 grid grid-cols-1 md:grid-cols-3 gap-6 transition-all duration-1000 delay-700 transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>

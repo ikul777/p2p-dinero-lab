@@ -29,14 +29,6 @@ const Header = () => {
           </h1>
         </div>
 
-        <div className="hidden md:block">
-          <img 
-            src="/lovable-uploads/61be801a-5db2-4c37-b7b8-5980d8b07377.png" 
-            alt="Luxury car on parking lot" 
-            className="h-14 rounded-md object-cover shadow-lg transform transition-transform hover:scale-105"
-          />
-        </div>
-
         <div className="flex items-center">
           <a 
             href="https://t.me/+iDCbfd3Bm8wxMzZi" 
