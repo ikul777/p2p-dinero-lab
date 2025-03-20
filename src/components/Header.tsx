@@ -28,15 +28,6 @@ const Header = () => {
             <span className="text-dinero-red">Lab</span>
           </h1>
         </div>
-
-        <div className="flex items-center">
-          <a 
-            href="https://t.me/+iDCbfd3Bm8wxMzZi" 
-            className="bg-dinero-red text-white px-4 py-2 rounded-md font-medium text-sm hover:bg-red-600 transition-all button-glow"
-          >
-            Увійти
-          </a>
-        </div>
       </div>
     </header>
   );

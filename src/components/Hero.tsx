@@ -35,7 +35,7 @@ const Hero = () => {
               href="#join" 
               className="inline-flex items-center bg-dinero-red text-white px-8 py-3 rounded-md font-medium text-lg hover:bg-red-600 transition-all button-glow"
             >
-              Увійти в ком'юніті
+              Приєднатись до ком'юніті
               <ArrowRight size={20} className="ml-2" />
             </a>
           </div>
