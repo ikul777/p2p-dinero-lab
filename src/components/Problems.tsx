@@ -41,21 +41,18 @@ const Problems = () => {
             </h2>
             <div className="w-16 h-1 bg-dinero-red mx-auto mb-6"></div>
             <p className="text-gray-300 md:text-lg max-w-2xl mx-auto">
-              Без правильного підходу P2P-арбітраж перетворюється на злиті гроші
+              Більшість новачків заходять в тему і зливають бабки, бо:
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-3 gap-8">
             <div className="glass-card p-6 md:p-8 rounded-xl relative reveal-animation">
               <div className="absolute -top-4 -left-4 h-12 w-12 rounded-full bg-dinero-red flex items-center justify-center">
                 <AlertTriangle size={24} className="text-white" />
               </div>
               <h3 className="text-xl font-semibold mb-4 mt-2">Купують хламові зв'язки</h3>
-              <p className="text-gray-300 mb-4">
-                Більшість початківців витрачають гроші на неперевірені або застарілі зв'язки, які реально не працюють. 
-              </p>
-              <p className="text-gray-400 text-sm">
-                У результаті — вони не тільки не заробляють, але й втрачають початковий депозит, намагаючись змусити працювати непрацюючу схему.
+              <p className="text-gray-300">
+                Купують хламові зв'язки, які вже давно не працюють.
               </p>
             </div>
             
@@ -64,37 +61,18 @@ const Problems = () => {
                 <Users size={24} className="text-white" />
               </div>
               <h3 className="text-xl font-semibold mb-4 mt-2">Відсутність підтримки</h3>
-              <p className="text-gray-300 mb-4">
-                Купили зв'язку — і залишились самі. Типова ситуація: щось не працює, а допомоги немає.
-              </p>
-              <p className="text-gray-400 text-sm">
-                Без команди та актуальних даних від саппортів, які щодня в темі, новачок швидко втрачає орієнтацію і зливає гроші.
+              <p className="text-gray-300">
+                Не мають підтримки і не розуміють, що робити при найменших змінах в робочому процесі.
               </p>
             </div>
             
             <div className="glass-card p-6 md:p-8 rounded-xl relative reveal-animation">
               <div className="absolute -bottom-4 -left-4 h-12 w-12 rounded-full bg-dinero-red flex items-center justify-center">
-                <DollarSign size={24} className="text-white" />
-              </div>
-              <h3 className="text-xl font-semibold mb-4 mt-2">Нереалістичні очікування</h3>
-              <p className="text-gray-300 mb-4">
-                Багато хто думає, що P2P — це кнопка "заробити миллион", але це системна робота, яка потребує навичок.
-              </p>
-              <p className="text-gray-400 text-sm">
-                Без розуміння процесів, правильних інструментів та актуальних даних, новачки швидко розчаровуються і виходять в мінус.
-              </p>
-            </div>
-            
-            <div className="glass-card p-6 md:p-8 rounded-xl relative reveal-animation">
-              <div className="absolute -bottom-4 -right-4 h-12 w-12 rounded-full bg-dinero-red flex items-center justify-center">
                 <Shield size={24} className="text-white" />
               </div>
               <h3 className="text-xl font-semibold mb-4 mt-2">Потрапляють на скам</h3>
-              <p className="text-gray-300 mb-4">
-                Ринок переповнений шахраями, які продають "золоті схеми", а насправді надають непрацюючі зв'язки або їх загальний опис.
-              </p>
-              <p className="text-gray-400 text-sm">
-                Без доступу до перевіреного ком'юніті та реальних результатів, люди стають жертвами красивих обіцянок.
+              <p className="text-gray-300">
+                Потрапляють на скам і втрачають все на рівному місці.
               </p>
             </div>
           </div>
@@ -103,7 +81,7 @@ const Problems = () => {
             <div className="glass-card p-6 md:p-8 rounded-xl inline-block max-w-2xl">
               <h3 className="text-xl font-semibold mb-4">Висновок</h3>
               <p className="text-gray-300">
-                Без перевірених схем, актуальних даних і підтримки досвідчених саппортів — P2P-арбітраж перетворюється на злите бабло. Вам потрібна система і ком'юніті професіоналів.
+                Без перевірених зв'язок, актуальної інфомації та підтримки сапортів – твій бюджет і ти просто згорите. Не роби цих помилок.
               </p>
             </div>
           </div>
