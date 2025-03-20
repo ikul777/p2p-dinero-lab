@@ -1,11 +1,32 @@
 
-const testimonialImages = [
-  "/lovable-uploads/0f454836-1e24-4f21-83cb-65c872fb6aa7.png",
-  "/lovable-uploads/c6b86e04-3252-4056-9815-619cae704a5c.png",
-  "/lovable-uploads/65363d3f-4724-48ef-8920-947b2b722e15.png",
-  "/lovable-uploads/cf8b8384-701c-491b-97e5-682e575a0369.png",
-  "/lovable-uploads/26d2bf9f-029d-416b-9762-a2dd1007d399.png",
-  "/lovable-uploads/9566adfe-ce94-47b5-9e3d-c4ac797dcf6d.png"
+import { User, Star, CheckCircle } from 'lucide-react';
+
+// Individual review data based on the screenshot
+const testimonialData = [
+  {
+    id: 1,
+    groupName: "P2P FEEDBACK",
+    sender: "Переслано від 1",
+    avatar: "/lovable-uploads/7c9183a7-c407-47e3-96c9-b96af2d9c112.png", // Using the uploaded image as a default avatar
+    content: "Ну, легко) матеріал цікавий, незвичайний для вітчизняного п2п, не тупа дрочка по картам як була тому 10 років)) потроху вчишся, в мене так враження, завжди щось онлайн(принаймні в мене так і є) коли не напишу відповідь отримую не пізніше ніж 5 хв а чат діджейків звичайність, окрім сапортів пацани допомагають, також іноді виконують бонусну роботу (чат ідентифікають ордери) це почалося нещодавно але все одно круто, ще хочу додати що сапорти подають все розказують, тобто щоб я більш-менш на рахунок шо да я хочу дивитися найбільше, і всю цю дінеро діджую н бачу як та шо ти платиш щоб зекономити сотні час та не набивати шишки, обєсц це безцінна штука, а тут тебе просто ведуть за ручку і кладуть до рогтя про ордери а наті)",
+    rating: 5
+  },
+  {
+    id: 2,
+    groupName: "P2P FEEDBACK",
+    sender: "Переслано від 2",
+    avatar: "/lovable-uploads/7c9183a7-c407-47e3-96c9-b96af2d9c112.png",
+    content: "Мій профіт, зараз короленько дам бо там два огляди вкінці, але скажу так, я зайшов, один день дивились, я задував стхви дропінки по п2п з різном працював ще а часів ≈6 ранку і до другой годины, потім я не роботі в день читав, і в мене просто висіли ордери, а на третій день почну і от тому числу перше число ≈ 12545, може трошки меньше може трошки більше, та просто один день дуже плотно вийшов, буквально ельдорадо, але всеодно зараз за інш місяц пацани профіт роблять",
+    rating: 5
+  },
+  {
+    id: 3,
+    groupName: "P2P FEEDBACK",
+    sender: "Переслано від 3",
+    avatar: "/lovable-uploads/7c9183a7-c407-47e3-96c9-b96af2d9c112.png",
+    content: "Працював з хлопцями коли ще не було ком'юніті, рекомендую! Стабільний прибуток і професійний підхід до кожного клієнта. Сапорт відповідає оперативно і завжди готовий допомогти з будь-яким питанням.",
+    rating: 5
+  },
 ];
 
 const Testimonials = () => {
@@ -31,15 +52,54 @@ const Testimonials = () => {
             </p>
           </div>
           
-          {/* Testimonials grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 reveal-animation">
-            {testimonialImages.map((image, index) => (
-              <div key={index} className="glass-card overflow-hidden rounded-xl border border-gray-800 hover:border-dinero-red/50 transition-all duration-300 transform hover:-translate-y-1">
-                <img 
-                  src={image} 
-                  alt={`Testimonial screenshot ${index + 1}`} 
-                  className="w-full h-auto object-cover object-center transition-transform duration-500 hover:scale-105"
-                />
+          {/* Testimonials grid - replaced with custom review blocks */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 reveal-animation">
+            {testimonialData.map((testimonial) => (
+              <div 
+                key={testimonial.id} 
+                className="glass-card p-6 rounded-xl border border-gray-800 hover:border-dinero-red/40 transition-all duration-300 transform hover:-translate-y-1 relative overflow-hidden"
+              >
+                {/* Top decorative element */}
+                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-dinero-red/40 via-dinero-red to-dinero-red/40"></div>
+                
+                {/* Header with group name and sender */}
+                <div className="flex items-center justify-between mb-4">
+                  <div className="bg-dinero-red/10 text-dinero-red px-3 py-1 rounded-md text-xs font-semibold">
+                    {testimonial.groupName}
+                  </div>
+                  <div className="text-gray-400 text-sm">
+                    {testimonial.sender}
+                  </div>
+                </div>
+                
+                {/* Content */}
+                <div className="mb-4 text-gray-300">
+                  <p className="leading-relaxed">
+                    {testimonial.content}
+                  </p>
+                </div>
+                
+                {/* Footer with rating */}
+                <div className="flex items-center justify-between mt-4 pt-4 border-t border-gray-800">
+                  <div className="flex items-center">
+                    <div className="h-8 w-8 rounded-full bg-dinero-red/20 flex items-center justify-center mr-3">
+                      <User size={16} className="text-dinero-red" />
+                    </div>
+                    <div className="flex items-center">
+                      {[...Array(testimonial.rating)].map((_, i) => (
+                        <Star 
+                          key={i} 
+                          size={14} 
+                          className="text-dinero-red fill-dinero-red mr-1" 
+                        />
+                      ))}
+                    </div>
+                  </div>
+                  <div className="flex items-center">
+                    <CheckCircle size={16} className="text-green-500 mr-1" />
+                    <span className="text-xs text-green-500">Верифіковано</span>
+                  </div>
+                </div>
               </div>
             ))}
           </div>
@@ -52,7 +112,7 @@ const Testimonials = () => {
               rel="noopener noreferrer"
               className="inline-flex items-center text-dinero-light bg-dinero-red hover:bg-red-600 transition-colors px-6 py-3 rounded-md font-medium text-lg button-glow"
             >
-              Більше кейсів
+              Більше відгуків
             </a>
           </div>
         </div>
