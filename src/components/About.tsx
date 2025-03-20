@@ -100,7 +100,7 @@ const About = () => {
                     <div className="h-6 w-6 rounded-full bg-dinero-red/20 flex items-center justify-center flex-shrink-0 mt-0.5">
                       <Check size={14} className="text-dinero-red" />
                     </div>
-                    <p className="text-gray-300 ml-3 text-sm">Створюємо робочі зв'язки, які приносять від $100 в день</p>
+                    <p className="text-gray-300 ml-3 text-sm">Створюємо робочі зв'язки, які приносять стабільний дохід</p>
                   </div>
                   
                   <div className="flex items-start">
