@@ -1,6 +1,8 @@
 
-import { User } from 'lucide-react';
+import { useRef, useState, useEffect } from 'react';
+import { User, ChevronLeft, ChevronRight } from 'lucide-react';
 import { ScrollArea } from '@/components/ui/scroll-area';
+import { Button } from '@/components/ui/button';
 
 // Expanded testimonial data for carousel
 const testimonialData = [
@@ -57,6 +59,53 @@ const testimonialData = [
 ];
 
 const Testimonials = () => {
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const [showLeftButton, setShowLeftButton] = useState(false);
+  const [showRightButton, setShowRightButton] = useState(true);
+  
+  // Function to check scroll position and update button visibility
+  const checkScrollPosition = () => {
+    const container = scrollContainerRef.current;
+    if (!container) return;
+    
+    // Show left button if scrolled right
+    setShowLeftButton(container.scrollLeft > 20);
+    
+    // Show right button if not at the end
+    const maxScrollLeft = container.scrollWidth - container.clientWidth;
+    setShowRightButton(container.scrollLeft < maxScrollLeft - 20);
+  };
+  
+  // Handle scroll by one testimonial
+  const scrollBy = (direction: 'left' | 'right') => {
+    const container = scrollContainerRef.current;
+    if (!container) return;
+    
+    const scrollAmount = 350 + 24; // card width + gap
+    
+    if (direction === 'left') {
+      container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    } else {
+      container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    }
+  };
+  
+  // Initialize scroll position check
+  useEffect(() => {
+    const container = scrollContainerRef.current;
+    if (!container) return;
+    
+    // Check initial position
+    checkScrollPosition();
+    
+    // Add scroll event listener
+    container.addEventListener('scroll', checkScrollPosition);
+    
+    return () => {
+      container.removeEventListener('scroll', checkScrollPosition);
+    };
+  }, []);
+  
   return (
     <section id="testimonials" className="py-20 bg-dinero-dark relative overflow-hidden">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-dinero-red/20 to-transparent"></div>
@@ -80,8 +129,11 @@ const Testimonials = () => {
           </div>
           
           {/* Full-width scrollable testimonials */}
-          <div className="reveal-animation mb-12 overflow-hidden">
-            <div className="testimonial-container overflow-x-auto pb-6">
+          <div className="reveal-animation mb-12 overflow-hidden relative">
+            <div 
+              ref={scrollContainerRef}
+              className="testimonial-container overflow-x-auto pb-6"
+            >
               <div className="flex gap-6 px-4 pb-2 min-w-max">
                 {testimonialData.map((testimonial) => (
                   <div 
@@ -117,6 +169,31 @@ const Testimonials = () => {
                 ))}
               </div>
             </div>
+            
+            {/* Navigation buttons */}
+            {showLeftButton && (
+              <Button
+                variant="secondary"
+                size="icon"
+                className="absolute left-1 top-1/2 -translate-y-1/2 z-10 bg-dinero-dark/80 backdrop-blur-sm border border-gray-800 rounded-full h-10 w-10 opacity-90 hover:opacity-100 transition-opacity"
+                onClick={() => scrollBy('left')}
+              >
+                <ChevronLeft size={20} />
+                <span className="sr-only">Попередні відгуки</span>
+              </Button>
+            )}
+            
+            {showRightButton && (
+              <Button
+                variant="secondary"
+                size="icon"
+                className="absolute right-1 top-1/2 -translate-y-1/2 z-10 bg-dinero-dark/80 backdrop-blur-sm border border-gray-800 rounded-full h-10 w-10 opacity-90 hover:opacity-100 transition-opacity"
+                onClick={() => scrollBy('right')}
+              >
+                <ChevronRight size={20} />
+                <span className="sr-only">Наступні відгуки</span>
+              </Button>
+            )}
           </div>
           
           {/* Call to action */}
