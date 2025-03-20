@@ -1,3 +1,4 @@
+
 import { useEffect } from 'react';
 import { TrendingUp, Check, Star, User } from 'lucide-react';
 
@@ -134,9 +135,9 @@ const About = () => {
                   <Star size={20} className="text-dinero-red" />
                 </div>
                 <div className="ml-4">
-                  <h4 className="text-lg font-medium mb-2">Яких результатів ми досягнули</h4>
+                  <h4 className="text-lg font-medium mb-2">Яких результатів досягають наші учасники?</h4>
                   <p className="text-gray-400 text-sm">
-                    Наша команда щомісяця генерує 6-значні суми на P2P-арбітражі — і ми ділимося усіма схемами з нашими учасниками.
+                    Завдяки нашій спільноті люди виходять на стабільний дохід вже в перший місяць.
                   </p>
                 </div>
               </div>
