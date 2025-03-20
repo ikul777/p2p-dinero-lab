@@ -55,14 +55,6 @@ const Solution = () => {
                   Ми пропонуємо перевірені схеми для будь-якого бюджету — від $500 до $100,000. Кожен зв'язок пройшов сотні транзакцій нашої команди.
                 </p>
                 
-                <div className="overflow-hidden rounded-lg mb-6 relative z-10">
-                  <img 
-                    src="/lovable-uploads/d6e8365e-1235-4586-9733-bde874b2d8fd.png" 
-                    alt="Luxury BMW car at night" 
-                    className="w-full h-60 object-cover object-center transition-transform duration-500 hover:scale-105"
-                  />
-                </div>
-                
                 <a 
                   href="#join" 
                   className="inline-flex items-center text-dinero-red hover:text-dinero-light group relative z-10"
@@ -81,14 +73,6 @@ const Solution = () => {
                 <p className="text-gray-300 mb-6 relative z-10">
                   Ринок P2P постійно змінюється. Наша команда щодня перевіряє всі схеми та моментально оновлює інформацію для учасників спільноти.
                 </p>
-                
-                <div className="overflow-hidden rounded-lg mb-6 relative z-10">
-                  <img 
-                    src="/lovable-uploads/b1f34697-5bdd-484e-9479-a6f7ba2eb281.png" 
-                    alt="Person holding cash in a car" 
-                    className="w-full h-60 object-cover object-center transition-transform duration-500 hover:scale-105"
-                  />
-                </div>
                 
                 <a 
                   href="#join" 

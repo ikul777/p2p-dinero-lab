@@ -40,9 +40,9 @@ const About = () => {
             <div className="w-16 h-1 bg-dinero-red mx-auto mb-6"></div>
           </div>
           
-          <div className="grid md:grid-cols-12 gap-10 items-center">
-            {/* Left column - About text */}
-            <div className="md:col-span-7 reveal-animation">
+          <div className="grid md:grid-cols-1 gap-10 items-center">
+            {/* About text */}
+            <div className="reveal-animation">
               <div className="glass-card p-6 md:p-8 rounded-xl relative mb-8">
                 <div className="absolute -top-4 -right-4 h-8 w-8 rounded-full bg-dinero-red flex items-center justify-center">
                   <TrendingUp size={16} className="text-white" />
@@ -124,25 +124,6 @@ const About = () => {
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
-            
-            {/* Right column - Images */}
-            <div className="md:col-span-5 space-y-6 reveal-animation">
-              <div className="overflow-hidden rounded-xl glass-card">
-                <img 
-                  src="/lovable-uploads/226ac4bd-92e1-4cc1-a355-4d2d9a3a39bc.png" 
-                  alt="Person looking at city view from high-rise building" 
-                  className="w-full h-auto object-cover transition-transform duration-500 hover:scale-105"
-                />
-              </div>
-              
-              <div className="overflow-hidden rounded-xl glass-card">
-                <img 
-                  src="/lovable-uploads/49f196cc-7ef6-4c8d-9390-a3a2affb6ce8.png" 
-                  alt="Person sitting in a luxury car using a smartphone" 
-                  className="w-full h-auto object-cover transition-transform duration-500 hover:scale-105"
-                />
               </div>
             </div>
           </div>

@@ -55,32 +55,6 @@ const Testimonials = () => {
           </div>
         </div>
       </div>
-      
-      {/* Lifestyle image */}
-      <div className="max-w-6xl mx-auto px-4 md:px-6 mt-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-          <div className="order-2 md:order-1 reveal-animation">
-            <div className="glass-card p-6 md:p-8 rounded-xl relative">
-              <h3 className="text-2xl font-semibold mb-4">Життя, яке ти заслуговуєш</h3>
-              <p className="text-gray-300 mb-4">
-                P2P-арбітраж відкриває можливості, про які ти раніше тільки мріяв. Це не просто спосіб заробітку — це стиль життя, який дає свободу.
-              </p>
-              <p className="text-gray-300">
-                Приєднуйся до ком'юніті, де кожен учасник має доступ до перевірених зв'язків та підтримки 24/7.
-              </p>
-            </div>
-          </div>
-          <div className="order-1 md:order-2 reveal-animation">
-            <div className="overflow-hidden rounded-xl glass-card">
-              <img 
-                src="/lovable-uploads/ad13f5ac-2ce6-4e17-9f0a-f089abd3284d.png" 
-                alt="Person in bathrobe enjoying a view in luxury resort" 
-                className="w-full h-auto object-cover transition-transform duration-500 hover:scale-105"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
     </section>
   );
 };
