@@ -1,6 +1,6 @@
 
 import { useEffect } from 'react';
-import { TrendingUp, Check, Star } from 'lucide-react';
+import { TrendingUp, Check, Star, User } from 'lucide-react';
 
 const About = () => {
   useEffect(() => {
@@ -38,6 +38,29 @@ const About = () => {
               Від новачка до експерта в P2P
             </h2>
             <div className="w-16 h-1 bg-dinero-red mx-auto mb-6"></div>
+          </div>
+          
+          {/* Personal introduction */}
+          <div className="glass-card p-6 md:p-8 rounded-xl mb-12 reveal-animation">
+            <div className="flex flex-col md:flex-row items-start gap-6">
+              <div className="flex-shrink-0 mb-4 md:mb-0">
+                <div className="h-16 w-16 rounded-full bg-dinero-red/20 flex items-center justify-center">
+                  <User size={32} className="text-dinero-red" />
+                </div>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-4">Привіт! Мене звати Ярослав</h3>
+                <p className="text-gray-300 mb-4">
+                  Я в темі P2P-арбітражу ще з тих часів, коли не було ніяких ком'юніті та гайдів – всі розбиралися самі, через помилки і втрати.
+                </p>
+                <p className="text-gray-300 mb-4">
+                  Я теж злив купу грошей, поки не зібрав команду та не збудував систему правильної роботи. Так з'явилось Dinero Lab – ком'юніті, де ти отримуєш готові зв'язки, оточення однодумців та підтримку досвідченої команди сапортів, які реально працюють в цій сфері, а не просто навчають.
+                </p>
+                <p className="text-gray-300 font-medium italic">
+                  Якби в 2022-му коли я починав мені дали можливість приєднатися до такого ком'юніті – я був би вже на 10 кроків попереду. Але зараз твій черга!
+                </p>
+              </div>
+            </div>
           </div>
           
           <div className="grid md:grid-cols-2 gap-10 items-center mb-12">
