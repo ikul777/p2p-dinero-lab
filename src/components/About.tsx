@@ -85,11 +85,11 @@ const About = () => {
                 <h3 className="text-xl font-semibold mb-4">Моя історія в P2P</h3>
                 
                 <p className="text-gray-300 mb-4">
-                  Почав як і більшість — з невеликих експериментів на P2P біржах. Перші успіхи швидко змінились розчаруваннями: нестабільні зв'язки, скам, відсутність підтримки.
+                  Почав як і більшість — з невеликих експериментів на P2P біржах та ще й з позичених грошей. Перші успіхи швидко змінились розчаруваннями: нестабільні зв'язки, скам, відсутність підтримки та актуальної інформації.
                 </p>
                 
                 <p className="text-gray-300 mb-6">
-                  Після місяців проб і помилок, знайшов робочі стратегії та створив команду професіоналів, які зараз приносять стабільний прибуток нашим учасникам.
+                  Після місяців проб і помилок, знайшов робочі стратегії та зібрав команду професіоналів, які зараз приносять стабільний прибуток нашим учасникам.
                 </p>
                 
                 <div className="space-y-3">
@@ -97,21 +97,21 @@ const About = () => {
                     <div className="h-6 w-6 rounded-full bg-dinero-red/20 flex items-center justify-center flex-shrink-0 mt-0.5">
                       <Check size={14} className="text-dinero-red" />
                     </div>
-                    <p className="text-gray-300 ml-3 text-sm">Більше 3 років досвіду в P2P-арбітражі</p>
+                    <p className="text-gray-300 ml-3 text-sm">Більше 5 років досвіду в P2P-арбітражі в команди</p>
                   </div>
                   
                   <div className="flex items-start">
                     <div className="h-6 w-6 rounded-full bg-dinero-red/20 flex items-center justify-center flex-shrink-0 mt-0.5">
                       <Check size={14} className="text-dinero-red" />
                     </div>
-                    <p className="text-gray-300 ml-3 text-sm">Створив робочі зв'язки, які приносять від $100 в день</p>
+                    <p className="text-gray-300 ml-3 text-sm">Створюємо робочі зв'язки, які приносять від $100 в день</p>
                   </div>
                   
                   <div className="flex items-start">
                     <div className="h-6 w-6 rounded-full bg-dinero-red/20 flex items-center justify-center flex-shrink-0 mt-0.5">
                       <Check size={14} className="text-dinero-red" />
                     </div>
-                    <p className="text-gray-300 ml-3 text-sm">Допоміг більш ніж 300 учасникам почати заробляти</p>
+                    <p className="text-gray-300 ml-3 text-sm">Допомогли більш ніж 300 учасникам почати заробляти</p>
                   </div>
                 </div>
               </div>
