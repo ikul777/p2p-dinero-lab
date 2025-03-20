@@ -40,7 +40,18 @@ const About = () => {
             <div className="w-16 h-1 bg-dinero-red mx-auto mb-6"></div>
           </div>
           
-          <div className="grid md:grid-cols-1 gap-10 items-center">
+          <div className="grid md:grid-cols-2 gap-10 items-center mb-12">
+            {/* Image */}
+            <div className="reveal-animation">
+              <div className="rounded-xl overflow-hidden shadow-xl shadow-dinero-red/10 transform hover:scale-[1.02] transition-all duration-300">
+                <img 
+                  src="/lovable-uploads/58de9db5-ff5c-4abd-a14d-7a461f8a479a.png" 
+                  alt="Expert in P2P trading" 
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+            </div>
+            
             {/* About text */}
             <div className="reveal-animation">
               <div className="glass-card p-6 md:p-8 rounded-xl relative mb-8">
@@ -81,48 +92,48 @@ const About = () => {
                   </div>
                 </div>
               </div>
-              
-              <div className="space-y-6 reveal-animation">
-                <div className="glass-card p-6 rounded-xl">
-                  <div className="flex items-start">
-                    <div className="h-12 w-12 rounded-full bg-dinero-red/20 flex items-center justify-center flex-shrink-0">
-                      <Star size={20} className="text-dinero-red" />
-                    </div>
-                    <div className="ml-4">
-                      <h4 className="text-lg font-medium mb-2">Чому наша команда реально шарить</h4>
-                      <p className="text-gray-400 text-sm">
-                        Ми не просто теоретики — кожен саппорт щодня працює з реальними зв'язками та допомагає учасникам 24/7.
-                      </p>
-                    </div>
-                  </div>
+            </div>
+          </div>
+          
+          <div className="space-y-6 reveal-animation">
+            <div className="glass-card p-6 rounded-xl">
+              <div className="flex items-start">
+                <div className="h-12 w-12 rounded-full bg-dinero-red/20 flex items-center justify-center flex-shrink-0">
+                  <Star size={20} className="text-dinero-red" />
                 </div>
-                
-                <div className="glass-card p-6 rounded-xl">
-                  <div className="flex items-start">
-                    <div className="h-12 w-12 rounded-full bg-dinero-red/20 flex items-center justify-center flex-shrink-0">
-                      <Star size={20} className="text-dinero-red" />
-                    </div>
-                    <div className="ml-4">
-                      <h4 className="text-lg font-medium mb-2">Яких результатів ми досягнули</h4>
-                      <p className="text-gray-400 text-sm">
-                        Наша команда щомісяця генерує 6-значні суми на P2P-арбітражі — і ми ділимося усіма схемами з нашими учасниками.
-                      </p>
-                    </div>
-                  </div>
+                <div className="ml-4">
+                  <h4 className="text-lg font-medium mb-2">Чому наша команда реально шарить</h4>
+                  <p className="text-gray-400 text-sm">
+                    Ми не просто теоретики — кожен саппорт щодня працює з реальними зв'язками та допомагає учасникам 24/7.
+                  </p>
                 </div>
-                
-                <div className="glass-card p-6 rounded-xl">
-                  <div className="flex items-start">
-                    <div className="h-12 w-12 rounded-full bg-dinero-red/20 flex items-center justify-center flex-shrink-0">
-                      <Star size={20} className="text-dinero-red" />
-                    </div>
-                    <div className="ml-4">
-                      <h4 className="text-lg font-medium mb-2">Що відрізняє нас від інших</h4>
-                      <p className="text-gray-400 text-sm">
-                        Ми надаємо реальні зв'язки, а не теоретичні курси. Наш підхід — практика і підтримка на кожному кроці.
-                      </p>
-                    </div>
-                  </div>
+              </div>
+            </div>
+            
+            <div className="glass-card p-6 rounded-xl">
+              <div className="flex items-start">
+                <div className="h-12 w-12 rounded-full bg-dinero-red/20 flex items-center justify-center flex-shrink-0">
+                  <Star size={20} className="text-dinero-red" />
+                </div>
+                <div className="ml-4">
+                  <h4 className="text-lg font-medium mb-2">Яких результатів ми досягнули</h4>
+                  <p className="text-gray-400 text-sm">
+                    Наша команда щомісяця генерує 6-значні суми на P2P-арбітражі — і ми ділимося усіма схемами з нашими учасниками.
+                  </p>
+                </div>
+              </div>
+            </div>
+            
+            <div className="glass-card p-6 rounded-xl">
+              <div className="flex items-start">
+                <div className="h-12 w-12 rounded-full bg-dinero-red/20 flex items-center justify-center flex-shrink-0">
+                  <Star size={20} className="text-dinero-red" />
+                </div>
+                <div className="ml-4">
+                  <h4 className="text-lg font-medium mb-2">Що відрізняє нас від інших</h4>
+                  <p className="text-gray-400 text-sm">
+                    Ми надаємо реальні зв'язки, а не теоретичні курси. Наш підхід — практика і підтримка на кожному кроці.
+                  </p>
                 </div>
               </div>
             </div>
