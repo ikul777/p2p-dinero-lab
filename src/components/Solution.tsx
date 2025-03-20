@@ -52,12 +52,14 @@ const Solution = () => {
                 
                 <h3 className="text-xl font-semibold mb-4 relative z-10">Авторські P2P-зв'язки під різний бюджет</h3>
                 <p className="text-gray-300 mb-6 relative z-10">
-                  Ми пропонуємо перевірені схеми для будь-якого бюджету — від $500 до $100,000. Кожен зв'язок пройшов сотні транзакцій нашої команди.
+                  Ми пропонуємо перевірені зв'язки практично для будь-якого бюджету — від $500. Кожна зв'язка спочатку проходить тест а потім надається в роботу учасникам спільноти.
                 </p>
                 
                 <a 
-                  href="#join" 
+                  href="https://t.me/ikul777" 
                   className="inline-flex items-center text-dinero-red hover:text-dinero-light group relative z-10"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <span className="group-hover:underline">Дізнатися більше</span>
                   <ArrowRight size={16} className="ml-2 transition-transform group-hover:translate-x-1" />
@@ -69,14 +71,16 @@ const Solution = () => {
               <div className="glass-card p-6 md:p-8 rounded-xl h-full relative overflow-hidden group">
                 <div className="absolute bottom-0 right-0 w-32 h-32 bg-gradient-to-tl from-dinero-red/10 to-transparent rounded-full filter blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 
-                <h3 className="text-xl font-semibold mb-4 relative z-10">Постійне оновлення зв'язок та актуальної інфо</h3>
+                <h3 className="text-xl font-semibold mb-4 relative z-10">Постійне оновлення зв'язок та актуальної інфи</h3>
                 <p className="text-gray-300 mb-6 relative z-10">
-                  Ринок P2P постійно змінюється. Наша команда щодня перевіряє всі схеми та моментально оновлює інформацію для учасників спільноти.
+                  Ринок P2P постійно змінюється. Наша команда стабільно перевіряє всі схеми та оновлює актуальну інформацію для учасників спільноти.
                 </p>
                 
                 <a 
-                  href="#join" 
+                  href="https://t.me/ikul777" 
                   className="inline-flex items-center text-dinero-red hover:text-dinero-light group relative z-10"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <span className="group-hover:underline">Дізнатися більше</span>
                   <ArrowRight size={16} className="ml-2 transition-transform group-hover:translate-x-1" />
@@ -94,8 +98,10 @@ const Solution = () => {
                 </p>
                 
                 <a 
-                  href="#join" 
+                  href="https://t.me/ikul777" 
                   className="inline-flex items-center text-dinero-red hover:text-dinero-light group relative z-10"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <span className="group-hover:underline">Дізнатися більше</span>
                   <ArrowRight size={16} className="ml-2 transition-transform group-hover:translate-x-1" />
@@ -109,12 +115,14 @@ const Solution = () => {
                 
                 <h3 className="text-xl font-semibold mb-4 relative z-10">Закрите ком'юніті без рандомних людей</h3>
                 <p className="text-gray-300 mb-6 relative z-10">
-                  Ми цінуємо довіру та безпеку наших учасників. Тому доступ до ком'юніті отримують тільки перевірені люди, які реально зацікавлені в результаті.
+                  Ми цінуємо довіру та безпеку наших учасників. Тому доступ до ком'юніті отримують далеко не всі, наявність грошей це не основний критерій.
                 </p>
                 
                 <a 
-                  href="#join" 
+                  href="https://t.me/ikul777" 
                   className="inline-flex items-center text-dinero-red hover:text-dinero-light group relative z-10"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <span className="group-hover:underline">Дізнатися більше</span>
                   <ArrowRight size={16} className="ml-2 transition-transform group-hover:translate-x-1" />

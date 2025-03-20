@@ -45,7 +45,7 @@ const Hero = () => {
               <div className="h-12 w-12 rounded-full bg-dinero-red/20 flex items-center justify-center mb-4 mx-auto">
                 <DollarSign size={24} className="text-dinero-red" />
               </div>
-              <h3 className="text-lg font-semibold mb-2">Щоденний Кеш</h3>
+              <h3 className="text-lg font-semibold mb-2">Стабільний заробіток</h3>
               <p className="text-gray-400 text-sm">Реальні результати від перевірених P2P-зв'язок</p>
             </div>
             
@@ -53,7 +53,7 @@ const Hero = () => {
               <div className="h-12 w-12 rounded-full bg-dinero-red/20 flex items-center justify-center mb-4 mx-auto">
                 <TrendingUp size={24} className="text-dinero-red" />
               </div>
-              <h3 className="text-lg font-semibold mb-2">Перевірені Схеми</h3>
+              <h3 className="text-lg font-semibold mb-2">Перевірені зв'язки</h3>
               <p className="text-gray-400 text-sm">Стратегії, які працюють незалежно від ринку</p>
             </div>
             
