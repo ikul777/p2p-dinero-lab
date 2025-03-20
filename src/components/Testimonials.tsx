@@ -1,3 +1,4 @@
+
 import { useRef, useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, Link } from 'lucide-react';
 import { ScrollArea } from '@/components/ui/scroll-area';
@@ -195,7 +196,7 @@ const Testimonials = () => {
               rel="noopener noreferrer"
               className="inline-flex items-center text-dinero-light bg-dinero-red hover:bg-red-600 transition-colors px-6 py-3 rounded-md font-medium text-lg button-glow"
             >
-              Більше відгуків в P2P Feedback
+              Більше відгуків P2P FEEDBACK
             </a>
           </div>
         </div>
@@ -205,3 +206,4 @@ const Testimonials = () => {
 };
 
 export default Testimonials;
+
