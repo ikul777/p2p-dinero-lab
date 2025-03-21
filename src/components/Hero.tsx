@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { ArrowRight, DollarSign, TrendingUp, Users } from 'lucide-react';
 
@@ -22,7 +21,7 @@ const Hero = () => {
           <div className={`transition-all duration-1000 delay-300 transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <h1 className="text-3xl md:text-5xl font-bold mb-4 leading-tight">
               P2P-арбітраж, який приносить
-              <span className="text-gradient ml-2">кожного дня</span>
+              <span className="text-gradient ml-2">кеш кожного дня</span>
             </h1>
             
             <p className="text-lg md:text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
@@ -68,7 +67,6 @@ const Hero = () => {
         </div>
       </div>
       
-      {/* Scrolling arrow */}
       <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
         <a href="#about" className="text-dinero-light/50 hover:text-dinero-light transition-colors">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chevron-down"><path d="m6 9 6 6 6-6"/></svg>
