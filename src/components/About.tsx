@@ -1,4 +1,3 @@
-
 import { useEffect } from 'react';
 import { TrendingUp, Check, Star, User } from 'lucide-react';
 
@@ -58,13 +57,6 @@ const About = () => {
                   Якби в 2022-му, коли я починав, мені дали можливість приєднатись до такого комʼюніті - я був би вже на 10 кроків попереду. Але зараз твоя черга!
                 </p>
               </div>
-            </div>
-          </div>
-          
-          <div className="glass-card p-6 md:p-8 rounded-xl mb-8 reveal-animation text-center">
-            <div className="flex items-center justify-center gap-3 mb-2">
-              <img src="/lovable-uploads/cf8b8384-701c-491b-97e5-682e575a0369.png" alt="WhiteBIT Logo" className="h-8" />
-              <h3 className="text-xl font-semibold">Офіційний амбасадор біржі WhiteBIT</h3>
             </div>
           </div>
           
