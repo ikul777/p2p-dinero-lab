@@ -44,19 +44,6 @@ const CTA = () => {
               P2P без ком'юніті – це злиті гроші
             </h2>
             
-            <div className="glass-card p-6 rounded-xl mb-8 reveal-animation">
-              <div className="flex flex-col md:flex-row items-center justify-center gap-4">
-                <img 
-                  src="/lovable-uploads/c3ed313c-63a6-4419-a6e1-baa7f220eeb6.png" 
-                  alt="WhiteBIT Logo" 
-                  className="h-14 w-auto"
-                />
-                <h3 className="text-xl md:text-2xl font-semibold text-white">
-                  Офіційний амбасадор біржі WhiteBIT
-                </h3>
-              </div>
-            </div>
-            
             <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
               Якщо хочеш отримати доступ до перевірених P2P-зв'язок і сильного ком'юніті – приєднуйся до Dinero Lab.
             </p>
@@ -108,6 +95,19 @@ const CTA = () => {
                 Вступити в Dinero Lab
                 <ArrowRight size={20} className="ml-2" />
               </a>
+            </div>
+          </div>
+          
+          <div className="glass-card p-6 rounded-xl mb-8 reveal-animation">
+            <div className="flex flex-col md:flex-row items-center justify-center gap-4">
+              <img 
+                src="/lovable-uploads/c3ed313c-63a6-4419-a6e1-baa7f220eeb6.png" 
+                alt="WhiteBIT Logo" 
+                className="h-14 w-auto"
+              />
+              <h3 className="text-xl md:text-2xl font-semibold text-white">
+                Офіційний амбасадор біржі WhiteBIT
+              </h3>
             </div>
           </div>
           
