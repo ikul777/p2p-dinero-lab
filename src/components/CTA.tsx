@@ -98,16 +98,38 @@ const CTA = () => {
             </div>
           </div>
           
-          <div className="glass-card p-6 rounded-xl mb-8 reveal-animation">
-            <div className="flex flex-col md:flex-row items-center justify-center gap-4">
-              <img 
-                src="/lovable-uploads/c3ed313c-63a6-4419-a6e1-baa7f220eeb6.png" 
-                alt="WhiteBIT Logo" 
-                className="h-14 w-auto"
-              />
-              <h3 className="text-xl md:text-2xl font-semibold text-white">
-                Офіційний амбасадор біржі WhiteBIT
-              </h3>
+          {/* Redesigned WhiteBIT Ambassador section */}
+          <div className="glass-card overflow-hidden rounded-xl relative mb-8 reveal-animation">
+            <div className="absolute -right-16 -top-16 w-32 h-32 bg-gradient-to-bl from-blue-500/30 to-transparent rounded-full blur-xl"></div>
+            <div className="absolute -left-16 -bottom-16 w-32 h-32 bg-gradient-to-tr from-blue-500/30 to-transparent rounded-full blur-xl"></div>
+            
+            <div className="relative p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6">
+              <div className="flex items-center gap-5">
+                <div className="relative">
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-transparent rounded-full animate-pulse-subtle"></div>
+                  <img 
+                    src="/lovable-uploads/c3ed313c-63a6-4419-a6e1-baa7f220eeb6.png" 
+                    alt="WhiteBIT Logo" 
+                    className="h-16 w-auto relative z-10"
+                  />
+                </div>
+                <div className="text-left">
+                  <span className="text-xs font-medium uppercase tracking-wider text-blue-400 mb-1 block">Офіційне партнерство</span>
+                  <h3 className="text-xl md:text-2xl font-bold text-white">
+                    Офіційний амбасадор біржі WhiteBIT
+                  </h3>
+                </div>
+              </div>
+              
+              <a 
+                href="https://whitebit.com/a/35b66592-1a6b-473b-be2a-a27d105fee85" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="px-5 py-2 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white text-sm font-medium rounded-md transition-all flex items-center gap-2 whitespace-nowrap"
+              >
+                Перейти на біржу
+                <ArrowRight size={16} />
+              </a>
             </div>
           </div>
           
