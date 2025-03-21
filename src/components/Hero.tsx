@@ -20,7 +20,7 @@ const Hero = () => {
         <div className="max-w-4xl mx-auto text-center">
           <div className={`transition-all duration-1000 delay-300 transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <h1 className="text-3xl md:text-5xl font-bold mb-4 leading-tight">
-              P2P-арбітраж, який приноситькеш кожного дня
+              P2P-арбітраж, який приносить кеш кожного дня
               <span className="text-gradient ml-2">кеш кожного дня</span>
             </h1>
             
