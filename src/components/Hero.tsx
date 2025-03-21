@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { ArrowRight, DollarSign, TrendingUp, Users } from 'lucide-react';
 
@@ -21,7 +22,7 @@ const Hero = () => {
           <div className={`transition-all duration-1000 delay-300 transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <h1 className="text-3xl md:text-5xl font-bold mb-4 leading-tight">
               P2P-арбітраж, який приносить кеш кожного дня
-              <span className="text-gradient ml-2">кеш кожного дня</span>
+              <span className="text-gradient ml-2">👑</span>
             </h1>
             
             <p className="text-lg md:text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
