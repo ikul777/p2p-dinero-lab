@@ -1,6 +1,7 @@
 
 import { useEffect } from 'react';
 import { ArrowRight } from 'lucide-react';
+import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 
 const CTA = () => {
   useEffect(() => {
@@ -66,7 +67,7 @@ const CTA = () => {
                     <span className="h-5 w-5 rounded-full bg-dinero-red/10 flex items-center justify-center mr-2">
                       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-3 h-3 text-dinero-red"><polyline points="20 6 9 17 4 12"></polyline></svg>
                     </span>
-                    <span className="text-sm text-gray-300">Підтримка саппортів 24/7</span>
+                    <span className="text-sm text-gray-300">Підтримка сапортів 24/7</span>
                   </li>
                   <li className="flex items-center">
                     <span className="h-5 w-5 rounded-full bg-dinero-red/10 flex items-center justify-center mr-2">
@@ -77,11 +78,16 @@ const CTA = () => {
                 </ul>
               </div>
               
-              <img 
-                src="/lovable-uploads/4163f2a1-abbc-4a32-8707-ad42dd503f19.png" 
-                alt="Dinero Lab Logo" 
-                className="w-40 h-40 object-contain" 
-              />
+              <div className="flex items-center justify-center">
+                <Avatar className="w-40 h-40 border-4 border-dinero-red/20">
+                  <AvatarImage 
+                    src="/lovable-uploads/4163f2a1-abbc-4a32-8707-ad42dd503f19.png" 
+                    alt="Dinero Lab Logo" 
+                    className="object-contain" 
+                  />
+                  <AvatarFallback className="bg-dinero-red/10 text-dinero-red text-2xl font-bold">DL</AvatarFallback>
+                </Avatar>
+              </div>
             </div>
             
             <div className="text-center mt-6">
