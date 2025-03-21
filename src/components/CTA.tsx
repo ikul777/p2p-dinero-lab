@@ -1,4 +1,3 @@
-
 import { useEffect } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
@@ -139,7 +138,7 @@ const CTA = () => {
           
           <div className="text-center reveal-animation">
             <p className="text-gray-400 text-sm">
-              Маєш питання? Напиши нам в Telegram – 
+              Маєш питання? Пиши мені в Telegram – 
               <a 
                 href="https://t.me/ikul777" 
                 target="_blank" 
