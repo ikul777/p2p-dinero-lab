@@ -4,6 +4,7 @@ import { ChevronLeft, ChevronRight, Link } from 'lucide-react';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Button } from '@/components/ui/button';
 import { useIsMobile } from '@/hooks/use-mobile';
+import { PaginationDots } from '@/components/ui/pagination-dots';
 
 const testimonialData = [
   {
@@ -62,6 +63,7 @@ const Testimonials = () => {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [showLeftButton, setShowLeftButton] = useState(false);
   const [showRightButton, setShowRightButton] = useState(true);
+  const [activeIndex, setActiveIndex] = useState(0);
   const isMobile = useIsMobile();
   
   const checkScrollPosition = () => {
@@ -72,6 +74,11 @@ const Testimonials = () => {
     
     const maxScrollLeft = container.scrollWidth - container.clientWidth;
     setShowRightButton(container.scrollLeft < maxScrollLeft - 20);
+    
+    // Calculate the current active card index based on scroll position
+    const cardWidth = 350 + 24; // card width + gap
+    const currentIndex = Math.round(container.scrollLeft / cardWidth);
+    setActiveIndex(currentIndex);
   };
   
   const scrollBy = (direction: 'left' | 'right') => {
@@ -87,6 +94,17 @@ const Testimonials = () => {
     }
   };
   
+  const scrollToIndex = (index: number) => {
+    const container = scrollContainerRef.current;
+    if (!container) return;
+    
+    const cardWidth = 350 + 24; // card width + gap
+    container.scrollTo({
+      left: index * cardWidth,
+      behavior: 'smooth'
+    });
+  };
+  
   // Implement snap scrolling manually
   const handleScrollEnd = () => {
     const container = scrollContainerRef.current;
@@ -97,6 +115,7 @@ const Testimonials = () => {
     
     // Calculate the nearest card
     const cardIndex = Math.round(scrollPosition / cardWidth);
+    setActiveIndex(cardIndex);
     
     // Scroll to the nearest card
     container.scrollTo({
@@ -156,6 +175,17 @@ const Testimonials = () => {
               Перевірені результати від учасників нашого ком'юніті
             </p>
           </div>
+          
+          {isMobile && (
+            <div className="mb-4 reveal-animation">
+              <PaginationDots 
+                total={testimonialData.length}
+                active={activeIndex}
+                onDotClick={scrollToIndex}
+                className="py-2"
+              />
+            </div>
+          )}
           
           <div className="reveal-animation mb-12 overflow-hidden relative">
             <div 
