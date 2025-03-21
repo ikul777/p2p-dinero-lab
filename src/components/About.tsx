@@ -42,13 +42,14 @@ const About = () => {
           
           <div className="glass-card p-6 md:p-8 rounded-xl mb-12 reveal-animation">
             <div className="flex flex-col md:flex-row items-start gap-6">
-              <div className="flex-shrink-0 mb-4 md:mb-0">
+              <div className="flex-shrink-0 mb-4 md:mb-0 flex items-center gap-4">
                 <Avatar className="h-16 w-16 border-2 border-dinero-red/20">
                   <AvatarImage src="/lovable-uploads/592109ad-20dc-4aa2-8092-112e614a1686.png" alt="Ярослав" />
                   <AvatarFallback className="bg-dinero-red/20">
                     <User size={32} className="text-dinero-red" />
                   </AvatarFallback>
                 </Avatar>
+                <img src="/logo.svg" alt="DineroLab Logo" className="h-16 w-16" />
               </div>
               <div>
                 <h3 className="text-xl font-semibold mb-4">Привіт! Мене звати Ярослав</h3>
