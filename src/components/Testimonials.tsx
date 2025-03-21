@@ -1,4 +1,3 @@
-
 import { useRef, useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, Link } from 'lucide-react';
 import { ScrollArea } from '@/components/ui/scroll-area';
