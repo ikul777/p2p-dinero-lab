@@ -78,16 +78,11 @@ const CTA = () => {
                 </ul>
               </div>
               
-              <div className="flex items-center justify-center">
-                <Avatar className="w-40 h-40 border-4 border-dinero-red/20">
-                  <AvatarImage 
-                    src="/lovable-uploads/4163f2a1-abbc-4a32-8707-ad42dd503f19.png" 
-                    alt="Dinero Lab Logo" 
-                    className="object-contain" 
-                  />
-                  <AvatarFallback className="bg-dinero-red/10 text-dinero-red text-2xl font-bold">DL</AvatarFallback>
-                </Avatar>
-              </div>
+              <img 
+                src="/lovable-uploads/4163f2a1-abbc-4a32-8707-ad42dd503f19.png" 
+                alt="Dinero Lab Logo" 
+                className="w-40 h-40 object-contain" 
+              />
             </div>
             
             <div className="text-center mt-6">
