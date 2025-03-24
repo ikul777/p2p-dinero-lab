@@ -132,7 +132,7 @@ const Testimonials = () => {
     setShowRightButton(container.scrollLeft < maxScrollLeft - 20);
     
     // Calculate the current active card index based on scroll position
-    const cardWidth = 350 + 24; // card width + gap
+    const cardWidth = isMobile ? container.clientWidth : 350 + 24; // Full width on mobile, fixed width + gap on desktop
     const currentIndex = Math.round(container.scrollLeft / cardWidth);
     setActiveIndex(currentIndex);
   };
@@ -141,7 +141,7 @@ const Testimonials = () => {
     const container = scrollContainerRef.current;
     if (!container) return;
     
-    const scrollAmount = 350 + 24;
+    const scrollAmount = isMobile ? container.clientWidth : 350 + 24;
     
     if (direction === 'left') {
       container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
@@ -154,7 +154,7 @@ const Testimonials = () => {
     const container = scrollContainerRef.current;
     if (!container) return;
     
-    const cardWidth = 350 + 24; // card width + gap
+    const cardWidth = isMobile ? container.clientWidth : 350 + 24; // Full width on mobile, fixed width + gap on desktop
     container.scrollTo({
       left: index * cardWidth,
       behavior: 'smooth'
@@ -166,7 +166,7 @@ const Testimonials = () => {
     const container = scrollContainerRef.current;
     if (!container) return;
     
-    const cardWidth = 350 + 24; // card width + gap
+    const cardWidth = isMobile ? container.clientWidth : 350 + 24; // Full width on mobile, fixed width + gap on desktop
     const scrollPosition = container.scrollLeft;
     
     // Calculate the nearest card
@@ -209,7 +209,7 @@ const Testimonials = () => {
         window.clearTimeout(scrollTimeout);
       }
     };
-  }, []);
+  }, [isMobile]);
   
   return (
     <section id="testimonials" className="py-20 bg-dinero-dark relative overflow-hidden">
@@ -248,11 +248,13 @@ const Testimonials = () => {
               ref={scrollContainerRef}
               className="testimonial-container overflow-x-auto pb-6 scroll-snap-x"
             >
-              <div className="flex gap-6 px-4 pb-2 min-w-max">
-                {testimonialData.map((testimonial) => (
+              <div className={`flex gap-6 pb-2 px-4 ${isMobile ? 'flex-nowrap' : 'min-w-max'}`}>
+                {testimonialData.map((testimonial, index) => (
                   <div 
                     key={testimonial.id} 
-                    className="glass-card p-6 rounded-xl border border-gray-800 hover:border-dinero-red/40 transition-all duration-300 w-[350px] min-w-[350px] relative scroll-snap-align-start"
+                    className={`glass-card p-6 rounded-xl border border-gray-800 hover:border-dinero-red/40 transition-all duration-300 ${
+                      isMobile ? 'min-w-full w-full flex-shrink-0' : 'w-[350px] min-w-[350px]'
+                    } relative scroll-snap-align-start`}
                   >
                     <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-dinero-red/40 via-dinero-red to-dinero-red/40"></div>
                     
@@ -262,7 +264,7 @@ const Testimonials = () => {
                       </div>
                     </div>
                     
-                    <ScrollArea className="h-[180px]">
+                    <ScrollArea className="h-[180px] md:h-[200px]">
                       <div className="text-gray-300 pr-4">
                         <p className="leading-relaxed text-sm">
                           {testimonial.content}
