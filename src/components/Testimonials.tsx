@@ -1,7 +1,6 @@
-
 import { useEffect, useRef, useState } from 'react';
 import { ArrowRight, ArrowLeft } from 'lucide-react';
-import { useMediaQuery } from '@/hooks/use-mobile';
+import { useIsMobile } from '@/hooks/use-mobile';
 import { Button } from '@/components/ui/button';
 import { PaginationDots } from '@/components/ui/pagination-dots';
 
@@ -9,7 +8,7 @@ const testimonialData = [
   {
     id: 1,
     groupName: "Відгук з каналу P2P FEEDBACK",
-    content: "Хочу сказати величезне спасибі DineroLab командi. Завдяки їхнім гайдам і особистій підтримці від саппортів за перший місяць підняв 2300$ з нуля. " +
+    content: "Хочу сказати величезне спасибі DineroLab команді. Завдяки їхнім гайдам і особистій підтримці від саппортів за перший місяць підняв 2300$ з нуля. " +
     "Найбільше вражає, що на кожне питання швидко отримуєш відповідь в будь-який час доби і з будь-яких питань по процесу. " +
     "На мою думку, нічого схожого по співвідношенню ціна/результат на ринку навіть близько немає. " +
     "Якщо придбати всі ці схеми окремо, вийде в 5-10 разів дорожче, а тут ще й саппорти, які допомагають оперативно їх впроваджувати і масштабувати. Щиро рекомендую!",
@@ -47,11 +46,11 @@ const testimonialData = [
   {
     id: 5,
     groupName: "Відгук з каналу P2P FEEDBACK",
-    content: "Майже місяць користуюсь P2P зв'язками від Dinero Lab - вражений якістю і результатами. " +
+    content: "Майже місяць користуюся P2P зв'язками від Dinero Lab - вражений якістю і результатами. " +
     "Найцінніше, що вчать не лише самих схем арбітражу, але й правильній роботі з обліковими записами, безпеці та масштабуванню. " +
     "Головна перевага - дуже сильні сапорти, які не тільки відповідають на питання, але й можуть особисто провести по всім етапам. " +
     "За місяць трохи більше 5к$ сумарно (були як плюсові так і мінусові дні). Думаю що скоро  буду відверентим через пару місяців. " +
-    "Вперше за багато років реально відчуваю, що знайшов надійний спосіб заробітку в інтернеті. Дякую всій команді!",
+    "Вперше за багато років реально відчуваю, що знайшов надійний спосіб заробітку в інтернеті. Дякую всім команді!",
     link: "https://t.me/c/2405682015/139"
   },
   {
@@ -106,7 +105,7 @@ const testimonialData = [
 const Testimonials = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const testimonialRef = useRef<HTMLDivElement>(null);
-  const isMobile = useMediaQuery("(max-width: 768px)");
+  const isMobile = useIsMobile();
   
   const scrollToTestimonial = (index: number) => {
     if (testimonialRef.current) {
@@ -249,7 +248,7 @@ const Testimonials = () => {
               <PaginationDots 
                 total={testimonialData.length} 
                 active={activeIndex} 
-                onClick={scrollToTestimonial} 
+                onDotClick={scrollToTestimonial} 
                 className="gap-1"
                 dotClassName="bg-dinero-red/30 w-2 h-2 rounded-full transition-all duration-300"
                 activeDotClassName="bg-dinero-red w-3 h-3"

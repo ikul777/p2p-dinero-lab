@@ -7,6 +7,8 @@ interface PaginationDotsProps {
   active: number;
   onDotClick?: (index: number) => void;
   className?: string;
+  dotClassName?: string;
+  activeDotClassName?: string;
 }
 
 export const PaginationDots = ({
@@ -14,6 +16,8 @@ export const PaginationDots = ({
   active,
   onDotClick,
   className,
+  dotClassName,
+  activeDotClassName,
 }: PaginationDotsProps) => {
   return (
     <div className={cn("flex items-center justify-center gap-2", className)}>
@@ -21,10 +25,10 @@ export const PaginationDots = ({
         <button
           key={index}
           className={cn(
-            "w-2 h-2 rounded-full transition-all duration-300",
+            "transition-all duration-300",
             active === index 
-              ? "bg-dinero-red scale-125" 
-              : "bg-gray-500/50 hover:bg-gray-400/70"
+              ? cn("scale-125", activeDotClassName || "bg-dinero-red w-2 h-2 rounded-full") 
+              : cn("hover:bg-gray-400/70", dotClassName || "bg-gray-500/50 w-2 h-2 rounded-full")
           )}
           onClick={() => onDotClick && onDotClick(index)}
           aria-label={`Go to testimonial ${index + 1} of ${total}`}
