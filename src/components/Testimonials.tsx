@@ -161,6 +161,14 @@ const Testimonials = () => {
     });
   };
   
+  // Reset to first testimonial when switching between mobile and desktop
+  useEffect(() => {
+    if (scrollContainerRef.current) {
+      scrollToIndex(0);
+      setActiveIndex(0);
+    }
+  }, [isMobile]);
+  
   // Implement snap scrolling manually
   const handleScrollEnd = () => {
     const container = scrollContainerRef.current;
@@ -232,8 +240,34 @@ const Testimonials = () => {
             </p>
           </div>
           
+          {/* Controls - Before cards on mobile */}
           {isMobile && (
-            <div className="mb-4 reveal-animation">
+            <div className="mb-4 text-center reveal-animation">
+              <div className="flex items-center justify-center gap-2 mb-2">
+                <Button
+                  variant="outline"
+                  size="icon"
+                  className="bg-dinero-dark/80 backdrop-blur-sm border border-gray-800 rounded-full h-8 w-8 opacity-90 hover:opacity-100 transition-opacity"
+                  onClick={() => scrollBy('left')}
+                  disabled={!showLeftButton}
+                >
+                  <ChevronLeft size={18} />
+                  <span className="sr-only">Попередні відгуки</span>
+                </Button>
+                <span className="text-sm text-gray-400">
+                  {activeIndex + 1} / {testimonialData.length}
+                </span>
+                <Button
+                  variant="outline"
+                  size="icon"
+                  className="bg-dinero-dark/80 backdrop-blur-sm border border-gray-800 rounded-full h-8 w-8 opacity-90 hover:opacity-100 transition-opacity"
+                  onClick={() => scrollBy('right')}
+                  disabled={!showRightButton}
+                >
+                  <ChevronRight size={18} />
+                  <span className="sr-only">Наступні відгуки</span>
+                </Button>
+              </div>
               <PaginationDots 
                 total={testimonialData.length}
                 active={activeIndex}
@@ -246,7 +280,11 @@ const Testimonials = () => {
           <div className="reveal-animation mb-12 overflow-hidden relative">
             <div 
               ref={scrollContainerRef}
-              className="testimonial-container overflow-x-auto pb-6 scroll-snap-x"
+              className="testimonial-container overflow-x-auto pb-6 scroll-snap-type-x mandatory"
+              style={{
+                scrollbarWidth: 'none', /* Firefox */
+                msOverflowStyle: 'none', /* IE and Edge */
+              }}
             >
               <div className={`flex gap-6 pb-2 px-4 ${isMobile ? 'flex-nowrap' : 'min-w-max'}`}>
                 {testimonialData.map((testimonial, index) => (
