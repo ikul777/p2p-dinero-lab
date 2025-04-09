@@ -27,9 +27,9 @@ export default {
 				foreground: 'hsl(var(--foreground))',
 				dinero: {
 					red: '#e53935',
-					dark: '#000000', // Changed to pure black
-					light: '#ffffff', // Changed to pure white
-					gray: '#1a1a1a', // Darker gray
+					dark: '#121212',
+					light: '#f5f5f5',
+					gray: '#2a2a2a',
 					accent: '#e53935'
 				},
 				primary: {
@@ -134,14 +134,6 @@ export default {
 					'50%': {
 						opacity: '0.85'
 					}
-				},
-				'float': {
-					'0%, 100%': {
-						transform: 'translateY(0)'
-					},
-					'50%': {
-						transform: 'translateY(-10px)'
-					}
 				}
 			},
 			animation: {
@@ -150,8 +142,7 @@ export default {
 				'fade-in': 'fade-in 0.7s ease-out',
 				'fade-in-right': 'fade-in-right 0.7s ease-out',
 				'fade-in-left': 'fade-in-left 0.7s ease-out',
-				'pulse-subtle': 'pulse-subtle 2s ease-in-out infinite',
-				'float': 'float 6s ease-in-out infinite'
+				'pulse-subtle': 'pulse-subtle 2s ease-in-out infinite'
 			}
 		}
 	},

@@ -27,27 +27,23 @@ const CTA = () => {
   }, []);
   
   return (
-    <section id="join" className="py-12 md:py-20 bg-gradient-to-b from-black to-black/95 relative overflow-hidden">
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-dinero-red/30 to-transparent"></div>
+    <section id="join" className="py-12 md:py-20 bg-gradient-to-b from-dinero-dark to-dinero-dark/95 relative overflow-hidden">
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-dinero-red/20 to-transparent"></div>
       
       {/* Background elements */}
       <div className="absolute top-0 left-0 w-full h-full bg-grid opacity-5"></div>
-      
-      {/* Red stylized line elements */}
-      <div className="absolute top-[10%] left-0 w-[40%] h-px bg-dinero-red opacity-60"></div>
-      <div className="absolute bottom-[15%] right-0 w-[30%] h-px bg-dinero-red opacity-60"></div>
-      <div className="absolute top-[40%] right-[5%] w-px h-[30%] bg-dinero-red opacity-60"></div>
+      <div className="absolute -top-[20%] -right-[10%] w-[50%] h-[50%] bg-gradient-to-bl from-dinero-red/20 to-transparent rounded-full filter blur-3xl opacity-20"></div>
+      <div className="absolute -bottom-[20%] -left-[10%] w-[50%] h-[50%] bg-gradient-to-tr from-dinero-red/20 to-transparent rounded-full filter blur-3xl opacity-20"></div>
       
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           <div className="reveal-animation">
-            <span className="inline-block px-3 py-1 text-xs font-semibold bg-dinero-red/10 text-dinero-red rounded-md mb-3">
+            <span className="inline-block px-3 py-1 text-xs font-semibold bg-dinero-red/10 text-dinero-red rounded-full mb-3">
               Приєднуйся зараз
             </span>
             
-            <h2 className="text-2xl md:text-4xl font-bold mb-4 md:mb-6 flex flex-col md:flex-row items-center justify-center gap-2">
-              <span>P2P без ком'юніті –</span>
-              <span className="text-dinero-red">це злиті гроші</span>
+            <h2 className="text-2xl md:text-4xl font-bold mb-4 md:mb-6">
+              P2P без ком'юніті – це злиті гроші
             </h2>
             
             <p className="text-base md:text-xl text-gray-300 mb-6 md:mb-8 max-w-2xl mx-auto">
@@ -55,25 +51,10 @@ const CTA = () => {
             </p>
           </div>
           
-          <div className="glass-card p-6 md:p-10 rounded-xl mb-8 md:mb-10 reveal-animation shadow-2xl border border-gray-800 relative">
-            <div className="absolute -top-6 -left-6 md:-top-10 md:-left-10 w-24 h-24 md:w-32 md:h-32">
-              <div className="w-full h-full relative">
-                <div className="absolute top-0 left-0 w-full h-full border-t-2 border-l-2 border-dinero-red opacity-60 rounded-tl-3xl"></div>
-              </div>
-            </div>
-            
-            <div className="absolute -bottom-6 -right-6 md:-bottom-10 md:-right-10 w-24 h-24 md:w-32 md:h-32">
-              <div className="w-full h-full relative">
-                <div className="absolute bottom-0 right-0 w-full h-full border-b-2 border-r-2 border-dinero-red opacity-60 rounded-br-3xl"></div>
-              </div>
-            </div>
-            
-            <div className="flex flex-col md:flex-row items-center justify-between gap-6 md:gap-8 relative">
+          <div className="glass-card p-6 md:p-10 rounded-xl mb-8 md:mb-10 reveal-animation shadow-lg">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-6 md:gap-8">
               <div className="text-left w-full md:w-auto">
-                <h3 className="text-xl md:text-2xl font-bold mb-2">
-                  <span className="text-white">Dinero Lab</span>
-                  <span className="text-dinero-red"> VIP Community</span>
-                </h3>
+                <h3 className="text-xl md:text-2xl font-bold mb-2">Dinero Lab VIP Community</h3>
                 <p className="text-gray-300 mb-4">
                   Отримай доступ до топових P2P-зв'язок та команди професіоналів
                 </p>
@@ -111,26 +92,18 @@ const CTA = () => {
                 href="https://t.me/+iDCbfd3Bm8wxMzZi" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center w-full md:w-auto bg-dinero-red text-white px-6 md:px-8 py-3 rounded-md font-medium text-lg hover:bg-red-600 transition-all button-glow relative overflow-hidden group"
+                className="inline-flex items-center justify-center w-full md:w-auto bg-dinero-red text-white px-6 md:px-8 py-3 rounded-md font-medium text-lg hover:bg-red-600 transition-all button-glow"
               >
-                <span className="relative z-10 flex items-center">
-                  Вступити в Dinero Lab
-                  <ArrowRight size={20} className="ml-2 group-hover:translate-x-1 transition-transform" />
-                </span>
-                <span className="absolute inset-0 bg-gradient-to-r from-red-600 to-dinero-red transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
+                Вступити в Dinero Lab
+                <ArrowRight size={20} className="ml-2" />
               </a>
             </div>
           </div>
           
           {/* WhiteBIT Ambassador section - improved for mobile */}
-          <div className="glass-card overflow-hidden rounded-xl relative mb-6 md:mb-8 reveal-animation shadow-xl border border-gray-800">
-            <div className="absolute -top-6 -right-6 w-12 h-12">
-              <div className="w-full h-full relative">
-                <div className="absolute top-0 right-0 w-full h-full border-t-2 border-r-2 border-blue-500/40 opacity-70 rounded-tr-2xl"></div>
-              </div>
-            </div>
-            
-            <div className="absolute -left-16 -bottom-16 w-32 h-32 bg-gradient-to-tr from-blue-500/20 to-transparent rounded-full blur-xl"></div>
+          <div className="glass-card overflow-hidden rounded-xl relative mb-6 md:mb-8 reveal-animation shadow-lg">
+            <div className="absolute -right-16 -top-16 w-32 h-32 bg-gradient-to-bl from-blue-500/30 to-transparent rounded-full blur-xl"></div>
+            <div className="absolute -left-16 -bottom-16 w-32 h-32 bg-gradient-to-tr from-blue-500/30 to-transparent rounded-full blur-xl"></div>
             
             <div className="relative p-5 md:p-8">
               <div className="flex flex-col md:flex-row items-center justify-between gap-4 md:gap-6">
@@ -155,10 +128,10 @@ const CTA = () => {
                   href="https://whitebit.com/a/35b66592-1a6b-473b-be2a-a27d105fee85" 
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  className="px-5 py-2 bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white text-sm font-medium rounded-md transition-all flex items-center justify-center gap-2 whitespace-nowrap w-full md:w-auto group"
+                  className="px-5 py-2 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white text-sm font-medium rounded-md transition-all flex items-center justify-center gap-2 whitespace-nowrap w-full md:w-auto"
                 >
                   Перейти на біржу
-                  <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight size={16} />
                 </a>
               </div>
             </div>
