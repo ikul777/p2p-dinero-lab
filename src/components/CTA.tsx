@@ -1,3 +1,4 @@
+
 import { useEffect } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
@@ -80,7 +81,7 @@ const CTA = () => {
               </div>
               
               <img 
-                src="/lovable-uploads/4163f2a1-abbc-4a32-8707-ad42dd503f19.png" 
+                src="/lovable-uploads/40d7ae54-8f62-41c0-aa32-9f26100d352c.png" 
                 alt="Dinero Lab Logo" 
                 className="w-28 h-28 md:w-40 md:h-40 object-contain" 
               />
