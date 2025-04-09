@@ -3,12 +3,29 @@
   width="100" 
   height="100" 
   viewBox="0 0 100 100" 
+  fill="none" 
   xmlns="http://www.w3.org/2000/svg"
 >
-  <image
-    href="/lovable-uploads/f1f2cdc3-c2a1-4135-a89c-b31c3d0c71e1.png"
-    width="100"
-    height="100"
-    preserveAspectRatio="xMidYMid slice"
+  <!-- Circle Background -->
+  <circle cx="50" cy="50" r="48" fill="#121212" stroke="#e53935" stroke-width="2" />
+  
+  <!-- D Letter -->
+  <path 
+    d="M28 30H44C52.837 30 60 37.163 60 46V46C60 54.837 52.837 62 44 62H28V30Z" 
+    fill="#121212" 
+    stroke="#e53935" 
+    stroke-width="3"
   />
+  
+  <!-- L Letter -->
+  <path 
+    d="M45 38V70H72" 
+    stroke="#e53935" 
+    stroke-width="4" 
+    stroke-linecap="round" 
+    stroke-linejoin="round"
+  />
+  
+  <!-- Accent dot -->
+  <circle cx="65" cy="35" r="4" fill="#e53935" />
 </svg>

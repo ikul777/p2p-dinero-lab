@@ -23,11 +23,10 @@ const Header = () => {
     }`}>
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
         <div className="flex items-center">
-          <img 
-            src="/lovable-uploads/f1f2cdc3-c2a1-4135-a89c-b31c3d0c71e1.png" 
-            alt="DineroLab Logo" 
-            className="h-10 w-auto"
-          />
+          <h1 className="text-xl font-bold">
+            <span className="text-white">Dinero</span>
+            <span className="text-dinero-red">Lab</span>
+          </h1>
         </div>
       </div>
     </header>
