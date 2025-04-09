@@ -26,11 +26,11 @@ export default {
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
 				dinero: {
-					red: '#e53935',
+					red: '#ff0000',
 					dark: '#121212',
 					light: '#f5f5f5',
 					gray: '#2a2a2a',
-					accent: '#e53935'
+					accent: '#ff0000'
 				},
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
