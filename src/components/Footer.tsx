@@ -1,5 +1,6 @@
 
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   const [year, setYear] = useState('');
@@ -48,9 +49,18 @@ const Footer = () => {
               </a>
             </div>
             
-            <p className="text-gray-500 text-xs">
-              &copy; {year} Dinero Lab. Всі права захищені.
-            </p>
+            <div className="flex flex-col items-center md:items-end">
+              <Link 
+                to="/terms" 
+                className="text-gray-400 hover:text-dinero-red transition-colors text-sm mb-2"
+              >
+                Договір оферти
+              </Link>
+              
+              <p className="text-gray-500 text-xs">
+                &copy; {year} Dinero Lab. Всі права захищені.
+              </p>
+            </div>
           </div>
         </div>
       </div>

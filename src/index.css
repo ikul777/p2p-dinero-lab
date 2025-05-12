@@ -151,3 +151,20 @@
   opacity: 1;
   transform: translateY(0);
 }
+
+/* Terms page styling */
+.prose h2 {
+  @apply text-white font-semibold text-2xl mb-4 mt-8;
+}
+
+.prose p {
+  @apply text-gray-300 mb-3 leading-relaxed;
+}
+
+.prose section {
+  @apply mb-8;
+}
+
+.prose section:not(:first-child) {
+  @apply mt-8;
+}
