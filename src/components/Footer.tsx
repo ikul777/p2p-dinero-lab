@@ -1,13 +1,22 @@
 
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const Footer = () => {
   const [year, setYear] = useState('');
+  const location = useLocation();
   
   useEffect(() => {
     setYear(new Date().getFullYear().toString());
   }, []);
+  
+  const handleLogoClick = () => {
+    if (location.pathname === '/') {
+      // If on homepage, scroll to top smoothly
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    // If on another page, Link will handle navigation to home
+  };
   
   return (
     <footer className="bg-dinero-dark py-8 relative overflow-hidden">
@@ -16,12 +25,14 @@ const Footer = () => {
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-4 md:mb-0">
-            <div className="flex items-center">
-              <h1 className="text-xl font-bold">
-                <span className="text-white">Dinero</span>
-                <span className="text-dinero-red">Lab</span>
-              </h1>
-            </div>
+            <Link to="/" onClick={handleLogoClick} className="hover:opacity-80 transition-opacity">
+              <div className="flex items-center">
+                <h1 className="text-xl font-bold">
+                  <span className="text-white">Dinero</span>
+                  <span className="text-dinero-red">Lab</span>
+                </h1>
+              </div>
+            </Link>
             <p className="text-gray-400 text-sm mt-2">
               P2P-арбітраж, який приносить кеш кожен день
             </p>
@@ -52,6 +63,8 @@ const Footer = () => {
             <div className="flex flex-col items-center md:items-end">
               <Link 
                 to="/terms" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-gray-400 hover:text-dinero-red transition-colors text-sm mb-2"
               >
                 Договір оферти
