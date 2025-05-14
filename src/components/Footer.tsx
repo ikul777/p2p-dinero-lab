@@ -61,14 +61,25 @@ const Footer = () => {
             </div>
             
             <div className="flex flex-col items-center md:items-end">
-              <Link 
-                to="/terms" 
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-dinero-red transition-colors text-sm mb-2"
-              >
-                Договір оферти
-              </Link>
+              <div className="flex space-x-4 mb-2">
+                <Link 
+                  to="/terms" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-dinero-red transition-colors text-sm"
+                >
+                  Договір оферти
+                </Link>
+                
+                <Link 
+                  to="/privacy" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-dinero-red transition-colors text-sm"
+                >
+                  Політика конфіденційності
+                </Link>
+              </div>
               
               <p className="text-gray-500 text-xs">
                 &copy; {year} Dinero Lab. Всі права захищені.
