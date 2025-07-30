@@ -119,7 +119,7 @@ const CTA = () => {
                   <div>
                     <span className="text-xs font-medium uppercase tracking-wider text-blue-400 mb-1 block">Офіційне партнерство</span>
                     <h3 className="text-lg md:text-2xl font-bold text-white">
-                      Офіційний амбасадор біржі WhiteBIT
+                      Офіційний партнер біржі WhiteBIT
                     </h3>
                   </div>
                 </div>
@@ -129,6 +129,43 @@ const CTA = () => {
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="px-5 py-2 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white text-sm font-medium rounded-md transition-all flex items-center justify-center gap-2 whitespace-nowrap w-full md:w-auto"
+                >
+                  Перейти на біржу
+                  <ArrowRight size={16} />
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          {/* Bybit Partnership section */}
+          <div className="glass-card overflow-hidden rounded-xl relative mb-6 md:mb-8 reveal-animation shadow-lg">
+            <div className="absolute -right-16 -top-16 w-32 h-32 bg-gradient-to-bl from-orange-500/30 to-transparent rounded-full blur-xl"></div>
+            <div className="absolute -left-16 -bottom-16 w-32 h-32 bg-gradient-to-tr from-orange-500/30 to-transparent rounded-full blur-xl"></div>
+            
+            <div className="relative p-5 md:p-8">
+              <div className="flex flex-col md:flex-row items-center justify-between gap-4 md:gap-6">
+                <div className="flex flex-col md:flex-row items-center md:items-start gap-4 md:gap-5 text-center md:text-left">
+                  <div className="relative">
+                    <div className="absolute inset-0 bg-gradient-to-br from-orange-500/20 to-transparent rounded-full animate-pulse-subtle"></div>
+                    <img 
+                      src="/lovable-uploads/bc9ec3e6-6ada-499c-833f-58675bd63dc5.png" 
+                      alt="Bybit Logo" 
+                      className="h-14 md:h-16 w-auto relative z-10"
+                    />
+                  </div>
+                  <div>
+                    <span className="text-xs font-medium uppercase tracking-wider text-orange-400 mb-1 block">Офіційне партнерство</span>
+                    <h3 className="text-lg md:text-2xl font-bold text-white">
+                      Офіційний партнер біржі Bybit
+                    </h3>
+                  </div>
+                </div>
+                
+                <a 
+                  href="https://partner.bybit.com/b/136114" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="px-5 py-2 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white text-sm font-medium rounded-md transition-all flex items-center justify-center gap-2 whitespace-nowrap w-full md:w-auto"
                 >
                   Перейти на біржу
                   <ArrowRight size={16} />
