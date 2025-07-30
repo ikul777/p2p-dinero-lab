@@ -52,6 +52,10 @@ const Footer = () => {
                 <Link to="/privacy" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-dinero-red transition-colors text-sm">
                   Політика конфіденційності
                 </Link>
+                
+                <Link to="/entry-terms" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-dinero-red transition-colors text-sm">
+                  Умови вступу
+                </Link>
               </div>
               
               <p className="text-gray-500 text-xs">
