@@ -1,33 +1,25 @@
-
 import { useEffect } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
-
 const CTA = () => {
   const isMobile = useIsMobile();
-  
   useEffect(() => {
     const handleScroll = () => {
       const elements = document.querySelectorAll('.reveal-animation');
-      
-      elements.forEach((element) => {
+      elements.forEach(element => {
         const elementTop = element.getBoundingClientRect().top;
         const elementVisible = 150;
-        
         if (elementTop < window.innerHeight - elementVisible) {
           element.classList.add('revealed');
         }
       });
     };
-    
     window.addEventListener('scroll', handleScroll);
     handleScroll(); // Check on initial load
-    
+
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-  
-  return (
-    <section id="join" className="py-12 md:py-20 bg-gradient-to-b from-dinero-dark to-dinero-dark/95 relative overflow-hidden">
+  return <section id="join" className="py-12 md:py-20 bg-gradient-to-b from-dinero-dark to-dinero-dark/95 relative overflow-hidden">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-dinero-red/20 to-transparent"></div>
       
       {/* Background elements */}
@@ -80,20 +72,11 @@ const CTA = () => {
                 </ul>
               </div>
               
-              <img 
-                src="/lovable-uploads/40d7ae54-8f62-41c0-aa32-9f26100d352c.png" 
-                alt="Dinero Lab Logo" 
-                className="w-28 h-28 md:w-40 md:h-40 object-contain" 
-              />
+              <img src="/lovable-uploads/40d7ae54-8f62-41c0-aa32-9f26100d352c.png" alt="Dinero Lab Logo" className="w-28 h-28 md:w-40 md:h-40 object-contain" />
             </div>
             
             <div className="text-center mt-6">
-              <a 
-                href="https://t.me/+iDCbfd3Bm8wxMzZi" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center w-full md:w-auto bg-dinero-red text-white px-6 md:px-8 py-3 rounded-md font-medium text-lg hover:bg-red-600 transition-all button-glow"
-              >
+              <a href="https://t.me/+iDCbfd3Bm8wxMzZi" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center w-full md:w-auto bg-dinero-red text-white px-6 md:px-8 py-3 rounded-md font-medium text-lg hover:bg-red-600 transition-all button-glow">
                 Вступити в Dinero Lab
                 <ArrowRight size={20} className="ml-2" />
               </a>
@@ -110,11 +93,7 @@ const CTA = () => {
                 <div className="flex flex-col md:flex-row items-center md:items-start gap-4 md:gap-5 text-center md:text-left">
                   <div className="relative">
                     <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-transparent rounded-full animate-pulse-subtle"></div>
-                    <img 
-                      src="/lovable-uploads/c3ed313c-63a6-4419-a6e1-baa7f220eeb6.png" 
-                      alt="WhiteBIT Logo" 
-                      className="h-14 md:h-16 w-auto relative z-10"
-                    />
+                    <img src="/lovable-uploads/c3ed313c-63a6-4419-a6e1-baa7f220eeb6.png" alt="WhiteBIT Logo" className="h-14 md:h-16 w-auto relative z-10" />
                   </div>
                   <div>
                     <span className="text-xs font-medium uppercase tracking-wider text-blue-400 mb-1 block">Офіційне партнерство</span>
@@ -124,12 +103,7 @@ const CTA = () => {
                   </div>
                 </div>
                 
-                <a 
-                  href="https://whitebit.com/a/35b66592-1a6b-473b-be2a-a27d105fee85" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="px-5 py-2 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white text-sm font-medium rounded-md transition-all flex items-center justify-center gap-2 whitespace-nowrap w-full md:w-auto"
-                >
+                <a href="https://whitebit.com/a/35b66592-1a6b-473b-be2a-a27d105fee85" target="_blank" rel="noopener noreferrer" className="px-5 py-2 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white text-sm font-medium rounded-md transition-all flex items-center justify-center gap-2 whitespace-nowrap w-full md:w-auto">
                   Перейти на біржу
                   <ArrowRight size={16} />
                 </a>
@@ -147,11 +121,7 @@ const CTA = () => {
                 <div className="flex flex-col md:flex-row items-center md:items-start gap-4 md:gap-5 text-center md:text-left">
                   <div className="relative">
                     <div className="absolute inset-0 bg-gradient-to-br from-orange-500/20 to-transparent rounded-full animate-pulse-subtle"></div>
-                    <img 
-                      src="/lovable-uploads/bc9ec3e6-6ada-499c-833f-58675bd63dc5.png" 
-                      alt="Bybit Logo" 
-                      className="h-14 md:h-16 w-auto relative z-10"
-                    />
+                    <img src="/lovable-uploads/bc9ec3e6-6ada-499c-833f-58675bd63dc5.png" alt="Bybit Logo" className="h-14 md:h-16 w-auto relative z-10" />
                   </div>
                   <div>
                     <span className="text-xs font-medium uppercase tracking-wider text-orange-400 mb-1 block">Офіційне партнерство</span>
@@ -161,12 +131,7 @@ const CTA = () => {
                   </div>
                 </div>
                 
-                <a 
-                  href="https://partner.bybit.com/b/136114" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="px-5 py-2 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white text-sm font-medium rounded-md transition-all flex items-center justify-center gap-2 whitespace-nowrap w-full md:w-auto"
-                >
+                <a href="https://partner.bybit.com/b/136114" target="_blank" rel="noopener noreferrer" className="px-5 py-2 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white text-sm font-medium rounded-md transition-all flex items-center justify-center gap-2 whitespace-nowrap w-full md:w-auto">
                   Перейти на біржу
                   <ArrowRight size={16} />
                 </a>
@@ -175,22 +140,10 @@ const CTA = () => {
           </div>
           
           <div className="text-center reveal-animation">
-            <p className="text-gray-400 text-sm">
-              Маєш питання? Пиши мені в Telegram – 
-              <a 
-                href="https://t.me/ikul777" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-dinero-red hover:underline"
-              >
-                @ikul777
-              </a>
-            </p>
+            
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default CTA;
