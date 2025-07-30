@@ -48,7 +48,7 @@ const About = () => {
               <div>
                 <h3 className="text-xl font-semibold mb-4">Привіт! Мене звати Ярослав</h3>
                 <p className="text-gray-300 mb-4">
-                  Я в темі P2P-арбітражу ще з тих часів, коли не було ніяких ком'юніті та гайдів – всі розбиралися самі, через помилки і втрати. Зараз я офіційний амбасадор топової біржі <a href="https://whitebit.com/a/35b66592-1a6b-473b-be2a-a27d105fee85" target="_blank" rel="noopener noreferrer" className="text-dinero-red hover:underline">WhiteBIT</a>, та засновник P2P-комʼюніті DineroLab.
+                  Я в темі P2P-арбітражу ще з тих часів, коли не було ніяких ком'юніті та гайдів – всі розбиралися самі, через помилки і втрати. Зараз я офіційний партнер топових крипто-бірж <a href="https://whitebit.com/a/35b66592-1a6b-473b-be2a-a27d105fee85" target="_blank" rel="noopener noreferrer" className="text-dinero-red hover:underline">WhiteBIT</a> та <a href="https://partner.bybit.com/b/136114" target="_blank" rel="noopener noreferrer" className="text-dinero-red hover:underline">Bybit</a>, та засновник P2P-комʼюніті DineroLab.
                 </p>
                 <p className="text-gray-300 mb-4">
                   Коли я починав я теж злив купу грошей на тестах та спробах, поки не зібрав команду та не почав будувати систему правильної роботи, а не разових "темок". Так і з'явилось Dinero Lab – ком'юніті, де ти отримуєш готові зв'язки, оточення однодумців та підтримку досвідченої команди сапортів, які реально працюють в цій сфері, а не просто навчають.
