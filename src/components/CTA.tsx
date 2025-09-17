@@ -151,24 +151,22 @@ const CTA = () => {
                     <div className="absolute inset-0 bg-gradient-to-br from-green-500/20 to-transparent rounded-full animate-pulse-subtle"></div>
                     <img src="/lovable-uploads/okx_logo.jpg" alt="OKX Logo" className="h-14 md:h-16 w-auto relative z-10" />
                   </div>
-                  <div>
+                  <div className="flex-1">
                     <span className="text-xs font-medium uppercase tracking-wider text-green-400 mb-1 block">Офіційне партнерство</span>
-                    <h3 className="text-lg md:text-2xl font-bold text-white">
+                    <h3 className="text-lg md:text-2xl font-bold text-white mb-2">
                       Офіційний партнер біржі OKX
                     </h3>
+                    <a href="/okx-instructions" className="inline-flex items-center text-xs text-gray-400 hover:text-green-400 transition-colors">
+                      Інструкція з переносу акаунта
+                      <ArrowRight size={12} className="ml-1" />
+                    </a>
                   </div>
                 </div>
                 
-                <div className="flex flex-col md:flex-row gap-3 w-full md:w-auto">
-                  <a href="https://www.okx.com/join/DINEROLAB" target="_blank" rel="noopener noreferrer" className="px-5 py-2 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white text-sm font-medium rounded-md transition-all flex items-center justify-center gap-2 whitespace-nowrap">
-                    Перейти на біржу
-                    <ArrowRight size={16} />
-                  </a>
-                  <a href="/okx-instructions" className="px-5 py-2 bg-gray-800 hover:bg-gray-700 text-white text-sm font-medium rounded-md transition-all flex items-center justify-center gap-2 whitespace-nowrap border border-gray-600">
-                    ІНСТРУКЦІЯ З ПЕРЕНОСУ АККАУНТА
-                    <ArrowRight size={16} />
-                  </a>
-                </div>
+                <a href="https://www.okx.com/join/DINEROLAB" target="_blank" rel="noopener noreferrer" className="px-5 py-2 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white text-sm font-medium rounded-md transition-all flex items-center justify-center gap-2 whitespace-nowrap w-full md:w-auto">
+                  Перейти на біржу
+                  <ArrowRight size={16} />
+                </a>
               </div>
             </div>
           </div>
