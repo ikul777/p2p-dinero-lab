@@ -159,10 +159,16 @@ const CTA = () => {
                   </div>
                 </div>
                 
-                <a href="https://www.okx.com/join/DINEROLAB" target="_blank" rel="noopener noreferrer" className="px-5 py-2 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white text-sm font-medium rounded-md transition-all flex items-center justify-center gap-2 whitespace-nowrap w-full md:w-auto">
-                  Перейти на біржу
-                  <ArrowRight size={16} />
-                </a>
+                <div className="flex flex-col md:flex-row gap-3 w-full md:w-auto">
+                  <a href="https://www.okx.com/join/DINEROLAB" target="_blank" rel="noopener noreferrer" className="px-5 py-2 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white text-sm font-medium rounded-md transition-all flex items-center justify-center gap-2 whitespace-nowrap">
+                    Перейти на біржу
+                    <ArrowRight size={16} />
+                  </a>
+                  <a href="/okx-instructions" className="px-5 py-2 bg-gray-800 hover:bg-gray-700 text-white text-sm font-medium rounded-md transition-all flex items-center justify-center gap-2 whitespace-nowrap border border-gray-600">
+                    ІНСТРУКЦІЯ З ПЕРЕНОСУ АККАУНТА
+                    <ArrowRight size={16} />
+                  </a>
+                </div>
               </div>
             </div>
           </div>
