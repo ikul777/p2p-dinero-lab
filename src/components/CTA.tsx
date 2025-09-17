@@ -139,6 +139,34 @@ const CTA = () => {
             </div>
           </div>
           
+          {/* OKX Partnership section */}
+          <div className="glass-card overflow-hidden rounded-xl relative mb-6 md:mb-8 reveal-animation shadow-lg">
+            <div className="absolute -right-16 -top-16 w-32 h-32 bg-gradient-to-bl from-green-500/30 to-transparent rounded-full blur-xl"></div>
+            <div className="absolute -left-16 -bottom-16 w-32 h-32 bg-gradient-to-tr from-green-500/30 to-transparent rounded-full blur-xl"></div>
+            
+            <div className="relative p-5 md:p-8">
+              <div className="flex flex-col md:flex-row items-center justify-between gap-4 md:gap-6">
+                <div className="flex flex-col md:flex-row items-center md:items-start gap-4 md:gap-5 text-center md:text-left">
+                  <div className="relative">
+                    <div className="absolute inset-0 bg-gradient-to-br from-green-500/20 to-transparent rounded-full animate-pulse-subtle"></div>
+                    <img src="/lovable-uploads/okx_logo.jpg" alt="OKX Logo" className="h-14 md:h-16 w-auto relative z-10" />
+                  </div>
+                  <div>
+                    <span className="text-xs font-medium uppercase tracking-wider text-green-400 mb-1 block">Офіційне партнерство</span>
+                    <h3 className="text-lg md:text-2xl font-bold text-white">
+                      Офіційний партнер біржі OKX
+                    </h3>
+                  </div>
+                </div>
+                
+                <a href="https://www.okx.com/join/DINEROLAB" target="_blank" rel="noopener noreferrer" className="px-5 py-2 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white text-sm font-medium rounded-md transition-all flex items-center justify-center gap-2 whitespace-nowrap w-full md:w-auto">
+                  Перейти на біржу
+                  <ArrowRight size={16} />
+                </a>
+              </div>
+            </div>
+          </div>
+          
           <div className="text-center reveal-animation">
             
           </div>
