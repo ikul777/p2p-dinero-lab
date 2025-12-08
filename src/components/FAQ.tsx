@@ -36,47 +36,47 @@ const FAQ = () => {
   };
   
   return (
-    <section id="faq" className="py-16 md:py-24 lg:py-32 bg-background relative overflow-hidden">
+    <section id="faq" className="py-12 sm:py-16 md:py-24 lg:py-32 bg-background relative overflow-hidden">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent"></div>
-      <div className="absolute top-1/4 left-1/4 w-[300px] md:w-[400px] h-[300px] md:h-[400px] bg-primary/5 rounded-full filter blur-[100px] md:blur-[150px]"></div>
+      <div className="absolute top-1/4 left-1/4 w-[200px] sm:w-[300px] md:w-[400px] h-[200px] sm:h-[300px] md:h-[400px] bg-primary/5 rounded-full filter blur-[80px] sm:blur-[100px] md:blur-[150px]"></div>
       
-      <div className="container mx-auto px-4 md:px-6 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 relative z-10">
         <div className="max-w-3xl mx-auto">
           {/* Section header */}
-          <div className="text-center mb-10 md:mb-12 reveal-animation">
-            <span className="tag mb-3 md:mb-4 inline-block text-xs">FAQ</span>
-            <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4">
+          <div className="text-center mb-8 sm:mb-10 md:mb-12 reveal-animation">
+            <span className="tag mb-2 sm:mb-3 md:mb-4 inline-block text-[10px] sm:text-xs">FAQ</span>
+            <h2 className="font-display text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-2 sm:mb-3 md:mb-4">
               <span className="text-foreground">Популярні </span>
               <span className="text-gradient">питання</span>
             </h2>
           </div>
           
           {/* FAQ items */}
-          <div className="space-y-3 md:space-y-4 reveal-animation">
+          <div className="space-y-2 sm:space-y-3 md:space-y-4 reveal-animation">
             {faqItems.map((item, index) => (
               <div 
                 key={index} 
-                className="glass-card rounded-xl overflow-hidden"
+                className="glass-card rounded-lg sm:rounded-xl overflow-hidden"
               >
                 <button
-                  className="w-full text-left px-4 md:px-6 py-4 flex justify-between items-center gap-4"
+                  className="w-full text-left px-3 sm:px-4 md:px-6 py-3 sm:py-4 flex justify-between items-center gap-3 sm:gap-4"
                   onClick={() => toggleFAQ(index)}
                 >
-                  <span className="font-medium text-sm md:text-base text-foreground">{item.question}</span>
+                  <span className="font-medium text-xs sm:text-sm md:text-base text-foreground">{item.question}</span>
                   <ChevronDown 
-                    size={20} 
-                    className={`text-primary flex-shrink-0 transition-transform duration-300 ${openIndex === index ? 'rotate-180' : ''}`} 
+                    size={16} 
+                    className={`sm:w-5 sm:h-5 text-primary flex-shrink-0 transition-transform duration-300 ${openIndex === index ? 'rotate-180' : ''}`} 
                   />
                 </button>
                 
                 <div 
-                  className={`px-4 md:px-6 overflow-hidden transition-all duration-300 ${
+                  className={`px-3 sm:px-4 md:px-6 overflow-hidden transition-all duration-300 ${
                     openIndex === index 
-                      ? 'max-h-96 pb-4 md:pb-6 opacity-100' 
+                      ? 'max-h-96 pb-3 sm:pb-4 md:pb-6 opacity-100' 
                       : 'max-h-0 pb-0 opacity-0'
                   }`}
                 >
-                  <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">{item.answer}</p>
+                  <p className="text-[10px] sm:text-xs md:text-sm text-muted-foreground leading-relaxed">{item.answer}</p>
                 </div>
               </div>
             ))}

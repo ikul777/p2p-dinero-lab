@@ -74,7 +74,7 @@ const Testimonials = () => {
     const container = scrollContainerRef.current;
     if (!container) return;
     
-    const scrollAmount = isMobile ? 280 : 380;
+    const scrollAmount = isMobile ? 240 : 380;
     container.scrollBy({ 
       left: direction === 'left' ? -scrollAmount : scrollAmount, 
       behavior: 'smooth' 
@@ -92,20 +92,20 @@ const Testimonials = () => {
   }, []);
   
   return (
-    <section id="testimonials" className="py-16 md:py-24 lg:py-32 bg-background relative overflow-hidden">
+    <section id="testimonials" className="py-12 sm:py-16 md:py-24 lg:py-32 bg-background relative overflow-hidden">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent"></div>
-      <div className="absolute bottom-0 right-1/4 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-primary/5 rounded-full filter blur-[100px] md:blur-[150px]"></div>
+      <div className="absolute bottom-0 right-1/4 w-[200px] sm:w-[300px] md:w-[500px] h-[200px] sm:h-[300px] md:h-[500px] bg-primary/5 rounded-full filter blur-[80px] sm:blur-[100px] md:blur-[150px]"></div>
       
-      <div className="container mx-auto px-4 md:px-6 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 relative z-10">
         <div className="max-w-6xl mx-auto">
           {/* Section header */}
-          <div className="text-center mb-10 md:mb-12 reveal-animation">
-            <span className="tag mb-3 md:mb-4 inline-block text-xs">Відгуки</span>
-            <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4">
+          <div className="text-center mb-8 sm:mb-10 md:mb-12 reveal-animation">
+            <span className="tag mb-2 sm:mb-3 md:mb-4 inline-block text-[10px] sm:text-xs">Відгуки</span>
+            <h2 className="font-display text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-2 sm:mb-3 md:mb-4">
               <span className="text-foreground">Реальні </span>
               <span className="text-gradient">кейси</span>
             </h2>
-            <p className="text-sm md:text-base lg:text-lg text-muted-foreground max-w-xl mx-auto px-4">
+            <p className="text-xs sm:text-sm md:text-base lg:text-lg text-muted-foreground max-w-xl mx-auto px-2">
               Перевірені результати від учасників нашого комʼюніті
             </p>
           </div>
@@ -114,31 +114,31 @@ const Testimonials = () => {
           <div className="reveal-animation relative">
             <div 
               ref={scrollContainerRef}
-              className="flex gap-4 md:gap-6 overflow-x-auto pb-4 scrollbar-hide scroll-smooth"
+              className="flex gap-3 sm:gap-4 md:gap-6 overflow-x-auto pb-4 scrollbar-hide scroll-smooth"
               style={{ scrollSnapType: 'x mandatory' }}
             >
               {testimonialData.map((testimonial) => (
                 <div 
                   key={testimonial.id} 
-                  className="glass-card p-4 md:p-6 rounded-xl flex-shrink-0 w-[260px] sm:w-[300px] md:w-[360px]"
+                  className="glass-card p-3 sm:p-4 md:p-6 rounded-lg sm:rounded-xl flex-shrink-0 w-[220px] sm:w-[260px] md:w-[360px]"
                   style={{ scrollSnapAlign: 'start' }}
                 >
                   {/* Header */}
-                  <div className="flex items-center justify-between mb-3 md:mb-4">
-                    <span className="tag text-[10px] md:text-xs">{testimonial.groupName}</span>
+                  <div className="flex items-center justify-between mb-2 sm:mb-3 md:mb-4">
+                    <span className="tag text-[8px] sm:text-[10px] md:text-xs px-2 py-0.5 sm:px-3 sm:py-1">{testimonial.groupName}</span>
                     <a 
                       href={testimonial.link} 
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-muted-foreground hover:text-primary transition-colors"
                     >
-                      <ExternalLink size={14} />
+                      <ExternalLink size={12} className="sm:w-3.5 sm:h-3.5 md:w-4 md:h-4" />
                     </a>
                   </div>
                   
                   {/* Content */}
-                  <ScrollArea className="h-[140px] md:h-[160px]">
-                    <p className="text-xs md:text-sm text-muted-foreground leading-relaxed pr-2">
+                  <ScrollArea className="h-[100px] sm:h-[120px] md:h-[160px]">
+                    <p className="text-[10px] sm:text-xs md:text-sm text-muted-foreground leading-relaxed pr-2">
                       {testimonial.content}
                     </p>
                   </ScrollArea>
@@ -175,15 +175,15 @@ const Testimonials = () => {
           </div>
           
           {/* CTA */}
-          <div className="text-center mt-8 md:mt-12 reveal-animation">
+          <div className="text-center mt-6 sm:mt-8 md:mt-12 reveal-animation">
             <a 
               href="https://t.me/+fsuDNjshEhplMGMy" 
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-primary inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm md:text-base font-medium text-primary-foreground"
+              className="btn-primary inline-flex items-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 rounded-full text-xs sm:text-sm md:text-base font-medium text-primary-foreground"
             >
               Більше відгуків
-              <ExternalLink size={16} />
+              <ExternalLink size={14} className="sm:w-4 sm:h-4" />
             </a>
           </div>
         </div>
