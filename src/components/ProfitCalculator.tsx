@@ -69,7 +69,7 @@ const ProfitCalculator = () => {
                 
                 {/* Quick buttons */}
                 <div className="flex flex-wrap gap-2 mt-4">
-                  {[500, 1000, 3000, 5000, 10000].map((amount) => (
+                  {[500, 1000, 3000, 5000].map((amount) => (
                     <button
                       key={amount}
                       onClick={() => setBudget(amount)}
@@ -98,23 +98,23 @@ const ProfitCalculator = () => {
                 </div>
                 
                 <div className="grid grid-cols-3 gap-2 sm:gap-3 md:gap-4">
-                  <div className="text-center p-2 sm:p-3 md:p-4 rounded-xl bg-background/30 border border-border/30">
+                  <div className="text-center p-2 sm:p-3 md:p-4 rounded-xl bg-background/30 border border-border/30 overflow-hidden">
                     <p className="text-[9px] sm:text-[10px] md:text-xs text-muted-foreground mb-1">Мінімум</p>
-                    <p className="text-sm sm:text-lg md:text-2xl font-display font-bold text-foreground/70 whitespace-nowrap">
+                    <p className="text-xs sm:text-base md:text-xl lg:text-2xl font-display font-bold text-foreground/70 truncate">
                       ${formatNumber(minProfit)}
                     </p>
                     <p className="text-[9px] sm:text-[10px] md:text-xs text-muted-foreground">4%/круг</p>
                   </div>
-                  <div className="text-center p-2 sm:p-3 md:p-4 rounded-xl bg-primary/10 border border-primary/30">
+                  <div className="text-center p-2 sm:p-3 md:p-4 rounded-xl bg-primary/10 border border-primary/30 overflow-hidden">
                     <p className="text-[9px] sm:text-[10px] md:text-xs text-primary mb-1">Середній</p>
-                    <p className="text-base sm:text-xl md:text-3xl font-display font-bold text-gradient whitespace-nowrap">
+                    <p className="text-sm sm:text-lg md:text-2xl lg:text-3xl font-display font-bold text-gradient truncate">
                       ${formatNumber(avgProfit)}
                     </p>
                     <p className="text-[9px] sm:text-[10px] md:text-xs text-primary">6%/круг</p>
                   </div>
-                  <div className="text-center p-2 sm:p-3 md:p-4 rounded-xl bg-background/30 border border-border/30">
+                  <div className="text-center p-2 sm:p-3 md:p-4 rounded-xl bg-background/30 border border-border/30 overflow-hidden">
                     <p className="text-[9px] sm:text-[10px] md:text-xs text-muted-foreground mb-1">Максимум</p>
-                    <p className="text-sm sm:text-lg md:text-2xl font-display font-bold text-foreground/70 whitespace-nowrap">
+                    <p className="text-xs sm:text-base md:text-xl lg:text-2xl font-display font-bold text-foreground/70 truncate">
                       ${formatNumber(maxProfit)}
                     </p>
                     <p className="text-[9px] sm:text-[10px] md:text-xs text-muted-foreground">8%/круг</p>
@@ -123,8 +123,13 @@ const ProfitCalculator = () => {
               </div>
             </div>
             
+            {/* Disclaimer */}
+            <p className="text-[10px] sm:text-xs text-muted-foreground/60 text-center mt-6 sm:mt-8">
+              * Розрахунок є орієнтовним та залежить від ринкових умов і особистої активності
+            </p>
+            
             {/* CTA */}
-            <div className="mt-8 sm:mt-10 pt-6 sm:pt-8 border-t border-border/30 text-center">
+            <div className="mt-6 sm:mt-8 pt-6 sm:pt-8 border-t border-border/30 text-center">
               <a 
                 href="#join" 
                 className="btn-primary inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 rounded-full text-sm sm:text-base font-medium"
