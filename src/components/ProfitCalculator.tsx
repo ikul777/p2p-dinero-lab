@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Calculator, TrendingUp, Wallet, Info } from 'lucide-react';
+import { Calculator, TrendingUp, Wallet } from 'lucide-react';
 
 const ProfitCalculator = () => {
   const [budget, setBudget] = useState<number>(1000);
@@ -69,7 +69,7 @@ const ProfitCalculator = () => {
                 
                 {/* Quick buttons */}
                 <div className="flex flex-wrap gap-2 mt-4">
-                  {[500, 1000, 5000, 10000, 50000].map((amount) => (
+                  {[500, 1000, 3000, 5000, 10000].map((amount) => (
                     <button
                       key={amount}
                       onClick={() => setBudget(amount)}
@@ -97,36 +97,28 @@ const ProfitCalculator = () => {
                   </div>
                 </div>
                 
-                <div className="grid grid-cols-3 gap-3 sm:gap-4">
-                  <div className="text-center p-3 sm:p-4 rounded-xl bg-background/30 border border-border/30">
-                    <p className="text-[10px] sm:text-xs text-muted-foreground mb-1">Мінімум</p>
-                    <p className="text-base sm:text-xl md:text-2xl font-display font-bold text-foreground/70">
+                <div className="grid grid-cols-3 gap-2 sm:gap-3 md:gap-4">
+                  <div className="text-center p-2 sm:p-3 md:p-4 rounded-xl bg-background/30 border border-border/30">
+                    <p className="text-[9px] sm:text-[10px] md:text-xs text-muted-foreground mb-1">Мінімум</p>
+                    <p className="text-sm sm:text-lg md:text-2xl font-display font-bold text-foreground/70 whitespace-nowrap">
                       ${formatNumber(minProfit)}
                     </p>
-                    <p className="text-[10px] sm:text-xs text-muted-foreground">4%/круг</p>
+                    <p className="text-[9px] sm:text-[10px] md:text-xs text-muted-foreground">4%/круг</p>
                   </div>
-                  <div className="text-center p-3 sm:p-4 rounded-xl bg-primary/10 border border-primary/30">
-                    <p className="text-[10px] sm:text-xs text-primary mb-1">Середній</p>
-                    <p className="text-lg sm:text-2xl md:text-3xl font-display font-bold text-gradient">
+                  <div className="text-center p-2 sm:p-3 md:p-4 rounded-xl bg-primary/10 border border-primary/30">
+                    <p className="text-[9px] sm:text-[10px] md:text-xs text-primary mb-1">Середній</p>
+                    <p className="text-base sm:text-xl md:text-3xl font-display font-bold text-gradient whitespace-nowrap">
                       ${formatNumber(avgProfit)}
                     </p>
-                    <p className="text-[10px] sm:text-xs text-primary">6%/круг</p>
+                    <p className="text-[9px] sm:text-[10px] md:text-xs text-primary">6%/круг</p>
                   </div>
-                  <div className="text-center p-3 sm:p-4 rounded-xl bg-background/30 border border-border/30">
-                    <p className="text-[10px] sm:text-xs text-muted-foreground mb-1">Максимум</p>
-                    <p className="text-base sm:text-xl md:text-2xl font-display font-bold text-foreground/70">
+                  <div className="text-center p-2 sm:p-3 md:p-4 rounded-xl bg-background/30 border border-border/30">
+                    <p className="text-[9px] sm:text-[10px] md:text-xs text-muted-foreground mb-1">Максимум</p>
+                    <p className="text-sm sm:text-lg md:text-2xl font-display font-bold text-foreground/70 whitespace-nowrap">
                       ${formatNumber(maxProfit)}
                     </p>
-                    <p className="text-[10px] sm:text-xs text-muted-foreground">8%/круг</p>
+                    <p className="text-[9px] sm:text-[10px] md:text-xs text-muted-foreground">8%/круг</p>
                   </div>
-                </div>
-                
-                {/* Info about calculations */}
-                <div className="flex items-start gap-2 mt-4 p-3 rounded-lg bg-background/20 border border-border/20">
-                  <Info className="w-4 h-4 text-muted-foreground shrink-0 mt-0.5" />
-                  <p className="text-[10px] sm:text-xs text-muted-foreground">
-                    Розрахунок: оборот до {formatNumber(maxDailyTurnover)} USDT/день × {workingDays} робочих днів × 4-8% профіту з кругу
-                  </p>
                 </div>
               </div>
             </div>
