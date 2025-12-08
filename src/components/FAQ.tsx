@@ -1,110 +1,82 @@
-
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 
-type FAQItem = {
-  question: string;
-  answer: string;
-};
-
-const faqItems: FAQItem[] = [
+const faqItems = [
   {
     question: "Скільки потрібно грошей для старту?",
-    answer: "Для початку роботи з P2P-арбітражем рекомендуємо мінімальний бюджет від $100. Оптимально мати $300-500, щоб більш ефективно використовувати наші зв'язки. Хоча більшість наших зв'язок для тих, хто готовий працювати з бюджетами $1000+, які дозволяють значно масштабувати прибуток."
+    answer: "Рекомендуємо мінімальний бюджет від $100. Оптимально мати $300-500. Хоча більшість наших звʼязок для бюджетів $1000+, які дозволяють масштабувати прибуток."
   },
   {
     question: "Чи можна почати без досвіду?",
-    answer: "НІ, щоб приєднатись у Dinero Lab ти маєш мати мінімальні вміння в використанні бірж, банків та крипти. Не зважаючи на те що в нас є детальні інструкції, підтримка саппортів 24/7 та готові зв'язки, які допоможуть тобі швидко розібратися, ти мусиш розуміти з чим ти працюєш."
+    answer: "НІ, щоб приєднатись у Dinero Lab ти маєш мати мінімальні вміння в використанні бірж, банків та крипти. В нас є детальні інструкції та підтримка 24/7, але ти мусиш розуміти з чим працюєш."
   },
   {
-    question: "Чи можу я втратити гроші на P2P?",
-    answer: "Якщо дотримуватись інструкцій та не робити дурниць – ні. Ми показуємо лише перевірені зв'язки, з якими працюємо самі."
+    question: "Чи можу я втратити гроші?",
+    answer: "Якщо дотримуватись інструкцій та не робити дурниць – ні. Ми показуємо лише перевірені звʼязки, з якими працюємо самі."
   },
   {
     question: "Чи можна працювати за кордоном?",
-    answer: "Так, наші зв'язки працюють онлайн. Багато наших учасників успішно працюють з Європи. Ми регулярно оновлюємо зв'язки з урахуванням того, щоб ваше місцеперебування не мало значення."
+    answer: "Так, наші звʼязки працюють онлайн. Багато учасників успішно працюють з Європи. Ми регулярно оновлюємо звʼязки щоб місцеперебування не мало значення."
   },
   {
     question: "Як проходить навчання?",
-    answer: "Після вступу в ком'юніті ви отримуєте доступ до бази знань з покроковими інструкціями для кожної зв'язки. Саппорти проводять вас через перші кроки, допомагають налаштувати все необхідне та відповідають на всі питання. Ми використовуємо підхід 'навчання через практику' — ви починаєте заробляти, поступово покращуючи свої навички, а ми з своєї сторони забезпечуємо вас якісною та актуальною інформацією."
+    answer: "Після вступу ви отримуєте доступ до бази знань з покроковими інструкціями. Саппорти проводять через перші кроки та відповідають на всі питання. Ви починаєте заробляти, поступово покращуючи навички."
   },
   {
     question: "Які гарантії?",
-    answer: "Ми не можемо гарантувати конкретні суми заробітку, адже результати залежать від багатьох факторів, включаючи ваш стартовий капітал, час, який ви готові інвестувати, та вашу здатність слідувати інструкціям. Однак ми гарантуємо, що надаємо актуальні робочі зв'язки та повну підтримку для досягнення успіху. Наші численні відгуки демонструють, що система працює при правильному застосуванні."
+    answer: "Ми не можемо гарантувати конкретні суми, адже результати залежать від багатьох факторів. Але ми гарантуємо актуальні робочі звʼязки та повну підтримку для досягнення успіху."
   }
 ];
 
 const FAQ = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   
-  useEffect(() => {
-    const handleScroll = () => {
-      const elements = document.querySelectorAll('.reveal-animation');
-      
-      elements.forEach((element) => {
-        const elementTop = element.getBoundingClientRect().top;
-        const elementVisible = 150;
-        
-        if (elementTop < window.innerHeight - elementVisible) {
-          element.classList.add('revealed');
-        }
-      });
-    };
-    
-    window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Check on initial load
-    
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-  
   const toggleFAQ = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
   };
   
   return (
-    <section id="faq" className="py-20 bg-dinero-dark relative overflow-hidden">
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-dinero-red/20 to-transparent"></div>
+    <section id="faq" className="py-16 md:py-24 lg:py-32 bg-background relative overflow-hidden">
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent"></div>
+      <div className="absolute top-1/4 left-1/4 w-[300px] md:w-[400px] h-[300px] md:h-[400px] bg-primary/5 rounded-full filter blur-[100px] md:blur-[150px]"></div>
       
-      {/* Background elements */}
-      <div className="absolute -top-[30%] left-[20%] w-[40%] h-[40%] bg-gradient-to-br from-dinero-red/10 to-transparent rounded-full filter blur-3xl opacity-20"></div>
-      
-      <div className="container mx-auto px-4 md:px-6">
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="max-w-3xl mx-auto">
-          <div className="text-center mb-12 reveal-animation">
-            <span className="inline-block px-3 py-1 text-xs font-semibold bg-dinero-red/10 text-dinero-red rounded-full mb-3">
-              FAQ
-            </span>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Відповіді на популярні питання
+          {/* Section header */}
+          <div className="text-center mb-10 md:mb-12 reveal-animation">
+            <span className="tag mb-3 md:mb-4 inline-block text-xs">FAQ</span>
+            <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4">
+              <span className="text-foreground">Популярні </span>
+              <span className="text-gradient">питання</span>
             </h2>
-            <div className="w-16 h-1 bg-dinero-red mx-auto mb-6"></div>
           </div>
           
-          <div className="space-y-4 reveal-animation">
+          {/* FAQ items */}
+          <div className="space-y-3 md:space-y-4 reveal-animation">
             {faqItems.map((item, index) => (
               <div 
                 key={index} 
                 className="glass-card rounded-xl overflow-hidden"
               >
                 <button
-                  className="w-full text-left px-6 py-4 flex justify-between items-center"
+                  className="w-full text-left px-4 md:px-6 py-4 flex justify-between items-center gap-4"
                   onClick={() => toggleFAQ(index)}
                 >
-                  <span className="font-medium text-white">{item.question}</span>
+                  <span className="font-medium text-sm md:text-base text-foreground">{item.question}</span>
                   <ChevronDown 
                     size={20} 
-                    className={`text-dinero-red transition-transform ${openIndex === index ? 'rotate-180' : ''}`} 
+                    className={`text-primary flex-shrink-0 transition-transform duration-300 ${openIndex === index ? 'rotate-180' : ''}`} 
                   />
                 </button>
                 
                 <div 
-                  className={`px-6 overflow-hidden transition-all duration-300 ${
+                  className={`px-4 md:px-6 overflow-hidden transition-all duration-300 ${
                     openIndex === index 
-                      ? 'max-h-96 pb-6 opacity-100' 
+                      ? 'max-h-96 pb-4 md:pb-6 opacity-100' 
                       : 'max-h-0 pb-0 opacity-0'
                   }`}
                 >
-                  <p className="text-gray-300">{item.answer}</p>
+                  <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">{item.answer}</p>
                 </div>
               </div>
             ))}
