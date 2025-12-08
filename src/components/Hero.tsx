@@ -110,14 +110,6 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      
-      {/* Scroll indicator - hidden on mobile */}
-      <div className={`absolute bottom-6 left-1/2 -translate-x-1/2 hidden md:flex transition-all duration-700 delay-700 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
-        <a href="#about" className="flex flex-col items-center gap-2 text-muted-foreground hover:text-foreground transition-colors">
-          <span className="text-xs uppercase tracking-widest">Scroll</span>
-          <div className="scroll-indicator"></div>
-        </a>
-      </div>
     </section>
   );
 };
