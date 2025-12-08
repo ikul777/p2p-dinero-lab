@@ -48,7 +48,7 @@ const ProfitCalculator = () => {
           
           {/* Calculator Card */}
           <div className="glass-card p-6 sm:p-8 md:p-10 rounded-2xl border border-border/50">
-            <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+            <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
               {/* Input Section */}
               <div>
                 <label className="block mb-3 sm:mb-4">
