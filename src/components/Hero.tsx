@@ -84,25 +84,34 @@ const Hero = () => {
               </div>
             </div>
             
-            {/* Partnerships */}
-            <div className={`mt-8 sm:mt-10 md:mt-16 transition-all duration-700 delay-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-              <p className="text-[10px] sm:text-xs text-muted-foreground mb-3 sm:mb-4 uppercase tracking-widest">Офіційний партнер</p>
-              <div className="flex items-center justify-center gap-4 sm:gap-6 md:gap-10 flex-wrap">
-                {partnerships.map((partner) => (
-                  <a 
-                    key={partner.name}
-                    href={partner.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="opacity-60 hover:opacity-100 transition-opacity"
-                  >
-                    <img 
-                      src={partner.logo} 
-                      alt={partner.name} 
-                      className="h-6 sm:h-8 md:h-10 w-auto object-contain grayscale hover:grayscale-0 transition-all"
-                    />
-                  </a>
-                ))}
+            {/* Partnerships - Enhanced Section */}
+            <div className={`mt-10 sm:mt-14 md:mt-20 transition-all duration-700 delay-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+              <div className="glass-card p-4 sm:p-6 md:p-8 rounded-2xl border border-primary/20 bg-primary/5">
+                <p className="text-xs sm:text-sm text-primary mb-4 sm:mb-6 uppercase tracking-widest font-medium text-center">
+                  Офіційний партнер
+                </p>
+                <div className="flex items-center justify-center gap-6 sm:gap-8 md:gap-12">
+                  {partnerships.map((partner) => (
+                    <a 
+                      key={partner.name}
+                      href={partner.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group flex flex-col items-center gap-2 sm:gap-3 transition-all hover:scale-105"
+                    >
+                      <div className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-xl sm:rounded-2xl bg-background/50 border border-border/50 flex items-center justify-center p-2 sm:p-3 group-hover:border-primary/50 transition-all">
+                        <img 
+                          src={partner.logo} 
+                          alt={partner.name} 
+                          className="w-full h-full object-contain"
+                        />
+                      </div>
+                      <span className="text-[10px] sm:text-xs text-muted-foreground group-hover:text-foreground transition-colors">
+                        {partner.name}
+                      </span>
+                    </a>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
