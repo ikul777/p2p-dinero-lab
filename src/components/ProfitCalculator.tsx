@@ -97,27 +97,28 @@ const ProfitCalculator = () => {
                   </div>
                 </div>
                 
-                <div className="grid grid-cols-3 gap-2 sm:gap-3 md:gap-4">
-                  <div className="text-center p-2 sm:p-3 md:p-4 rounded-xl bg-background/30 border border-border/30 overflow-hidden">
-                    <p className="text-[9px] sm:text-[10px] md:text-xs text-muted-foreground mb-1">Мінімум</p>
-                    <p className="text-xs sm:text-base md:text-xl lg:text-2xl font-display font-bold text-foreground/70 truncate">
+                {/* Mobile: vertical layout, Desktop: 3 columns */}
+                <div className="flex flex-col gap-3 sm:grid sm:grid-cols-3 sm:gap-4">
+                  <div className="flex items-center justify-between sm:flex-col sm:justify-start sm:text-center p-3 sm:p-4 rounded-xl bg-background/30 border border-border/30">
+                    <p className="text-xs sm:text-xs text-muted-foreground sm:mb-1">Мінімум</p>
+                    <p className="text-xl sm:text-xl md:text-2xl font-display font-bold text-foreground/70">
                       ${formatNumber(minProfit)}
                     </p>
-                    <p className="text-[9px] sm:text-[10px] md:text-xs text-muted-foreground">4%/круг</p>
+                    <p className="text-xs text-muted-foreground hidden sm:block">4%/круг</p>
                   </div>
-                  <div className="text-center p-2 sm:p-3 md:p-4 rounded-xl bg-primary/10 border border-primary/30 overflow-hidden">
-                    <p className="text-[9px] sm:text-[10px] md:text-xs text-primary mb-1">Середній</p>
-                    <p className="text-sm sm:text-lg md:text-2xl lg:text-3xl font-display font-bold text-gradient truncate">
+                  <div className="flex items-center justify-between sm:flex-col sm:justify-start sm:text-center p-3 sm:p-4 rounded-xl bg-primary/10 border border-primary/30">
+                    <p className="text-xs sm:text-xs text-primary sm:mb-1">Середній</p>
+                    <p className="text-2xl sm:text-2xl md:text-3xl font-display font-bold text-gradient">
                       ${formatNumber(avgProfit)}
                     </p>
-                    <p className="text-[9px] sm:text-[10px] md:text-xs text-primary">6%/круг</p>
+                    <p className="text-xs text-primary hidden sm:block">6%/круг</p>
                   </div>
-                  <div className="text-center p-2 sm:p-3 md:p-4 rounded-xl bg-background/30 border border-border/30 overflow-hidden">
-                    <p className="text-[9px] sm:text-[10px] md:text-xs text-muted-foreground mb-1">Максимум</p>
-                    <p className="text-xs sm:text-base md:text-xl lg:text-2xl font-display font-bold text-foreground/70 truncate">
+                  <div className="flex items-center justify-between sm:flex-col sm:justify-start sm:text-center p-3 sm:p-4 rounded-xl bg-background/30 border border-border/30">
+                    <p className="text-xs sm:text-xs text-muted-foreground sm:mb-1">Максимум</p>
+                    <p className="text-xl sm:text-xl md:text-2xl font-display font-bold text-foreground/70">
                       ${formatNumber(maxProfit)}
                     </p>
-                    <p className="text-[9px] sm:text-[10px] md:text-xs text-muted-foreground">8%/круг</p>
+                    <p className="text-xs text-muted-foreground hidden sm:block">8%/круг</p>
                   </div>
                 </div>
               </div>
