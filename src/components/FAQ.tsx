@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { ChevronDown } from 'lucide-react';
 
@@ -51,7 +52,7 @@ const FAQ = () => {
     };
     
     window.addEventListener('scroll', handleScroll);
-    handleScroll();
+    handleScroll(); // Check on initial load
     
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -61,45 +62,39 @@ const FAQ = () => {
   };
   
   return (
-    <section id="faq" className="py-24 bg-background relative overflow-hidden">
-      {/* Top Divider */}
-      <div className="absolute top-0 left-0 right-0 divider-gold"></div>
+    <section id="faq" className="py-20 bg-dinero-dark relative overflow-hidden">
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-dinero-red/20 to-transparent"></div>
       
-      {/* Ambient Light */}
-      <div className="absolute top-1/4 left-0 w-[400px] h-[400px] bg-gold/3 rounded-full filter blur-[120px]"></div>
+      {/* Background elements */}
+      <div className="absolute -top-[30%] left-[20%] w-[40%] h-[40%] bg-gradient-to-br from-dinero-red/10 to-transparent rounded-full filter blur-3xl opacity-20"></div>
       
       <div className="container mx-auto px-4 md:px-6">
         <div className="max-w-3xl mx-auto">
-          {/* Section Header */}
-          <div className="text-center mb-16 reveal-animation">
-            <span className="inline-flex items-center gap-2 px-4 py-2 badge-premium rounded-full text-sm font-medium mb-6">
+          <div className="text-center mb-12 reveal-animation">
+            <span className="inline-block px-3 py-1 text-xs font-semibold bg-dinero-red/10 text-dinero-red rounded-full mb-3">
               FAQ
             </span>
-            <h2 className="font-display text-3xl md:text-5xl font-bold mb-6">
-              Відповіді на <span className="text-gradient-gold">популярні</span> питання
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Відповіді на популярні питання
             </h2>
-            <div className="divider-gold-thick mx-auto"></div>
+            <div className="w-16 h-1 bg-dinero-red mx-auto mb-6"></div>
           </div>
           
-          {/* FAQ Items */}
           <div className="space-y-4 reveal-animation">
             {faqItems.map((item, index) => (
               <div 
                 key={index} 
-                className={`glass-card rounded-2xl overflow-hidden transition-all duration-300 ${
-                  openIndex === index ? 'glow-gold' : ''
-                }`}
+                className="glass-card rounded-xl overflow-hidden"
               >
                 <button
-                  className="w-full text-left px-6 py-5 flex justify-between items-center gap-4"
+                  className="w-full text-left px-6 py-4 flex justify-between items-center"
                   onClick={() => toggleFAQ(index)}
                 >
-                  <span className="font-medium text-foreground">{item.question}</span>
-                  <div className={`icon-circle-premium h-8 w-8 rounded-lg flex items-center justify-center flex-shrink-0 transition-transform duration-300 ${
-                    openIndex === index ? 'rotate-180' : ''
-                  }`}>
-                    <ChevronDown size={16} className="text-gold" />
-                  </div>
+                  <span className="font-medium text-white">{item.question}</span>
+                  <ChevronDown 
+                    size={20} 
+                    className={`text-dinero-red transition-transform ${openIndex === index ? 'rotate-180' : ''}`} 
+                  />
                 </button>
                 
                 <div 
@@ -109,7 +104,7 @@ const FAQ = () => {
                       : 'max-h-0 pb-0 opacity-0'
                   }`}
                 >
-                  <p className="text-muted-foreground leading-relaxed">{item.answer}</p>
+                  <p className="text-gray-300">{item.answer}</p>
                 </div>
               </div>
             ))}

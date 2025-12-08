@@ -1,5 +1,6 @@
+
 import { useState, useEffect } from 'react';
-import { ArrowRight, Sparkles, TrendingUp, Shield } from 'lucide-react';
+import { ArrowRight, DollarSign, TrendingUp, Users } from 'lucide-react';
 
 const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -9,87 +10,66 @@ const Hero = () => {
   }, []);
   
   return (
-    <section className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-background">
-      {/* Premium Grid Background */}
-      <div className="absolute inset-0 bg-grid-premium"></div>
+    <section className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-dinero-dark">
+      {/* Grid background */}
+      <div className="absolute inset-0 bg-grid opacity-10"></div>
       
-      {/* Ambient Light Effects */}
-      <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-gold/5 rounded-full filter blur-[120px] animate-float"></div>
-      <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-gold/3 rounded-full filter blur-[100px]"></div>
+      {/* Animated gradient background */}
+      <div className="absolute -top-[30%] -left-[10%] w-[60%] h-[60%] bg-gradient-to-br from-dinero-red/20 to-transparent rounded-full filter blur-3xl opacity-20 animate-pulse-subtle"></div>
       
       <div className="container mx-auto px-4 md:px-6 z-10">
-        <div className="max-w-5xl mx-auto text-center">
-          {/* Premium Badge */}
-          <div className={`transition-all duration-1000 delay-100 transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-            <span className="inline-flex items-center gap-2 px-4 py-2 badge-premium rounded-full text-sm font-medium mb-8">
-              <Sparkles size={14} className="text-gold" />
-              <span>Преміум P2P Ком'юніті</span>
-            </span>
-          </div>
-          
+        <div className="max-w-4xl mx-auto text-center">
           <div className={`transition-all duration-1000 delay-300 transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-            <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-[1.1] tracking-tight">
-              P2P-арбітраж, який
-              <br />
-              <span className="text-gradient-premium">приносить результат</span>
+            <h1 className="text-3xl md:text-5xl font-bold mb-4 leading-tight">
+              P2P-арбітраж, який приносить <span className="enhanced-gradient font-extrabold">кеш кожного дня</span>
             </h1>
             
-            <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
-              Авторські P2P-зв'язки, ексклюзивні стратегії та доступ до закритого ком'юніті професіоналів
+            <p className="text-lg md:text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+              Авторські P2P-зв'язки, реальні кейси, доступ до топового ком'юніті.
             </p>
           </div>
           
-          {/* CTA Buttons */}
-          <div className={`flex flex-col sm:flex-row items-center justify-center gap-4 mb-20 transition-all duration-1000 delay-500 transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <div className={`mt-8 transition-all duration-1000 delay-500 transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <a 
               href="#join" 
-              className="button-premium px-8 py-4 rounded-xl font-semibold text-lg inline-flex items-center gap-2"
+              className="inline-flex items-center bg-dinero-red text-white px-8 py-3 rounded-md font-medium text-lg hover:bg-red-600 transition-all button-glow"
             >
               Приєднатись до ком'юніті
-              <ArrowRight size={20} />
-            </a>
-            <a 
-              href="#about" 
-              className="button-ghost px-8 py-4 rounded-xl font-medium text-lg inline-flex items-center gap-2"
-            >
-              Дізнатись більше
+              <ArrowRight size={20} className="ml-2" />
             </a>
           </div>
           
-          {/* Feature Cards */}
-          <div className={`grid grid-cols-1 md:grid-cols-3 gap-6 transition-all duration-1000 delay-700 transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-            <div className="glass-card p-8 rounded-2xl group hover:glow-gold transition-all duration-500">
-              <div className="icon-circle-premium h-14 w-14 rounded-xl flex items-center justify-center mb-5 mx-auto group-hover:scale-110 transition-transform duration-300">
-                <Sparkles size={24} className="text-gold" />
+          <div className={`mt-16 grid grid-cols-1 md:grid-cols-3 gap-6 transition-all duration-1000 delay-700 transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+            <div className="glass-card p-6 rounded-xl">
+              <div className="h-12 w-12 rounded-full bg-dinero-red/20 flex items-center justify-center mb-4 mx-auto">
+                <DollarSign size={24} className="text-dinero-red" />
               </div>
-              <h3 className="text-lg font-semibold mb-3 text-foreground">Ексклюзивні зв'язки</h3>
-              <p className="text-muted-foreground text-sm leading-relaxed">Перевірені схеми з реальними результатами від нашої команди</p>
+              <h3 className="text-lg font-semibold mb-2">Стабільний заробіток</h3>
+              <p className="text-gray-400 text-sm">Реальні результати від перевірених P2P-зв'язок</p>
             </div>
             
-            <div className="glass-card p-8 rounded-2xl group hover:glow-gold transition-all duration-500">
-              <div className="icon-circle-premium h-14 w-14 rounded-xl flex items-center justify-center mb-5 mx-auto group-hover:scale-110 transition-transform duration-300">
-                <TrendingUp size={24} className="text-gold" />
+            <div className="glass-card p-6 rounded-xl">
+              <div className="h-12 w-12 rounded-full bg-dinero-red/20 flex items-center justify-center mb-4 mx-auto">
+                <TrendingUp size={24} className="text-dinero-red" />
               </div>
-              <h3 className="text-lg font-semibold mb-3 text-foreground">Стабільний дохід</h3>
-              <p className="text-muted-foreground text-sm leading-relaxed">Стратегії, що працюють незалежно від ринкових умов</p>
+              <h3 className="text-lg font-semibold mb-2">Перевірені зв'язки</h3>
+              <p className="text-gray-400 text-sm">Стратегії, які працюють незалежно від ринку</p>
             </div>
             
-            <div className="glass-card p-8 rounded-2xl group hover:glow-gold transition-all duration-500">
-              <div className="icon-circle-premium h-14 w-14 rounded-xl flex items-center justify-center mb-5 mx-auto group-hover:scale-110 transition-transform duration-300">
-                <Shield size={24} className="text-gold" />
+            <div className="glass-card p-6 rounded-xl">
+              <div className="h-12 w-12 rounded-full bg-dinero-red/20 flex items-center justify-center mb-4 mx-auto">
+                <Users size={24} className="text-dinero-red" />
               </div>
-              <h3 className="text-lg font-semibold mb-3 text-foreground">Підтримка 24/7</h3>
-              <p className="text-muted-foreground text-sm leading-relaxed">Команда досвідчених саппортів завжди на зв'язку</p>
+              <h3 className="text-lg font-semibold mb-2">Топ Ком'юніті</h3>
+              <p className="text-gray-400 text-sm">Постійна підтримка від досвідчених саппортів</p>
             </div>
           </div>
         </div>
       </div>
       
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2">
-        <a href="#about" className="flex flex-col items-center text-muted-foreground hover:text-gold transition-colors duration-300">
-          <span className="text-xs uppercase tracking-widest mb-2">Scroll</span>
-          <div className="w-px h-8 bg-gradient-to-b from-gold/50 to-transparent"></div>
+      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <a href="#about" className="text-dinero-light/50 hover:text-dinero-light transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chevron-down"><path d="m6 9 6 6 6-6"/></svg>
         </a>
       </div>
     </section>
