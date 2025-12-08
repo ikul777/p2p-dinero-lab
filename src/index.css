@@ -92,16 +92,27 @@
 }
 
 /* Bracket decorations */
-.bracket-left::before {
-  content: '[';
-  position: absolute;
-  left: -1.5rem;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 2em;
-  font-weight: 200;
-  color: hsl(var(--primary));
-  opacity: 0.6;
+/* Glass card - refined */
+.glass-card {
+  background: hsl(var(--card) / 0.5);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid hsl(var(--border) / 0.3);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card:hover {
+  border-color: hsl(var(--primary) / 0.2);
+}
+
+/* Hide scrollbar */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
 }
 
 .bracket-right::after {
