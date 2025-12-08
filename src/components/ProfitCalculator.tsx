@@ -1,13 +1,26 @@
 import { useState } from 'react';
-import { Calculator, TrendingUp, Wallet } from 'lucide-react';
+import { Calculator, TrendingUp, Wallet, Info } from 'lucide-react';
 
 const ProfitCalculator = () => {
   const [budget, setBudget] = useState<number>(1000);
   
-  // Розрахунок потенційного прибутку (приклад: 15-30% на місяць)
-  const minProfit = Math.round(budget * 0.15);
-  const maxProfit = Math.round(budget * 0.30);
-  const avgProfit = Math.round(budget * 0.225);
+  // Логіка: 4-8% з кругу, оборот 1000-3000 USDT/день, 22 робочих дні
+  const workingDays = 22;
+  const minDailyTurnover = 1000;
+  const maxDailyTurnover = 3000;
+  
+  // Денний оборот обмежений бюджетом та максимальним оборотом
+  const effectiveTurnover = Math.min(budget, maxDailyTurnover);
+  
+  // Денний прибуток: 4-8% від обороту
+  const minDailyProfit = effectiveTurnover * 0.04;
+  const maxDailyProfit = effectiveTurnover * 0.08;
+  const avgDailyProfit = effectiveTurnover * 0.06;
+  
+  // Місячний прибуток
+  const minProfit = Math.round(minDailyProfit * workingDays);
+  const maxProfit = Math.round(maxDailyProfit * workingDays);
+  const avgProfit = Math.round(avgDailyProfit * workingDays);
 
   const formatNumber = (num: number) => {
     return num.toLocaleString('uk-UA');
@@ -90,27 +103,31 @@ const ProfitCalculator = () => {
                     <p className="text-base sm:text-xl md:text-2xl font-display font-bold text-foreground/70">
                       ${formatNumber(minProfit)}
                     </p>
-                    <p className="text-[10px] sm:text-xs text-muted-foreground">15%</p>
+                    <p className="text-[10px] sm:text-xs text-muted-foreground">4%/круг</p>
                   </div>
                   <div className="text-center p-3 sm:p-4 rounded-xl bg-primary/10 border border-primary/30">
                     <p className="text-[10px] sm:text-xs text-primary mb-1">Середній</p>
                     <p className="text-lg sm:text-2xl md:text-3xl font-display font-bold text-gradient">
                       ${formatNumber(avgProfit)}
                     </p>
-                    <p className="text-[10px] sm:text-xs text-primary">~22%</p>
+                    <p className="text-[10px] sm:text-xs text-primary">6%/круг</p>
                   </div>
                   <div className="text-center p-3 sm:p-4 rounded-xl bg-background/30 border border-border/30">
                     <p className="text-[10px] sm:text-xs text-muted-foreground mb-1">Максимум</p>
                     <p className="text-base sm:text-xl md:text-2xl font-display font-bold text-foreground/70">
                       ${formatNumber(maxProfit)}
                     </p>
-                    <p className="text-[10px] sm:text-xs text-muted-foreground">30%</p>
+                    <p className="text-[10px] sm:text-xs text-muted-foreground">8%/круг</p>
                   </div>
                 </div>
                 
-                <p className="text-[10px] sm:text-xs text-muted-foreground text-center mt-4">
-                  * Результати залежать від активності та ринкових умов
-                </p>
+                {/* Info about calculations */}
+                <div className="flex items-start gap-2 mt-4 p-3 rounded-lg bg-background/20 border border-border/20">
+                  <Info className="w-4 h-4 text-muted-foreground shrink-0 mt-0.5" />
+                  <p className="text-[10px] sm:text-xs text-muted-foreground">
+                    Розрахунок: оборот до {formatNumber(maxDailyTurnover)} USDT/день × {workingDays} робочих днів × 4-8% профіту з кругу
+                  </p>
+                </div>
               </div>
             </div>
             
