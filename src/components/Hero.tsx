@@ -52,10 +52,14 @@ const Hero = () => {
               </span>
             </h1>
             
-            {/* Subheading */}
-            <p className={`text-xs sm:text-sm md:text-base lg:text-lg text-muted-foreground max-w-xl mx-auto mb-6 sm:mb-8 px-4 transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-              Авторські P2P звʼязки, постійні оновлення, досвідчені сапорти, партнерства з біржами та доступ до комʼюніті конкурентів якому немає на ринку
-            </p>
+            {/* Subheading - Tags */}
+            <div className={`flex flex-wrap justify-center gap-2 sm:gap-3 max-w-2xl mx-auto mb-6 sm:mb-8 px-4 transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+              {['Авторські P2P звʼязки', 'Постійні оновлення', '24/7 підтримка', 'Партнерства з біржами', 'Унікальне комʼюніті'].map((tag) => (
+                <span key={tag} className="px-3 py-1.5 sm:px-4 sm:py-2 text-[10px] sm:text-xs md:text-sm border border-white/20 rounded-full bg-white/5 text-muted-foreground backdrop-blur-sm">
+                  {tag}
+                </span>
+              ))}
+            </div>
             
             {/* CTA Button */}
             <div className={`transition-all duration-700 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
