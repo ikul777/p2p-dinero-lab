@@ -1,30 +1,7 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { useCounterAnimation } from '@/hooks/use-counter-animation';
-
-const useScrollAnimation = () => {
-  const ref = useRef<HTMLDivElement>(null);
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.3 }
-    );
-
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
-
-  return { ref, isVisible };
-};
+import { useScrollAnimation } from '@/hooks/use-scroll-animation';
 
 const partnerships = [
   {
@@ -59,11 +36,11 @@ const Hero = () => {
   
   return (
     <section className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-background pt-16 pb-16 sm:pt-20 sm:pb-10 md:pt-24 md:pb-0">
-      {/* Background */}
+      {/* Background - optimized for mobile */}
       <div className="absolute inset-0 bg-grid opacity-20"></div>
-      <div className="absolute top-1/4 left-1/4 w-[200px] sm:w-[300px] md:w-[600px] h-[200px] sm:h-[300px] md:h-[600px] bg-primary/10 rounded-full filter blur-[80px] sm:blur-[100px] md:blur-[150px] animate-pulse-subtle"></div>
-      <div className="absolute bottom-1/4 right-1/4 w-[150px] sm:w-[200px] md:w-[400px] h-[150px] sm:h-[200px] md:h-[400px] bg-primary/5 rounded-full filter blur-[60px] sm:blur-[80px] md:blur-[100px]"></div>
-      <div className="absolute inset-0 noise pointer-events-none"></div>
+      <div className="absolute top-1/4 left-1/4 w-[150px] sm:w-[250px] md:w-[500px] h-[150px] sm:h-[250px] md:h-[500px] bg-primary/8 rounded-full filter blur-[60px] sm:blur-[80px] md:blur-[120px]"></div>
+      <div className="absolute bottom-1/4 right-1/4 w-[100px] sm:w-[150px] md:w-[300px] h-[100px] sm:h-[150px] md:h-[300px] bg-primary/5 rounded-full filter blur-[40px] sm:blur-[60px] md:blur-[80px]"></div>
+      <div className="absolute inset-0 noise pointer-events-none hidden sm:block"></div>
       
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
         <div className="max-w-4xl mx-auto">

@@ -1,4 +1,5 @@
 import { ArrowRight, Check } from 'lucide-react';
+import { useScrollAnimation } from '@/hooks/use-scroll-animation';
 
 const benefits = [
   'Авторські звʼязки під різний бюджет',
@@ -7,30 +8,39 @@ const benefits = [
 ];
 
 const CTA = () => {
+  const headerAnimation = useScrollAnimation();
+  const cardAnimation = useScrollAnimation({ threshold: 0.2 });
+
   return (
     <section id="join" className="py-12 sm:py-16 md:py-24 lg:py-32 bg-background relative overflow-hidden">
       <div className="absolute inset-0 bg-grid opacity-20"></div>
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent"></div>
-      <div className="absolute top-1/4 left-1/4 w-[200px] sm:w-[300px] md:w-[500px] h-[200px] sm:h-[300px] md:h-[500px] bg-primary/10 rounded-full filter blur-[80px] sm:blur-[100px] md:blur-[150px] animate-pulse-subtle"></div>
-      <div className="absolute bottom-1/4 right-1/4 w-[150px] sm:w-[200px] md:w-[400px] h-[150px] sm:h-[200px] md:h-[400px] bg-primary/5 rounded-full filter blur-[60px] sm:blur-[80px] md:blur-[100px]"></div>
+      <div className="absolute top-1/4 left-1/4 w-[150px] sm:w-[200px] md:w-[400px] h-[150px] sm:h-[200px] md:h-[400px] bg-primary/8 rounded-full filter blur-[60px] sm:blur-[80px] md:blur-[120px]"></div>
+      <div className="absolute bottom-1/4 right-1/4 w-[100px] sm:w-[150px] md:w-[300px] h-[100px] sm:h-[150px] md:h-[300px] bg-primary/5 rounded-full filter blur-[40px] sm:blur-[60px] md:blur-[80px]"></div>
       
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
         <div className="max-w-3xl mx-auto">
           {/* Section header */}
-          <div className="text-center mb-8 sm:mb-10 md:mb-12 reveal-animation">
+          <div 
+            ref={headerAnimation.ref}
+            className={`text-center mb-8 sm:mb-10 md:mb-12 transition-all duration-700 ${headerAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+          >
             <span className="tag mb-2 sm:mb-3 md:mb-4 inline-block text-[10px] sm:text-xs">Приєднуйся зараз</span>
-            <h2 className="font-display text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-2 sm:mb-3 md:mb-4">
+            <h2 className="font-display text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-2 sm:mb-3 md:mb-4">
               <span className="text-foreground">P2P без комʼюніті —</span>
               <br />
               <span className="text-foreground/30">це злиті гроші</span>
             </h2>
-            <p className="text-xs sm:text-sm md:text-base lg:text-lg text-muted-foreground max-w-xl mx-auto px-2">
+            <p className="text-xs sm:text-sm md:text-base text-muted-foreground max-w-xl mx-auto px-2">
               Отримай доступ до перевірених P2P-звʼязок і сильного комʼюніті
             </p>
           </div>
           
           {/* Main CTA card */}
-          <div className="reveal-animation">
+          <div 
+            ref={cardAnimation.ref}
+            className={`transition-all duration-700 delay-150 ${cardAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+          >
             <div className="relative">
               <div className="absolute -inset-1 bg-primary/20 rounded-xl sm:rounded-2xl blur-xl"></div>
               
