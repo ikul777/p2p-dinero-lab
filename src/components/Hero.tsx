@@ -69,8 +69,8 @@ const Hero = () => {
         <div className="max-w-4xl mx-auto">
           <div className="text-center">
             {/* Logo */}
-            <div className={`mb-8 sm:mb-10 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-              <h2 className="font-display text-2xl sm:text-xl md:text-2xl font-bold tracking-tight inline-block">
+            <div className={`mb-6 sm:mb-8 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+              <h2 className="font-display text-sm sm:text-base md:text-lg font-medium tracking-wide inline-block opacity-70">
                 <span className="text-foreground">Dinero</span>
                 <span className="text-primary">Lab</span>
               </h2>
