@@ -1,5 +1,4 @@
 import { useEffect } from 'react';
-import Header from '../components/Header';
 import Hero from '../components/Hero';
 import About from '../components/About';
 import ProfitCalculator from '../components/ProfitCalculator';
@@ -9,6 +8,7 @@ import Testimonials from '../components/Testimonials';
 import FAQ from '../components/FAQ';
 import CTA from '../components/CTA';
 import Footer from '../components/Footer';
+import FloatingCTA from '../components/FloatingCTA';
 
 const Index = () => {
   useEffect(() => {
@@ -35,7 +35,6 @@ const Index = () => {
   
   return (
     <div className="min-h-screen bg-background text-foreground overflow-hidden">
-      <Header />
       <Hero />
       <About />
       <ProfitCalculator />
@@ -45,6 +44,7 @@ const Index = () => {
       <FAQ />
       <CTA />
       <Footer />
+      <FloatingCTA />
     </div>
   );
 };

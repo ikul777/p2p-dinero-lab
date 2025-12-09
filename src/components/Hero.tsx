@@ -58,7 +58,7 @@ const Hero = () => {
   }, []);
   
   return (
-    <section className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-background pt-24 pb-16 sm:pt-28 sm:pb-10 md:pt-32 md:pb-0">
+    <section className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-background pt-16 pb-16 sm:pt-20 sm:pb-10 md:pt-24 md:pb-0">
       {/* Background */}
       <div className="absolute inset-0 bg-grid opacity-20"></div>
       <div className="absolute top-1/4 left-1/4 w-[200px] sm:w-[300px] md:w-[600px] h-[200px] sm:h-[300px] md:h-[600px] bg-primary/10 rounded-full filter blur-[80px] sm:blur-[100px] md:blur-[150px] animate-pulse-subtle"></div>
@@ -68,6 +68,13 @@ const Hero = () => {
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
         <div className="max-w-4xl mx-auto">
           <div className="text-center">
+            {/* Logo */}
+            <div className={`mb-6 sm:mb-8 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+              <h2 className="font-display text-lg md:text-xl font-bold tracking-tight inline-block">
+                <span className="text-foreground">Dinero</span>
+                <span className="text-primary">Lab</span>
+              </h2>
+            </div>
             {/* Main heading */}
             <h1 className={`font-display text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight mb-4 sm:mb-6 transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
               <span className="block text-gradient">P2P-АРБІТРАЖ —</span>
