@@ -56,10 +56,16 @@ const testimonialData = [
   }
 ];
 
+// Helper to highlight numbers in text
+const highlightNumbers = (text: string) => {
+  return text.replace(/(\d+[\d,.\s]*[$€%]?|\$\d+[\d,.\s]*|[xXхХ]\d+)/g, '<span class="highlight-number">$1</span>');
+};
+
 const Testimonials = () => {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [showLeftButton, setShowLeftButton] = useState(false);
   const [showRightButton, setShowRightButton] = useState(true);
+  const [isPaused, setIsPaused] = useState(false);
   const isMobile = useIsMobile();
   const headerAnimation = useScrollAnimation();
   const carouselAnimation = useScrollAnimation({ threshold: 0.1 });
@@ -83,6 +89,25 @@ const Testimonials = () => {
       behavior: 'smooth' 
     });
   };
+
+  // Auto-scroll
+  useEffect(() => {
+    if (isPaused || isMobile) return;
+    
+    const interval = setInterval(() => {
+      const container = scrollContainerRef.current;
+      if (!container) return;
+      
+      const maxScrollLeft = container.scrollWidth - container.clientWidth;
+      if (container.scrollLeft >= maxScrollLeft - 20) {
+        container.scrollTo({ left: 0, behavior: 'smooth' });
+      } else {
+        container.scrollBy({ left: 380, behavior: 'smooth' });
+      }
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, [isPaused, isMobile]);
   
   useEffect(() => {
     const container = scrollContainerRef.current;
@@ -120,21 +145,30 @@ const Testimonials = () => {
           <div 
             ref={carouselAnimation.ref}
             className={`relative transition-all duration-700 delay-150 ${carouselAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
           >
+            {/* Fade edges */}
+            <div className="carousel-fade-left hidden md:block"></div>
+            <div className="carousel-fade-right hidden md:block"></div>
+            
             <div 
               ref={scrollContainerRef}
               className="flex gap-3 sm:gap-4 md:gap-6 overflow-x-auto pb-4 scrollbar-hide scroll-smooth"
               style={{ scrollSnapType: 'x mandatory' }}
             >
-              {testimonialData.map((testimonial) => (
+              {testimonialData.map((testimonial, index) => (
                 <div 
                   key={testimonial.id} 
-                  className="glass-card p-3 sm:p-4 md:p-6 rounded-lg sm:rounded-xl flex-shrink-0 w-[260px] sm:w-[280px] md:w-[360px]"
+                  className="glass-card p-3 sm:p-4 md:p-6 rounded-lg sm:rounded-xl flex-shrink-0 w-[260px] sm:w-[280px] md:w-[360px] group hover:border-primary/30 transition-all"
                   style={{ scrollSnapAlign: 'start' }}
                 >
                   {/* Header */}
                   <div className="flex items-center justify-between mb-2 sm:mb-3 md:mb-4">
-                    <span className="tag text-[8px] sm:text-[10px] md:text-xs px-2 py-0.5 sm:px-3 sm:py-1">{testimonial.groupName}</span>
+                    <div className="flex items-center gap-2">
+                      <span className="faq-number">{index + 1}</span>
+                      <span className="tag text-[8px] sm:text-[10px] md:text-xs px-2 py-0.5 sm:px-3 sm:py-1">{testimonial.groupName}</span>
+                    </div>
                     <a 
                       href={testimonial.link} 
                       target="_blank"
@@ -147,9 +181,10 @@ const Testimonials = () => {
                   
                   {/* Content */}
                   <ScrollArea className="h-[110px] sm:h-[120px] md:h-[160px]">
-                    <p className="text-[11px] sm:text-xs md:text-sm text-muted-foreground leading-relaxed pr-2">
-                      {testimonial.content}
-                    </p>
+                    <p 
+                      className="text-[11px] sm:text-xs md:text-sm text-muted-foreground leading-relaxed pr-2"
+                      dangerouslySetInnerHTML={{ __html: highlightNumbers(testimonial.content) }}
+                    />
                   </ScrollArea>
                 </div>
               ))}
@@ -162,7 +197,7 @@ const Testimonials = () => {
                   <Button
                     variant="secondary"
                     size="icon"
-                    className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 bg-background/80 backdrop-blur-sm border border-border rounded-full h-10 w-10"
+                    className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 bg-background/80 backdrop-blur-sm border border-border rounded-full h-10 w-10 hover:bg-primary/10 hover:border-primary/50 transition-all"
                     onClick={() => scrollBy('left')}
                   >
                     <ChevronLeft size={20} />
@@ -173,7 +208,7 @@ const Testimonials = () => {
                   <Button
                     variant="secondary"
                     size="icon"
-                    className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 bg-background/80 backdrop-blur-sm border border-border rounded-full h-10 w-10"
+                    className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 bg-background/80 backdrop-blur-sm border border-border rounded-full h-10 w-10 hover:bg-primary/10 hover:border-primary/50 transition-all"
                     onClick={() => scrollBy('right')}
                   >
                     <ChevronRight size={20} />

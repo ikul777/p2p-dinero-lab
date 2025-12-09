@@ -36,59 +36,55 @@ const CTA = () => {
             </p>
           </div>
           
-          {/* Main CTA card */}
+          {/* Main CTA card with animated border */}
           <div 
             ref={cardAnimation.ref}
             className={`transition-all duration-700 delay-150 ${cardAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
           >
-            <div className="relative">
-              <div className="absolute -inset-1 bg-primary/20 rounded-xl sm:rounded-2xl blur-xl"></div>
-              
-              <div className="relative glass-card p-5 sm:p-6 md:p-10 rounded-xl sm:rounded-2xl border border-primary/30">
-                <div className="flex flex-col md:flex-row items-center gap-5 sm:gap-6 md:gap-8">
-                  {/* Content */}
-                  <div className="flex-1 text-center md:text-left">
-                    <h3 className="font-display text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold mb-2 sm:mb-3 text-foreground">
-                      Dinero Lab VIP
-                    </h3>
-                    <p className="text-xs sm:text-sm md:text-base text-muted-foreground mb-4 sm:mb-5 md:mb-6">
-                      Отримай доступ до топових P2P-звʼязок та команди професіоналів
-                    </p>
-                    
-                    {/* Benefits */}
-                    <div className="space-y-2 sm:space-y-3 mb-5 sm:mb-6 md:mb-8">
-                      {benefits.map((benefit, index) => (
-                        <div key={index} className="flex items-center gap-2 sm:gap-3 justify-center md:justify-start">
-                          <div className="w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                            <Check size={10} className="sm:w-3 sm:h-3 text-primary" />
-                          </div>
-                          <span className="text-[11px] sm:text-xs md:text-sm text-muted-foreground">{benefit}</span>
+            <div className="animated-border p-5 sm:p-6 md:p-10 rounded-xl sm:rounded-2xl">
+              <div className="flex flex-col md:flex-row items-center gap-5 sm:gap-6 md:gap-8">
+                {/* Content */}
+                <div className="flex-1 text-center md:text-left">
+                  <h3 className="font-display text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold mb-2 sm:mb-3 text-foreground">
+                    Dinero Lab VIP
+                  </h3>
+                  <p className="text-xs sm:text-sm md:text-base text-muted-foreground mb-4 sm:mb-5 md:mb-6">
+                    Отримай доступ до топових P2P-звʼязок та команди професіоналів
+                  </p>
+                  
+                  {/* Benefits */}
+                  <div className="space-y-2 sm:space-y-3 mb-5 sm:mb-6 md:mb-8">
+                    {benefits.map((benefit, index) => (
+                      <div key={index} className="flex items-center gap-2 sm:gap-3 justify-center md:justify-start group">
+                        <div className="w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 group-hover:scale-110 transition-all">
+                          <Check size={10} className="sm:w-3 sm:h-3 text-primary" />
                         </div>
-                      ))}
-                    </div>
-                    
-                    {/* CTA button */}
-                    <a 
-                      href="https://t.me/+iDCbfd3Bm8wxMzZi" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="btn-primary inline-flex items-center gap-2 px-5 sm:px-6 md:px-8 py-2.5 sm:py-3 md:py-4 rounded-full text-sm sm:text-base md:text-lg font-medium text-primary-foreground w-full md:w-auto justify-center"
-                    >
-                      Вступити в Dinero Lab
-                      <ArrowRight size={16} className="sm:w-[18px] sm:h-[18px] md:w-5 md:h-5" />
-                    </a>
+                        <span className="text-[11px] sm:text-xs md:text-sm text-muted-foreground group-hover:text-foreground transition-colors">{benefit}</span>
+                      </div>
+                    ))}
                   </div>
                   
-                  {/* Logo */}
-                  <div className="flex-shrink-0 order-first md:order-last">
-                    <div className="relative">
-                      <div className="absolute inset-0 bg-primary/20 rounded-full blur-2xl"></div>
-                      <img 
-                        src="/lovable-uploads/40d7ae54-8f62-41c0-aa32-9f26100d352c.png" 
-                        alt="Dinero Lab Logo" 
-                        className="relative w-20 h-20 sm:w-24 sm:h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 object-contain"
-                      />
-                    </div>
+                  {/* CTA button - larger with pulse */}
+                  <a 
+                    href="https://t.me/+iDCbfd3Bm8wxMzZi" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="btn-primary btn-pulse inline-flex items-center gap-2 px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-5 rounded-full text-sm sm:text-base md:text-xl font-semibold text-primary-foreground w-full md:w-auto justify-center"
+                  >
+                    Вступити в Dinero Lab
+                    <ArrowRight size={18} className="sm:w-5 sm:h-5 md:w-6 md:h-6" />
+                  </a>
+                </div>
+                
+                {/* Logo with float animation */}
+                <div className="flex-shrink-0 order-first md:order-last">
+                  <div className="relative animate-float-slow">
+                    <div className="absolute inset-0 bg-primary/30 rounded-full blur-3xl animate-pulse-glow"></div>
+                    <img 
+                      src="/lovable-uploads/40d7ae54-8f62-41c0-aa32-9f26100d352c.png" 
+                      alt="Dinero Lab Logo" 
+                      className="relative w-20 h-20 sm:w-24 sm:h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 object-contain"
+                    />
                   </div>
                 </div>
               </div>

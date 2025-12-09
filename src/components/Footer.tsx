@@ -18,7 +18,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 sm:gap-6">
           {/* Logo and tagline */}
           <div className="text-center md:text-left">
-            <Link to="/" onClick={handleLogoClick} className="inline-block mb-1 sm:mb-2">
+            <Link to="/" onClick={handleLogoClick} className="inline-block mb-1 sm:mb-2 logo-glow">
               <h1 className="font-display text-base sm:text-lg md:text-xl font-bold">
                 <span className="text-foreground">Dinero</span>
                 <span className="text-primary">Lab</span>
@@ -37,7 +37,7 @@ const Footer = () => {
                 href="https://t.me/+iDCbfd3Bm8wxMzZi" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="text-muted-foreground hover:text-primary transition-colors"
+                className="social-icon text-muted-foreground"
                 aria-label="Telegram"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="sm:w-[18px] sm:h-[18px]"><path d="m22 2-7 20-4-9-9-4Z" /><path d="M22 2 11 13" /></svg>
@@ -46,7 +46,7 @@ const Footer = () => {
                 href="https://www.instagram.com/1ikul/" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="text-muted-foreground hover:text-primary transition-colors"
+                className="social-icon text-muted-foreground"
                 aria-label="Instagram"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="sm:w-[18px] sm:h-[18px]"><rect width="20" height="20" x="2" y="2" rx="5" ry="5" /><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" /><line x1="17.5" x2="17.51" y1="6.5" y2="6.5" /></svg>
@@ -55,7 +55,7 @@ const Footer = () => {
                 href="https://t.me/ikul777" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="text-[10px] sm:text-xs text-muted-foreground hover:text-primary transition-colors"
+                className="text-[10px] sm:text-xs text-muted-foreground hover:text-primary transition-colors hover-underline"
               >
                 Контакт
               </a>
@@ -63,13 +63,13 @@ const Footer = () => {
             
             {/* Legal links */}
             <div className="flex flex-wrap items-center justify-center md:justify-end gap-2 sm:gap-3 md:gap-4">
-              <Link to="/terms" className="text-[10px] sm:text-xs text-muted-foreground hover:text-primary transition-colors">
+              <Link to="/terms" className="text-[10px] sm:text-xs text-muted-foreground hover:text-primary transition-colors hover-underline">
                 Договір оферти
               </Link>
-              <Link to="/privacy" className="text-[10px] sm:text-xs text-muted-foreground hover:text-primary transition-colors">
+              <Link to="/privacy" className="text-[10px] sm:text-xs text-muted-foreground hover:text-primary transition-colors hover-underline">
                 Політика конфіденційності
               </Link>
-              <Link to="/entry-terms" className="text-[10px] sm:text-xs text-muted-foreground hover:text-primary transition-colors">
+              <Link to="/entry-terms" className="text-[10px] sm:text-xs text-muted-foreground hover:text-primary transition-colors hover-underline">
                 Умови вступу
               </Link>
             </div>

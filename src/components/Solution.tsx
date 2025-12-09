@@ -5,22 +5,26 @@ const features = [
   {
     icon: Zap,
     title: 'Авторські P2P-звʼязки',
-    desc: 'Перевірені звʼязки для будь-якого бюджету — від $500. Кожна спочатку проходить тест.'
+    desc: 'Перевірені звʼязки для будь-якого бюджету — від $500. Кожна спочатку проходить тест.',
+    isNew: false
   },
   {
     icon: RefreshCw,
     title: 'Постійне оновлення',
-    desc: 'Ринок P2P змінюється. Ми стабільно перевіряємо всі схеми та оновлюємо інформацію.'
+    desc: 'Ринок P2P змінюється. Ми стабільно перевіряємо всі схеми та оновлюємо інформацію.',
+    isNew: true
   },
   {
     icon: Headphones,
     title: 'Досвідчені саппорти',
-    desc: 'Наші саппорти щодня роблять реальні транзакції і знають всі нюанси.'
+    desc: 'Наші саппорти щодня роблять реальні транзакції і знають всі нюанси.',
+    isNew: false
   },
   {
     icon: Lock,
     title: 'Закрите комʼюніті',
-    desc: 'Ми цінуємо довіру та безпеку. Доступ отримують далеко не всі.'
+    desc: 'Ми цінуємо довіру та безпеку. Доступ отримують далеко не всі.',
+    isNew: false
   }
 ];
 
@@ -63,12 +67,19 @@ const Solution = () => {
                 className="group"
                 style={{ transitionDelay: `${index * 100}ms` }}
               >
-                <div className="glass-card p-4 sm:p-5 md:p-8 rounded-lg sm:rounded-xl h-full relative overflow-hidden">
+                <div className="glass-card solution-card p-4 sm:p-5 md:p-8 rounded-lg sm:rounded-xl h-full relative overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   
+                  {/* NEW badge */}
+                  {feature.isNew && (
+                    <div className="absolute top-3 right-3 sm:top-4 sm:right-4">
+                      <span className="badge-new">NEW</span>
+                    </div>
+                  )}
+                  
                   <div className="relative z-10">
-                    <div className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-lg sm:rounded-xl bg-primary/10 flex items-center justify-center mb-3 sm:mb-4 md:mb-5 group-hover:scale-110 transition-transform duration-300">
-                      <feature.icon size={16} className="sm:w-5 sm:h-5 md:w-6 md:h-6 text-primary" />
+                    <div className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-lg sm:rounded-xl bg-primary/10 flex items-center justify-center mb-3 sm:mb-4 md:mb-5 group-hover:scale-110 group-hover:bg-primary/20 transition-all duration-300">
+                      <feature.icon size={16} className="sm:w-5 sm:h-5 md:w-6 md:h-6 text-primary group-hover:animate-icon-float" />
                     </div>
                     
                     <h3 className="font-display text-sm sm:text-base md:text-lg font-semibold mb-1.5 sm:mb-2 md:mb-3 text-foreground">
