@@ -1,11 +1,13 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Calculator, TrendingUp, Wallet } from 'lucide-react';
 import { useScrollAnimation } from '@/hooks/use-scroll-animation';
 
 const ProfitCalculator = () => {
   const [budget, setBudget] = useState<number>(1000);
+  const [displayedAvg, setDisplayedAvg] = useState<number>(0);
   const headerAnimation = useScrollAnimation();
   const cardAnimation = useScrollAnimation({ threshold: 0.2 });
+  const prevBudgetRef = useRef(budget);
   
   // Логіка: 4-8% з кругу, оборот 1000-3000 USDT/день, 22 робочих дні
   const workingDays = 22;
@@ -24,8 +26,43 @@ const ProfitCalculator = () => {
   const maxProfit = Math.round(maxDailyProfit * workingDays);
   const avgProfit = Math.round(avgDailyProfit * workingDays);
 
+  // Animate number changes
+  useEffect(() => {
+    const startValue = displayedAvg;
+    const endValue = avgProfit;
+    const duration = 300;
+    const startTime = Date.now();
+
+    const animate = () => {
+      const elapsed = Date.now() - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const easeOut = 1 - Math.pow(1 - progress, 3);
+      const current = Math.round(startValue + (endValue - startValue) * easeOut);
+      
+      setDisplayedAvg(current);
+      
+      if (progress < 1) {
+        requestAnimationFrame(animate);
+      }
+    };
+
+    if (prevBudgetRef.current !== budget) {
+      requestAnimationFrame(animate);
+      prevBudgetRef.current = budget;
+    }
+  }, [avgProfit, budget]);
+
+  // Initialize displayed value
+  useEffect(() => {
+    setDisplayedAvg(avgProfit);
+  }, []);
+
   const formatNumber = (num: number) => {
     return num.toLocaleString('uk-UA');
+  };
+
+  const handleSliderChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setBudget(Number(e.target.value));
   };
 
   return (
@@ -79,15 +116,32 @@ const ProfitCalculator = () => {
                     </div>
                   </label>
                   
+                  {/* Slider */}
+                  <div className="mt-4 mb-6">
+                    <input
+                      type="range"
+                      min="100"
+                      max="10000"
+                      step="100"
+                      value={Math.min(budget, 10000)}
+                      onChange={handleSliderChange}
+                      className="w-full"
+                    />
+                    <div className="flex justify-between text-[10px] sm:text-xs text-muted-foreground mt-2">
+                      <span>100</span>
+                      <span>10,000+</span>
+                    </div>
+                  </div>
+                  
                   {/* Quick buttons */}
-                  <div className="flex flex-wrap gap-2 mt-4">
+                  <div className="flex flex-wrap gap-2">
                     {[500, 1000, 3000, 5000].map((amount) => (
                       <button
                         key={amount}
                         onClick={() => setBudget(amount)}
-                        className={`px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm font-medium transition-all ${
+                        className={`quick-btn px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm font-medium transition-all ${
                           budget === amount 
-                            ? 'bg-primary text-primary-foreground' 
+                            ? 'bg-primary text-primary-foreground active' 
                             : 'bg-background/50 border border-border/50 text-muted-foreground hover:border-primary/50 hover:text-foreground'
                         }`}
                       >
@@ -100,7 +154,7 @@ const ProfitCalculator = () => {
                 {/* Results Section */}
                 <div className="space-y-4 sm:space-y-6">
                   <div className="flex items-center gap-3 mb-4 sm:mb-6">
-                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-primary/10 flex items-center justify-center animate-icon-float">
                       <TrendingUp className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
                     </div>
                     <div>
@@ -118,10 +172,10 @@ const ProfitCalculator = () => {
                       </p>
                       <p className="text-[10px] sm:text-xs text-muted-foreground mt-1">4%/круг</p>
                     </div>
-                    <div className="text-center p-2 sm:p-3 md:p-4 rounded-xl bg-primary/10 border border-primary/30">
+                    <div className="text-center p-2 sm:p-3 md:p-4 rounded-xl bg-primary/10 border border-primary/30 profit-highlight">
                       <p className="text-[10px] sm:text-xs text-primary mb-1">Середній</p>
                       <p className="text-sm sm:text-lg md:text-xl lg:text-2xl font-display font-bold text-primary leading-tight whitespace-nowrap">
-                        ${formatNumber(avgProfit)}
+                        ${formatNumber(displayedAvg)}
                       </p>
                       <p className="text-[10px] sm:text-xs text-primary mt-1">6%/круг</p>
                     </div>

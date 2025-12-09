@@ -65,13 +65,18 @@ const FAQ = () => {
             {faqItems.map((item, index) => (
               <div 
                 key={index} 
-                className="glass-card rounded-lg sm:rounded-xl overflow-hidden"
+                className={`glass-card rounded-lg sm:rounded-xl overflow-hidden transition-all duration-300 ${
+                  openIndex === index ? 'border-primary/40 shadow-lg shadow-primary/5' : ''
+                }`}
               >
                 <button
-                  className="w-full text-left px-3 sm:px-4 md:px-6 py-3 sm:py-4 flex justify-between items-center gap-3 sm:gap-4"
+                  className="w-full text-left px-3 sm:px-4 md:px-6 py-3 sm:py-4 flex items-center gap-3 sm:gap-4 group"
                   onClick={() => toggleFAQ(index)}
                 >
-                  <span className="font-medium text-xs sm:text-sm md:text-base text-foreground">{item.question}</span>
+                  <span className={`faq-number transition-all duration-300 ${openIndex === index ? 'bg-primary/30 scale-110' : ''}`}>
+                    {index + 1}
+                  </span>
+                  <span className="font-medium text-xs sm:text-sm md:text-base text-foreground flex-1">{item.question}</span>
                   <ChevronDown 
                     size={16} 
                     className={`sm:w-5 sm:h-5 text-primary flex-shrink-0 transition-transform duration-300 ${openIndex === index ? 'rotate-180' : ''}`} 
@@ -85,7 +90,9 @@ const FAQ = () => {
                       : 'max-h-0 pb-0 opacity-0'
                   }`}
                 >
-                  <p className="text-[10px] sm:text-xs md:text-sm text-muted-foreground leading-relaxed">{item.answer}</p>
+                  <div className="pl-9 sm:pl-11 md:pl-14">
+                    <p className="text-[10px] sm:text-xs md:text-sm text-muted-foreground leading-relaxed">{item.answer}</p>
+                  </div>
                 </div>
               </div>
             ))}

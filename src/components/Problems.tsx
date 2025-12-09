@@ -61,13 +61,13 @@ const Problems = () => {
             {problems.map((problem, index) => (
               <div 
                 key={index}
-                className="glass-card p-4 sm:p-5 md:p-8 rounded-lg sm:rounded-xl relative group"
+                className="glass-card problem-card p-4 sm:p-5 md:p-8 rounded-lg sm:rounded-xl relative group"
                 style={{ transitionDelay: `${index * 100}ms` }}
               >
-                <div className="absolute top-0 right-0 w-12 sm:w-16 md:w-20 h-12 sm:h-16 md:h-20 bg-primary/5 rounded-bl-[30px] sm:rounded-bl-[40px] md:rounded-bl-[60px]"></div>
+                <div className="absolute top-0 right-0 w-12 sm:w-16 md:w-20 h-12 sm:h-16 md:h-20 bg-primary/5 rounded-bl-[30px] sm:rounded-bl-[40px] md:rounded-bl-[60px] group-hover:bg-destructive/10 transition-colors"></div>
                 
-                <div className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-lg sm:rounded-xl bg-primary/10 flex items-center justify-center mb-3 sm:mb-4 md:mb-5 group-hover:bg-primary/20 transition-colors">
-                  <problem.icon size={16} className="sm:w-5 sm:h-5 md:w-6 md:h-6 text-primary" />
+                <div className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-lg sm:rounded-xl bg-primary/10 flex items-center justify-center mb-3 sm:mb-4 md:mb-5 group-hover:bg-destructive/20 group-hover:animate-shake transition-colors">
+                  <problem.icon size={16} className="sm:w-5 sm:h-5 md:w-6 md:h-6 text-primary group-hover:text-destructive transition-colors" />
                 </div>
                 
                 <h3 className="font-display text-sm sm:text-base md:text-lg font-semibold mb-1.5 sm:mb-2 md:mb-3 text-foreground">
@@ -80,15 +80,18 @@ const Problems = () => {
             ))}
           </div>
           
-          {/* Bottom message */}
+          {/* Bottom message with animated border */}
           <div 
             ref={bottomAnimation.ref}
             className={`text-center px-2 transition-all duration-700 delay-300 ${bottomAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
           >
-            <div className="inline-block glass-card px-4 py-3 sm:px-5 sm:py-4 md:px-8 md:py-6 rounded-lg sm:rounded-xl border-l-2 border-primary">
-              <p className="text-xs sm:text-sm md:text-base text-foreground font-medium">
-                Без перевірених звʼязок та підтримки — твій бюджет просто згорить.
-              </p>
+            <div className="inline-block relative">
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-destructive/50 via-primary/50 to-destructive/50 rounded-lg sm:rounded-xl blur-sm animate-pulse-glow"></div>
+              <div className="relative glass-card px-4 py-3 sm:px-5 sm:py-4 md:px-8 md:py-6 rounded-lg sm:rounded-xl border-l-2 border-primary">
+                <p className="text-xs sm:text-sm md:text-base text-foreground font-medium">
+                  Без перевірених звʼязок та підтримки — твій бюджет просто згорить. 🔥
+                </p>
+              </div>
             </div>
           </div>
         </div>
