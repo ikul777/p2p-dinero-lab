@@ -33,7 +33,7 @@ const Hero = () => {
   }, []);
   
   return (
-    <section className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-background pt-24 pb-16 sm:pt-20 sm:pb-10 md:pt-0 md:pb-0">
+    <section className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-background pt-24 pb-16 sm:pt-28 sm:pb-10 md:pt-32 md:pb-0">
       {/* Background */}
       <div className="absolute inset-0 bg-grid opacity-20"></div>
       <div className="absolute top-1/4 left-1/4 w-[200px] sm:w-[300px] md:w-[600px] h-[200px] sm:h-[300px] md:h-[600px] bg-primary/10 rounded-full filter blur-[80px] sm:blur-[100px] md:blur-[150px] animate-pulse-subtle"></div>
@@ -44,12 +44,12 @@ const Hero = () => {
         <div className="max-w-4xl mx-auto">
           <div className="text-center">
             {/* Main heading */}
-            <h1 className={`font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-4 sm:mb-6 transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-              <span className="text-gradient">P2P-АРБІТРАЖ</span>
-              <span className="text-foreground">—</span>
-              <br />
-              <span className="text-foreground">твій інструмент для </span>
-              <span className="text-gradient">стабільного заробітку</span>
+            <h1 className={`font-display text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight mb-4 sm:mb-6 transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+              <span className="block text-gradient">P2P-АРБІТРАЖ —</span>
+              <span className="block">
+                <span className="text-foreground">твій інструмент для </span>
+                <span className="text-gradient">стабільного заробітку</span>
+              </span>
             </h1>
             
             {/* Subheading */}
@@ -69,30 +69,30 @@ const Hero = () => {
             </div>
             
             {/* Stats */}
-            <div className={`mt-8 sm:mt-10 md:mt-16 grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-3 md:gap-6 max-w-xs sm:max-w-2xl md:max-w-3xl mx-auto transition-all duration-700 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-              <div ref={counter3100.ref} className="text-center p-3 sm:p-2 md:p-4">
-                <div className="font-display font-bold text-lg sm:text-xl md:text-3xl lg:text-4xl text-primary mb-1 sm:mb-2">
-                  {counter3100.count} <span className="text-sm sm:text-base md:text-xl lg:text-2xl">USDT</span>
+            <div className={`mt-8 sm:mt-10 md:mt-16 grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3 md:gap-6 max-w-sm sm:max-w-2xl md:max-w-3xl mx-auto transition-all duration-700 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+              <div ref={counter3100.ref} className="text-center p-2 sm:p-2 md:p-4">
+                <div className="font-display font-bold text-base sm:text-xl md:text-3xl lg:text-4xl text-primary mb-1 sm:mb-2 whitespace-nowrap">
+                  {counter3100.count} <span className="text-xs sm:text-base md:text-xl lg:text-2xl">USDT</span>
                 </div>
-                <div className="text-[9px] sm:text-[10px] md:text-xs lg:text-sm text-muted-foreground leading-tight">
+                <div className="text-[8px] sm:text-[9px] md:text-xs lg:text-sm text-muted-foreground leading-tight">
                   середній дохід учасника
                 </div>
               </div>
-              <div ref={counter300.ref} className="text-center p-3 sm:p-2 md:p-4 sm:border-l sm:border-border/30">
-                <div className="font-display font-bold text-lg sm:text-xl md:text-3xl lg:text-4xl text-foreground mb-1 sm:mb-2">{counter300.count}+</div>
-                <div className="text-[9px] sm:text-[10px] md:text-xs lg:text-sm text-muted-foreground leading-tight">
+              <div ref={counter300.ref} className="text-center p-2 sm:p-2 md:p-4 sm:border-l sm:border-border/30">
+                <div className="font-display font-bold text-base sm:text-xl md:text-3xl lg:text-4xl text-foreground mb-1 sm:mb-2">{counter300.count}+</div>
+                <div className="text-[8px] sm:text-[9px] md:text-xs lg:text-sm text-muted-foreground leading-tight">
                   учасників навчили заробляти на p2p
                 </div>
               </div>
-              <div className="text-center p-3 sm:p-2 md:p-4 sm:border-l sm:border-border/30">
-                <div className="font-display font-bold text-lg sm:text-xl md:text-3xl lg:text-4xl text-foreground mb-1 sm:mb-2">24/7</div>
-                <div className="text-[9px] sm:text-[10px] md:text-xs lg:text-sm text-muted-foreground leading-tight">
+              <div className="text-center p-2 sm:p-2 md:p-4 sm:border-l sm:border-border/30">
+                <div className="font-display font-bold text-base sm:text-xl md:text-3xl lg:text-4xl text-foreground mb-1 sm:mb-2">24/7</div>
+                <div className="text-[8px] sm:text-[9px] md:text-xs lg:text-sm text-muted-foreground leading-tight">
                   індивідуальна підтримка від наших сапортів
                 </div>
               </div>
-              <div ref={counter5.ref} className="text-center p-3 sm:p-2 md:p-4 sm:border-l sm:border-border/30">
-                <div className="font-display font-bold text-lg sm:text-xl md:text-3xl lg:text-4xl text-foreground mb-1 sm:mb-2">{counter5.count}+</div>
-                <div className="text-[9px] sm:text-[10px] md:text-xs lg:text-sm text-muted-foreground leading-tight">
+              <div ref={counter5.ref} className="text-center p-2 sm:p-2 md:p-4 sm:border-l sm:border-border/30">
+                <div className="font-display font-bold text-base sm:text-xl md:text-3xl lg:text-4xl text-foreground mb-1 sm:mb-2">{counter5.count}+</div>
+                <div className="text-[8px] sm:text-[9px] md:text-xs lg:text-sm text-muted-foreground leading-tight">
                   роки досвіду команди
                 </div>
               </div>
