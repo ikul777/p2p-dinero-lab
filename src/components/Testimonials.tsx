@@ -165,10 +165,7 @@ const Testimonials = () => {
                 >
                   {/* Header */}
                   <div className="flex items-center justify-between mb-2 sm:mb-3 md:mb-4">
-                    <div className="flex items-center gap-2">
-                      <span className="faq-number">{index + 1}</span>
-                      <span className="tag text-[8px] sm:text-[10px] md:text-xs px-2 py-0.5 sm:px-3 sm:py-1">{testimonial.groupName}</span>
-                    </div>
+                    <span className="tag text-[8px] sm:text-[10px] md:text-xs px-2 py-0.5 sm:px-3 sm:py-1">{testimonial.groupName}</span>
                     <a 
                       href={testimonial.link} 
                       target="_blank"
