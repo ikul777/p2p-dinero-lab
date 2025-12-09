@@ -110,7 +110,7 @@ const Hero = () => {
             {/* Partnerships - Subtle */}
             <div 
               ref={partnersAnimation.ref}
-              className={`mt-10 sm:mt-12 md:mt-16 transition-all duration-1000 ease-out ${partnersAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+              className={`mt-10 sm:mt-12 md:mt-16 mb-4 sm:mb-6 transition-all duration-1000 ease-out ${partnersAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
             >
               <p className={`text-[10px] sm:text-xs text-muted-foreground/60 mb-4 sm:mb-6 uppercase tracking-widest transition-all duration-700 ${partnersAnimation.isVisible ? 'opacity-100' : 'opacity-0'}`}>
                 DineroLab партнер крипто-бірж
