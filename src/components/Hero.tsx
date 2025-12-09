@@ -53,8 +53,14 @@ const Hero = () => {
             </h1>
             
             {/* Subheading */}
-            <p className={`text-[10px] sm:text-xs md:text-sm text-muted-foreground/50 max-w-lg mx-auto mt-2 mb-8 sm:mb-10 px-6 transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-              Авторські P2P звʼязки, постійні оновлення, досвідчені сапорти, партнерства з біржами та доступ до комʼюніті конкурентів якому немає на ринку
+            <p className={`text-[9px] sm:text-[10px] md:text-xs text-muted-foreground/60 max-w-2xl mx-auto mt-3 mb-8 sm:mb-10 uppercase tracking-[0.2em] transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+              <span>Авторські звʼязки</span>
+              <span className="mx-2 sm:mx-3 text-primary/40">•</span>
+              <span>Оновлення 24/7</span>
+              <span className="mx-2 sm:mx-3 text-primary/40">•</span>
+              <span>Досвідчені сапорти</span>
+              <span className="mx-2 sm:mx-3 text-primary/40">•</span>
+              <span>Партнерства з біржами</span>
             </p>
             
             {/* CTA Button */}
