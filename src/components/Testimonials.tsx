@@ -120,7 +120,7 @@ const Testimonials = () => {
               {testimonialData.map((testimonial) => (
                 <div 
                   key={testimonial.id} 
-                  className="glass-card p-3 sm:p-4 md:p-6 rounded-lg sm:rounded-xl flex-shrink-0 w-[220px] sm:w-[260px] md:w-[360px]"
+                  className="glass-card p-3 sm:p-4 md:p-6 rounded-lg sm:rounded-xl flex-shrink-0 w-[260px] sm:w-[280px] md:w-[360px]"
                   style={{ scrollSnapAlign: 'start' }}
                 >
                   {/* Header */}
@@ -137,8 +137,8 @@ const Testimonials = () => {
                   </div>
                   
                   {/* Content */}
-                  <ScrollArea className="h-[100px] sm:h-[120px] md:h-[160px]">
-                    <p className="text-[10px] sm:text-xs md:text-sm text-muted-foreground leading-relaxed pr-2">
+                  <ScrollArea className="h-[110px] sm:h-[120px] md:h-[160px]">
+                    <p className="text-[11px] sm:text-xs md:text-sm text-muted-foreground leading-relaxed pr-2">
                       {testimonial.content}
                     </p>
                   </ScrollArea>
