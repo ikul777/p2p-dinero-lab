@@ -76,7 +76,7 @@ const Hero = () => {
               </h2>
             </div>
             {/* Main heading */}
-            <h1 className={`font-display text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight mb-4 sm:mb-6 transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+            <h1 className={`font-display text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold leading-tight mb-4 sm:mb-6 max-w-2xl mx-auto transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
               <span className="block text-gradient">P2P-АРБІТРАЖ —</span>
               <span className="block">
                 <span className="text-foreground">твій інструмент для </span>
