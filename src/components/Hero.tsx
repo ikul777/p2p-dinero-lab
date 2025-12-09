@@ -53,8 +53,8 @@ const Hero = () => {
             </h1>
             
             {/* Subheading */}
-            <p className={`text-xs sm:text-sm md:text-base lg:text-lg text-muted-foreground max-w-xl mx-auto mb-6 sm:mb-8 px-4 transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-              Авторські P2P звʼязки, постійні оновлення, досвідчені сапорти, партнерства з біржами та доступ до комʼюніті конкурентів якому немає на ринку
+            <p className={`text-xs sm:text-sm md:text-base lg:text-lg text-foreground/70 max-w-xl mx-auto mb-6 sm:mb-8 px-4 transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+              <span className="text-gradient font-medium">Авторські P2P звʼязки</span>, постійні оновлення, <span className="text-gradient font-medium">досвідчені сапорти</span>, партнерства з біржами та доступ до <span className="text-gradient font-medium">комʼюніті конкурентів</span> якому немає на ринку
             </p>
             
             {/* CTA Button */}
