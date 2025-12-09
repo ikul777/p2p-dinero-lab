@@ -1,10 +1,9 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ArrowRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -20,7 +19,6 @@ const Header = () => {
     if (location.pathname === '/') {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
-    setIsMobileMenuOpen(false);
   };
 
   return (
@@ -37,63 +35,18 @@ const Header = () => {
           </h1>
         </Link>
         
-        {/* Desktop CTA */}
+        {/* CTA Button */}
         <a 
           href="#join" 
-          className={`hidden md:inline-flex items-center gap-2 px-5 py-2 rounded-full text-sm font-medium transition-all ${
+          className={`inline-flex items-center gap-1.5 sm:gap-2 px-3 py-1.5 sm:px-5 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-all ${
             isScrolled 
               ? 'bg-primary text-primary-foreground hover:bg-primary/90' 
               : 'border border-border text-foreground hover:border-primary hover:text-primary'
           }`}
         >
           Приєднатись
-          <ArrowRight size={16} />
+          <ArrowRight size={14} className="sm:w-4 sm:h-4" />
         </a>
-
-        {/* Mobile menu button */}
-        <button 
-          className="md:hidden z-50 p-2"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-        >
-          {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
-
-        {/* Mobile menu */}
-        {isMobileMenuOpen && (
-          <div className="fixed inset-0 bg-background/98 backdrop-blur-xl z-40 md:hidden">
-            <div className="flex flex-col items-center justify-center h-full gap-8">
-              <a 
-                href="#about" 
-                className="text-2xl font-display text-foreground hover:text-primary transition-colors"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Про мене
-              </a>
-              <a 
-                href="#solution" 
-                className="text-2xl font-display text-foreground hover:text-primary transition-colors"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Рішення
-              </a>
-              <a 
-                href="#testimonials" 
-                className="text-2xl font-display text-foreground hover:text-primary transition-colors"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Відгуки
-              </a>
-              <a 
-                href="#join" 
-                className="btn-primary inline-flex items-center gap-2 px-8 py-3 rounded-full text-lg font-medium text-primary-foreground mt-4"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Приєднатись
-                <ArrowRight size={18} />
-              </a>
-            </div>
-          </div>
-        )}
       </div>
     </header>
   );

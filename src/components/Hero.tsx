@@ -69,29 +69,29 @@ const Hero = () => {
             </div>
             
             {/* Stats */}
-            <div className={`mt-8 sm:mt-10 md:mt-16 grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3 md:gap-6 max-w-sm sm:max-w-2xl md:max-w-3xl mx-auto transition-all duration-700 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+            <div className={`mt-8 sm:mt-10 md:mt-16 grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 md:gap-6 max-w-xs sm:max-w-2xl md:max-w-3xl mx-auto transition-all duration-700 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
               <div ref={counter3100.ref} className="text-center p-2 sm:p-2 md:p-4">
-                <div className="font-display font-bold text-base sm:text-xl md:text-3xl lg:text-4xl text-primary mb-1 sm:mb-2 whitespace-nowrap">
-                  {counter3100.count} <span className="text-xs sm:text-base md:text-xl lg:text-2xl">USDT</span>
+                <div className="font-display font-bold text-sm sm:text-lg md:text-2xl lg:text-3xl text-primary mb-1 sm:mb-2 whitespace-nowrap">
+                  {counter3100.count} <span className="text-[8px] sm:text-sm md:text-lg">USDT</span>
                 </div>
                 <div className="text-[8px] sm:text-[9px] md:text-xs lg:text-sm text-muted-foreground leading-tight">
                   середній дохід учасника
                 </div>
               </div>
               <div ref={counter300.ref} className="text-center p-2 sm:p-2 md:p-4 sm:border-l sm:border-border/30">
-                <div className="font-display font-bold text-base sm:text-xl md:text-3xl lg:text-4xl text-foreground mb-1 sm:mb-2">{counter300.count}+</div>
+                <div className="font-display font-bold text-sm sm:text-lg md:text-2xl lg:text-3xl text-foreground mb-1 sm:mb-2">{counter300.count}+</div>
                 <div className="text-[8px] sm:text-[9px] md:text-xs lg:text-sm text-muted-foreground leading-tight">
                   учасників навчили заробляти на p2p
                 </div>
               </div>
               <div className="text-center p-2 sm:p-2 md:p-4 sm:border-l sm:border-border/30">
-                <div className="font-display font-bold text-base sm:text-xl md:text-3xl lg:text-4xl text-foreground mb-1 sm:mb-2">24/7</div>
+                <div className="font-display font-bold text-sm sm:text-lg md:text-2xl lg:text-3xl text-foreground mb-1 sm:mb-2">24/7</div>
                 <div className="text-[8px] sm:text-[9px] md:text-xs lg:text-sm text-muted-foreground leading-tight">
                   індивідуальна підтримка від наших сапортів
                 </div>
               </div>
               <div ref={counter5.ref} className="text-center p-2 sm:p-2 md:p-4 sm:border-l sm:border-border/30">
-                <div className="font-display font-bold text-base sm:text-xl md:text-3xl lg:text-4xl text-foreground mb-1 sm:mb-2">{counter5.count}+</div>
+                <div className="font-display font-bold text-sm sm:text-lg md:text-2xl lg:text-3xl text-foreground mb-1 sm:mb-2">{counter5.count}+</div>
                 <div className="text-[8px] sm:text-[9px] md:text-xs lg:text-sm text-muted-foreground leading-tight">
                   роки досвіду команди
                 </div>
