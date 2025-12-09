@@ -91,18 +91,25 @@
   background-clip: text;
 }
 
-/* Bracket decorations */
 /* Glass card - refined */
 .glass-card {
-  background: hsl(var(--card) / 0.5);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid hsl(var(--border) / 0.3);
+  background: hsl(var(--card) / 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid hsl(var(--border) / 0.4);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+@media (min-width: 768px) {
+  .glass-card {
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+}
+
 .glass-card:hover {
-  border-color: hsl(var(--primary) / 0.2);
+  border-color: hsl(var(--primary) / 0.25);
+  box-shadow: 0 0 30px -10px hsl(var(--primary) / 0.15);
 }
 
 /* Hide scrollbar */
@@ -125,20 +132,6 @@
   font-weight: 200;
   color: hsl(var(--primary));
   opacity: 0.6;
-}
-
-/* Glass card - refined */
-.glass-card {
-  background: hsl(var(--card) / 0.6);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid hsl(var(--border) / 0.5);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.glass-card:hover {
-  border-color: hsl(var(--primary) / 0.3);
-  box-shadow: 0 0 40px -10px hsl(var(--primary) / 0.2);
 }
 
 /* Accent card */
