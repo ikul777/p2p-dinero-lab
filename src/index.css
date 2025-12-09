@@ -96,25 +96,25 @@
   background-clip: text;
 }
 
-/* Glass card - refined */
+/* Glass card - refined and optimized for mobile */
 .glass-card {
-  background: hsl(var(--card) / 0.6);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: hsl(var(--card) / 0.7);
   border: 1px solid hsl(var(--border) / 0.4);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.2s ease;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 640px) {
   .glass-card {
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    background: hsl(var(--card) / 0.6);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
-}
-
-.glass-card:hover {
-  border-color: hsl(var(--primary) / 0.25);
-  box-shadow: 0 0 30px -10px hsl(var(--primary) / 0.15);
+  
+  .glass-card:hover {
+    border-color: hsl(var(--primary) / 0.25);
+    box-shadow: 0 0 30px -10px hsl(var(--primary) / 0.15);
+  }
 }
 
 /* Problem card hover - red glow */
@@ -203,17 +203,19 @@
   transform: translateX(100%);
 }
 
-/* Pulsing button */
-.btn-pulse {
-  animation: btn-pulse-glow 2s ease-in-out infinite;
+/* Pulsing button - desktop only */
+@media (min-width: 640px) {
+  .btn-pulse {
+    animation: btn-pulse-glow 2s ease-in-out infinite;
+  }
 }
 
 @keyframes btn-pulse-glow {
   0%, 100% {
-    box-shadow: 0 0 20px -5px hsl(var(--primary) / 0.4);
+    box-shadow: 0 0 15px -5px hsl(var(--primary) / 0.3);
   }
   50% {
-    box-shadow: 0 0 40px -5px hsl(var(--primary) / 0.6);
+    box-shadow: 0 0 30px -5px hsl(var(--primary) / 0.5);
   }
 }
 
@@ -250,17 +252,23 @@
   background-size: 30px 30px;
 }
 
-/* Animated gradient background */
+/* Animated gradient background - optimized for mobile */
 .animated-gradient-bg {
-  background: linear-gradient(
-    -45deg,
-    hsl(var(--background)),
-    hsl(0 85% 8%),
-    hsl(var(--background)),
-    hsl(0 85% 6%)
-  );
-  background-size: 400% 400%;
-  animation: gradient-shift 15s ease infinite;
+  background: hsl(var(--background));
+}
+
+@media (min-width: 640px) {
+  .animated-gradient-bg {
+    background: linear-gradient(
+      -45deg,
+      hsl(var(--background)),
+      hsl(0 85% 8%),
+      hsl(var(--background)),
+      hsl(0 85% 6%)
+    );
+    background-size: 400% 400%;
+    animation: gradient-shift 15s ease infinite;
+  }
 }
 
 @keyframes gradient-shift {
@@ -570,27 +578,33 @@
   --partner-color: 150 70% 45%;
 }
 
-/* Partner logo hover effects */
+/* Partner logo hover effects - optimized for touch */
 .partner-logo {
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  filter: grayscale(50%) brightness(0.8);
+  transition: all 0.3s ease;
+  filter: grayscale(30%) brightness(0.9);
 }
 
-.partner-logo:hover {
-  filter: grayscale(0%) brightness(1);
-  transform: scale(1.15);
-}
-
-.partner-logo.whitebit:hover {
-  filter: drop-shadow(0 0 20px hsl(210 100% 60% / 0.6));
-}
-
-.partner-logo.bybit:hover {
-  filter: drop-shadow(0 0 20px hsl(30 100% 55% / 0.6));
-}
-
-.partner-logo.okx:hover {
-  filter: drop-shadow(0 0 20px hsl(150 70% 45% / 0.6));
+@media (min-width: 640px) {
+  .partner-logo {
+    filter: grayscale(50%) brightness(0.8);
+  }
+  
+  .partner-logo:hover {
+    filter: grayscale(0%) brightness(1);
+    transform: scale(1.1);
+  }
+  
+  .partner-logo.whitebit:hover {
+    filter: drop-shadow(0 0 15px hsl(210 100% 60% / 0.5));
+  }
+  
+  .partner-logo.bybit:hover {
+    filter: drop-shadow(0 0 15px hsl(30 100% 55% / 0.5));
+  }
+  
+  .partner-logo.okx:hover {
+    filter: drop-shadow(0 0 15px hsl(150 70% 45% / 0.5));
+  }
 }
 
 /* Animated border for CTA */
@@ -659,19 +673,25 @@
   text-shadow: 0 0 20px hsl(var(--primary) / 0.5);
 }
 
-/* Floating CTA pulse */
+/* Floating CTA - simplified for mobile */
 .floating-cta {
-  animation: floating-pulse 3s ease-in-out infinite;
+  box-shadow: 0 8px 25px -8px hsl(var(--primary) / 0.4);
+}
+
+@media (min-width: 640px) {
+  .floating-cta {
+    animation: floating-pulse 3s ease-in-out infinite;
+  }
 }
 
 @keyframes floating-pulse {
   0%, 100% {
-    transform: translateY(0) scale(1);
+    transform: translateY(0);
     box-shadow: 0 10px 30px -10px hsl(var(--primary) / 0.4);
   }
   50% {
-    transform: translateY(-3px) scale(1.02);
-    box-shadow: 0 15px 40px -10px hsl(var(--primary) / 0.5);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 35px -10px hsl(var(--primary) / 0.5);
   }
 }
 
@@ -686,13 +706,13 @@
   filter: drop-shadow(0 0 10px hsl(var(--primary) / 0.5));
 }
 
-/* Slider track styling */
+/* Slider track styling - touch optimized */
 input[type="range"] {
   -webkit-appearance: none;
   appearance: none;
   width: 100%;
-  height: 8px;
-  border-radius: 4px;
+  height: 6px;
+  border-radius: 3px;
   background: hsl(var(--border));
   outline: none;
 }
@@ -700,28 +720,42 @@ input[type="range"] {
 input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 24px;
-  height: 24px;
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
   background: hsl(var(--primary));
   cursor: pointer;
-  box-shadow: 0 0 10px hsl(var(--primary) / 0.5);
-  transition: all 0.2s ease;
+  box-shadow: 0 0 8px hsl(var(--primary) / 0.4);
 }
 
-input[type="range"]::-webkit-slider-thumb:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 20px hsl(var(--primary) / 0.6);
+@media (min-width: 640px) {
+  input[type="range"]::-webkit-slider-thumb {
+    width: 22px;
+    height: 22px;
+    transition: all 0.2s ease;
+  }
+  
+  input[type="range"]::-webkit-slider-thumb:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px hsl(var(--primary) / 0.5);
+  }
 }
 
 input[type="range"]::-moz-range-thumb {
-  width: 24px;
-  height: 24px;
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
   background: hsl(var(--primary));
   cursor: pointer;
   border: none;
-  box-shadow: 0 0 10px hsl(var(--primary) / 0.5);
+  box-shadow: 0 0 8px hsl(var(--primary) / 0.4);
+}
+
+@media (min-width: 640px) {
+  input[type="range"]::-moz-range-thumb {
+    width: 22px;
+    height: 22px;
+  }
 }
 
 /* Average profit pulsing glow */

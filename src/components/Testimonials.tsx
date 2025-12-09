@@ -157,32 +157,29 @@ const Testimonials = () => {
               className="flex gap-3 sm:gap-4 md:gap-6 overflow-x-auto pb-4 scrollbar-hide scroll-smooth"
               style={{ scrollSnapType: 'x mandatory' }}
             >
-              {testimonialData.map((testimonial, index) => (
+              {testimonialData.map((testimonial) => (
                 <div 
                   key={testimonial.id} 
-                  className="glass-card p-3 sm:p-4 md:p-6 rounded-lg sm:rounded-xl flex-shrink-0 w-[260px] sm:w-[280px] md:w-[360px] group hover:border-primary/30 transition-all"
+                  className="glass-card p-4 sm:p-5 md:p-6 rounded-xl flex-shrink-0 w-[280px] sm:w-[300px] md:w-[360px] group hover:border-primary/30 transition-all"
                   style={{ scrollSnapAlign: 'start' }}
                 >
                   {/* Header */}
-                  <div className="flex items-center justify-between mb-2 sm:mb-3 md:mb-4">
-                    <div className="flex items-center gap-2">
-                      <span className="faq-number">{index + 1}</span>
-                      <span className="tag text-[8px] sm:text-[10px] md:text-xs px-2 py-0.5 sm:px-3 sm:py-1">{testimonial.groupName}</span>
-                    </div>
+                  <div className="flex items-center justify-between mb-2 sm:mb-3">
+                    <span className="tag text-[8px] sm:text-[10px] px-2 py-0.5 sm:px-2.5 sm:py-1">{testimonial.groupName}</span>
                     <a 
                       href={testimonial.link} 
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-muted-foreground hover:text-primary transition-colors"
+                      className="text-muted-foreground hover:text-primary transition-colors p-1"
                     >
-                      <ExternalLink size={12} className="sm:w-3.5 sm:h-3.5 md:w-4 md:h-4" />
+                      <ExternalLink size={14} className="sm:w-4 sm:h-4" />
                     </a>
                   </div>
                   
                   {/* Content */}
-                  <ScrollArea className="h-[110px] sm:h-[120px] md:h-[160px]">
+                  <ScrollArea className="h-[130px] sm:h-[140px] md:h-[160px]">
                     <p 
-                      className="text-[11px] sm:text-xs md:text-sm text-muted-foreground leading-relaxed pr-2"
+                      className="text-xs sm:text-sm text-muted-foreground leading-relaxed pr-2"
                       dangerouslySetInnerHTML={{ __html: highlightNumbers(testimonial.content) }}
                     />
                   </ScrollArea>

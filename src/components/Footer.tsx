@@ -11,7 +11,7 @@ const Footer = () => {
   };
   
   return (
-    <footer className="py-6 sm:py-8 md:py-12 bg-background relative overflow-hidden">
+    <footer className="py-5 sm:py-6 md:py-10 bg-background relative overflow-hidden">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent"></div>
       
       <div className="container mx-auto px-4 sm:px-6">

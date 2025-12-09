@@ -66,38 +66,38 @@ const ProfitCalculator = () => {
   };
 
   return (
-    <section id="calculator" className="relative py-10 sm:py-14 md:py-16 bg-background overflow-hidden">
+    <section id="calculator" className="relative py-10 sm:py-12 md:py-16 bg-background overflow-hidden">
       {/* Top separator line */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent"></div>
       
-      {/* Background effects - optimized */}
-      <div className="absolute inset-0 bg-grid opacity-10"></div>
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200px] sm:w-[350px] md:w-[600px] h-[200px] sm:h-[350px] md:h-[600px] bg-primary/5 rounded-full filter blur-[60px] sm:blur-[80px] md:blur-[120px]"></div>
+      {/* Background effects - optimized for mobile */}
+      <div className="absolute inset-0 bg-grid opacity-5 sm:opacity-10"></div>
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150px] sm:w-[250px] md:w-[400px] h-[150px] sm:h-[250px] md:h-[400px] bg-primary/3 sm:bg-primary/5 rounded-full filter blur-[50px] sm:blur-[70px] md:blur-[100px]"></div>
       
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
         <div className="max-w-4xl mx-auto">
           {/* Header */}
           <div 
             ref={headerAnimation.ref}
-            className={`text-center mb-10 sm:mb-12 md:mb-16 transition-all duration-700 ${headerAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+            className={`text-center mb-6 sm:mb-8 md:mb-12 transition-all duration-500 ${headerAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
           >
-            <span className="tag mb-3 sm:mb-4 inline-block text-[10px] sm:text-xs">Калькулятор</span>
-            <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6">
+            <span className="tag mb-2 sm:mb-3 inline-block text-[10px] sm:text-xs">Калькулятор</span>
+            <h2 className="font-display text-xl sm:text-2xl md:text-3xl font-bold mb-2 sm:mb-3">
               <span className="text-foreground">Розрахуй свій </span>
               <span className="text-gradient">прибуток</span>
             </h2>
-            <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-xl mx-auto px-2">
-              Введи свій стартовий капітал та дізнайся потенційний місячний дохід
+            <p className="text-xs sm:text-sm md:text-base text-muted-foreground max-w-md mx-auto px-4">
+              Введи свій капітал та дізнайся потенційний дохід
             </p>
           </div>
           
           {/* Calculator Card */}
           <div 
             ref={cardAnimation.ref}
-            className={`transition-all duration-700 delay-150 ${cardAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+            className={`transition-all duration-500 delay-100 ${cardAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
           >
-            <div className="glass-card p-6 sm:p-8 md:p-10 rounded-2xl border border-border/50">
-              <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            <div className="glass-card p-4 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl border border-border/30">
+              <div className="grid lg:grid-cols-2 gap-6 lg:gap-10 items-center">
                 {/* Input Section */}
                 <div>
                   <label className="block mb-3 sm:mb-4">
