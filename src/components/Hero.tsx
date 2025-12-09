@@ -69,18 +69,32 @@ const Hero = () => {
             </div>
             
             {/* Stats */}
-            <div className={`mt-8 sm:mt-10 md:mt-16 grid grid-cols-3 gap-3 sm:gap-4 md:gap-8 max-w-xs sm:max-w-md md:max-w-2xl mx-auto transition-all duration-700 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-              <div className="text-center">
-                <div className="font-display font-bold text-xl sm:text-2xl md:text-4xl text-foreground mb-0.5 sm:mb-1">300+</div>
-                <div className="text-[10px] sm:text-xs md:text-sm text-muted-foreground">учасників</div>
+            <div className={`mt-8 sm:mt-10 md:mt-16 grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-3 md:gap-6 max-w-xs sm:max-w-2xl md:max-w-3xl mx-auto transition-all duration-700 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+              <div className="text-center p-3 sm:p-2 md:p-4">
+                <div className="font-display font-bold text-lg sm:text-xl md:text-3xl lg:text-4xl text-primary mb-1 sm:mb-2">
+                  3100 <span className="text-sm sm:text-base md:text-xl lg:text-2xl">USDT</span>
+                </div>
+                <div className="text-[9px] sm:text-[10px] md:text-xs lg:text-sm text-muted-foreground leading-tight">
+                  середній дохід учасника
+                </div>
               </div>
-              <div className="text-center border-x border-border/50">
-                <div className="font-display font-bold text-xl sm:text-2xl md:text-4xl text-foreground mb-0.5 sm:mb-1">24/7</div>
-                <div className="text-[10px] sm:text-xs md:text-sm text-muted-foreground">підтримка</div>
+              <div className="text-center p-3 sm:p-2 md:p-4 sm:border-l sm:border-border/30">
+                <div className="font-display font-bold text-lg sm:text-xl md:text-3xl lg:text-4xl text-foreground mb-1 sm:mb-2">300+</div>
+                <div className="text-[9px] sm:text-[10px] md:text-xs lg:text-sm text-muted-foreground leading-tight">
+                  учасників навчили правильній торгівлі
+                </div>
               </div>
-              <div className="text-center">
-                <div className="font-display font-bold text-xl sm:text-2xl md:text-4xl text-foreground mb-0.5 sm:mb-1">3+</div>
-                <div className="text-[10px] sm:text-xs md:text-sm text-muted-foreground">роки досвіду</div>
+              <div className="text-center p-3 sm:p-2 md:p-4 sm:border-l sm:border-border/30">
+                <div className="font-display font-bold text-lg sm:text-xl md:text-3xl lg:text-4xl text-foreground mb-1 sm:mb-2">24/7</div>
+                <div className="text-[9px] sm:text-[10px] md:text-xs lg:text-sm text-muted-foreground leading-tight">
+                  індивідуальна підтримка від чотирьох саппортів
+                </div>
+              </div>
+              <div className="text-center p-3 sm:p-2 md:p-4 sm:border-l sm:border-border/30">
+                <div className="font-display font-bold text-lg sm:text-xl md:text-3xl lg:text-4xl text-foreground mb-1 sm:mb-2">5+</div>
+                <div className="text-[9px] sm:text-[10px] md:text-xs lg:text-sm text-muted-foreground leading-tight">
+                  роки досвіду команди
+                </div>
               </div>
             </div>
             
