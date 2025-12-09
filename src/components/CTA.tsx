@@ -12,11 +12,11 @@ const CTA = () => {
   const cardAnimation = useScrollAnimation({ threshold: 0.2 });
 
   return (
-    <section id="join" className="py-12 sm:py-16 md:py-24 lg:py-32 bg-background relative overflow-hidden">
-      <div className="absolute inset-0 bg-grid opacity-20"></div>
+    <section id="join" className="py-10 sm:py-14 md:py-20 lg:py-28 bg-background relative overflow-hidden">
+      <div className="absolute inset-0 bg-grid opacity-5 sm:opacity-10"></div>
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent"></div>
-      <div className="absolute top-1/4 left-1/4 w-[150px] sm:w-[200px] md:w-[400px] h-[150px] sm:h-[200px] md:h-[400px] bg-primary/8 rounded-full filter blur-[60px] sm:blur-[80px] md:blur-[120px]"></div>
-      <div className="absolute bottom-1/4 right-1/4 w-[100px] sm:w-[150px] md:w-[300px] h-[100px] sm:h-[150px] md:h-[300px] bg-primary/5 rounded-full filter blur-[40px] sm:blur-[60px] md:blur-[80px]"></div>
+      <div className="absolute top-1/4 left-1/4 w-[100px] sm:w-[150px] md:w-[300px] h-[100px] sm:h-[150px] md:h-[300px] bg-primary/5 sm:bg-primary/8 rounded-full filter blur-[50px] sm:blur-[70px] md:blur-[100px]"></div>
+      <div className="absolute bottom-1/4 right-1/4 w-[80px] sm:w-[120px] md:w-[200px] h-[80px] sm:h-[120px] md:h-[200px] bg-primary/3 sm:bg-primary/5 rounded-full filter blur-[40px] sm:blur-[60px] md:blur-[80px]"></div>
       
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
         <div className="max-w-3xl mx-auto">

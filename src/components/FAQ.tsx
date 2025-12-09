@@ -39,19 +39,19 @@ const FAQ = () => {
   };
   
   return (
-    <section id="faq" className="py-12 sm:py-16 md:py-24 lg:py-32 bg-background relative overflow-hidden">
+    <section id="faq" className="py-10 sm:py-14 md:py-20 lg:py-28 bg-background relative overflow-hidden">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent"></div>
-      <div className="absolute top-1/4 left-1/4 w-[150px] sm:w-[200px] md:w-[300px] h-[150px] sm:h-[200px] md:h-[300px] bg-primary/5 rounded-full filter blur-[60px] sm:blur-[80px] md:blur-[120px]"></div>
+      <div className="absolute top-1/4 left-1/4 w-[100px] sm:w-[150px] md:w-[250px] h-[100px] sm:h-[150px] md:h-[250px] bg-primary/3 sm:bg-primary/5 rounded-full filter blur-[50px] sm:blur-[70px] md:blur-[100px]"></div>
       
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
         <div className="max-w-3xl mx-auto">
           {/* Section header */}
           <div 
             ref={headerAnimation.ref}
-            className={`text-center mb-8 sm:mb-10 md:mb-12 transition-all duration-700 ${headerAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+            className={`text-center mb-6 sm:mb-8 md:mb-10 transition-all duration-500 ${headerAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
           >
-            <span className="tag mb-2 sm:mb-3 md:mb-4 inline-block text-[10px] sm:text-xs">FAQ</span>
-            <h2 className="font-display text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-2 sm:mb-3 md:mb-4">
+            <span className="tag mb-2 sm:mb-3 inline-block text-[10px] sm:text-xs">FAQ</span>
+            <h2 className="font-display text-xl sm:text-2xl md:text-3xl font-bold mb-2 sm:mb-3">
               <span className="text-foreground">Популярні </span>
               <span className="text-gradient">питання</span>
             </h2>
