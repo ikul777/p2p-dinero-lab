@@ -35,7 +35,7 @@ const Hero = () => {
   }, []);
   
   return (
-    <section className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-background pt-16 pb-16 sm:pt-20 sm:pb-10 md:pt-24 md:pb-0">
+    <section className="relative flex flex-col justify-center overflow-hidden bg-background pt-16 pb-8 sm:pt-20 sm:pb-10 md:pt-24 md:pb-12">
       {/* Background - optimized for mobile */}
       <div className="absolute inset-0 bg-grid opacity-20"></div>
       <div className="absolute top-1/4 left-1/4 w-[150px] sm:w-[250px] md:w-[500px] h-[150px] sm:h-[250px] md:h-[500px] bg-primary/8 rounded-full filter blur-[60px] sm:blur-[80px] md:blur-[120px]"></div>
@@ -53,7 +53,7 @@ const Hero = () => {
               </h2>
             </div>
             {/* Main heading */}
-            <h1 className={`font-display text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold leading-tight mb-4 sm:mb-6 transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+            <h1 className={`font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-4 sm:mb-6 transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
               <span className="block text-gradient">P2P-АРБІТРАЖ —</span>
               <span className="block">
                 <span className="text-foreground">твій інструмент для </span>
