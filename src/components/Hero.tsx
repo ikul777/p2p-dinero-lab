@@ -1,5 +1,6 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { ArrowRight } from 'lucide-react';
+import { useCounterAnimation } from '@/hooks/use-counter-animation';
 
 const partnerships = [
   {
@@ -21,6 +22,11 @@ const partnerships = [
 
 const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
+  
+  // Counter animations for stats
+  const counter3100 = useCounterAnimation({ end: 3100, duration: 2000, delay: 500 });
+  const counter300 = useCounterAnimation({ end: 300, duration: 1800, delay: 600 });
+  const counter5 = useCounterAnimation({ end: 5, duration: 1200, delay: 700 });
 
   useEffect(() => {
     setIsVisible(true);
@@ -70,16 +76,16 @@ const Hero = () => {
             
             {/* Stats */}
             <div className={`mt-8 sm:mt-10 md:mt-16 grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-3 md:gap-6 max-w-xs sm:max-w-2xl md:max-w-3xl mx-auto transition-all duration-700 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-              <div className="text-center p-3 sm:p-2 md:p-4">
+              <div ref={counter3100.ref} className="text-center p-3 sm:p-2 md:p-4">
                 <div className="font-display font-bold text-lg sm:text-xl md:text-3xl lg:text-4xl text-primary mb-1 sm:mb-2">
-                  3100 <span className="text-sm sm:text-base md:text-xl lg:text-2xl">USDT</span>
+                  {counter3100.count} <span className="text-sm sm:text-base md:text-xl lg:text-2xl">USDT</span>
                 </div>
                 <div className="text-[9px] sm:text-[10px] md:text-xs lg:text-sm text-muted-foreground leading-tight">
                   середній дохід учасника
                 </div>
               </div>
-              <div className="text-center p-3 sm:p-2 md:p-4 sm:border-l sm:border-border/30">
-                <div className="font-display font-bold text-lg sm:text-xl md:text-3xl lg:text-4xl text-foreground mb-1 sm:mb-2">300+</div>
+              <div ref={counter300.ref} className="text-center p-3 sm:p-2 md:p-4 sm:border-l sm:border-border/30">
+                <div className="font-display font-bold text-lg sm:text-xl md:text-3xl lg:text-4xl text-foreground mb-1 sm:mb-2">{counter300.count}+</div>
                 <div className="text-[9px] sm:text-[10px] md:text-xs lg:text-sm text-muted-foreground leading-tight">
                   учасників навчили правильній торгівлі
                 </div>
@@ -90,8 +96,8 @@ const Hero = () => {
                   індивідуальна підтримка від чотирьох саппортів
                 </div>
               </div>
-              <div className="text-center p-3 sm:p-2 md:p-4 sm:border-l sm:border-border/30">
-                <div className="font-display font-bold text-lg sm:text-xl md:text-3xl lg:text-4xl text-foreground mb-1 sm:mb-2">5+</div>
+              <div ref={counter5.ref} className="text-center p-3 sm:p-2 md:p-4 sm:border-l sm:border-border/30">
+                <div className="font-display font-bold text-lg sm:text-xl md:text-3xl lg:text-4xl text-foreground mb-1 sm:mb-2">{counter5.count}+</div>
                 <div className="text-[9px] sm:text-[10px] md:text-xs lg:text-sm text-muted-foreground leading-tight">
                   роки досвіду команди
                 </div>
