@@ -2,6 +2,30 @@ import { useState, useEffect, useRef } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { useCounterAnimation } from '@/hooks/use-counter-animation';
 
+const useScrollAnimation = () => {
+  const ref = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  return { ref, isVisible };
+};
+
 const partnerships = [
   {
     name: 'WhiteBIT',
@@ -22,6 +46,7 @@ const partnerships = [
 
 const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const partnersAnimation = useScrollAnimation();
   
   // Counter animations for stats
   const counter3100 = useCounterAnimation({ end: 3100, duration: 2000, delay: 500 });
@@ -99,19 +124,25 @@ const Hero = () => {
             </div>
             
             {/* Partnerships - Subtle */}
-            <div className={`mt-10 sm:mt-12 md:mt-16 transition-all duration-700 delay-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-              <p className="text-[10px] sm:text-xs text-muted-foreground/60 mb-4 sm:mb-6 uppercase tracking-widest">
+            <div 
+              ref={partnersAnimation.ref}
+              className={`mt-10 sm:mt-12 md:mt-16 transition-all duration-1000 ease-out ${partnersAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+            >
+              <p className={`text-[10px] sm:text-xs text-muted-foreground/60 mb-4 sm:mb-6 uppercase tracking-widest transition-all duration-700 ${partnersAnimation.isVisible ? 'opacity-100' : 'opacity-0'}`}>
                 DineroLab партнер крипто-бірж
               </p>
               <div className="inline-block border border-border/20 rounded-xl p-4 sm:p-6 md:p-8">
                 <div className="flex items-center justify-center gap-8 sm:gap-10 md:gap-14">
-                  {partnerships.map((partner) => (
+                  {partnerships.map((partner, index) => (
                     <a 
                       key={partner.name}
                       href={partner.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="opacity-40 hover:opacity-100 transition-all duration-300 hover:scale-110"
+                      style={{ 
+                        transitionDelay: partnersAnimation.isVisible ? `${index * 150}ms` : '0ms' 
+                      }}
+                      className={`transition-all duration-500 ${partnersAnimation.isVisible ? 'opacity-40 translate-y-0 scale-100' : 'opacity-0 translate-y-4 scale-95'} hover:opacity-100 hover:scale-110`}
                     >
                       <img 
                         src={partner.logo} 
