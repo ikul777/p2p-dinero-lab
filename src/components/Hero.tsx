@@ -38,73 +38,74 @@ const Hero = () => {
   }, []);
   
   return (
-    <section className="relative flex flex-col justify-center overflow-hidden animated-gradient-bg pt-12 pb-6 sm:pt-16 sm:pb-10 md:pt-20 md:pb-12">
+    <section className="relative flex flex-col justify-center overflow-hidden animated-gradient-bg pt-16 pb-8 sm:pt-20 sm:pb-10 md:pt-24 md:pb-12">
       {/* Background - optimized for mobile */}
-      <div className="absolute inset-0 bg-grid opacity-10 sm:opacity-20"></div>
-      <div className="absolute top-1/4 left-1/4 w-[120px] sm:w-[200px] md:w-[400px] h-[120px] sm:h-[200px] md:h-[400px] bg-primary/5 sm:bg-primary/8 rounded-full filter blur-[50px] sm:blur-[80px] md:blur-[100px]"></div>
-      <div className="absolute bottom-1/4 right-1/4 w-[80px] sm:w-[120px] md:w-[250px] h-[80px] sm:h-[120px] md:h-[250px] bg-primary/3 sm:bg-primary/5 rounded-full filter blur-[40px] sm:blur-[60px] md:blur-[80px]"></div>
+      <div className="absolute inset-0 bg-grid opacity-20"></div>
+      <div className="absolute top-1/4 left-1/4 w-[150px] sm:w-[250px] md:w-[500px] h-[150px] sm:h-[250px] md:h-[500px] bg-primary/8 rounded-full filter blur-[60px] sm:blur-[80px] md:blur-[120px] animate-pulse-glow"></div>
+      <div className="absolute bottom-1/4 right-1/4 w-[100px] sm:w-[150px] md:w-[300px] h-[100px] sm:h-[150px] md:h-[300px] bg-primary/5 rounded-full filter blur-[40px] sm:blur-[60px] md:blur-[80px]"></div>
+      <div className="absolute inset-0 noise pointer-events-none hidden sm:block"></div>
       
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
         <div className="max-w-4xl mx-auto">
           <div className="text-center">
             {/* Logo with glow */}
-            <div className={`mb-4 sm:mb-6 md:mb-8 transition-all duration-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-              <h2 className="font-display text-xs sm:text-sm md:text-base font-medium tracking-wide inline-block logo-glow">
+            <div className={`mb-6 sm:mb-8 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+              <h2 className="font-display text-sm sm:text-base md:text-lg font-medium tracking-wide inline-block logo-glow">
                 <span className="text-foreground">Dinero</span>
                 <span className="text-primary text-glow">Lab</span>
               </h2>
             </div>
             {/* Main heading */}
-            <h1 className={`font-display text-[22px] leading-[1.2] sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-3 sm:mb-5 transition-all duration-500 delay-75 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+            <h1 className={`font-display text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold leading-tight mb-4 sm:mb-6 transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
               <span className="block text-gradient">P2P-АРБІТРАЖ —</span>
-              <span className="block mt-1">
+              <span className="block">
                 <span className="text-foreground">твій інструмент для </span>
                 <span className="text-gradient">стабільного заробітку</span>
               </span>
             </h1>
             
             {/* Subheading */}
-            <p className={`text-[11px] sm:text-xs md:text-sm text-muted-foreground/60 max-w-md mx-auto mb-6 sm:mb-8 px-4 transition-all duration-500 delay-150 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-              Авторські P2P звʼязки, постійні оновлення, досвідчені сапорти та доступ до топового комʼюніті
+            <p className={`text-[10px] sm:text-xs md:text-sm text-muted-foreground/50 max-w-lg mx-auto mt-2 mb-8 sm:mb-10 px-6 transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+              Авторські P2P звʼязки, постійні оновлення, досвідчені сапорти, партнерства з біржами та доступ до комʼюніті конкурентів якому немає на ринку
             </p>
             
             {/* CTA Button with pulse */}
-            <div className={`transition-all duration-500 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+            <div className={`transition-all duration-700 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
               <a 
                 href="#join" 
-                className="btn-primary btn-pulse inline-flex items-center gap-2 px-6 sm:px-7 md:px-8 py-3.5 sm:py-4 rounded-full text-sm sm:text-base font-medium text-primary-foreground active:scale-95 transition-transform"
+                className="btn-primary btn-pulse inline-flex items-center gap-2 px-5 sm:px-6 md:px-8 py-3 sm:py-3.5 md:py-4 rounded-full text-sm sm:text-base md:text-lg font-medium text-primary-foreground"
               >
                 Приєднатись до комʼюніті
-                <ArrowRight size={18} className="sm:w-5 sm:h-5" />
+                <ArrowRight size={16} className="sm:w-[18px] sm:h-[18px] md:w-5 md:h-5" />
               </a>
             </div>
             
             {/* Stats */}
-            <div className={`mt-8 sm:mt-10 md:mt-14 grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3 md:gap-4 max-w-sm sm:max-w-xl md:max-w-2xl mx-auto transition-all duration-500 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-              <div ref={counter3100.ref} className="text-center py-3 px-2 sm:p-3 md:p-4 rounded-xl bg-primary/5 sm:bg-transparent">
-                <div className="font-display font-bold text-base sm:text-lg md:text-2xl text-primary mb-1 whitespace-nowrap">
-                  {counter3100.count} <span className="text-[10px] sm:text-xs md:text-sm">USDT</span>
+            <div className={`mt-8 sm:mt-10 md:mt-16 grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 md:gap-6 max-w-xs sm:max-w-2xl md:max-w-3xl mx-auto transition-all duration-700 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+              <div ref={counter3100.ref} className="text-center p-2 sm:p-2 md:p-4 group">
+                <div className="font-display font-bold text-sm sm:text-lg md:text-2xl lg:text-3xl text-primary mb-1 sm:mb-2 whitespace-nowrap group-hover:text-glow transition-all">
+                  {counter3100.count} <span className="text-[8px] sm:text-sm md:text-lg">USDT</span>
                 </div>
-                <div className="text-[9px] sm:text-[10px] md:text-xs text-muted-foreground leading-tight">
-                  середній дохід
-                </div>
-              </div>
-              <div ref={counter300.ref} className="text-center py-3 px-2 sm:p-3 md:p-4 sm:border-l sm:border-border/30">
-                <div className="font-display font-bold text-base sm:text-lg md:text-2xl text-foreground mb-1">{counter300.count}+</div>
-                <div className="text-[9px] sm:text-[10px] md:text-xs text-muted-foreground leading-tight">
-                  учасників
+                <div className="text-[8px] sm:text-[9px] md:text-xs lg:text-sm text-muted-foreground leading-tight">
+                  середній дохід учасника
                 </div>
               </div>
-              <div className="text-center py-3 px-2 sm:p-3 md:p-4 sm:border-l sm:border-border/30">
-                <div className="font-display font-bold text-base sm:text-lg md:text-2xl text-foreground mb-1">24/7</div>
-                <div className="text-[9px] sm:text-[10px] md:text-xs text-muted-foreground leading-tight">
-                  підтримка
+              <div ref={counter300.ref} className="text-center p-2 sm:p-2 md:p-4 sm:border-l sm:border-border/30 group">
+                <div className="font-display font-bold text-sm sm:text-lg md:text-2xl lg:text-3xl text-foreground mb-1 sm:mb-2 group-hover:text-primary transition-colors">{counter300.count}+</div>
+                <div className="text-[8px] sm:text-[9px] md:text-xs lg:text-sm text-muted-foreground leading-tight">
+                  учасників навчили заробляти на p2p
                 </div>
               </div>
-              <div ref={counter5.ref} className="text-center py-3 px-2 sm:p-3 md:p-4 sm:border-l sm:border-border/30">
-                <div className="font-display font-bold text-base sm:text-lg md:text-2xl text-foreground mb-1">{counter5.count}+</div>
-                <div className="text-[9px] sm:text-[10px] md:text-xs text-muted-foreground leading-tight">
-                  років досвіду
+              <div className="text-center p-2 sm:p-2 md:p-4 sm:border-l sm:border-border/30 group">
+                <div className="font-display font-bold text-sm sm:text-lg md:text-2xl lg:text-3xl text-foreground mb-1 sm:mb-2 group-hover:text-primary transition-colors">24/7</div>
+                <div className="text-[8px] sm:text-[9px] md:text-xs lg:text-sm text-muted-foreground leading-tight">
+                  індивідуальна підтримка від наших сапортів
+                </div>
+              </div>
+              <div ref={counter5.ref} className="text-center p-2 sm:p-2 md:p-4 sm:border-l sm:border-border/30 group">
+                <div className="font-display font-bold text-sm sm:text-lg md:text-2xl lg:text-3xl text-foreground mb-1 sm:mb-2 group-hover:text-primary transition-colors">{counter5.count}+</div>
+                <div className="text-[8px] sm:text-[9px] md:text-xs lg:text-sm text-muted-foreground leading-tight">
+                  роки досвіду команди
                 </div>
               </div>
             </div>
@@ -112,13 +113,13 @@ const Hero = () => {
             {/* Partnerships - Subtle */}
             <div 
               ref={partnersAnimation.ref}
-              className={`mt-8 sm:mt-10 md:mt-14 mb-2 sm:mb-4 transition-all duration-700 ease-out ${partnersAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
+              className={`mt-10 sm:mt-12 md:mt-16 mb-4 sm:mb-6 transition-all duration-1000 ease-out ${partnersAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
             >
-              <p className={`text-[9px] sm:text-[10px] md:text-xs text-muted-foreground/50 mb-3 sm:mb-4 uppercase tracking-wider transition-all duration-500 ${partnersAnimation.isVisible ? 'opacity-100' : 'opacity-0'}`}>
-                Офіційний партнер
+              <p className={`text-[10px] sm:text-xs text-muted-foreground/60 mb-4 sm:mb-6 uppercase tracking-widest transition-all duration-700 ${partnersAnimation.isVisible ? 'opacity-100' : 'opacity-0'}`}>
+                DineroLab партнер крипто-бірж
               </p>
-              <div className="inline-block border border-border/15 rounded-xl p-3 sm:p-4 md:p-6 active:scale-[0.98] transition-transform">
-                <div className="flex items-center justify-center gap-6 sm:gap-8 md:gap-12">
+              <div className="inline-block border border-border/20 rounded-xl p-4 sm:p-6 md:p-8 hover:border-border/40 transition-colors">
+                <div className="flex items-center justify-center gap-8 sm:gap-10 md:gap-14">
                   {partnerships.map((partner, index) => (
                     <a 
                       key={partner.name}
@@ -126,14 +127,14 @@ const Hero = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       style={{ 
-                        transitionDelay: partnersAnimation.isVisible ? `${index * 100}ms` : '0ms' 
+                        transitionDelay: partnersAnimation.isVisible ? `${index * 150}ms` : '0ms' 
                       }}
-                      className={`transition-all duration-400 active:scale-95 ${partnersAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'}`}
+                      className={`transition-all duration-500 ${partnersAnimation.isVisible ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-4 scale-95'}`}
                     >
                       <img 
                         src={partner.logo} 
                         alt={partner.name} 
-                        className={`h-7 sm:h-8 md:h-10 w-auto object-contain partner-logo ${partner.colorClass}`}
+                        className={`h-8 sm:h-10 md:h-12 w-auto object-contain partner-logo ${partner.colorClass}`}
                       />
                     </a>
                   ))}

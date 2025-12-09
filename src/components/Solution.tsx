@@ -33,10 +33,10 @@ const Solution = () => {
   const gridAnimation = useScrollAnimation({ threshold: 0.1 });
 
   return (
-    <section id="solution" className="py-10 sm:py-14 md:py-20 lg:py-28 bg-background relative overflow-hidden">
-      <div className="absolute inset-0 bg-grid-sm opacity-5 sm:opacity-10"></div>
+    <section id="solution" className="py-12 sm:py-16 md:py-24 lg:py-32 bg-background relative overflow-hidden">
+      <div className="absolute inset-0 bg-grid-sm opacity-10"></div>
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent"></div>
-      <div className="absolute top-1/2 right-0 w-[100px] sm:w-[150px] md:w-[300px] h-[100px] sm:h-[150px] md:h-[300px] bg-primary/3 sm:bg-primary/5 rounded-full filter blur-[50px] sm:blur-[70px] md:blur-[100px] -translate-y-1/2"></div>
+      <div className="absolute top-1/2 right-0 w-[150px] sm:w-[200px] md:w-[400px] h-[150px] sm:h-[200px] md:h-[400px] bg-primary/5 rounded-full filter blur-[60px] sm:blur-[80px] md:blur-[120px] -translate-y-1/2"></div>
       
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
         <div className="max-w-5xl mx-auto">
