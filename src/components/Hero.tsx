@@ -43,24 +43,18 @@ const Hero = () => {
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
         <div className="max-w-4xl mx-auto">
           <div className="text-center">
-            {/* Tag */}
-            <div className={`transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-              <span className="tag mb-4 sm:mb-6 inline-block text-[10px] sm:text-xs">P2P Комʼюніті</span>
-            </div>
-            
             {/* Main heading */}
             <h1 className={`font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-4 sm:mb-6 transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-              <span className="text-foreground">P2P-арбітраж,</span>
+              <span className="text-gradient">P2P-АРБІТРАЖ</span>
+              <span className="text-foreground">—</span>
               <br />
-              <span className="text-foreground">який приносить </span>
-              <span className="text-gradient">кеш</span>
-              <br />
-              <span className="text-foreground/30 text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl">кожного дня</span>
+              <span className="text-foreground">твій інструмент для </span>
+              <span className="text-gradient">стабільного заробітку</span>
             </h1>
             
             {/* Subheading */}
-            <p className={`text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground max-w-xl mx-auto mb-6 sm:mb-8 px-2 transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-              Авторські P2P-звʼязки, реальні кейси, доступ до топового комʼюніті
+            <p className={`text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground max-w-2xl mx-auto mb-6 sm:mb-8 px-2 transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+              Авторські P2P звʼязки, постійні оновлення, досвідчені сапорти, партнерства з біржами та доступ до комʼюніті конкурентів якому немає на ринку
             </p>
             
             {/* CTA Button */}
@@ -87,13 +81,13 @@ const Hero = () => {
               <div ref={counter300.ref} className="text-center p-3 sm:p-2 md:p-4 sm:border-l sm:border-border/30">
                 <div className="font-display font-bold text-lg sm:text-xl md:text-3xl lg:text-4xl text-foreground mb-1 sm:mb-2">{counter300.count}+</div>
                 <div className="text-[9px] sm:text-[10px] md:text-xs lg:text-sm text-muted-foreground leading-tight">
-                  учасників навчили правильній торгівлі
+                  учасників навчили заробляти на p2p
                 </div>
               </div>
               <div className="text-center p-3 sm:p-2 md:p-4 sm:border-l sm:border-border/30">
                 <div className="font-display font-bold text-lg sm:text-xl md:text-3xl lg:text-4xl text-foreground mb-1 sm:mb-2">24/7</div>
                 <div className="text-[9px] sm:text-[10px] md:text-xs lg:text-sm text-muted-foreground leading-tight">
-                  індивідуальна підтримка від чотирьох саппортів
+                  індивідуальна підтримка від наших сапортів
                 </div>
               </div>
               <div ref={counter5.ref} className="text-center p-3 sm:p-2 md:p-4 sm:border-l sm:border-border/30">
@@ -107,24 +101,26 @@ const Hero = () => {
             {/* Partnerships - Subtle */}
             <div className={`mt-10 sm:mt-12 md:mt-16 transition-all duration-700 delay-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
               <p className="text-[10px] sm:text-xs text-muted-foreground/60 mb-4 sm:mb-6 uppercase tracking-widest">
-                Офіційний партнер
+                DineroLab партнер крипто-бірж
               </p>
-              <div className="flex items-center justify-center gap-8 sm:gap-10 md:gap-14">
-                {partnerships.map((partner) => (
-                  <a 
-                    key={partner.name}
-                    href={partner.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="opacity-40 hover:opacity-100 transition-all duration-300 hover:scale-110"
-                  >
-                    <img 
-                      src={partner.logo} 
-                      alt={partner.name} 
-                      className="h-8 sm:h-10 md:h-12 w-auto object-contain"
-                    />
-                  </a>
-                ))}
+              <div className="inline-block border border-border/20 rounded-xl p-4 sm:p-6 md:p-8">
+                <div className="flex items-center justify-center gap-8 sm:gap-10 md:gap-14">
+                  {partnerships.map((partner) => (
+                    <a 
+                      key={partner.name}
+                      href={partner.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="opacity-40 hover:opacity-100 transition-all duration-300 hover:scale-110"
+                    >
+                      <img 
+                        src={partner.logo} 
+                        alt={partner.name} 
+                        className="h-8 sm:h-10 md:h-12 w-auto object-contain"
+                      />
+                    </a>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
