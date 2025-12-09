@@ -30,6 +30,9 @@ const ProfitCalculator = () => {
 
   return (
     <section id="calculator" className="relative py-10 sm:py-14 md:py-16 bg-background overflow-hidden">
+      {/* Top separator line */}
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent"></div>
+      
       {/* Background effects - optimized */}
       <div className="absolute inset-0 bg-grid opacity-10"></div>
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200px] sm:w-[350px] md:w-[600px] h-[200px] sm:h-[350px] md:h-[600px] bg-primary/5 rounded-full filter blur-[60px] sm:blur-[80px] md:blur-[120px]"></div>
