@@ -45,7 +45,7 @@ const DineroLabContent = () => {
             <span className="tag">Що всередині</span>
           </div>
           <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6">
-            НАПОВНЕННЯ <span className="text-gradient">DINERO LAB</span>
+            НАПОВНЕННЯ <span className="text-gradient whitespace-nowrap">DINERO LAB</span>
           </h2>
           <p className="text-muted-foreground text-sm sm:text-base md:text-lg max-w-2xl mx-auto">
             Детальний огляд усіх можливостей та інструментів, які ви отримаєте
