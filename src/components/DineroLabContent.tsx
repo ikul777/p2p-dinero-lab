@@ -12,13 +12,13 @@ const block1Points = [
 ];
 
 const block2Points = [
-  "Тезис 1 — опис буде додано пізніше",
-  "Тезис 2 — опис буде додано пізніше",
-  "Тезис 3 — опис буде додано пізніше",
-  "Тезис 4 — опис буде додано пізніше",
-  "Тезис 5 — опис буде додано пізніше",
-  "Тезис 6 — опис буде додано пізніше",
-  "Тезис 7 — опис буде додано пізніше",
+  { title: "ФЛУД", desc: "Неформальне спілкування учасників комʼюніті не тільки на тему п2п сфери" },
+  { title: "МЕЙКЕРИ / МЕРЧАНТИ OKX", desc: "Актуальна робота з партнером OKX: видача мерчантів всім учасникам. Допомога у всіх етапах роботи з біржою напряму." },
+  { title: "МЕЙКЕРИ / МЕРЧАНТИ Bybit", desc: "Робота з партнером Bybit: видача мейкерів та мерчантів для всіх учасників по полегшеній системі. Допомога у всіх етапах роботи з біржою напряму." },
+  { title: "ОРДЕРИ", desc: "Гілка для обміну ордерами між учасниками та допомога ордерами від нашої команди для збільшення ліквідності." },
+  { title: "ДЗВІНКИ", desc: "Регулярні групові дзвінки з розборами конкретних тем, відповідями на питання учасників та обговоренням актуальних кейсів. *Індивідуальні дзвінки сапорти проводять з учасниками окремо" },
+  { title: "ПРАВИЛА БЕЗПЕКИ В P2P", desc: "Система безпеки, яка зберігає ваші кошти: ризики, помилки та розбір популярних методів скаму." },
+  { title: "КОРИСНІ СЕРВІСИ", desc: "Інструменти, сервіси, софти та віртуальні машини, які спрощують роботу, економлять час і підвищують ефективність в роботі." },
 ];
 
 const DineroLabContent = () => {
@@ -127,12 +127,17 @@ const DineroLabContent = () => {
                   }`}
                   style={{ transitionDelay: `${index * 100 + 200}ms` }}
                 >
-                  <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-primary/20 flex items-center justify-center mt-0.5">
+                  <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-primary/20 flex items-center justify-center mt-1">
                     <Check className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-primary" />
                   </div>
-                  <p className="text-sm sm:text-base md:text-lg text-foreground/90 leading-relaxed">
-                    {point}
-                  </p>
+                  <div>
+                    <p className="text-sm sm:text-base font-semibold text-foreground mb-1">
+                      {point.title}
+                    </p>
+                    <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+                      {point.desc}
+                    </p>
+                  </div>
                 </li>
               ))}
             </ul>
