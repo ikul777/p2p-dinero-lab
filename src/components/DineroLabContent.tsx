@@ -55,13 +55,13 @@ const DineroLabContent = () => {
         {/* Block 1: Image Left, Points Right */}
         <div
           ref={block1Animation.ref}
-          className={`flex flex-col lg:flex-row items-center gap-8 lg:gap-12 mb-16 sm:mb-20 md:mb-24 transition-all duration-700 ${
+          className={`flex flex-col md:flex-row items-center gap-6 md:gap-8 lg:gap-12 mb-16 sm:mb-20 md:mb-24 transition-all duration-700 ${
             block1Animation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >
           {/* Image */}
-          <div className="w-full lg:w-2/5">
-            <div className="glass-card p-2 sm:p-3 rounded-2xl group overflow-hidden max-w-sm mx-auto lg:max-w-none">
+          <div className="w-full md:w-1/3 flex-shrink-0">
+            <div className="glass-card p-2 sm:p-3 rounded-2xl group overflow-hidden max-w-xs mx-auto md:max-w-none">
               <img
                 src={dineroLabImage1}
                 alt="Dinero Lab Screenshot 1"
@@ -71,7 +71,7 @@ const DineroLabContent = () => {
           </div>
 
           {/* Points */}
-          <div className="w-full lg:w-3/5">
+          <div className="w-full md:flex-1">
             <ul className="space-y-4 sm:space-y-5">
               {block1Points.map((point, index) => (
                 <li
@@ -96,13 +96,13 @@ const DineroLabContent = () => {
         {/* Block 2: Points Left, Image Right */}
         <div
           ref={block2Animation.ref}
-          className={`flex flex-col lg:flex-row-reverse items-center gap-8 lg:gap-12 transition-all duration-700 ${
+          className={`flex flex-col md:flex-row-reverse items-center gap-6 md:gap-8 lg:gap-12 transition-all duration-700 ${
             block2Animation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >
           {/* Image */}
-          <div className="w-full lg:w-2/5">
-            <div className="glass-card p-2 sm:p-3 rounded-2xl group overflow-hidden max-w-sm mx-auto lg:max-w-none">
+          <div className="w-full md:w-1/3 flex-shrink-0">
+            <div className="glass-card p-2 sm:p-3 rounded-2xl group overflow-hidden max-w-xs mx-auto md:max-w-none">
               <img
                 src={dineroLabImage2}
                 alt="Dinero Lab Screenshot 2"
@@ -112,7 +112,7 @@ const DineroLabContent = () => {
           </div>
 
           {/* Points */}
-          <div className="w-full lg:w-3/5">
+          <div className="w-full md:flex-1">
             <ul className="space-y-4 sm:space-y-5">
               {block2Points.map((point, index) => (
                 <li
