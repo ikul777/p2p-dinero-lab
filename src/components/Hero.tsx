@@ -29,7 +29,7 @@ const Hero = () => {
   const partnersAnimation = useScrollAnimation();
   
   // Counter animations for stats
-  const counter3100 = useCounterAnimation({ end: 3100, duration: 2000, delay: 500 });
+  const counter4100 = useCounterAnimation({ end: 4100, duration: 2000, delay: 500 });
   const counter300 = useCounterAnimation({ end: 300, duration: 1800, delay: 600 });
   const counter5 = useCounterAnimation({ end: 5, duration: 1200, delay: 700 });
 
@@ -82,9 +82,9 @@ const Hero = () => {
             
             {/* Stats */}
             <div className={`mt-8 sm:mt-10 md:mt-16 grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 md:gap-6 max-w-xs sm:max-w-2xl md:max-w-3xl mx-auto transition-all duration-700 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-              <div ref={counter3100.ref} className="text-center p-2 sm:p-2 md:p-4 group">
+              <div ref={counter4100.ref} className="text-center p-2 sm:p-2 md:p-4 group">
                 <div className="font-display font-bold text-sm sm:text-lg md:text-2xl lg:text-3xl text-primary mb-1 sm:mb-2 whitespace-nowrap group-hover:text-glow transition-all">
-                  {counter3100.count} <span className="text-[8px] sm:text-sm md:text-lg">USDT</span>
+                  {counter4100.count} <span className="text-[8px] sm:text-sm md:text-lg">USDT</span>
                 </div>
                 <div className="text-[8px] sm:text-[9px] md:text-xs lg:text-sm text-muted-foreground leading-tight">
                   середній дохід учасника
