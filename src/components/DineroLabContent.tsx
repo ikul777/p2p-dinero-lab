@@ -4,11 +4,11 @@ import dineroLabImage1 from '@/assets/dinerolab-content-1.png';
 import dineroLabImage2 from '@/assets/dinerolab-content-2.png';
 
 const block1Points = [
-  "Тезис 1 — опис буде додано пізніше",
-  "Тезис 2 — опис буде додано пізніше",
-  "Тезис 3 — опис буде додано пізніше",
-  "Тезис 4 — опис буде додано пізніше",
-  "Тезис 5 — опис буде додано пізніше",
+  { title: "ЗАГАЛЬНА ІНФОРМАЦІЯ", desc: "Меню та структура всіх інших гілок для зручної навігації. Контакти сапортів, реферальна програма, правила перебування. Інструкція з чого почати." },
+  { title: "P2P ЗВʼЯЗКИ", desc: "13 актуальних авторських п2п звʼязок з профітом 4-8% для роботи. Оффлайн, онлайн, з €/£/₴, під Українські та Європейські банки." },
+  { title: "РОБОТА З БАНКАМИ / БІРЖАМИ", desc: "Практичні інструкції по роботі з банками та біржами: прогріви, ліміти, ризики, блокування, логіка поведінки антифрод системи та актуальні рішення під роботу." },
+  { title: "ДОДАТКОВА ІНФОРМАЦІЯ", desc: "Корисні матеріали під кожну звʼязку, приклади та нюанси, які не входять у стандартні гайди, але критично впливають на результат." },
+  { title: "CHAT 2.0", desc: "Живе комʼюніті з постійною взаємодією: питання, відповіді, обговорення ситуацій, досвід учасників і підтримка в реальному часі в груповому форматі." },
 ];
 
 const block2Points = [
@@ -81,12 +81,17 @@ const DineroLabContent = () => {
                   }`}
                   style={{ transitionDelay: `${index * 100 + 200}ms` }}
                 >
-                  <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-primary/20 flex items-center justify-center mt-0.5">
+                  <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-primary/20 flex items-center justify-center mt-1">
                     <Check className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-primary" />
                   </div>
-                  <p className="text-sm sm:text-base md:text-lg text-foreground/90 leading-relaxed">
-                    {point}
-                  </p>
+                  <div>
+                    <p className="text-sm sm:text-base font-semibold text-foreground mb-1">
+                      {point.title}
+                    </p>
+                    <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+                      {point.desc}
+                    </p>
+                  </div>
                 </li>
               ))}
             </ul>
