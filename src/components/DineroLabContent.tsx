@@ -60,8 +60,8 @@ const DineroLabContent = () => {
           }`}
         >
           {/* Image */}
-          <div className="w-full lg:w-1/2">
-            <div className="glass-card p-2 sm:p-3 rounded-2xl group overflow-hidden">
+          <div className="w-full lg:w-2/5">
+            <div className="glass-card p-2 sm:p-3 rounded-2xl group overflow-hidden max-w-sm mx-auto lg:max-w-none">
               <img
                 src={dineroLabImage1}
                 alt="Dinero Lab Screenshot 1"
@@ -71,7 +71,7 @@ const DineroLabContent = () => {
           </div>
 
           {/* Points */}
-          <div className="w-full lg:w-1/2">
+          <div className="w-full lg:w-3/5">
             <ul className="space-y-4 sm:space-y-5">
               {block1Points.map((point, index) => (
                 <li
@@ -101,8 +101,8 @@ const DineroLabContent = () => {
           }`}
         >
           {/* Image */}
-          <div className="w-full lg:w-1/2">
-            <div className="glass-card p-2 sm:p-3 rounded-2xl group overflow-hidden">
+          <div className="w-full lg:w-2/5">
+            <div className="glass-card p-2 sm:p-3 rounded-2xl group overflow-hidden max-w-sm mx-auto lg:max-w-none">
               <img
                 src={dineroLabImage2}
                 alt="Dinero Lab Screenshot 2"
@@ -112,7 +112,7 @@ const DineroLabContent = () => {
           </div>
 
           {/* Points */}
-          <div className="w-full lg:w-1/2">
+          <div className="w-full lg:w-3/5">
             <ul className="space-y-4 sm:space-y-5">
               {block2Points.map((point, index) => (
                 <li
