@@ -2,6 +2,7 @@ import Hero from '../components/Hero';
 import ProfitCalculator from '../components/ProfitCalculator';
 import Problems from '../components/Problems';
 import Solution from '../components/Solution';
+import DineroLabContent from '../components/DineroLabContent';
 import Testimonials from '../components/Testimonials';
 import FAQ from '../components/FAQ';
 import CTA from '../components/CTA';
@@ -15,6 +16,7 @@ const Index = () => {
       <ProfitCalculator />
       <Problems />
       <Solution />
+      <DineroLabContent />
       <Testimonials />
       <FAQ />
       <CTA />
