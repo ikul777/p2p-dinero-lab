@@ -46,7 +46,7 @@ const CTA = () => {
                 {/* Content */}
                 <div className="flex-1 text-center md:text-left">
                   <h3 className="font-display text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold mb-2 sm:mb-3 text-foreground">
-                    Dinero Lab VIP
+                    DineroLab VIP
                   </h3>
                   <p className="text-xs sm:text-sm md:text-base text-muted-foreground mb-4 sm:mb-5 md:mb-6">
                     Отримай доступ до топових P2P-звʼязок та команди професіоналів
@@ -71,7 +71,7 @@ const CTA = () => {
                     rel="noopener noreferrer"
                     className="btn-primary btn-pulse inline-flex items-center gap-2 px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-5 rounded-full text-sm sm:text-base md:text-xl font-semibold text-primary-foreground w-full md:w-auto justify-center"
                   >
-                    Вступити в Dinero Lab
+                    Вступити в DineroLab
                     <ArrowRight size={18} className="sm:w-5 sm:h-5 md:w-6 md:h-6" />
                   </a>
                 </div>
@@ -82,7 +82,7 @@ const CTA = () => {
                     <div className="absolute inset-0 bg-primary/30 rounded-full blur-3xl animate-pulse-glow"></div>
                     <img 
                       src="/lovable-uploads/40d7ae54-8f62-41c0-aa32-9f26100d352c.png" 
-                      alt="Dinero Lab Logo" 
+                      alt="DineroLab Logo" 
                       className="relative w-20 h-20 sm:w-24 sm:h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 object-contain"
                     />
                   </div>

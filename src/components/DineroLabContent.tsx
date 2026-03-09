@@ -45,7 +45,7 @@ const DineroLabContent = () => {
             <span className="tag">Що всередині</span>
           </div>
           <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6">
-            НАПОВНЕННЯ <span className="text-gradient whitespace-nowrap">DINERO LAB</span>
+            НАПОВНЕННЯ <span className="text-gradient whitespace-nowrap">DINEROLAB</span>
           </h2>
           <p className="text-muted-foreground text-sm sm:text-base md:text-lg max-w-2xl mx-auto">
             Детальний огляд усіх можливостей та інструментів, які ви отримаєте
@@ -64,7 +64,7 @@ const DineroLabContent = () => {
             <div className="glass-card p-2 sm:p-3 rounded-2xl group overflow-hidden max-w-xs mx-auto md:max-w-none">
               <img
                 src={dineroLabImage1}
-                alt="Dinero Lab Screenshot 1"
+                alt="DineroLab Screenshot 1"
                 className="w-full h-auto rounded-xl transition-transform duration-500 group-hover:scale-[1.02]"
               />
             </div>
@@ -110,7 +110,7 @@ const DineroLabContent = () => {
             <div className="glass-card p-2 sm:p-3 rounded-2xl group overflow-hidden max-w-xs mx-auto md:max-w-none">
               <img
                 src={dineroLabImage2}
-                alt="Dinero Lab Screenshot 2"
+                alt="DineroLab Screenshot 2"
                 className="w-full h-auto rounded-xl transition-transform duration-500 group-hover:scale-[1.02]"
               />
             </div>

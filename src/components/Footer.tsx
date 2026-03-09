@@ -76,7 +76,7 @@ const Footer = () => {
             
             {/* Copyright */}
             <p className="text-[9px] sm:text-xs text-muted-foreground/60">
-              © {year} Dinero Lab. Всі права захищені.
+              © {year} DineroLab. Всі права захищені.
             </p>
           </div>
         </div>
