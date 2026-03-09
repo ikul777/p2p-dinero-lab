@@ -48,7 +48,7 @@ const Solution = () => {
             <span className="tag mb-2 sm:mb-3 md:mb-4 inline-block text-[10px] sm:text-xs">Рішення</span>
             <h2 className="font-display text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-2 sm:mb-3 md:mb-4">
               <span className="text-foreground">Що таке </span>
-              <span className="text-gradient">Dinero Lab</span>
+              <span className="text-gradient">DineroLab</span>
               <span className="text-foreground">?</span>
             </h2>
             <p className="text-xs sm:text-sm md:text-base text-muted-foreground max-w-xl mx-auto px-2">
