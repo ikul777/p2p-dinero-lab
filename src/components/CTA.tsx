@@ -46,7 +46,7 @@ const CTA = () => {
                 {/* Content */}
                 <div className="flex-1 text-center md:text-left">
                   <h3 className="font-display text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold mb-2 sm:mb-3 text-foreground">
-                    Dinero Lab VIP
+                    DineroLab VIP
                   </h3>
                   <p className="text-xs sm:text-sm md:text-base text-muted-foreground mb-4 sm:mb-5 md:mb-6">
                     Отримай доступ до топових P2P-звʼязок та команди професіоналів
