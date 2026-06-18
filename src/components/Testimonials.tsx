@@ -232,7 +232,7 @@ const Testimonials = () => {
             <div className="flex flex-col items-center gap-2 flex-1">
               <span className="text-xs font-mono font-bold tracking-widest text-foreground">
                 {String(selectedIndex + 1).padStart(2, '0')}
-                <span className="text-muted-foreground/50"> / 247</span>
+                <span className="text-muted-foreground/50"> / 147</span>
               </span>
               <div className="relative h-[2px] w-full max-w-[120px] bg-border rounded-full overflow-hidden">
                 <div
