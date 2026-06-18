@@ -124,8 +124,8 @@ const Hero = () => {
               <p className={`text-[10px] sm:text-xs text-muted-foreground/60 mb-4 sm:mb-6 uppercase tracking-widest transition-all duration-700 ${partnersAnimation.isVisible ? 'opacity-100' : 'opacity-0'}`}>
                 DineroLab партнер крипто-бірж
               </p>
-              <div className="inline-block border border-border/20 rounded-xl p-4 sm:p-6 md:p-8 hover:border-border/40 transition-colors">
-                <div className="flex items-center justify-center gap-8 sm:gap-10 md:gap-14">
+              <div className="inline-block border border-border/20 rounded-xl px-4 py-3 sm:p-6 md:p-8 hover:border-border/40 transition-colors">
+                <div className="flex items-center justify-center gap-6 sm:gap-10 md:gap-14">
                   {partnerships.map((partner, index) => (
                     <a 
                       key={partner.name}
