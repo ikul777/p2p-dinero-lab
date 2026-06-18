@@ -39,7 +39,7 @@ const Hero = () => {
   }, []);
   
   return (
-    <section className="relative flex flex-col justify-center overflow-hidden animated-gradient-bg aurora-bg min-h-screen pt-20 pb-10 sm:pt-24 sm:pb-12 md:pt-28 md:pb-16">
+    <section className="relative flex min-h-[100svh] flex-col justify-center overflow-hidden animated-gradient-bg aurora-bg pt-16 pb-8 sm:pt-24 sm:pb-12 md:pt-28 md:pb-16">
       {/* Background - optimized for mobile */}
       <div className="absolute inset-0 bg-grid opacity-20"></div>
       <div className="absolute top-1/4 left-1/4 w-[150px] sm:w-[250px] md:w-[500px] h-[150px] sm:h-[250px] md:h-[500px] bg-primary/8 rounded-full filter blur-[60px] sm:blur-[80px] md:blur-[120px] animate-pulse-glow"></div>
@@ -50,29 +50,29 @@ const Hero = () => {
         <div className="max-w-5xl mx-auto">
           <div className="text-center">
             {/* Logo with glow */}
-            <div className={`mb-6 sm:mb-8 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+            <div className={`mb-4 sm:mb-8 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
               <div className="inline-block logo-glow">
                 <img
                   src={logoWhite.url}
                   alt="DineroLab"
-                  className="h-12 sm:h-14 md:h-16 lg:h-20 w-auto mx-auto object-contain"
+                  className="h-10 sm:h-14 md:h-16 lg:h-20 w-auto mx-auto object-contain"
                 />
               </div>
             </div>
             {/* Main heading */}
-            <h1 className={`hero-display text-[clamp(22px,6.8vw,28px)] leading-[1.1] sm:text-5xl sm:leading-tight md:text-6xl lg:text-7xl mb-5 sm:mb-7 transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 translate-y-0 blur-0' : 'opacity-0 translate-y-10 blur-sm'}`}>
+            <h1 className={`hero-display mx-auto max-w-[22rem] text-[clamp(20px,5.9vw,24px)] leading-[1.12] sm:max-w-none sm:text-4xl sm:leading-tight md:text-5xl lg:text-6xl mb-4 sm:mb-7 transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 translate-y-0 blur-0' : 'opacity-0 translate-y-10 blur-sm'}`}>
               <span className="block text-gradient-animated">P2P АРБІТРАЖ</span>
               <span className="block mt-1 sm:mt-2 text-foreground/95">
                 твій інструмент для
               </span>
-              <span className="block mt-1 sm:mt-0 text-gradient sm:accent-underline whitespace-nowrap text-[clamp(20px,6.2vw,28px)] sm:text-inherit">
+              <span className="block mt-1 sm:mt-0 text-gradient sm:accent-underline whitespace-nowrap text-[clamp(18.5px,5.45vw,22px)] sm:text-4xl md:text-5xl lg:text-6xl">
                 стабільного заробітку
               </span>
             </h1>
             
             {/* Subheading */}
-            <p className={`text-[12px] sm:text-sm md:text-base text-muted-foreground/80 max-w-full sm:max-w-xl mx-auto mt-2 mb-8 sm:mb-10 leading-relaxed sm:text-balance transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-              Авторські P2P звʼязки, постійні оновлення, досвідчені сапорти, партнерства з біржами та доступ до комʼюніті конкурентів якому немає на ринку
+            <p className={`text-[12px] sm:text-sm md:text-base text-muted-foreground/80 max-w-[21rem] sm:max-w-xl mx-auto mt-2 mb-6 sm:mb-10 leading-[1.65] sm:text-balance transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+              Авторські P2P-звʼязки, постійні оновлення, досвідчені сапорти, партнерства з біржами та доступ до сильного комʼюніті.
             </p>
             
             {/* CTA Button with pulse */}
@@ -87,28 +87,28 @@ const Hero = () => {
             </div>
             
             {/* Stats */}
-            <div className={`mt-8 sm:mt-10 md:mt-16 grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 md:gap-5 max-w-[340px] sm:max-w-2xl md:max-w-3xl mx-auto transition-all duration-700 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-              <div ref={counter4100.ref} className="stat-card text-center p-3 sm:p-3 md:p-5 group">
-                <div className="font-display font-bold text-lg sm:text-xl md:text-2xl lg:text-3xl text-gradient mb-1 sm:mb-2 whitespace-nowrap transition-all">
-                  {counter4100.count} <span className="text-[9px] sm:text-sm md:text-lg">USDT</span>
+            <div className={`mt-7 sm:mt-10 md:mt-16 grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 md:gap-5 max-w-[340px] sm:max-w-2xl md:max-w-4xl mx-auto transition-all duration-700 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+              <div ref={counter4100.ref} className="stat-card text-center p-3 sm:p-3 md:p-5 group min-h-[78px] sm:min-h-0">
+                <div className="font-display font-bold text-lg sm:text-xl md:text-[26px] lg:text-[28px] text-gradient mb-1 sm:mb-2 whitespace-nowrap transition-all">
+                  {counter4100.count} <span className="text-[9px] sm:text-[10px] md:text-xs">USDT</span>
                 </div>
                 <div className="text-[9px] sm:text-[10px] md:text-xs lg:text-sm text-muted-foreground leading-tight">
                   середній дохід учасника
                 </div>
               </div>
-              <div ref={counter300.ref} className="stat-card text-center p-3 sm:p-3 md:p-5 group">
+              <div ref={counter300.ref} className="stat-card text-center p-3 sm:p-3 md:p-5 group min-h-[78px] sm:min-h-0">
                 <div className="font-display font-bold text-lg sm:text-xl md:text-2xl lg:text-3xl text-foreground mb-1 sm:mb-2 group-hover:text-primary transition-colors">{counter300.count}+</div>
                 <div className="text-[9px] sm:text-[10px] md:text-xs lg:text-sm text-muted-foreground leading-tight">
                   учасників навчили заробляти на p2p
                 </div>
               </div>
-              <div className="stat-card text-center p-3 sm:p-3 md:p-5 group">
+              <div className="stat-card text-center p-3 sm:p-3 md:p-5 group min-h-[78px] sm:min-h-0">
                 <div className="font-display font-bold text-lg sm:text-xl md:text-2xl lg:text-3xl text-foreground mb-1 sm:mb-2 group-hover:text-primary transition-colors">24/7</div>
                 <div className="text-[9px] sm:text-[10px] md:text-xs lg:text-sm text-muted-foreground leading-tight">
                   індивідуальна підтримка від наших сапортів
                 </div>
               </div>
-              <div ref={counter5.ref} className="stat-card text-center p-3 sm:p-3 md:p-5 group">
+              <div ref={counter5.ref} className="stat-card text-center p-3 sm:p-3 md:p-5 group min-h-[78px] sm:min-h-0">
                 <div className="font-display font-bold text-lg sm:text-xl md:text-2xl lg:text-3xl text-foreground mb-1 sm:mb-2 group-hover:text-primary transition-colors">{counter5.count}+</div>
                 <div className="text-[9px] sm:text-[10px] md:text-xs lg:text-sm text-muted-foreground leading-tight">
                   роки досвіду команди
@@ -119,7 +119,7 @@ const Hero = () => {
             {/* Partnerships - Subtle */}
             <div 
               ref={partnersAnimation.ref}
-              className={`mt-10 sm:mt-12 md:mt-16 mb-4 sm:mb-6 transition-all duration-1000 ease-out ${partnersAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+              className={`mt-8 sm:mt-12 md:mt-16 mb-1 sm:mb-6 transition-all duration-1000 ease-out ${partnersAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
             >
               <p className={`text-[10px] sm:text-xs text-muted-foreground/60 mb-4 sm:mb-6 uppercase tracking-widest transition-all duration-700 ${partnersAnimation.isVisible ? 'opacity-100' : 'opacity-0'}`}>
                 DineroLab партнер крипто-бірж

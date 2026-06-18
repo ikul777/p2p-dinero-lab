@@ -39,7 +39,7 @@ const FAQ = () => {
   };
   
   return (
-    <section id="faq" className="py-12 sm:py-16 md:py-24 lg:py-32 bg-background relative overflow-hidden">
+    <section id="faq" className="py-12 sm:py-16 md:py-24 lg:py-28 bg-background relative overflow-hidden">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent"></div>
       <div className="absolute top-1/4 left-1/4 w-[150px] sm:w-[200px] md:w-[300px] h-[150px] sm:h-[200px] md:h-[300px] bg-primary/5 rounded-full filter blur-[60px] sm:blur-[80px] md:blur-[120px]"></div>
       
@@ -51,7 +51,7 @@ const FAQ = () => {
             className={`text-center mb-8 sm:mb-10 md:mb-12 transition-all duration-700 ${headerAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
           >
             <span className="tag mb-2 sm:mb-3 md:mb-4 inline-block text-[10px] sm:text-xs">FAQ</span>
-            <h2 className="font-display text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-2 sm:mb-3 md:mb-4">
+            <h2 className="font-display text-[1.35rem] sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-2 sm:mb-3 md:mb-4 text-balance">
               <span className="text-foreground">Популярні </span>
               <span className="text-gradient">питання</span>
             </h2>

@@ -13,7 +13,7 @@ const CTA = () => {
   const cardAnimation = useScrollAnimation({ threshold: 0.2 });
 
   return (
-    <section id="join" className="py-12 sm:py-16 md:py-24 lg:py-32 bg-background relative overflow-hidden">
+    <section id="join" className="py-12 sm:py-16 md:py-24 lg:py-28 bg-background relative overflow-hidden">
       <div className="absolute inset-0 bg-grid opacity-20"></div>
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent"></div>
       <div className="absolute top-1/4 left-1/4 w-[150px] sm:w-[200px] md:w-[400px] h-[150px] sm:h-[200px] md:h-[400px] bg-primary/8 rounded-full filter blur-[60px] sm:blur-[80px] md:blur-[120px]"></div>
@@ -27,12 +27,12 @@ const CTA = () => {
             className={`text-center mb-8 sm:mb-10 md:mb-12 transition-all duration-700 ${headerAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
           >
             <span className="tag mb-2 sm:mb-3 md:mb-4 inline-block text-[10px] sm:text-xs">Приєднуйся зараз</span>
-            <h2 className="font-display text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-2 sm:mb-3 md:mb-4">
+            <h2 className="font-display text-[1.35rem] sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-2 sm:mb-3 md:mb-4 text-balance">
               <span className="text-foreground">P2P без комʼюніті —</span>
               <br />
               <span className="text-foreground/30">це злиті гроші</span>
             </h2>
-            <p className="text-xs sm:text-sm md:text-base text-muted-foreground max-w-xl mx-auto px-2">
+            <p className="text-xs sm:text-sm md:text-base text-muted-foreground max-w-xl mx-auto px-2 text-balance">
               Отримай доступ до перевірених P2P-звʼязок і сильного комʼюніті
             </p>
           </div>
@@ -42,7 +42,7 @@ const CTA = () => {
             ref={cardAnimation.ref}
             className={`transition-all duration-700 delay-150 ${cardAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
           >
-            <div className="animated-border p-5 sm:p-6 md:p-10 rounded-xl sm:rounded-2xl">
+            <div className="animated-border p-4 sm:p-6 md:p-10 rounded-xl sm:rounded-2xl">
               <div className="flex flex-col md:flex-row items-center gap-5 sm:gap-6 md:gap-8">
                 {/* Content */}
                 <div className="flex-1 text-center md:text-left">

@@ -99,7 +99,7 @@ const Testimonials = () => {
   return (
     <section
       id="testimonials"
-      className="py-14 sm:py-20 md:py-28 lg:py-32 bg-background relative overflow-hidden"
+      className="py-12 sm:py-20 md:py-28 lg:py-32 bg-background relative overflow-hidden"
     >
       {/* top border */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
@@ -127,12 +127,12 @@ const Testimonials = () => {
               </span>
             </div>
 
-            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tighter">
+            <h2 className="font-display text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-normal text-balance">
               <span className="text-foreground">Реальні </span>
               <span className="text-gradient">кейси</span>
             </h2>
 
-            <p className="text-xs sm:text-sm text-muted-foreground/80 leading-relaxed max-w-[280px] sm:max-w-md mx-auto">
+            <p className="text-xs sm:text-sm text-muted-foreground/80 leading-relaxed max-w-[280px] sm:max-w-md mx-auto text-balance">
               Скріншоти живих відгуків з нашого приватного каналу P2P FEEDBACK
             </p>
           </div>
