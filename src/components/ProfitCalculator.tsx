@@ -202,15 +202,25 @@ const ProfitCalculator = () => {
                       <p className="text-xs sm:text-base md:text-lg lg:text-xl font-display font-bold text-foreground/70 leading-tight whitespace-nowrap">
                         ${formatNumber(maxProfit)}
                       </p>
-                      <p className="text-[10px] sm:text-xs text-muted-foreground mt-1">8%/круг</p>
+                      <p className="text-[10px] sm:text-xs text-muted-foreground mt-1">16%/день</p>
                     </div>
                   </div>
                 </div>
               </div>
-              
+
+              {/* Soft cap notice */}
+              {showSoftCapNote && (
+                <p
+                  role="note"
+                  className="mt-5 sm:mt-6 text-[11px] sm:text-xs text-primary/90 bg-primary/5 border border-primary/20 rounded-xl px-3 sm:px-4 py-2.5 sm:py-3 text-center"
+                >
+                  Для бюджету понад {formatNumber(softCap)} USDT результати орієнтовні — звʼяжись із саппортом для індивідуального розрахунку.
+                </p>
+              )}
+
               {/* Disclaimer */}
               <p className="text-[10px] sm:text-xs text-muted-foreground/60 text-center mt-6 sm:mt-8">
-                * Розрахунок є орієнтовним та залежить від ринкових умов і особистої активності
+                * Розрахунок: 2 круги/день × {workingDays} робочих дні. Орієнтовний, залежить від ринкових умов і особистої активності.
               </p>
               
               {/* CTA */}
