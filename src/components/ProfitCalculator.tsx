@@ -144,12 +144,15 @@ const ProfitCalculator = () => {
                   </div>
                   
                   {/* Quick buttons */}
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-2" role="group" aria-label="Швидкий вибір бюджету">
                     {[500, 1000, 3000, 5000].map((amount) => (
                       <button
                         key={amount}
+                        type="button"
                         onClick={() => setBudget(amount)}
-                        className={`quick-btn px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm font-medium transition-all ${
+                        aria-pressed={budget === amount}
+                        aria-label={`Встановити бюджет ${formatNumber(amount)} USDT`}
+                        className={`quick-btn px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm font-medium transition-all min-h-11 ${
                           budget === amount 
                             ? 'bg-primary text-primary-foreground active' 
                             : 'bg-background/50 border border-border/50 text-muted-foreground hover:border-primary/50 hover:text-foreground'
