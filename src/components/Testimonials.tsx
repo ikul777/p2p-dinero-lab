@@ -10,13 +10,9 @@ import t4 from '@/assets/testimonials/testimonial-6755.png.asset.json';
 import t5 from '@/assets/testimonials/testimonial-6756.png.asset.json';
 import t6 from '@/assets/testimonials/testimonial-6757.png.asset.json';
 import t7 from '@/assets/testimonials/testimonial-6760.png.asset.json';
-import t8 from '@/assets/testimonials/testimonial-6761.png.asset.json';
-import t9 from '@/assets/testimonials/testimonial-6762.png.asset.json';
-import t10 from '@/assets/testimonials/testimonial-6763.png.asset.json';
 
 const screenshots: string[] = [
-  t1.url, t2.url, t3.url, t4.url, t5.url,
-  t6.url, t7.url, t8.url, t9.url, t10.url,
+  t1.url, t2.url, t3.url, t4.url, t5.url, t6.url, t7.url,
 ];
 
 const Testimonials = () => {
@@ -107,10 +103,6 @@ const Testimonials = () => {
               gridAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
           >
-            {/* edge fades */}
-            <div className="pointer-events-none absolute inset-y-0 left-0 w-12 sm:w-20 md:w-32 bg-gradient-to-r from-background to-transparent z-20" />
-            <div className="pointer-events-none absolute inset-y-0 right-0 w-12 sm:w-20 md:w-32 bg-gradient-to-l from-background to-transparent z-20" />
-
             <div className="overflow-hidden" ref={emblaRef}>
               <div className="flex items-center touch-pan-y">
                 {screenshots.map((src, i) => {
@@ -118,7 +110,7 @@ const Testimonials = () => {
                   return (
                     <div
                       key={i}
-                      className="flex-[0_0_85%] sm:flex-[0_0_55%] md:flex-[0_0_42%] lg:flex-[0_0_34%] min-w-0 px-2 sm:px-3 md:px-4"
+                      className="flex-[0_0_72%] sm:flex-[0_0_50%] md:flex-[0_0_38%] lg:flex-[0_0_30%] min-w-0 px-2 sm:px-3 md:px-4"
                     >
                       <button
                         type="button"
@@ -126,8 +118,8 @@ const Testimonials = () => {
                         aria-label={isActive ? `Відкрити відгук ${i + 1}` : `Перейти до відгуку ${i + 1}`}
                         className={`group relative w-full overflow-hidden rounded-2xl bg-card/40 backdrop-blur ring-1 transition-all duration-500 ${
                           isActive
-                            ? 'ring-primary/60 shadow-[0_30px_80px_-30px_hsl(var(--primary)/0.5)] scale-100 opacity-100'
-                            : 'ring-border/30 opacity-50 scale-[0.9] hover:opacity-75'
+                            ? 'ring-primary/60 shadow-[0_20px_60px_-20px_hsl(var(--primary)/0.45)] scale-100 opacity-100 z-10'
+                            : 'ring-border/30 opacity-60 scale-[0.93] hover:opacity-85'
                         }`}
                       >
                         {/* glass shine top */}
