@@ -89,7 +89,7 @@ const Problems = () => {
               <div className="absolute -inset-0.5 bg-gradient-to-r from-destructive/50 via-primary/50 to-destructive/50 rounded-lg sm:rounded-xl blur-sm animate-pulse-glow"></div>
               <div className="relative glass-card px-4 py-3 sm:px-5 sm:py-4 md:px-8 md:py-6 rounded-lg sm:rounded-xl border-l-2 border-primary">
                 <p className="text-xs sm:text-sm md:text-base text-foreground font-medium">
-                  Без перевірених звʼязок та підтримки — твій бюджет просто згорить. 🔥
+                  Без перевірених звʼязок та підтримки — твій бюджет просто згорить 🔥
                 </p>
               </div>
             </div>
