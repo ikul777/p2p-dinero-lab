@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { useCounterAnimation } from '@/hooks/use-counter-animation';
 import { useScrollAnimation } from '@/hooks/use-scroll-animation';
+import logoWhite from '@/assets/dinerolab-logo-white.png.asset.json';
 
 const partnerships = [
   {
