@@ -123,7 +123,7 @@ const Testimonials = () => {
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-primary" />
               </span>
               <span className="text-[10px] uppercase tracking-[0.2em] font-bold text-primary">
-                Live • Відгуки
+                &nbsp;ВІДГУКИ ТА РЕЗУЛЬТАТИ
               </span>
             </div>
 
@@ -133,7 +133,7 @@ const Testimonials = () => {
             </h2>
 
             <p className="text-xs sm:text-sm text-muted-foreground/80 leading-relaxed max-w-[280px] sm:max-w-md mx-auto text-balance">
-              Скріншоти живих відгуків з нашого приватного каналу P2P FEEDBACK
+              Скріншоти живих відгуків учасників з відкритого каналу P2P FEEDBACK
             </p>
           </div>
 
