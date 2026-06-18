@@ -191,7 +191,7 @@ const Testimonials = () => {
                             alt={`Відгук ${i + 1} — DineroLab`}
                             loading="lazy"
                             draggable={false}
-                            className="absolute inset-0 w-full h-full object-cover object-top select-none"
+                            className="absolute inset-0 w-full h-full object-contain select-none bg-card"
                           />
 
                           {/* bottom darken */}
