@@ -275,6 +275,7 @@ const Testimonials = () => {
           onClick={close}
           role="dialog"
           aria-modal="true"
+          aria-label={`Відгук ${lightboxIndex + 1} з ${screenshots.length}`}
           translate="no"
         >
           <div className="absolute top-4 left-4 sm:top-6 sm:left-6 px-3 py-1.5 rounded-full bg-background/70 border border-border/50 text-xs sm:text-sm text-muted-foreground backdrop-blur font-mono">
@@ -283,11 +284,12 @@ const Testimonials = () => {
 
           <button
             type="button"
+            autoFocus
             onClick={(e) => { e.stopPropagation(); close(); }}
-            className="absolute top-4 right-4 sm:top-6 sm:right-6 w-10 h-10 rounded-full bg-background/80 border border-border flex items-center justify-center hover:bg-primary/10 hover:border-primary/50 transition-all z-10"
-            aria-label="Закрити"
+            className="absolute top-4 right-4 sm:top-6 sm:right-6 w-11 h-11 rounded-full bg-background/80 border border-border flex items-center justify-center hover:bg-primary/10 hover:border-primary/50 transition-all z-10"
+            aria-label="Закрити перегляд"
           >
-            <X size={20} />
+            <X size={20} aria-hidden="true" />
           </button>
 
           <button

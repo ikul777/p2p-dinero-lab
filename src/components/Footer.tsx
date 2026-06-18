@@ -39,19 +39,19 @@ const Footer = () => {
                 href="https://t.me/+iDCbfd3Bm8wxMzZi" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="social-icon text-muted-foreground"
-                aria-label="Telegram"
+                className="social-icon text-muted-foreground inline-flex items-center justify-center min-w-11 min-h-11 rounded-md"
+                aria-label="Telegram канал DineroLab"
               >
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="sm:w-[18px] sm:h-[18px]"><path d="m22 2-7 20-4-9-9-4Z" /><path d="M22 2 11 13" /></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4Z" /><path d="M22 2 11 13" /></svg>
               </a>
               <a 
                 href="https://www.instagram.com/1ikul/" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="social-icon text-muted-foreground"
-                aria-label="Instagram"
+                className="social-icon text-muted-foreground inline-flex items-center justify-center min-w-11 min-h-11 rounded-md"
+                aria-label="Instagram DineroLab"
               >
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="sm:w-[18px] sm:h-[18px]"><rect width="20" height="20" x="2" y="2" rx="5" ry="5" /><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" /><line x1="17.5" x2="17.51" y1="6.5" y2="6.5" /></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5" ry="5" /><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" /><line x1="17.5" x2="17.51" y1="6.5" y2="6.5" /></svg>
               </a>
               <a 
                 href="https://t.me/ikul777" 
