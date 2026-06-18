@@ -166,17 +166,6 @@ const Testimonials = () => {
                               : 'border border-border/40'
                           }`}
                         >
-                          {/* number badge */}
-                          <div
-                            className={`absolute top-3 left-3 z-20 w-7 h-7 flex items-center justify-center rounded-full text-[10px] font-mono font-bold transition-all duration-500 ${
-                              isActive
-                                ? 'bg-primary text-primary-foreground shadow-lg shadow-primary/40'
-                                : 'bg-background/70 text-muted-foreground border border-border/50'
-                            }`}
-                          >
-                            {String(i + 1).padStart(2, '0')}
-                          </div>
-
                           {/* zoom hint */}
                           <div
                             className={`absolute top-3 right-3 z-20 w-8 h-8 rounded-full bg-background/50 backdrop-blur-md border border-border/40 flex items-center justify-center transition-all duration-500 ${
@@ -185,6 +174,7 @@ const Testimonials = () => {
                           >
                             <ZoomIn size={14} className="text-foreground/80" />
                           </div>
+
 
                           {/* image */}
                           <img
