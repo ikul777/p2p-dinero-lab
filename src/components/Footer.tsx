@@ -20,10 +20,11 @@ const Footer = () => {
           {/* Logo and tagline */}
           <div className="text-center md:text-left">
             <Link to="/" onClick={handleLogoClick} className="inline-block mb-1 sm:mb-2 logo-glow">
-              <h1 className="font-display text-base sm:text-lg md:text-xl font-bold">
-                <span className="text-foreground">Dinero</span>
-                <span className="text-primary">Lab</span>
-              </h1>
+              <img
+                src={logoWhite.url}
+                alt="DineroLab"
+                className="h-10 sm:h-12 md:h-14 w-auto mx-auto md:mx-0 object-contain"
+              />
             </Link>
             <p className="text-[10px] sm:text-xs md:text-sm text-muted-foreground">
               P2P-арбітраж, який приносить дохід кожного дня
