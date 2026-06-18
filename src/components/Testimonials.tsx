@@ -133,7 +133,7 @@ const Testimonials = () => {
                   return (
                     <div
                       key={i}
-                      className="flex-[0_0_85%] sm:flex-[0_0_52%] md:flex-[0_0_40%] lg:flex-[0_0_32%] min-w-0 px-2 sm:px-3 md:px-4"
+                      className="flex-[0_0_60%] sm:flex-[0_0_52%] md:flex-[0_0_40%] lg:flex-[0_0_32%] min-w-0 px-2 sm:px-3 md:px-4"
                     >
                       <button
                         type="button"
@@ -143,8 +143,8 @@ const Testimonials = () => {
                           isActive
                             ? 'scale-100 opacity-100 z-10'
                             : distance === 1
-                              ? `scale-[0.92] opacity-40 sm:scale-[0.82] sm:opacity-25 sm:blur-[2px] ${i < selectedIndex ? '-rotate-3 sm:-rotate-6' : 'rotate-3 sm:rotate-6'}`
-                              : 'scale-[0.85] opacity-20 sm:scale-[0.7] sm:opacity-10 sm:blur-[3px]'
+                              ? `scale-[0.82] opacity-25 blur-[2px] ${i < selectedIndex ? '-rotate-6' : 'rotate-6'}`
+                              : 'scale-[0.7] opacity-10 blur-[3px]'
                         }`}
                       >
                         {/* outer red glow */}
