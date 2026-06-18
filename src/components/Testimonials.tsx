@@ -280,7 +280,7 @@ const Testimonials = () => {
               <div className="absolute -inset-0.5 bg-gradient-to-r from-primary to-primary/60 rounded-2xl blur opacity-30 group-hover:opacity-60 transition-opacity duration-500" />
               <div className="relative flex items-center justify-between px-5 sm:px-6 py-4 sm:py-5 bg-card rounded-2xl border border-border group-hover:border-primary/50 transition-colors">
                 <span className="text-foreground font-bold text-sm sm:text-base tracking-wide">
-                  Більше відгуків
+                  Більше відгуків в P2P FEEDBACK&nbsp;&nbsp;&nbsp;
                 </span>
                 <div className="w-9 h-9 rounded-full bg-primary flex items-center justify-center group-hover:translate-x-1 transition-transform duration-300">
                   <ArrowRight size={16} className="text-primary-foreground" />
