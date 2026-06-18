@@ -9,22 +9,22 @@ const ProfitCalculator = () => {
   const cardAnimation = useScrollAnimation({ threshold: 0.2 });
   const prevBudgetRef = useRef(budget);
   
-  // Логіка: 4-8% з кругу, оборот 1000-3000 USDT/день, 22 робочих дні
-  const workingDays = 22;
-  const maxDailyTurnover = 3000;
-  
-  // Денний оборот обмежений бюджетом та максимальним оборотом
-  const effectiveTurnover = Math.min(budget, maxDailyTurnover);
-  
-  // Денний прибуток: 4-8% від обороту
-  const minDailyProfit = effectiveTurnover * 0.04;
-  const maxDailyProfit = effectiveTurnover * 0.08;
-  const avgDailyProfit = effectiveTurnover * 0.06;
-  
+  // Логіка: 4-8% з кругу × 2 круги/день × 24 робочих дні
+  const roundsPerDay = 2;
+  const workingDays = 24;
+  const softCap = 5000; // USDT — поріг для нотатки про індивідуальний розрахунок
+
+  // Денний прибуток рахується лінійно від реального бюджету
+  const minDailyProfit = budget * 0.04 * roundsPerDay;
+  const avgDailyProfit = budget * 0.06 * roundsPerDay;
+  const maxDailyProfit = budget * 0.08 * roundsPerDay;
+
   // Місячний прибуток
   const minProfit = Math.round(minDailyProfit * workingDays);
-  const maxProfit = Math.round(maxDailyProfit * workingDays);
   const avgProfit = Math.round(avgDailyProfit * workingDays);
+  const maxProfit = Math.round(maxDailyProfit * workingDays);
+
+  const showSoftCapNote = budget > softCap;
 
   // Animate number changes
   useEffect(() => {
@@ -188,29 +188,39 @@ const ProfitCalculator = () => {
                       <p className="text-xs sm:text-base md:text-lg lg:text-xl font-display font-bold text-foreground/70 leading-tight whitespace-nowrap">
                         ${formatNumber(minProfit)}
                       </p>
-                      <p className="text-[10px] sm:text-xs text-muted-foreground mt-1">4%/круг</p>
+                      <p className="text-[10px] sm:text-xs text-muted-foreground mt-1">8%/день</p>
                     </div>
                     <div className="flex flex-col justify-between text-center p-2 sm:p-3 md:p-4 rounded-xl bg-primary/10 border border-primary/30 profit-highlight">
                       <p className="text-[10px] sm:text-xs text-primary mb-1">Середній</p>
                       <p className="text-xs sm:text-base md:text-lg lg:text-xl font-display font-bold text-primary leading-tight whitespace-nowrap">
                         ${formatNumber(displayedAvg)}
                       </p>
-                      <p className="text-[10px] sm:text-xs text-primary mt-1">6%/круг</p>
+                      <p className="text-[10px] sm:text-xs text-primary mt-1">12%/день</p>
                     </div>
                     <div className="flex flex-col justify-between text-center p-2 sm:p-3 md:p-4 rounded-xl bg-background/30 border border-border/30">
                       <p className="text-[10px] sm:text-xs text-muted-foreground mb-1">Максимум</p>
                       <p className="text-xs sm:text-base md:text-lg lg:text-xl font-display font-bold text-foreground/70 leading-tight whitespace-nowrap">
                         ${formatNumber(maxProfit)}
                       </p>
-                      <p className="text-[10px] sm:text-xs text-muted-foreground mt-1">8%/круг</p>
+                      <p className="text-[10px] sm:text-xs text-muted-foreground mt-1">16%/день</p>
                     </div>
                   </div>
                 </div>
               </div>
-              
+
+              {/* Soft cap notice */}
+              {showSoftCapNote && (
+                <p
+                  role="note"
+                  className="mt-5 sm:mt-6 text-[11px] sm:text-xs text-primary/90 bg-primary/5 border border-primary/20 rounded-xl px-3 sm:px-4 py-2.5 sm:py-3 text-center"
+                >
+                  Для бюджету понад {formatNumber(softCap)} USDT результати орієнтовні — звʼяжись із саппортом для індивідуального розрахунку.
+                </p>
+              )}
+
               {/* Disclaimer */}
               <p className="text-[10px] sm:text-xs text-muted-foreground/60 text-center mt-6 sm:mt-8">
-                * Розрахунок є орієнтовним та залежить від ринкових умов і особистої активності
+                * Розрахунок: 2 круги/день × {workingDays} робочих дні. Орієнтовний, залежить від ринкових умов і особистої активності.
               </p>
               
               {/* CTA */}
