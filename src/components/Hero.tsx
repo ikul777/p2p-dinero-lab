@@ -65,13 +65,13 @@ const Hero = () => {
               <span className="block mt-1 sm:mt-2 text-foreground/95">
                 твій інструмент для
               </span>
-              <span className="block mt-1 sm:mt-0 text-gradient sm:accent-underline">
+              <span className="block mt-1 sm:mt-0 text-gradient sm:accent-underline whitespace-nowrap">
                 стабільного заробітку
               </span>
             </h1>
             
             {/* Subheading */}
-            <p className={`text-[13px] sm:text-sm md:text-base text-muted-foreground/80 max-w-[20rem] sm:max-w-xl mx-auto mt-2 mb-8 sm:mb-10 leading-relaxed text-balance transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+            <p className={`text-[13px] sm:text-sm md:text-base text-muted-foreground/80 max-w-full sm:max-w-xl mx-auto mt-2 mb-8 sm:mb-10 leading-relaxed text-balance transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
               Авторські P2P звʼязки, постійні оновлення, досвідчені сапорти, партнерства з біржами та доступ до комʼюніті конкурентів якому немає на ринку
             </p>
             
