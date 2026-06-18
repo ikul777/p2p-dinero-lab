@@ -27,7 +27,7 @@ const Footer = () => {
               />
             </Link>
             <p className="text-[10px] sm:text-xs md:text-sm text-muted-foreground">
-              P2P-арбітраж, який приносить дохід кожного дня
+              {" "}
             </p>
           </div>
           
