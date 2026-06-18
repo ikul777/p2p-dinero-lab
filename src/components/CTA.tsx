@@ -33,7 +33,7 @@ const CTA = () => {
               <span className="text-foreground/30">це злиті гроші</span>
             </h2>
             <p className="text-xs sm:text-sm md:text-base text-muted-foreground max-w-xl mx-auto px-2 text-balance">
-              Отримай доступ до перевірених P2P-звʼязок і сильного комʼюніті
+              Отримай доступ до перевірених P2P-звʼязок, команди професіоналів і сильного комʼюніті
             </p>
           </div>
           
