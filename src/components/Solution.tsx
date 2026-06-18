@@ -67,7 +67,7 @@ const Solution = () => {
                 className="group"
                 style={{ transitionDelay: `${index * 100}ms` }}
               >
-                <div className="glass-card solution-card p-4 sm:p-5 md:p-8 rounded-lg sm:rounded-xl h-full relative overflow-hidden">
+                <div className="glass-card solution-card conic-hover p-4 sm:p-5 md:p-8 rounded-lg sm:rounded-xl h-full relative overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   
                   {/* NEW badge */}

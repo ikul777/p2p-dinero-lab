@@ -125,6 +125,8 @@ const ProfitCalculator = () => {
                       step="100"
                       value={Math.min(budget, 10000)}
                       onChange={handleSliderChange}
+                      aria-label="Бюджет в USDT"
+                      style={{ ['--range-fill' as string]: `${((Math.min(budget, 10000) - 100) / 9900) * 100}%` }}
                       className="w-full"
                     />
                     <div className="flex justify-between text-[10px] sm:text-xs text-muted-foreground mt-2">

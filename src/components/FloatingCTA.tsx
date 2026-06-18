@@ -28,6 +28,8 @@ const FloatingCTA = () => {
     <a
       href="#join"
       aria-label="Приєднатись до ком'юніті"
+      aria-hidden={!isVisible}
+      tabIndex={isVisible ? 0 : -1}
       style={{ paddingBottom: 'env(safe-area-inset-bottom, 0px)' }}
       className={`fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 flex items-center gap-2 px-4 py-2.5 sm:px-5 sm:py-3 bg-primary text-primary-foreground rounded-full shadow-lg shadow-primary/30 font-medium text-xs sm:text-sm transition-all duration-300 floating-cta hover:scale-110 ${
         isVisible
