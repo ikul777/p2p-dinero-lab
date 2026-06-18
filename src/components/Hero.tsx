@@ -60,16 +60,18 @@ const Hero = () => {
               </div>
             </div>
             {/* Main heading */}
-            <h1 className={`hero-display text-3xl sm:text-5xl md:text-6xl lg:text-7xl mb-5 sm:mb-7 transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 translate-y-0 blur-0' : 'opacity-0 translate-y-10 blur-sm'}`}>
+            <h1 className={`hero-display text-[26px] leading-[1.1] sm:text-5xl sm:leading-tight md:text-6xl lg:text-7xl mb-5 sm:mb-7 transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 translate-y-0 blur-0' : 'opacity-0 translate-y-10 blur-sm'}`}>
               <span className="block text-gradient-animated">P2P АРБІТРАЖ</span>
-              <span className="block mt-2 text-foreground/95">
-                твій інструмент для{' '}
-                <span className="accent-underline text-gradient">стабільного заробітку</span>
+              <span className="block mt-1 sm:mt-2 text-foreground/95">
+                твій інструмент для
+              </span>
+              <span className="block mt-1 sm:mt-0 text-gradient sm:accent-underline">
+                стабільного заробітку
               </span>
             </h1>
             
             {/* Subheading */}
-            <p className={`text-xs sm:text-sm md:text-base text-muted-foreground/80 max-w-xl mx-auto mt-2 mb-8 sm:mb-10 px-6 leading-relaxed transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+            <p className={`text-[13px] sm:text-sm md:text-base text-muted-foreground/80 max-w-[20rem] sm:max-w-xl mx-auto mt-2 mb-8 sm:mb-10 leading-relaxed text-balance transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
               Авторські P2P звʼязки, постійні оновлення, досвідчені сапорти, партнерства з біржами та доступ до комʼюніті конкурентів якому немає на ринку
             </p>
             
@@ -85,9 +87,9 @@ const Hero = () => {
             </div>
             
             {/* Stats */}
-            <div className={`mt-8 sm:mt-10 md:mt-16 grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 md:gap-5 max-w-xs sm:max-w-2xl md:max-w-3xl mx-auto transition-all duration-700 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+            <div className={`mt-8 sm:mt-10 md:mt-16 grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 md:gap-5 max-w-[340px] sm:max-w-2xl md:max-w-3xl mx-auto transition-all duration-700 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
               <div ref={counter4100.ref} className="stat-card text-center p-3 sm:p-3 md:p-5 group">
-                <div className="font-display font-bold text-base sm:text-xl md:text-2xl lg:text-3xl text-gradient mb-1 sm:mb-2 whitespace-nowrap transition-all">
+                <div className="font-display font-bold text-lg sm:text-xl md:text-2xl lg:text-3xl text-gradient mb-1 sm:mb-2 whitespace-nowrap transition-all">
                   {counter4100.count} <span className="text-[9px] sm:text-sm md:text-lg">USDT</span>
                 </div>
                 <div className="text-[9px] sm:text-[10px] md:text-xs lg:text-sm text-muted-foreground leading-tight">
@@ -95,19 +97,19 @@ const Hero = () => {
                 </div>
               </div>
               <div ref={counter300.ref} className="stat-card text-center p-3 sm:p-3 md:p-5 group">
-                <div className="font-display font-bold text-base sm:text-xl md:text-2xl lg:text-3xl text-foreground mb-1 sm:mb-2 group-hover:text-primary transition-colors">{counter300.count}+</div>
+                <div className="font-display font-bold text-lg sm:text-xl md:text-2xl lg:text-3xl text-foreground mb-1 sm:mb-2 group-hover:text-primary transition-colors">{counter300.count}+</div>
                 <div className="text-[9px] sm:text-[10px] md:text-xs lg:text-sm text-muted-foreground leading-tight">
                   учасників навчили заробляти на p2p
                 </div>
               </div>
               <div className="stat-card text-center p-3 sm:p-3 md:p-5 group">
-                <div className="font-display font-bold text-base sm:text-xl md:text-2xl lg:text-3xl text-foreground mb-1 sm:mb-2 group-hover:text-primary transition-colors">24/7</div>
+                <div className="font-display font-bold text-lg sm:text-xl md:text-2xl lg:text-3xl text-foreground mb-1 sm:mb-2 group-hover:text-primary transition-colors">24/7</div>
                 <div className="text-[9px] sm:text-[10px] md:text-xs lg:text-sm text-muted-foreground leading-tight">
                   індивідуальна підтримка від наших сапортів
                 </div>
               </div>
               <div ref={counter5.ref} className="stat-card text-center p-3 sm:p-3 md:p-5 group">
-                <div className="font-display font-bold text-base sm:text-xl md:text-2xl lg:text-3xl text-foreground mb-1 sm:mb-2 group-hover:text-primary transition-colors">{counter5.count}+</div>
+                <div className="font-display font-bold text-lg sm:text-xl md:text-2xl lg:text-3xl text-foreground mb-1 sm:mb-2 group-hover:text-primary transition-colors">{counter5.count}+</div>
                 <div className="text-[9px] sm:text-[10px] md:text-xs lg:text-sm text-muted-foreground leading-tight">
                   роки досвіду команди
                 </div>
@@ -122,8 +124,8 @@ const Hero = () => {
               <p className={`text-[10px] sm:text-xs text-muted-foreground/60 mb-4 sm:mb-6 uppercase tracking-widest transition-all duration-700 ${partnersAnimation.isVisible ? 'opacity-100' : 'opacity-0'}`}>
                 DineroLab партнер крипто-бірж
               </p>
-              <div className="inline-block border border-border/20 rounded-xl p-4 sm:p-6 md:p-8 hover:border-border/40 transition-colors">
-                <div className="flex items-center justify-center gap-8 sm:gap-10 md:gap-14">
+              <div className="inline-block border border-border/20 rounded-xl px-4 py-3 sm:p-6 md:p-8 hover:border-border/40 transition-colors">
+                <div className="flex items-center justify-center gap-6 sm:gap-10 md:gap-14">
                   {partnerships.map((partner, index) => (
                     <a 
                       key={partner.name}
