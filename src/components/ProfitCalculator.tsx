@@ -111,7 +111,8 @@ const ProfitCalculator = () => {
                         max="1000000"
                         value={budget}
                         onChange={(e) => setBudget(Math.max(0, Number(e.target.value)))}
-                        aria-label="Бюджет в USDT"
+                        aria-label="Бюджет у USDT — введіть число"
+                        aria-describedby="budget-results"
                         className="w-full bg-background/50 border border-border/50 rounded-xl py-3 sm:py-4 pl-10 sm:pl-12 pr-16 sm:pr-20 text-lg sm:text-2xl font-display font-bold text-foreground focus:outline-none focus:border-primary/50 focus:ring-2 focus:ring-primary/20 transition-all [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                       />
                       <span aria-hidden="true" className="absolute right-3 sm:right-4 top-1/2 -translate-y-1/2 text-muted-foreground text-xs sm:text-sm">USDT</span>
