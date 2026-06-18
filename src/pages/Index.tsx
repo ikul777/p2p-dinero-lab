@@ -8,10 +8,12 @@ import FAQ from '../components/FAQ';
 import CTA from '../components/CTA';
 import Footer from '../components/Footer';
 import FloatingCTA from '../components/FloatingCTA';
+import ScrollProgress from '../components/ScrollProgress';
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-hidden">
+      <ScrollProgress />
       <Hero />
       <ProfitCalculator />
       <Problems />
@@ -27,3 +29,4 @@ const Index = () => {
 };
 
 export default Index;
+
