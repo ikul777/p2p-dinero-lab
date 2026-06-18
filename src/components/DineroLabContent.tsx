@@ -106,7 +106,9 @@ const DineroLabContent = () => {
             <div className="glass-card p-2 sm:p-3 rounded-2xl group overflow-hidden max-w-xs mx-auto md:max-w-none">
               <img
                 src={dineroLabImage1.url}
-                alt="DineroLab Screenshot 1"
+                alt="Скріншот навігації DineroLab — загальна інформація та P2P-звʼязки"
+                loading="lazy"
+                decoding="async"
                 className="w-full h-auto rounded-xl transition-transform duration-500 group-hover:scale-[1.02]"
               />
             </div>
@@ -127,7 +129,9 @@ const DineroLabContent = () => {
             <div className="glass-card p-2 sm:p-3 rounded-2xl group overflow-hidden max-w-xs mx-auto md:max-w-none">
               <img
                 src={dineroLabImage2.url}
-                alt="DineroLab Screenshot 2"
+                alt="Скріншот DineroLab — мейкери/мерчанти Bybit та OKX"
+                loading="lazy"
+                decoding="async"
                 className="w-full h-auto rounded-xl transition-transform duration-500 group-hover:scale-[1.02]"
               />
             </div>
@@ -164,7 +168,9 @@ const DineroLabContent = () => {
                   <div className="p-2 sm:p-3 rounded-2xl group overflow-hidden max-w-xs sm:max-w-sm mx-auto md:max-w-none">
                     <img
                       src={dineroLabImage3.url}
-                      alt="DineroLab Ордери"
+                      alt="DineroLab — нові розділи: Ордер Продаж та Ордер Відкуп"
+                      loading="lazy"
+                      decoding="async"
                       className="w-full h-auto rounded-xl transition-transform duration-500 group-hover:scale-[1.02]"
                     />
                   </div>

@@ -1,46 +1,86 @@
-## Проблеми зараз
-1. Скріншоти обрізаються — використано `aspect-[9/16]` + `object-cover`, тому довгі телеграм-пости ріжуться знизу.
-2. Зайві підписи (нік `@author`, чіп `P2P FEEDBACK`) поверх зображення — дублюють те, що вже є на самому скріні.
-3. Загальний вигляд "так собі" — однорідна сітка однакових карток, мало глибини й характеру.
+# План повної оптимізації та полірування сайту DineroLab
 
-## Що зміню в `src/components/Testimonials.tsx`
+Зберігаю **всі поточні секції** (Hero, Problems, Solution, DineroLabContent, ProfitCalculator, Testimonials, FAQ, CTA, Footer, FloatingCTA). Працюю одночасно над мобільним і десктопом.
 
-**1. Прибираю весь оверлей з картки**
-- Видаляю нікнейм `@author` і тег `P2P FEEDBACK`.
-- Прибираю темний градієнт знизу, який затемнював текст відгуку.
-- Залишається тільки маленька іконка лупи у правому верхньому куті (з'являється на hover) як підказка «клікни щоб збільшити».
+## 1. Аудит помилок і продуктивності
 
-**2. Скріншоти показуються повністю, без обрізки**
-- Десктоп: **masonry-розкладка** через CSS `columns-2 lg:columns-3 xl:columns-4` з `gap-4`. Кожен скрін — `<img className="w-full h-auto">`, тобто видно весь пост цілком, різна висота карток створює живий редакційний ритм (як Pinterest / Behance).
-- Мобайл: горизонтальна карусель залишається, але картки тепер `w-[78vw] max-w-[320px]` і всередині — `<img>` з `h-auto max-h-[70vh] object-contain`, щоб поміщався весь скріншот без обрізки. Сніпи прокручуються по одному (scroll-snap).
-- Прибираю авто-скрол на десктопі (його сенс зник, бо буде masonry-grid, а не карусель). На мобайлі залишаю свайп руками без автопрокрутки — менше нав'язливості.
+- Перевірю console на runtime/React warnings (key, hydration, listeners на window без cleanup).
+- Перевірю `Testimonials.tsx`, `ProfitCalculator.tsx`, `FloatingCTA.tsx` на витоки IntersectionObserver / scroll listeners.
+- Прогон білда — впіймати TS/ESLint попередження.
+- Lazy-load для важких секцій нижче згину (`Testimonials`, `FAQ`, `Footer`) через `React.lazy` + `Suspense`.
+- Зображення скріншотів відгуків → `loading="lazy"` + `decoding="async"` + `fetchpriority` для активного.
+- Прев'ю-картинка hero/logo → `fetchpriority="high"` + preload в `index.html`.
+- Заміна важких blur-фільтрів на CSS-трансформи де можливо (мобільний performance).
+- `prefers-reduced-motion` — вимикати auto-scroll каруселі та float-анімації.
 
-**3. Преміум-оформлення картки**
-- Рамка: `rounded-2xl` + `ring-1 ring-border/40`, на hover → `ring-primary/50` + м'яке червоне свічення `shadow-[0_20px_60px_-20px_hsl(var(--primary)/0.35)]` + легкий підйом `-translate-y-1`.
-- Фон під зображенням — `bg-card/40 backdrop-blur` (щоб білі/світлі скріни не "вистрибували").
-- Тонкий внутрішній блік `before:` лінією зверху картки для відчуття скла.
+## 2. SEO та доступність
 
-**4. Заголовок секції**
-- Залишається структура (`tag` + `h2` + підзаголовок).
-- Підзаголовок коригую: «Скріншоти живих відгуків з нашого приватного каналу P2P FEEDBACK».
-- Під заголовком додаю маленький лічильник: `10 відгуків · оновлюється щотижня` дрібним muted-текстом.
+- `<title>` ≤60 символів з ключем "DineroLab P2P".
+- `<meta name="description">` ≤160 символів українською.
+- OG/Twitter tags + canonical.
+- JSON-LD `Organization` + `FAQPage` (з реальних питань FAQ).
+- Один `<h1>` (Hero), решта — `<h2>`/`<h3>`. Alt-тексти на всіх `<img>`.
+- ARIA-labels на іконкових кнопках каруселі/CTA.
 
-**5. Lightbox (залишається, трохи покращу)**
-- Додаю стрілки ‹ › для перегортання між скрінами прямо в lightbox.
-- Лічильник `3 / 10` в правому верхньому куті біля кнопки закриття.
-- Esc / клік по фону / стрілки клавіатури — все працює.
+## 3. Візуальне полірування (Awwwards-рівень, в межах поточної палітри: чорний + червоний акцент)
 
-**6. Адаптив (чітко)**
-- `< 640px` (mobile): горизонтальна snap-карусель, 1 картка на екран, повний скрін відгуку видно цілком (object-contain, max-h 70vh).
-- `640–1024px` (tablet): masonry `columns-2`.
-- `1024–1280px`: `columns-3`.
-- `≥ 1280px`: `columns-4`.
-- Кнопки ‹ › карусельні на десктопі прибираються (бо там masonry).
+**Глобально (index.css):**
+- Уніфікувати токени: `--surface-1/2/3`, `--border-glass`, `--shadow-glow-sm/md/lg`, `--gradient-radial-red`, `--gradient-text-red`.
+- Додати subtle noise/grain текстуру overlay для глибини (1 SVG, 4kb).
+- Радіуси: системно `0.75 / 1.25 / 2rem`. Зараз місцями розбіжності.
+- Анімації: `ease-out-expo` cubic-bezier, тривалості 300/500/700.
 
-## Технічно
-- Файл: тільки `src/components/Testimonials.tsx`. Дані (10 скрінів) залишаються ті самі, прибираю поле `author`.
-- Нові залежності не потрібні — все на Tailwind + існуючі lucide-іконки.
-- Зберігаю всі існуючі семантичні токени (`bg-card`, `border`, `primary`) — без хардкод-кольорів.
+**Hero:**
+- Додати ambient red orb (great-glow) за заголовком з parallax на mousemove (desktop only).
+- Статистики — поставити на скляні pill-картки з тонким top-border gradient.
+- Subtle scroll-cue знизу.
 
-## Результат
-Замість обрізаних однакових прямокутників — жива редакційна сітка повноцінних скріншотів із чистим преміум-обрамленням і зручним lightbox з навігацією. На мобайлі кожен відгук читається повністю одним свайпом.
+**Problems / Solution:**
+- Парні картки 2×2 з рівною висотою; іконки в окремих "капсулах" з градієнтним обрамленням.
+- Solution-картки — додати hover-tilt (CSS transform-only, без JS) + animated border-conic.
+
+**DineroLabContent:**
+- Зигзаг — додати connection-line SVG між блоками (desktop).
+- Order-cards (ОРДЕР ПРОДАЖ/ВІДКУП) — animated price ticks.
+
+**ProfitCalculator:**
+- Покращити повзунок: великий thumb з glow, fill-track градієнт.
+- Результат — animated count-up при зміні (requestAnimationFrame).
+- Розділити на дві колонки на десктопі (input | result).
+
+**Testimonials:** не чіпаю композицію (щойно затверджена), лише — плавніший fade-mask на краях + м'якший shadow активної картки.
+
+**FAQ:**
+- Аккордеон — додати плавне розкриття висоти, ротаційну іконку +/×, hover-glow ліворуч.
+- Номерні бейджі — узгодити з токенами.
+
+**CTA:**
+- Підсилити animated border (conic-gradient rotate) та pulsing button.
+
+**Footer:**
+- Додати top-divider з radial-glow, hover-підсвітку партнерських логотипів узгодити.
+
+**FloatingCTA:**
+- Slide-in з правого нижнього кута на скролі, прихований біля #join — вже працює, додам micro-bounce.
+
+## 4. Нове (мінімально, не ламаючи структуру)
+
+- **Marquee партнерів** (WhiteBIT/Bybit/OKX) — тонка лінія під Hero, тільки якщо узгоджується з ритмом. Висота ~64px.
+- **Scroll-progress bar** зверху (1px, primary) — посилює відчуття полірування.
+
+## 5. Технічні деталі
+
+- Стек незмінний: React 18 + Vite + Tailwind + shadcn.
+- Жодних нових залежностей крім `@vercel/analytics`-стилю не треба — все на CSS/Motion вже наявному.
+- Усі кольори — через існуючі HSL-токени, без хардкоду.
+- Зміни в `mem://design/*` за потреби (новий scroll-progress, marquee).
+
+## Порядок робіт
+
+1. Audit + fixes (console, listeners, lazy, SEO meta) — швидкі виграші.
+2. index.css токени + global polish layer.
+3. Hero → Problems → Solution → DineroLabContent → ProfitCalculator → FAQ → CTA → Footer.
+4. Marquee + scroll-progress.
+5. Фінальна перевірка на 390px і 1440px, console clean.
+
+Підтвердиш — починаю.
