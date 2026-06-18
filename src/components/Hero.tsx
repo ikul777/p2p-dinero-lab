@@ -51,10 +51,13 @@ const Hero = () => {
           <div className="text-center">
             {/* Logo with glow */}
             <div className={`mb-6 sm:mb-8 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-              <h2 className="font-display text-sm sm:text-base md:text-lg font-medium tracking-wide inline-block logo-glow">
-                <span className="text-foreground">Dinero</span>
-                <span className="text-primary text-glow">Lab</span>
-              </h2>
+              <div className="inline-block logo-glow">
+                <img
+                  src={logoWhite.url}
+                  alt="DineroLab"
+                  className="h-12 sm:h-14 md:h-16 lg:h-20 w-auto mx-auto object-contain"
+                />
+              </div>
             </div>
             {/* Main heading */}
             <h1 className={`font-display text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold leading-tight mb-4 sm:mb-6 transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
