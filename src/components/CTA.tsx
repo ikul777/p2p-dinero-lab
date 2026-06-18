@@ -50,7 +50,7 @@ const CTA = () => {
                   {/* Benefits */}
                   <div className="space-y-2 sm:space-y-3 mb-5 sm:mb-6 md:mb-8">
                     {benefits.map((benefit, index) => (
-                      <div key={index} className="flex items-center gap-2 sm:gap-3 justify-center md:justify-start group">
+                      <div key={index} className="flex items-start gap-2 sm:gap-3 justify-start group">
                         <div className="w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 group-hover:scale-110 transition-all">
                           <Check size={10} className="sm:w-3 sm:h-3 text-primary" />
                         </div>
