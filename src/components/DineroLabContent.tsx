@@ -64,8 +64,8 @@ const PointsList = ({ points, isVisible, reverse }: { points: Point[]; isVisible
 );
 
 const Screenshot = ({ src, alt }: { src: string; alt: string }) => (
-  <div className="mx-auto max-w-[200px] sm:max-w-[240px] md:max-w-[280px]">
-    <div className="p-1.5 rounded-3xl bg-gradient-to-b from-primary/30 via-primary/10 to-transparent">
+  <div className="mx-auto max-w-[260px] sm:max-w-[320px] md:max-w-[380px]">
+    <div className="p-2 sm:p-3 rounded-3xl bg-gradient-to-b from-primary/30 via-primary/10 to-transparent">
       <div className="rounded-[20px] overflow-hidden bg-background/40 ring-1 ring-border/40 group">
         <img
           src={src}
@@ -135,7 +135,6 @@ const DineroLabContent = () => {
           <div className="glass-card rounded-3xl p-5 sm:p-7 md:p-10">
             <div className="md:hidden text-center">
               <BlockBadge num="01" label="Основа" />
-              <h3 className="text-xl font-display font-semibold mb-5 text-foreground">Усе, з чого починається робота</h3>
             </div>
             <div className="flex flex-col md:flex-row items-center gap-6 md:gap-10 lg:gap-14">
               <div className="w-full md:w-1/3 flex-shrink-0">
@@ -163,7 +162,6 @@ const DineroLabContent = () => {
           <div className="glass-card rounded-3xl p-5 sm:p-7 md:p-10">
             <div className="md:hidden text-center">
               <BlockBadge num="02" label="Спільнота" />
-              <h3 className="text-xl font-display font-semibold mb-5 text-foreground">Живе ком'юніті та партнерства</h3>
             </div>
             <div className="flex flex-col md:flex-row-reverse items-center gap-6 md:gap-10 lg:gap-14">
               <div className="w-full md:w-1/3 flex-shrink-0">
