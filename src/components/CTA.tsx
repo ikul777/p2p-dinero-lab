@@ -46,13 +46,6 @@ const CTA = () => {
               <div className="flex flex-col md:flex-row items-center gap-5 sm:gap-6 md:gap-8">
                 {/* Content */}
                 <div className="flex-1 text-center md:text-left">
-                  <h3 className="font-display text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold mb-2 sm:mb-3 text-foreground">
-                    DineroLab
-                  </h3>
-                  <p className="text-xs sm:text-sm md:text-base text-muted-foreground mb-4 sm:mb-5 md:mb-6">
-                    Отримай доступ до топових P2P-звʼязок та команди професіоналів
-                  </p>
-                  
                   {/* Benefits */}
                   <div className="space-y-2 sm:space-y-3 mb-5 sm:mb-6 md:mb-8">
                     {benefits.map((benefit, index) => (
