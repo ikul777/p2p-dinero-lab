@@ -60,16 +60,18 @@ const Hero = () => {
               </div>
             </div>
             {/* Main heading */}
-            <h1 className={`hero-display text-3xl sm:text-5xl md:text-6xl lg:text-7xl mb-5 sm:mb-7 transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 translate-y-0 blur-0' : 'opacity-0 translate-y-10 blur-sm'}`}>
+            <h1 className={`hero-display text-[26px] leading-[1.1] sm:text-5xl sm:leading-tight md:text-6xl lg:text-7xl mb-5 sm:mb-7 transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 translate-y-0 blur-0' : 'opacity-0 translate-y-10 blur-sm'}`}>
               <span className="block text-gradient-animated">P2P АРБІТРАЖ</span>
-              <span className="block mt-2 text-foreground/95">
-                твій інструмент для{' '}
-                <span className="accent-underline text-gradient">стабільного заробітку</span>
+              <span className="block mt-1 sm:mt-2 text-foreground/95">
+                твій інструмент для
+              </span>
+              <span className="block mt-1 sm:mt-0 text-gradient sm:accent-underline">
+                стабільного заробітку
               </span>
             </h1>
             
             {/* Subheading */}
-            <p className={`text-xs sm:text-sm md:text-base text-muted-foreground/80 max-w-xl mx-auto mt-2 mb-8 sm:mb-10 px-6 leading-relaxed transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+            <p className={`text-[13px] sm:text-sm md:text-base text-muted-foreground/80 max-w-[20rem] sm:max-w-xl mx-auto mt-2 mb-8 sm:mb-10 leading-relaxed transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
               Авторські P2P звʼязки, постійні оновлення, досвідчені сапорти, партнерства з біржами та доступ до комʼюніті конкурентів якому немає на ринку
             </p>
             
