@@ -1,4 +1,5 @@
 import { Link, useLocation } from 'react-router-dom';
+import logoWhite from '@/assets/dinerolab-logo-white.png.asset.json';
 
 const Footer = () => {
   const location = useLocation();
