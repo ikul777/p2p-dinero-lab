@@ -195,7 +195,7 @@ const ProfitCalculator = () => {
                       <p className="text-xs sm:text-base md:text-lg lg:text-xl font-display font-bold text-primary leading-tight whitespace-nowrap">
                         ${formatNumber(displayedAvg)}
                       </p>
-                      <p className="text-[10px] sm:text-xs text-primary mt-1">6%/круг</p>
+                      <p className="text-[10px] sm:text-xs text-primary mt-1">12%/день</p>
                     </div>
                     <div className="flex flex-col justify-between text-center p-2 sm:p-3 md:p-4 rounded-xl bg-background/30 border border-border/30">
                       <p className="text-[10px] sm:text-xs text-muted-foreground mb-1">Максимум</p>
