@@ -161,7 +161,7 @@ const DineroLabContent = () => {
             <div className="relative glass-card rounded-2xl p-4 sm:p-6 md:p-8 lg:p-10">
               <div className="flex flex-col md:flex-row items-center gap-6 md:gap-8 lg:gap-12">
                 <div className="w-full md:w-1/3 flex-shrink-0">
-                  <div className="p-2 sm:p-3 rounded-2xl group overflow-hidden max-w-[240px] sm:max-w-xs mx-auto md:max-w-none">
+                  <div className="p-2 sm:p-3 rounded-2xl group overflow-hidden max-w-xs sm:max-w-sm mx-auto md:max-w-none">
                     <img
                       src={dineroLabImage3.url}
                       alt="DineroLab Ордери"
