@@ -165,10 +165,10 @@ const ProfitCalculator = () => {
                 </div>
                 
                 {/* Results Section */}
-                <div className="space-y-4 sm:space-y-6">
+                <div className="space-y-4 sm:space-y-6" id="budget-results" role="region" aria-live="polite" aria-atomic="true" aria-label="Результати розрахунку прибутку">
                   <div className="flex items-center gap-3 mb-4 sm:mb-6">
                     <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-primary/10 flex items-center justify-center animate-icon-float">
-                      <TrendingUp className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
+                      <TrendingUp aria-hidden="true" className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
                     </div>
                     <div>
                       <p className="text-xs sm:text-sm text-muted-foreground">Потенційний прибуток</p>
@@ -176,8 +176,13 @@ const ProfitCalculator = () => {
                     </div>
                   </div>
                   
+                  {/* SR-only summary so live region announces a clean sentence */}
+                  <p className="sr-only">
+                    Орієнтовний місячний дохід при бюджеті {formatNumber(budget)} USDT: мінімум ${formatNumber(minProfit)}, середній ${formatNumber(avgProfit)}, максимум ${formatNumber(maxProfit)}.
+                  </p>
+
                   {/* 3 columns on all screens */}
-                  <div className="grid grid-cols-3 gap-3 sm:gap-4 md:gap-5">
+                  <div className="grid grid-cols-3 gap-3 sm:gap-4 md:gap-5" aria-hidden="true">
                     <div className="text-center p-2 sm:p-3 md:p-4 rounded-xl bg-background/30 border border-border/30">
                       <p className="text-[10px] sm:text-xs text-muted-foreground mb-1">Мінімум</p>
                       <p className="text-xs sm:text-base md:text-lg lg:text-xl font-display font-bold text-foreground/70 leading-tight whitespace-nowrap">
