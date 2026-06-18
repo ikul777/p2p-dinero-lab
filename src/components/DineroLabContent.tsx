@@ -105,7 +105,7 @@ const DineroLabContent = () => {
           <div className="w-full md:w-1/3 flex-shrink-0">
             <div className="glass-card p-2 sm:p-3 rounded-2xl group overflow-hidden max-w-xs mx-auto md:max-w-none">
               <img
-                src={dineroLabImage1}
+                src={dineroLabImage1.url}
                 alt="DineroLab Screenshot 1"
                 className="w-full h-auto rounded-xl transition-transform duration-500 group-hover:scale-[1.02]"
               />
