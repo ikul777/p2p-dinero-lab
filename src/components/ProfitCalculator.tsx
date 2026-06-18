@@ -9,15 +9,16 @@ const ProfitCalculator = () => {
   const cardAnimation = useScrollAnimation({ threshold: 0.2 });
   const prevBudgetRef = useRef(budget);
   
-  // Логіка: 4-8% з кругу × 2 круги/день × 24 робочих дні
-  const roundsPerDay = 2;
-  const workingDays = 24;
+  // Логіка: 4-8% від денного обороту × 22 робочих дні
+  const workingDays = 22;
   const softCap = 5000; // USDT — поріг для нотатки про індивідуальний розрахунок
 
-  // Денний прибуток рахується лінійно від реального бюджету
-  const minDailyProfit = budget * 0.04 * roundsPerDay;
-  const avgDailyProfit = budget * 0.06 * roundsPerDay;
-  const maxDailyProfit = budget * 0.08 * roundsPerDay;
+  // Денний оборот = реальний бюджет (без штучної стелі)
+  const dailyTurnover = budget;
+
+  const minDailyProfit = dailyTurnover * 0.04;
+  const avgDailyProfit = dailyTurnover * 0.06;
+  const maxDailyProfit = dailyTurnover * 0.08;
 
   // Місячний прибуток
   const minProfit = Math.round(minDailyProfit * workingDays);
@@ -188,21 +189,21 @@ const ProfitCalculator = () => {
                       <p className="text-xs sm:text-base md:text-lg lg:text-xl font-display font-bold text-foreground/70 leading-tight whitespace-nowrap">
                         ${formatNumber(minProfit)}
                       </p>
-                      <p className="text-[10px] sm:text-xs text-muted-foreground mt-1">8%/день</p>
+                      <p className="text-[10px] sm:text-xs text-muted-foreground mt-1">4%</p>
                     </div>
                     <div className="flex flex-col justify-between text-center p-2 sm:p-3 md:p-4 rounded-xl bg-primary/10 border border-primary/30 profit-highlight">
                       <p className="text-[10px] sm:text-xs text-primary mb-1">Середній</p>
                       <p className="text-xs sm:text-base md:text-lg lg:text-xl font-display font-bold text-primary leading-tight whitespace-nowrap">
                         ${formatNumber(displayedAvg)}
                       </p>
-                      <p className="text-[10px] sm:text-xs text-primary mt-1">12%/день</p>
+                      <p className="text-[10px] sm:text-xs text-primary mt-1">6%</p>
                     </div>
                     <div className="flex flex-col justify-between text-center p-2 sm:p-3 md:p-4 rounded-xl bg-background/30 border border-border/30">
                       <p className="text-[10px] sm:text-xs text-muted-foreground mb-1">Максимум</p>
                       <p className="text-xs sm:text-base md:text-lg lg:text-xl font-display font-bold text-foreground/70 leading-tight whitespace-nowrap">
                         ${formatNumber(maxProfit)}
                       </p>
-                      <p className="text-[10px] sm:text-xs text-muted-foreground mt-1">16%/день</p>
+                      <p className="text-[10px] sm:text-xs text-muted-foreground mt-1">8%</p>
                     </div>
                   </div>
                 </div>
@@ -220,7 +221,7 @@ const ProfitCalculator = () => {
 
               {/* Disclaimer */}
               <p className="text-[10px] sm:text-xs text-muted-foreground/60 text-center mt-6 sm:mt-8">
-                * Розрахунок: 2 круги/день × {workingDays} робочих дні. Орієнтовний, залежить від ринкових умов і особистої активності.
+                * Розрахунок: оборот × 4–8% × {workingDays} робочих дні. Орієнтовний, залежить від ринкових умов.
               </p>
               
               {/* CTA */}
