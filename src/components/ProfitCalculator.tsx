@@ -111,7 +111,8 @@ const ProfitCalculator = () => {
                         max="1000000"
                         value={budget}
                         onChange={(e) => setBudget(Math.max(0, Number(e.target.value)))}
-                        aria-label="Бюджет в USDT"
+                        aria-label="Бюджет у USDT — введіть число"
+                        aria-describedby="budget-results"
                         className="w-full bg-background/50 border border-border/50 rounded-xl py-3 sm:py-4 pl-10 sm:pl-12 pr-16 sm:pr-20 text-lg sm:text-2xl font-display font-bold text-foreground focus:outline-none focus:border-primary/50 focus:ring-2 focus:ring-primary/20 transition-all [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                       />
                       <span aria-hidden="true" className="absolute right-3 sm:right-4 top-1/2 -translate-y-1/2 text-muted-foreground text-xs sm:text-sm">USDT</span>
@@ -127,11 +128,12 @@ const ProfitCalculator = () => {
                       step="100"
                       value={Math.min(budget, 10000)}
                       onChange={handleSliderChange}
-                      aria-label="Бюджет в USDT"
+                      aria-label="Бюджет у USDT — повзунок"
                       aria-valuemin={100}
                       aria-valuemax={10000}
                       aria-valuenow={Math.min(budget, 10000)}
                       aria-valuetext={`${formatNumber(Math.min(budget, 10000))} USDT`}
+                      aria-controls="budget-results"
                       style={{ ['--range-fill' as string]: `${((Math.min(budget, 10000) - 100) / 9900) * 100}%` }}
                       className="w-full"
                     />
@@ -142,12 +144,15 @@ const ProfitCalculator = () => {
                   </div>
                   
                   {/* Quick buttons */}
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-2" role="group" aria-label="Швидкий вибір бюджету">
                     {[500, 1000, 3000, 5000].map((amount) => (
                       <button
                         key={amount}
+                        type="button"
                         onClick={() => setBudget(amount)}
-                        className={`quick-btn px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm font-medium transition-all ${
+                        aria-pressed={budget === amount}
+                        aria-label={`Встановити бюджет ${formatNumber(amount)} USDT`}
+                        className={`quick-btn px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm font-medium transition-all min-h-11 ${
                           budget === amount 
                             ? 'bg-primary text-primary-foreground active' 
                             : 'bg-background/50 border border-border/50 text-muted-foreground hover:border-primary/50 hover:text-foreground'
@@ -160,10 +165,10 @@ const ProfitCalculator = () => {
                 </div>
                 
                 {/* Results Section */}
-                <div className="space-y-4 sm:space-y-6">
+                <div className="space-y-4 sm:space-y-6" id="budget-results" role="region" aria-live="polite" aria-atomic="true" aria-label="Результати розрахунку прибутку">
                   <div className="flex items-center gap-3 mb-4 sm:mb-6">
                     <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-primary/10 flex items-center justify-center animate-icon-float">
-                      <TrendingUp className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
+                      <TrendingUp aria-hidden="true" className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
                     </div>
                     <div>
                       <p className="text-xs sm:text-sm text-muted-foreground">Потенційний прибуток</p>
@@ -171,8 +176,13 @@ const ProfitCalculator = () => {
                     </div>
                   </div>
                   
+                  {/* SR-only summary so live region announces a clean sentence */}
+                  <p className="sr-only">
+                    Орієнтовний місячний дохід при бюджеті {formatNumber(budget)} USDT: мінімум ${formatNumber(minProfit)}, середній ${formatNumber(avgProfit)}, максимум ${formatNumber(maxProfit)}.
+                  </p>
+
                   {/* 3 columns on all screens */}
-                  <div className="grid grid-cols-3 gap-3 sm:gap-4 md:gap-5">
+                  <div className="grid grid-cols-3 gap-3 sm:gap-4 md:gap-5" aria-hidden="true">
                     <div className="text-center p-2 sm:p-3 md:p-4 rounded-xl bg-background/30 border border-border/30">
                       <p className="text-[10px] sm:text-xs text-muted-foreground mb-1">Мінімум</p>
                       <p className="text-xs sm:text-base md:text-lg lg:text-xl font-display font-bold text-foreground/70 leading-tight whitespace-nowrap">
