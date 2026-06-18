@@ -39,7 +39,7 @@ const Hero = () => {
   }, []);
   
   return (
-    <section className="relative flex flex-col justify-center overflow-hidden animated-gradient-bg aurora-bg pt-16 pb-8 sm:pt-20 sm:pb-10 md:pt-24 md:pb-12">
+    <section className="relative flex flex-col justify-center overflow-hidden animated-gradient-bg aurora-bg min-h-screen pt-20 pb-10 sm:pt-24 sm:pb-12 md:pt-28 md:pb-16">
       {/* Background - optimized for mobile */}
       <div className="absolute inset-0 bg-grid opacity-20"></div>
       <div className="absolute top-1/4 left-1/4 w-[150px] sm:w-[250px] md:w-[500px] h-[150px] sm:h-[250px] md:h-[500px] bg-primary/8 rounded-full filter blur-[60px] sm:blur-[80px] md:blur-[120px] animate-pulse-glow"></div>
@@ -60,12 +60,12 @@ const Hero = () => {
               </div>
             </div>
             {/* Main heading */}
-            <h1 className={`hero-display text-[26px] leading-[1.1] sm:text-5xl sm:leading-tight md:text-6xl lg:text-7xl mb-5 sm:mb-7 transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 translate-y-0 blur-0' : 'opacity-0 translate-y-10 blur-sm'}`}>
+            <h1 className={`hero-display text-[clamp(22px,6.8vw,28px)] leading-[1.1] sm:text-5xl sm:leading-tight md:text-6xl lg:text-7xl mb-5 sm:mb-7 transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 translate-y-0 blur-0' : 'opacity-0 translate-y-10 blur-sm'}`}>
               <span className="block text-gradient-animated">P2P АРБІТРАЖ</span>
               <span className="block mt-1 sm:mt-2 text-foreground/95">
                 твій інструмент для
               </span>
-              <span className="block mt-1 sm:mt-0 text-gradient sm:accent-underline whitespace-nowrap">
+              <span className="block mt-1 sm:mt-0 text-gradient sm:accent-underline whitespace-nowrap text-[clamp(20px,6.2vw,28px)] sm:text-inherit">
                 стабільного заробітку
               </span>
             </h1>
