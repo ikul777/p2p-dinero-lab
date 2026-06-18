@@ -72,7 +72,7 @@ const CTA = () => {
                     rel="noopener noreferrer"
                     className="btn-primary btn-pulse inline-flex items-center gap-2 px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-5 rounded-full text-sm sm:text-base md:text-xl font-semibold text-primary-foreground w-full md:w-auto justify-center"
                   >
-                    Вступити в DineroLab
+                    ПРИЄДНАТИСЬ В КОМ'ЮНІТІ
                     <ArrowRight size={18} className="sm:w-5 sm:h-5 md:w-6 md:h-6" />
                   </a>
                 </div>
