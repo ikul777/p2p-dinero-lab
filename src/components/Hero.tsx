@@ -39,7 +39,7 @@ const Hero = () => {
   }, []);
   
   return (
-    <section className="relative flex flex-col justify-center overflow-hidden animated-gradient-bg aurora-bg pt-16 pb-8 sm:pt-20 sm:pb-10 md:pt-24 md:pb-12">
+    <section className="relative flex flex-col justify-center overflow-hidden animated-gradient-bg aurora-bg min-h-screen pt-20 pb-10 sm:pt-24 sm:pb-12 md:pt-28 md:pb-16">
       {/* Background - optimized for mobile */}
       <div className="absolute inset-0 bg-grid opacity-20"></div>
       <div className="absolute top-1/4 left-1/4 w-[150px] sm:w-[250px] md:w-[500px] h-[150px] sm:h-[250px] md:h-[500px] bg-primary/8 rounded-full filter blur-[60px] sm:blur-[80px] md:blur-[120px] animate-pulse-glow"></div>
