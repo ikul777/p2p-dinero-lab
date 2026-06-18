@@ -137,27 +137,68 @@ const DineroLabContent = () => {
           </div>
         </div>
 
-        {/* Block 3: Image Left, Points Right (New Orders) */}
+        {/* Block 3: Highlighted "NEW" orders section */}
         <div
           ref={block3Animation.ref}
-          className={`flex flex-col md:flex-row items-center gap-6 md:gap-8 lg:gap-12 transition-all duration-700 ${
+          className={`relative transition-all duration-700 ${
             block3Animation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >
-          <div className="w-full md:w-1/3 flex-shrink-0">
-            <div className="glass-card p-2 sm:p-3 rounded-2xl group overflow-hidden max-w-xs mx-auto md:max-w-none relative">
-              <span className="absolute top-3 right-3 z-10 text-[9px] sm:text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-primary text-primary-foreground shadow-lg">
-                Нове
-              </span>
-              <img
-                src={dineroLabImage3.url}
-                alt="DineroLab Screenshot 3 — Ордери"
-                className="w-full h-auto rounded-xl transition-transform duration-500 group-hover:scale-[1.02]"
-              />
-            </div>
+          {/* Section heading for new orders */}
+          <div className="text-center mb-8 sm:mb-10">
+            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/15 border border-primary/30 text-primary text-[10px] sm:text-xs font-bold uppercase tracking-wider mb-3 sm:mb-4">
+              <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+              Нові розділи
+            </span>
+            <h3 className="font-display text-xl sm:text-2xl md:text-3xl font-bold">
+              Ордери — миттєва <span className="text-gradient">ліквідність</span>
+            </h3>
           </div>
-          <div className="w-full md:flex-1">
-            <PointsList points={block3Points} isVisible={block3Animation.isVisible} />
+
+          {/* Glow wrapper */}
+          <div className="relative">
+            <div className="absolute -inset-0.5 bg-gradient-to-r from-primary/40 via-primary/20 to-primary/40 rounded-2xl blur-md opacity-60" />
+            <div className="relative glass-card rounded-2xl p-4 sm:p-6 md:p-8 lg:p-10">
+              <div className="flex flex-col md:flex-row items-center gap-6 md:gap-8 lg:gap-12">
+                <div className="w-full md:w-1/3 flex-shrink-0">
+                  <div className="p-2 sm:p-3 rounded-2xl group overflow-hidden max-w-[240px] sm:max-w-xs mx-auto md:max-w-none">
+                    <img
+                      src={dineroLabImage3.url}
+                      alt="DineroLab Ордери"
+                      className="w-full h-auto rounded-xl transition-transform duration-500 group-hover:scale-[1.02]"
+                    />
+                  </div>
+                </div>
+                <div className="w-full md:flex-1 grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+                  {block3Points.map((point, index) => (
+                    <div
+                      key={index}
+                      className={`relative p-4 sm:p-5 rounded-xl bg-primary/5 border border-primary/20 hover:border-primary/40 transition-all duration-500 ${
+                        block3Animation.isVisible
+                          ? 'opacity-100 translate-y-0'
+                          : 'opacity-0 translate-y-6'
+                      }`}
+                      style={{ transitionDelay: `${index * 120 + 200}ms` }}
+                    >
+                      <span className="absolute top-3 right-3 text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-primary text-primary-foreground">
+                        Нове
+                      </span>
+                      <div className="flex items-center gap-2 mb-2 pr-14">
+                        <div className="flex-shrink-0 w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center">
+                          <Check className="w-3.5 h-3.5 text-primary" />
+                        </div>
+                        <p className="text-sm sm:text-base font-semibold text-foreground">
+                          {point.title}
+                        </p>
+                      </div>
+                      <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+                        {point.desc}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
