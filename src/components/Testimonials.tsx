@@ -56,18 +56,41 @@ const Testimonials = () => {
     []
   );
 
+  const lightboxRef = useRef<HTMLDivElement | null>(null);
+  const lastFocusedRef = useRef<HTMLElement | null>(null);
+
   useEffect(() => {
     if (lightboxIndex === null) return;
+    lastFocusedRef.current = document.activeElement as HTMLElement | null;
     const onKey = (e: KeyboardEvent) => {
       if (e.key === 'Escape') close();
       else if (e.key === 'ArrowLeft') lbPrev();
       else if (e.key === 'ArrowRight') lbNext();
+      else if (e.key === 'Tab') {
+        const root = lightboxRef.current;
+        if (!root) return;
+        const focusables = root.querySelectorAll<HTMLElement>(
+          'button, [href], [tabindex]:not([tabindex="-1"])'
+        );
+        if (focusables.length === 0) return;
+        const first = focusables[0];
+        const last = focusables[focusables.length - 1];
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      }
     };
     window.addEventListener('keydown', onKey);
     document.body.style.overflow = 'hidden';
     return () => {
       window.removeEventListener('keydown', onKey);
       document.body.style.overflow = '';
+      // Restore focus to the element that opened the lightbox
+      lastFocusedRef.current?.focus?.();
     };
   }, [lightboxIndex, close, lbPrev, lbNext]);
 
