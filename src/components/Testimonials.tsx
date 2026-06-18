@@ -280,12 +280,13 @@ const Testimonials = () => {
       </div>
 
       {/* Lightbox */}
-      {lightboxIndex !== null && (
+      {lightboxIndex !== null && createPortal(
         <div
           className="fixed inset-0 z-[100] bg-background/95 backdrop-blur-md flex items-center justify-center p-4 sm:p-6 md:p-10 animate-in fade-in duration-200"
           onClick={close}
           role="dialog"
           aria-modal="true"
+          translate="no"
         >
           <div className="absolute top-4 left-4 sm:top-6 sm:left-6 px-3 py-1.5 rounded-full bg-background/70 border border-border/50 text-xs sm:text-sm text-muted-foreground backdrop-blur font-mono">
             {String(lightboxIndex + 1).padStart(2, '0')} / {String(screenshots.length).padStart(2, '0')}
@@ -324,7 +325,8 @@ const Testimonials = () => {
             onClick={(e) => e.stopPropagation()}
             className="max-w-full max-h-full w-auto h-auto object-contain rounded-xl shadow-2xl border border-border/40 animate-in zoom-in-95 duration-300"
           />
-        </div>
+        </div>,
+        document.body
       )}
     </section>
   );
