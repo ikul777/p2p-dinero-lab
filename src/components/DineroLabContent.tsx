@@ -24,8 +24,8 @@ const block2Points: Point[] = [
 ];
 
 const block3Points: Point[] = [
-  { title: "ОРДЕР ПРОДАЖ", isNew: true, desc: "Гілка для швидкого продажу активів (USDT) іншим учасникам, минаючи стакан біржі для отримання негайної фіатної ліквідності." },
-  { title: "ОРДЕР ВІДКУП", isNew: true, desc: "Гілка для швидкого відкупу USDT у інших учасників, які мають надлишок ліквідності, для негайного старту нового кола без очікування в стакані." },
+  { title: "ОРДЕР ПРОДАЖ", isNew: true, desc: "Гілка для швидкого продажу активів та фіату іншим учасникам, минаючи стакан біржі для отримання негайної фіатної ліквідності. Простими словами можливість торгувати внутнішньо в DineroLab. " },
+  { title: "ОРДЕР ВІДКУП", isNew: true, desc: "Гілка для швидкого відкупу USDT інших учасників без очікування в стакані чи депозитів через прокладки/біржі." },
 ];
 
 const PointsList = ({ points, isVisible, reverse }: { points: Point[]; isVisible: boolean; reverse?: boolean }) => (
@@ -190,10 +190,10 @@ const DineroLabContent = () => {
           <div className="text-center mb-8 sm:mb-10">
             <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/15 border border-primary/30 text-primary text-[10px] sm:text-xs font-bold uppercase tracking-wider mb-3 sm:mb-4">
               <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-              Нові розділи
+              ВНУТРІШНЯ ТОРГІВЛЯ
             </span>
             <h3 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold">
-              Ордери — миттєва <span className="text-gradient">ліквідність</span>
+              Ордери — постійна <span className="text-gradient">ліквідність</span>
             </h3>
           </div>
 
