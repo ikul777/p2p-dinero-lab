@@ -60,12 +60,12 @@ const Hero = () => {
               </div>
             </div>
             {/* Main heading */}
-            <h1 className={`hero-display text-[26px] leading-[1.1] sm:text-5xl sm:leading-tight md:text-6xl lg:text-7xl mb-5 sm:mb-7 transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 translate-y-0 blur-0' : 'opacity-0 translate-y-10 blur-sm'}`}>
+            <h1 className={`hero-display text-[clamp(22px,6.8vw,28px)] leading-[1.1] sm:text-5xl sm:leading-tight md:text-6xl lg:text-7xl mb-5 sm:mb-7 transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 translate-y-0 blur-0' : 'opacity-0 translate-y-10 blur-sm'}`}>
               <span className="block text-gradient-animated">P2P АРБІТРАЖ</span>
               <span className="block mt-1 sm:mt-2 text-foreground/95">
                 твій інструмент для
               </span>
-              <span className="block mt-1 sm:mt-0 text-gradient sm:accent-underline whitespace-nowrap">
+              <span className="block mt-1 sm:mt-0 text-gradient sm:accent-underline whitespace-nowrap text-[clamp(20px,6.2vw,28px)] sm:text-inherit">
                 стабільного заробітку
               </span>
             </h1>
