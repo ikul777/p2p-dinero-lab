@@ -87,10 +87,10 @@ const Hero = () => {
             </div>
             
             {/* Stats */}
-            <div className={`mt-7 sm:mt-10 md:mt-16 grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 md:gap-5 max-w-[340px] sm:max-w-2xl md:max-w-3xl mx-auto transition-all duration-700 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+            <div className={`mt-7 sm:mt-10 md:mt-16 grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 md:gap-5 max-w-[340px] sm:max-w-2xl md:max-w-4xl mx-auto transition-all duration-700 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
               <div ref={counter4100.ref} className="stat-card text-center p-3 sm:p-3 md:p-5 group min-h-[78px] sm:min-h-0">
-                <div className="font-display font-bold text-lg sm:text-xl md:text-2xl lg:text-3xl text-gradient mb-1 sm:mb-2 whitespace-nowrap transition-all">
-                  {counter4100.count} <span className="text-[9px] sm:text-xs md:text-base">USDT</span>
+                <div className="font-display font-bold text-lg sm:text-xl md:text-[26px] lg:text-[28px] text-gradient mb-1 sm:mb-2 whitespace-nowrap transition-all">
+                  {counter4100.count} <span className="text-[9px] sm:text-[10px] md:text-xs">USDT</span>
                 </div>
                 <div className="text-[9px] sm:text-[10px] md:text-xs lg:text-sm text-muted-foreground leading-tight">
                   середній дохід учасника
