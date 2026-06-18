@@ -3,9 +3,10 @@ import { useScrollAnimation } from '@/hooks/use-scroll-animation';
 import logoRed from '@/assets/dinerolab-logo-red.png.asset.json';
 
 const benefits = [
-  'Авторські звʼязки під різний бюджет',
-  'Підтримка саппортів 24/7',
-  'Закрита спільнота професіоналів'
+  'Авторські звʼязки на 4-8% профіту',
+  'Готові рішення по внутрішній та зовнішній P2P торгівлі',
+  'Підтримка сапортів практиків 24/7',
+  'Закрите комʼюніті практиків'
 ];
 
 const CTA = () => {
