@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
-import { ExternalLink, X, ChevronLeft, ChevronRight, Quote, ZoomIn } from 'lucide-react';
+import { X, ChevronLeft, ChevronRight, ZoomIn, ArrowRight } from 'lucide-react';
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
 import { useScrollAnimation } from '@/hooks/use-scroll-animation';
@@ -27,7 +27,7 @@ const Testimonials = () => {
   );
 
   const [emblaRef, emblaApi] = useEmblaCarousel(
-    { loop: true, align: 'center', skipSnaps: false, dragFree: false },
+    { loop: true, align: 'center', skipSnaps: false },
     [autoplay.current]
   );
 
@@ -70,48 +70,45 @@ const Testimonials = () => {
     };
   }, [lightboxIndex, close, lbPrev, lbNext]);
 
+  const progressPct = ((selectedIndex + 1) / screenshots.length) * 100;
+
   return (
     <section
       id="testimonials"
-      className="py-12 sm:py-16 md:py-24 lg:py-32 bg-background relative overflow-hidden"
+      className="py-14 sm:py-20 md:py-28 lg:py-32 bg-background relative overflow-hidden"
     >
-      {/* ambient backdrop */}
+      {/* top border */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
-      <div className="absolute top-1/2 left-0 -translate-y-1/2 w-[200px] sm:w-[300px] md:w-[500px] h-[200px] sm:h-[300px] md:h-[500px] bg-primary/5 rounded-full filter blur-[80px] sm:blur-[120px]" />
-      <div className="absolute bottom-0 right-0 w-[150px] sm:w-[250px] md:w-[400px] h-[150px] sm:h-[250px] md:h-[400px] bg-primary/5 rounded-full filter blur-[60px] sm:blur-[100px]" />
-      {/* subtle grid texture */}
-      <div
-        className="absolute inset-0 opacity-[0.025] pointer-events-none"
-        style={{
-          backgroundImage:
-            'linear-gradient(hsl(var(--foreground)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--foreground)) 1px, transparent 1px)',
-          backgroundSize: '48px 48px',
-        }}
-      />
+
+      {/* central ambient glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[280px] sm:w-[420px] md:w-[640px] aspect-square bg-primary/15 rounded-full blur-[100px] sm:blur-[140px] pointer-events-none" />
 
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-6xl mx-auto flex flex-col items-center gap-10 sm:gap-12 md:gap-14">
+
           {/* Header */}
           <div
             ref={headerAnimation.ref}
-            className={`text-center mb-8 sm:mb-10 md:mb-14 transition-all duration-700 ${
+            className={`text-center space-y-3 sm:space-y-4 transition-all duration-700 ${
               headerAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
           >
-            <div className="inline-flex items-center gap-2 mb-3 sm:mb-4 px-3 py-1 rounded-full border border-primary/20 bg-primary/5 backdrop-blur">
-              <span className="relative flex h-1.5 w-1.5">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/20 bg-primary/5 backdrop-blur-md">
+              <span className="relative flex h-2 w-2">
                 <span className="absolute inline-flex h-full w-full rounded-full bg-primary opacity-75 animate-ping" />
-                <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-primary" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-primary" />
               </span>
-              <span className="text-[10px] sm:text-xs font-medium tracking-widest text-primary uppercase">
-                Live · Відгуки
+              <span className="text-[10px] uppercase tracking-[0.2em] font-bold text-primary">
+                Live • Відгуки
               </span>
             </div>
-            <h2 className="font-display text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-2 sm:mb-3 md:mb-4">
+
+            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tighter">
               <span className="text-foreground">Реальні </span>
               <span className="text-gradient">кейси</span>
             </h2>
-            <p className="text-xs sm:text-sm md:text-base text-muted-foreground max-w-xl mx-auto px-2">
+
+            <p className="text-xs sm:text-sm text-muted-foreground/80 leading-relaxed max-w-[280px] sm:max-w-md mx-auto">
               Скріншоти живих відгуків з нашого приватного каналу P2P FEEDBACK
             </p>
           </div>
@@ -119,53 +116,40 @@ const Testimonials = () => {
           {/* Carousel */}
           <div
             ref={gridAnimation.ref}
-            className={`relative transition-all duration-700 ${
+            className={`relative w-full transition-all duration-700 ${
               gridAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
           >
-            {/* floating quote mark */}
-            <Quote
-              className="hidden md:block absolute -top-6 left-1/2 -translate-x-1/2 text-primary/10 z-0"
-              size={120}
-              strokeWidth={1}
-            />
-
             {/* edge fades */}
-            <div className="pointer-events-none absolute inset-y-0 left-0 w-12 sm:w-20 md:w-32 bg-gradient-to-r from-background via-background/70 to-transparent z-20" />
-            <div className="pointer-events-none absolute inset-y-0 right-0 w-12 sm:w-20 md:w-32 bg-gradient-to-l from-background via-background/70 to-transparent z-20" />
+            <div className="pointer-events-none absolute inset-y-0 left-0 w-10 sm:w-20 md:w-32 bg-gradient-to-r from-background to-transparent z-20" />
+            <div className="pointer-events-none absolute inset-y-0 right-0 w-10 sm:w-20 md:w-32 bg-gradient-to-l from-background to-transparent z-20" />
 
-            <div className="overflow-hidden py-6 sm:py-8" ref={emblaRef}>
+            <div className="overflow-hidden py-4 sm:py-6" ref={emblaRef}>
               <div className="flex items-center touch-pan-y">
                 {screenshots.map((src, i) => {
                   const isActive = i === selectedIndex;
+                  const distance = Math.abs(i - selectedIndex);
                   return (
                     <div
                       key={i}
-                      className="flex-[0_0_72%] sm:flex-[0_0_50%] md:flex-[0_0_38%] lg:flex-[0_0_30%] min-w-0 px-2 sm:px-3 md:px-4"
+                      className="flex-[0_0_72%] sm:flex-[0_0_52%] md:flex-[0_0_40%] lg:flex-[0_0_32%] min-w-0 px-2 sm:px-3 md:px-4"
                     >
                       <button
                         type="button"
                         onClick={() => (isActive ? setLightboxIndex(i) : scrollTo(i))}
                         aria-label={isActive ? `Відкрити відгук ${i + 1}` : `Перейти до відгуку ${i + 1}`}
-                        className={`group relative w-full block transition-all duration-700 ease-out will-change-transform ${
+                        className={`relative w-full block transition-all duration-700 ease-out will-change-transform ${
                           isActive
                             ? 'scale-100 opacity-100 z-10'
-                            : 'scale-[0.86] opacity-45 hover:opacity-75'
+                            : distance === 1
+                              ? 'scale-[0.82] opacity-25 blur-[2px] ' +
+                                (i < selectedIndex ? '-rotate-[6deg]' : 'rotate-[6deg]')
+                              : 'scale-[0.7] opacity-10 blur-[3px]'
                         }`}
                       >
-                        {/* gradient frame */}
+                        {/* outer red glow */}
                         <div
-                          className={`absolute -inset-[1.5px] rounded-2xl transition-opacity duration-500 ${
-                            isActive ? 'opacity-100' : 'opacity-0'
-                          }`}
-                          style={{
-                            background:
-                              'linear-gradient(135deg, hsl(var(--primary) / 0.8), hsl(var(--primary) / 0.1) 40%, transparent 70%, hsl(var(--primary) / 0.4))',
-                          }}
-                        />
-                        {/* outer glow */}
-                        <div
-                          className={`absolute -inset-4 rounded-3xl blur-2xl transition-opacity duration-700 -z-10 ${
+                          className={`pointer-events-none absolute -inset-6 rounded-[2.5rem] -z-10 transition-opacity duration-700 ${
                             isActive ? 'opacity-100' : 'opacity-0'
                           }`}
                           style={{
@@ -175,43 +159,43 @@ const Testimonials = () => {
                         />
 
                         <div
-                          className={`relative overflow-hidden rounded-2xl bg-card/60 backdrop-blur-xl ring-1 ${
-                            isActive ? 'ring-primary/30' : 'ring-border/30'
+                          className={`relative w-full aspect-[9/16] overflow-hidden rounded-[2rem] bg-card transition-all duration-500 ${
+                            isActive
+                              ? 'border border-primary/40 shadow-2xl shadow-primary/20'
+                              : 'border border-border/40'
                           }`}
                         >
-                          {/* top glass shine */}
-                          <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-foreground/30 to-transparent z-10" />
-                          {/* corner index badge */}
+                          {/* number badge */}
                           <div
-                            className={`pointer-events-none absolute top-3 left-3 z-10 px-2 py-0.5 rounded-full text-[10px] font-mono tracking-wider transition-all duration-500 ${
+                            className={`absolute top-3 left-3 z-20 w-7 h-7 flex items-center justify-center rounded-full text-[10px] font-mono font-bold transition-all duration-500 ${
                               isActive
-                                ? 'bg-primary/90 text-primary-foreground'
+                                ? 'bg-primary text-primary-foreground shadow-lg shadow-primary/40'
                                 : 'bg-background/70 text-muted-foreground border border-border/50'
                             }`}
                           >
                             {String(i + 1).padStart(2, '0')}
                           </div>
+
                           {/* zoom hint */}
                           <div
-                            className={`pointer-events-none absolute top-3 right-3 z-10 w-8 h-8 rounded-full bg-background/80 backdrop-blur border border-border/50 flex items-center justify-center transition-all duration-500 ${
-                              isActive
-                                ? 'opacity-100 translate-y-0'
-                                : 'opacity-0 -translate-y-2'
-                            } group-hover:bg-primary/20 group-hover:border-primary/50`}
+                            className={`absolute top-3 right-3 z-20 w-8 h-8 rounded-full bg-background/50 backdrop-blur-md border border-border/40 flex items-center justify-center transition-all duration-500 ${
+                              isActive ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2'
+                            }`}
                           >
                             <ZoomIn size={14} className="text-foreground/80" />
                           </div>
 
+                          {/* image */}
                           <img
                             src={src}
                             alt={`Відгук ${i + 1} — DineroLab`}
                             loading="lazy"
                             draggable={false}
-                            className="w-full h-auto max-h-[65vh] sm:max-h-[70vh] md:max-h-[75vh] object-contain block select-none"
+                            className="absolute inset-0 w-full h-full object-cover object-top select-none"
                           />
 
-                          {/* bottom subtle gradient for read */}
-                          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-card/80 to-transparent z-[5]" />
+                          {/* bottom darken */}
+                          <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background/70" />
                         </div>
                       </button>
                     </div>
@@ -219,64 +203,76 @@ const Testimonials = () => {
                 })}
               </div>
             </div>
+          </div>
 
-            {/* nav buttons */}
+          {/* Navigation + progress */}
+          <div className="flex items-center justify-center gap-5 sm:gap-8 w-full max-w-xs">
             <button
               type="button"
               onClick={scrollPrev}
               aria-label="Попередній"
-              className="absolute left-1 sm:left-2 md:left-4 top-1/2 -translate-y-1/2 z-30 w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-full bg-background/80 backdrop-blur-xl border border-border hover:bg-primary hover:border-primary hover:text-primary-foreground hover:scale-110 flex items-center justify-center transition-all duration-300 shadow-lg"
+              className="w-11 h-11 sm:w-12 sm:h-12 rounded-full border border-border bg-card/50 backdrop-blur-md flex items-center justify-center text-muted-foreground hover:text-primary-foreground hover:bg-primary hover:border-primary hover:scale-105 transition-all"
             >
               <ChevronLeft size={20} />
             </button>
+
+            <div className="flex flex-col items-center gap-2 flex-1">
+              <span className="text-xs font-mono font-bold tracking-widest text-foreground">
+                {String(selectedIndex + 1).padStart(2, '0')}
+                <span className="text-muted-foreground/50"> / {String(screenshots.length).padStart(2, '0')}</span>
+              </span>
+              <div className="relative h-[2px] w-full max-w-[120px] bg-border rounded-full overflow-hidden">
+                <div
+                  className="absolute left-0 top-0 h-full bg-primary shadow-[0_0_10px_hsl(var(--primary)/0.6)] transition-all duration-500 ease-out"
+                  style={{ width: `${progressPct}%` }}
+                />
+              </div>
+            </div>
+
             <button
               type="button"
               onClick={scrollNext}
               aria-label="Наступний"
-              className="absolute right-1 sm:right-2 md:right-4 top-1/2 -translate-y-1/2 z-30 w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-full bg-background/80 backdrop-blur-xl border border-border hover:bg-primary hover:border-primary hover:text-primary-foreground hover:scale-110 flex items-center justify-center transition-all duration-300 shadow-lg"
+              className="w-11 h-11 sm:w-12 sm:h-12 rounded-full border border-border bg-card/50 backdrop-blur-md flex items-center justify-center text-muted-foreground hover:text-primary-foreground hover:bg-primary hover:border-primary hover:scale-105 transition-all"
             >
               <ChevronRight size={20} />
             </button>
           </div>
 
-          {/* dots + counter row */}
-          <div className="flex flex-col items-center gap-3 mt-6 sm:mt-8">
-            <div className="flex items-center gap-1.5 sm:gap-2">
-              {screenshots.map((_, i) => (
-                <button
-                  key={i}
-                  type="button"
-                  onClick={() => scrollTo(i)}
-                  aria-label={`Відгук ${i + 1}`}
-                  className={`h-1.5 rounded-full transition-all duration-500 ${
-                    i === selectedIndex
-                      ? 'w-8 sm:w-10 bg-primary shadow-[0_0_12px_hsl(var(--primary)/0.6)]'
-                      : 'w-1.5 bg-border hover:bg-muted-foreground'
-                  }`}
-                />
-              ))}
-            </div>
-            <div className="flex items-center gap-2 text-[10px] sm:text-xs text-muted-foreground/70 font-mono tracking-wider">
-              <span className="text-primary font-semibold">
-                {String(selectedIndex + 1).padStart(2, '0')}
-              </span>
-              <span className="w-6 h-px bg-border" />
-              <span>{String(screenshots.length).padStart(2, '0')}</span>
-              <span className="mx-1">·</span>
-              <span>оновлюється щотижня</span>
-            </div>
+          {/* dots for direct nav */}
+          <div className="flex items-center gap-1.5">
+            {screenshots.map((_, i) => (
+              <button
+                key={i}
+                type="button"
+                onClick={() => scrollTo(i)}
+                aria-label={`Відгук ${i + 1}`}
+                className={`h-1.5 rounded-full transition-all duration-500 ${
+                  i === selectedIndex
+                    ? 'w-6 bg-primary shadow-[0_0_8px_hsl(var(--primary)/0.6)]'
+                    : 'w-1.5 bg-border hover:bg-muted-foreground'
+                }`}
+              />
+            ))}
           </div>
 
-          {/* CTA */}
-          <div className="text-center mt-8 sm:mt-10 md:mt-14">
+          {/* CTA — bordered glow card */}
+          <div className="w-full max-w-sm px-2">
             <a
               href="https://t.me/+fsuDNjshEhplMGMy"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-primary inline-flex items-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 rounded-full text-xs sm:text-sm md:text-base font-medium text-primary-foreground"
+              className="relative group block w-full"
             >
-              Більше відгуків
-              <ExternalLink size={14} className="sm:w-4 sm:h-4" />
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-primary to-primary/60 rounded-2xl blur opacity-30 group-hover:opacity-60 transition-opacity duration-500" />
+              <div className="relative flex items-center justify-between px-5 sm:px-6 py-4 sm:py-5 bg-card rounded-2xl border border-border group-hover:border-primary/50 transition-colors">
+                <span className="text-foreground font-bold text-sm sm:text-base tracking-wide">
+                  Більше відгуків
+                </span>
+                <div className="w-9 h-9 rounded-full bg-primary flex items-center justify-center group-hover:translate-x-1 transition-transform duration-300">
+                  <ArrowRight size={16} className="text-primary-foreground" />
+                </div>
+              </div>
             </a>
           </div>
         </div>
