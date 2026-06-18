@@ -55,7 +55,7 @@ const Hero = () => {
                 <img
                   src={logoWhite.url}
                   alt="DineroLab"
-                  className="h-10 sm:h-14 md:h-16 lg:h-20 w-auto mx-auto object-contain"
+                  className="h-12 sm:h-14 md:h-16 lg:h-20 w-auto mx-auto object-contain"
                 />
               </div>
             </div>
