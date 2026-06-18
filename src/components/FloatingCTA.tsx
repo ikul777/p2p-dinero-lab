@@ -31,14 +31,16 @@ const FloatingCTA = () => {
       aria-hidden={!isVisible}
       tabIndex={isVisible ? 0 : -1}
       style={{ paddingBottom: 'env(safe-area-inset-bottom, 0px)' }}
-      className={`fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 flex items-center gap-2 px-4 py-2.5 sm:px-5 sm:py-3 bg-primary text-primary-foreground rounded-full shadow-lg shadow-primary/30 font-medium text-xs sm:text-sm transition-all duration-300 floating-cta hover:scale-110 ${
+      className={`fixed bottom-3 right-3 sm:bottom-5 sm:right-5 z-50 flex items-center gap-1.5 sm:gap-2 pl-3.5 pr-2.5 py-2 sm:pl-4 sm:pr-3 sm:py-2.5 bg-background/70 backdrop-blur-xl border border-primary/30 text-primary rounded-full shadow-[0_8px_32px_-8px_hsl(var(--primary)/0.25)] font-semibold text-[11px] sm:text-xs tracking-wide transition-all duration-300 hover:bg-primary hover:text-primary-foreground hover:border-primary hover:shadow-[0_8px_32px_-4px_hsl(var(--primary)/0.45)] hover:scale-105 active:scale-95 ${
         isVisible
           ? 'opacity-100 translate-y-0'
           : 'opacity-0 translate-y-4 pointer-events-none'
       }`}
     >
       Приєднатись
-      <ArrowRight size={14} className="sm:w-4 sm:h-4" />
+      <span className="flex items-center justify-center w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-primary/10 group-hover:bg-primary-foreground/20 transition-colors">
+        <ArrowRight size={12} className="sm:w-3.5 sm:h-3.5" />
+      </span>
     </a>
   );
 };
