@@ -128,11 +128,12 @@ const ProfitCalculator = () => {
                       step="100"
                       value={Math.min(budget, 10000)}
                       onChange={handleSliderChange}
-                      aria-label="Бюджет в USDT"
+                      aria-label="Бюджет у USDT — повзунок"
                       aria-valuemin={100}
                       aria-valuemax={10000}
                       aria-valuenow={Math.min(budget, 10000)}
                       aria-valuetext={`${formatNumber(Math.min(budget, 10000))} USDT`}
+                      aria-controls="budget-results"
                       style={{ ['--range-fill' as string]: `${((Math.min(budget, 10000) - 100) / 9900) * 100}%` }}
                       className="w-full"
                     />
