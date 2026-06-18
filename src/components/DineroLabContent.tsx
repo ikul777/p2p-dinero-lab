@@ -1,7 +1,7 @@
 import { useScrollAnimation } from '@/hooks/use-scroll-animation';
 import { Check } from 'lucide-react';
-import dineroLabImage1 from '@/assets/dinerolab-content-1.png';
-import dineroLabImage2 from '@/assets/dinerolab-content-2.png';
+import dineroLabImage1 from '@/assets/dinerolab-content-1.png.asset.json';
+import dineroLabImage2 from '@/assets/dinerolab-content-2.png.asset.json';
 import dineroLabImage3 from '@/assets/dinerolab-content-3.png.asset.json';
 
 type Point = { title: string; desc: string; isNew?: boolean };
