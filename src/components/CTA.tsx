@@ -1,5 +1,6 @@
 import { ArrowRight, Check } from 'lucide-react';
 import { useScrollAnimation } from '@/hooks/use-scroll-animation';
+import logoRed from '@/assets/dinerolab-logo-red.png.asset.json';
 
 const benefits = [
   'Авторські звʼязки під різний бюджет',
