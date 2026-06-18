@@ -30,9 +30,10 @@ const CTA = () => {
 
                 <span className="tag mb-4 sm:mb-5 inline-block text-[10px] sm:text-xs">Приєднуйся зараз</span>
 
-                <h2 className="font-display text-[1.6rem] leading-[1.15] sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 text-foreground">
-                  Готовий заробляти<br className="sm:hidden" /> з командою?
+                <h2 className="font-display text-[1.4rem] leading-tight sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 text-foreground text-balance">
+                  Готовий заробляти з командою?
                 </h2>
+
 
                 <p className="text-sm sm:text-base text-muted-foreground mb-6 sm:mb-8 max-w-sm">
                   Авторські звʼязки, підтримка 24/7 та закрита спільнота.
