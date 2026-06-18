@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
-import { ExternalLink, X, ZoomIn, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ExternalLink, X, ChevronLeft, ChevronRight } from 'lucide-react';
+import useEmblaCarousel from 'embla-carousel-react';
 import { useScrollAnimation } from '@/hooks/use-scroll-animation';
 
 import t1 from '@/assets/testimonials/testimonial-6752.png.asset.json';
@@ -20,15 +21,36 @@ const screenshots: string[] = [
 
 const Testimonials = () => {
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+  const [selectedIndex, setSelectedIndex] = useState(0);
   const headerAnimation = useScrollAnimation();
   const gridAnimation = useScrollAnimation({ threshold: 0.05 });
 
+  const [emblaRef, emblaApi] = useEmblaCarousel({
+    loop: true,
+    align: 'center',
+    skipSnaps: false,
+  });
+
+  useEffect(() => {
+    if (!emblaApi) return;
+    const onSelect = () => setSelectedIndex(emblaApi.selectedScrollSnap());
+    emblaApi.on('select', onSelect);
+    onSelect();
+    return () => {
+      emblaApi.off('select', onSelect);
+    };
+  }, [emblaApi]);
+
+  const scrollPrev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
+  const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
+  const scrollTo = useCallback((i: number) => emblaApi?.scrollTo(i), [emblaApi]);
+
   const close = useCallback(() => setLightboxIndex(null), []);
-  const prev = useCallback(
+  const lbPrev = useCallback(
     () => setLightboxIndex((i) => (i === null ? i : (i - 1 + screenshots.length) % screenshots.length)),
     []
   );
-  const next = useCallback(
+  const lbNext = useCallback(
     () => setLightboxIndex((i) => (i === null ? i : (i + 1) % screenshots.length)),
     []
   );
@@ -37,8 +59,8 @@ const Testimonials = () => {
     if (lightboxIndex === null) return;
     const onKey = (e: KeyboardEvent) => {
       if (e.key === 'Escape') close();
-      else if (e.key === 'ArrowLeft') prev();
-      else if (e.key === 'ArrowRight') next();
+      else if (e.key === 'ArrowLeft') lbPrev();
+      else if (e.key === 'ArrowRight') lbNext();
     };
     window.addEventListener('keydown', onKey);
     document.body.style.overflow = 'hidden';
@@ -46,7 +68,7 @@ const Testimonials = () => {
       window.removeEventListener('keydown', onKey);
       document.body.style.overflow = '';
     };
-  }, [lightboxIndex, close, prev, next]);
+  }, [lightboxIndex, close, lbPrev, lbNext]);
 
   return (
     <section
@@ -54,10 +76,11 @@ const Testimonials = () => {
       className="py-12 sm:py-16 md:py-24 lg:py-32 bg-background relative overflow-hidden"
     >
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
-      <div className="absolute bottom-0 right-1/4 w-[150px] sm:w-[200px] md:w-[400px] h-[150px] sm:h-[200px] md:h-[400px] bg-primary/5 rounded-full filter blur-[60px] sm:blur-[80px] md:blur-[120px]" />
+      <div className="absolute top-1/2 left-0 -translate-y-1/2 w-[200px] sm:w-[300px] md:w-[500px] h-[200px] sm:h-[300px] md:h-[500px] bg-primary/5 rounded-full filter blur-[80px] sm:blur-[120px]" />
+      <div className="absolute bottom-0 right-0 w-[150px] sm:w-[250px] md:w-[400px] h-[150px] sm:h-[250px] md:h-[400px] bg-primary/5 rounded-full filter blur-[60px] sm:blur-[100px]" />
 
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           {/* Header */}
           <div
             ref={headerAnimation.ref}
@@ -75,71 +98,94 @@ const Testimonials = () => {
             <p className="text-xs sm:text-sm md:text-base text-muted-foreground max-w-xl mx-auto px-2">
               Скріншоти живих відгуків з нашого приватного каналу P2P FEEDBACK
             </p>
-            <p className="mt-2 text-[10px] sm:text-xs text-muted-foreground/70">
-              {screenshots.length} відгуків · оновлюється щотижня
-            </p>
           </div>
 
-          {/* Mobile: horizontal snap carousel */}
+          {/* Carousel */}
           <div
             ref={gridAnimation.ref}
-            className={`md:hidden transition-all duration-700 ${
+            className={`relative transition-all duration-700 ${
               gridAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
           >
-            <div
-              className="flex gap-4 overflow-x-auto pb-4 -mx-4 px-4 scrollbar-hide snap-x snap-mandatory"
-            >
-              {screenshots.map((src, i) => (
-                <button
-                  type="button"
-                  key={i}
-                  onClick={() => setLightboxIndex(i)}
-                  className="group relative flex-shrink-0 w-[78vw] max-w-[340px] snap-center rounded-2xl overflow-hidden bg-card/40 backdrop-blur ring-1 ring-border/40 hover:ring-primary/50 transition-all duration-300 p-0"
-                  aria-label={`Відгук ${i + 1}`}
-                >
-                  <img
-                    src={src}
-                    alt={`Відгук ${i + 1} — DineroLab`}
-                    loading="lazy"
-                    className="w-full h-auto max-h-[70vh] object-contain block"
-                  />
-                </button>
-              ))}
+            {/* edge fades */}
+            <div className="pointer-events-none absolute inset-y-0 left-0 w-12 sm:w-20 md:w-32 bg-gradient-to-r from-background to-transparent z-20" />
+            <div className="pointer-events-none absolute inset-y-0 right-0 w-12 sm:w-20 md:w-32 bg-gradient-to-l from-background to-transparent z-20" />
+
+            <div className="overflow-hidden" ref={emblaRef}>
+              <div className="flex items-center touch-pan-y">
+                {screenshots.map((src, i) => {
+                  const isActive = i === selectedIndex;
+                  return (
+                    <div
+                      key={i}
+                      className="flex-[0_0_85%] sm:flex-[0_0_55%] md:flex-[0_0_42%] lg:flex-[0_0_34%] min-w-0 px-2 sm:px-3 md:px-4"
+                    >
+                      <button
+                        type="button"
+                        onClick={() => (isActive ? setLightboxIndex(i) : scrollTo(i))}
+                        aria-label={isActive ? `Відкрити відгук ${i + 1}` : `Перейти до відгуку ${i + 1}`}
+                        className={`group relative w-full overflow-hidden rounded-2xl bg-card/40 backdrop-blur ring-1 transition-all duration-500 ${
+                          isActive
+                            ? 'ring-primary/60 shadow-[0_30px_80px_-30px_hsl(var(--primary)/0.5)] scale-100 opacity-100'
+                            : 'ring-border/30 opacity-50 scale-[0.9] hover:opacity-75'
+                        }`}
+                      >
+                        {/* glass shine top */}
+                        <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-foreground/20 to-transparent z-10" />
+                        <img
+                          src={src}
+                          alt={`Відгук ${i + 1} — DineroLab`}
+                          loading="lazy"
+                          draggable={false}
+                          className="w-full h-auto max-h-[65vh] sm:max-h-[70vh] md:max-h-[75vh] object-contain block select-none"
+                        />
+                      </button>
+                    </div>
+                  );
+                })}
+              </div>
             </div>
+
+            {/* nav buttons */}
+            <button
+              type="button"
+              onClick={scrollPrev}
+              aria-label="Попередній"
+              className="absolute left-1 sm:left-2 md:left-6 top-1/2 -translate-y-1/2 z-30 w-9 h-9 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-full bg-background/80 backdrop-blur border border-border hover:bg-primary/10 hover:border-primary/50 flex items-center justify-center transition-all"
+            >
+              <ChevronLeft size={18} className="sm:w-5 sm:h-5" />
+            </button>
+            <button
+              type="button"
+              onClick={scrollNext}
+              aria-label="Наступний"
+              className="absolute right-1 sm:right-2 md:right-6 top-1/2 -translate-y-1/2 z-30 w-9 h-9 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-full bg-background/80 backdrop-blur border border-border hover:bg-primary/10 hover:border-primary/50 flex items-center justify-center transition-all"
+            >
+              <ChevronRight size={18} className="sm:w-5 sm:h-5" />
+            </button>
           </div>
 
-          {/* Desktop/Tablet: masonry grid */}
-          <div
-            className={`hidden md:block transition-all duration-700 ${
-              gridAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-            }`}
-          >
-            <div className="columns-2 lg:columns-3 xl:columns-4 gap-5 [column-fill:_balance]">
-              {screenshots.map((src, i) => (
-                <button
-                  type="button"
-                  key={i}
-                  onClick={() => setLightboxIndex(i)}
-                  className="group relative mb-5 block w-full break-inside-avoid rounded-2xl overflow-hidden bg-card/40 backdrop-blur ring-1 ring-border/40 hover:ring-primary/60 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_20px_60px_-20px_hsl(var(--primary)/0.4)] p-0"
-                  aria-label={`Відгук ${i + 1}`}
-                >
-                  {/* glass shine top */}
-                  <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-foreground/15 to-transparent" />
-                  <img
-                    src={src}
-                    alt={`Відгук ${i + 1} — DineroLab`}
-                    loading="lazy"
-                    className="w-full h-auto block transition-transform duration-700 group-hover:scale-[1.015]"
-                  />
-                  {/* zoom hint */}
-                  <div className="absolute top-3 right-3 w-9 h-9 rounded-full bg-background/70 backdrop-blur-md border border-border/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                    <ZoomIn size={16} className="text-foreground" />
-                  </div>
-                </button>
-              ))}
-            </div>
+          {/* dots */}
+          <div className="flex justify-center gap-1.5 sm:gap-2 mt-6 sm:mt-8">
+            {screenshots.map((_, i) => (
+              <button
+                key={i}
+                type="button"
+                onClick={() => scrollTo(i)}
+                aria-label={`Відгук ${i + 1}`}
+                className={`h-1.5 rounded-full transition-all duration-300 ${
+                  i === selectedIndex
+                    ? 'w-6 sm:w-8 bg-primary'
+                    : 'w-1.5 bg-border hover:bg-muted-foreground'
+                }`}
+              />
+            ))}
           </div>
+
+          {/* counter */}
+          <p className="text-center mt-4 text-[10px] sm:text-xs text-muted-foreground/70">
+            {selectedIndex + 1} / {screenshots.length} · оновлюється щотижня
+          </p>
 
           {/* CTA */}
           <div className="text-center mt-8 sm:mt-10 md:mt-14">
@@ -164,12 +210,10 @@ const Testimonials = () => {
           role="dialog"
           aria-modal="true"
         >
-          {/* counter */}
           <div className="absolute top-4 left-4 sm:top-6 sm:left-6 px-3 py-1.5 rounded-full bg-background/70 border border-border/50 text-xs sm:text-sm text-muted-foreground backdrop-blur">
             {lightboxIndex + 1} / {screenshots.length}
           </div>
 
-          {/* close */}
           <button
             type="button"
             onClick={(e) => { e.stopPropagation(); close(); }}
@@ -179,20 +223,18 @@ const Testimonials = () => {
             <X size={20} />
           </button>
 
-          {/* prev */}
           <button
             type="button"
-            onClick={(e) => { e.stopPropagation(); prev(); }}
+            onClick={(e) => { e.stopPropagation(); lbPrev(); }}
             className="absolute left-2 sm:left-6 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-background/80 border border-border flex items-center justify-center hover:bg-primary/10 hover:border-primary/50 transition-all z-10"
             aria-label="Попередній"
           >
             <ChevronLeft size={22} />
           </button>
 
-          {/* next */}
           <button
             type="button"
-            onClick={(e) => { e.stopPropagation(); next(); }}
+            onClick={(e) => { e.stopPropagation(); lbNext(); }}
             className="absolute right-2 sm:right-6 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-background/80 border border-border flex items-center justify-center hover:bg-primary/10 hover:border-primary/50 transition-all z-10"
             aria-label="Наступний"
           >
