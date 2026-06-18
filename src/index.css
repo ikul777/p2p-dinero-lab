@@ -55,6 +55,7 @@
 
   html {
     scroll-behavior: smooth;
+    text-size-adjust: 100%;
   }
 
   body {
@@ -62,6 +63,7 @@
     font-family: 'Inter', sans-serif;
     background: hsl(var(--background));
     overflow-x: hidden;
+    overflow-wrap: break-word;
   }
 }
 
@@ -975,8 +977,9 @@ input[type="range"] {
 .hero-display {
   font-family: 'Unbounded', sans-serif;
   font-weight: 800;
-  letter-spacing: -0.03em;
+  letter-spacing: 0;
   line-height: 1.02;
+  text-wrap: balance;
 }
 
 /* Magnetic lift on hover */

@@ -100,7 +100,7 @@ const DineroLabContent = () => {
   const block3Animation = useScrollAnimation({ threshold: 0.15 });
 
   return (
-    <section className="py-14 sm:py-20 md:py-28 relative overflow-hidden">
+    <section className="py-12 sm:py-20 md:py-28 relative overflow-hidden">
       {/* Background elements */}
       <div className="absolute inset-0 bg-grid opacity-30" />
       <div className="absolute top-1/4 left-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
@@ -110,17 +110,17 @@ const DineroLabContent = () => {
         {/* Section Header */}
         <div
           ref={headerAnimation.ref}
-          className={`text-center mb-12 sm:mb-16 md:mb-20 transition-all duration-700 ${
+          className={`text-center mb-10 sm:mb-16 md:mb-20 transition-all duration-700 ${
             headerAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >
           <div className="inline-block mb-4">
             <span className="tag">Що всередині</span>
           </div>
-          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6">
+          <h2 className="font-display text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 text-balance">
             НАПОВНЕННЯ <span className="text-gradient whitespace-nowrap">DINEROLAB</span>
           </h2>
-          <p className="text-muted-foreground text-sm sm:text-base md:text-lg max-w-2xl mx-auto">
+          <p className="text-muted-foreground text-sm sm:text-base md:text-lg max-w-2xl mx-auto text-balance">
             Детальний огляд усіх можливостей та інструментів, які ви отримаєте
           </p>
         </div>
@@ -132,7 +132,7 @@ const DineroLabContent = () => {
             block1Animation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >
-          <div className="glass-card rounded-3xl p-5 sm:p-7 md:p-10">
+            <div className="glass-card rounded-2xl sm:rounded-3xl p-4 sm:p-7 md:p-10">
             <div className="md:hidden text-center">
               <BlockBadge num="01" label="Основа" />
             </div>
@@ -200,7 +200,7 @@ const DineroLabContent = () => {
           {/* Glow wrapper */}
           <div className="relative">
             <div className="absolute -inset-0.5 bg-gradient-to-r from-primary/40 via-primary/20 to-primary/40 rounded-3xl blur md:blur-md opacity-60" />
-            <div className="relative glass-card rounded-3xl p-5 sm:p-7 md:p-10">
+              <div className="relative glass-card rounded-2xl sm:rounded-3xl p-4 sm:p-7 md:p-10">
               <div className="flex flex-col md:flex-row items-center gap-6 md:gap-10 lg:gap-14">
                 <div className="w-full md:w-1/3 flex-shrink-0">
                   <Screenshot src={dineroLabImage3.url} alt="DineroLab — нові розділи: Ордер Продаж та Ордер Відкуп" />

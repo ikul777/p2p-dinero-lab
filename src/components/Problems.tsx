@@ -30,7 +30,7 @@ const Problems = () => {
   const bottomAnimation = useScrollAnimation();
 
   return (
-    <section id="problems" className="py-14 sm:py-20 md:py-28 bg-background relative overflow-hidden">
+    <section id="problems" className="py-12 sm:py-20 md:py-28 bg-background relative overflow-hidden">
       <div className="absolute inset-0 bg-grid opacity-10"></div>
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent"></div>
       <div className="absolute bottom-0 left-1/4 w-[150px] sm:w-[200px] md:w-[400px] h-[150px] sm:h-[200px] md:h-[400px] bg-primary/5 rounded-full filter blur-[60px] sm:blur-[80px] md:blur-[120px]"></div>
@@ -43,12 +43,12 @@ const Problems = () => {
             className={`text-center mb-10 sm:mb-12 md:mb-16 transition-all duration-700 ${headerAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
           >
             <span className="tag mb-2 sm:mb-3 md:mb-4 inline-block text-[10px] sm:text-xs">Проблеми</span>
-            <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-2 sm:mb-3 md:mb-4">
+            <h2 className="font-display text-[1.35rem] sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-2 sm:mb-3 md:mb-4 text-balance">
               <span className="text-foreground">Чому більшість </span>
               <span className="text-foreground/30">зливають</span>
               <span className="text-foreground"> у P2P?</span>
             </h2>
-            <p className="text-sm sm:text-base text-muted-foreground max-w-xl mx-auto px-2">
+            <p className="text-sm sm:text-base text-muted-foreground max-w-xl mx-auto px-2 text-balance">
               Без правильного підходу P2P-арбітраж = злиті гроші
             </p>
           </div>
