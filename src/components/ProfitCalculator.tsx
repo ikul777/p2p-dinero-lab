@@ -100,19 +100,21 @@ const ProfitCalculator = () => {
               <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
                 {/* Input Section */}
                 <div>
-                  <label className="block mb-3 sm:mb-4">
+                  <label className="block mb-3 sm:mb-4" htmlFor="budget-input">
                     <span className="text-sm sm:text-base text-muted-foreground mb-2 block">Твій бюджет (USDT)</span>
                     <div className="relative">
-                      <Wallet className="absolute left-3 sm:left-4 top-1/2 -translate-y-1/2 w-4 h-4 sm:w-5 sm:h-5 text-muted-foreground" />
+                      <Wallet aria-hidden="true" className="absolute left-3 sm:left-4 top-1/2 -translate-y-1/2 w-4 h-4 sm:w-5 sm:h-5 text-muted-foreground" />
                       <input
+                        id="budget-input"
                         type="number"
                         min="100"
                         max="1000000"
                         value={budget}
                         onChange={(e) => setBudget(Math.max(0, Number(e.target.value)))}
+                        aria-label="Бюджет в USDT"
                         className="w-full bg-background/50 border border-border/50 rounded-xl py-3 sm:py-4 pl-10 sm:pl-12 pr-16 sm:pr-20 text-lg sm:text-2xl font-display font-bold text-foreground focus:outline-none focus:border-primary/50 focus:ring-2 focus:ring-primary/20 transition-all [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                       />
-                      <span className="absolute right-3 sm:right-4 top-1/2 -translate-y-1/2 text-muted-foreground text-xs sm:text-sm">USDT</span>
+                      <span aria-hidden="true" className="absolute right-3 sm:right-4 top-1/2 -translate-y-1/2 text-muted-foreground text-xs sm:text-sm">USDT</span>
                     </div>
                   </label>
                   
@@ -126,6 +128,10 @@ const ProfitCalculator = () => {
                       value={Math.min(budget, 10000)}
                       onChange={handleSliderChange}
                       aria-label="Бюджет в USDT"
+                      aria-valuemin={100}
+                      aria-valuemax={10000}
+                      aria-valuenow={Math.min(budget, 10000)}
+                      aria-valuetext={`${formatNumber(Math.min(budget, 10000))} USDT`}
                       style={{ ['--range-fill' as string]: `${((Math.min(budget, 10000) - 100) / 9900) * 100}%` }}
                       className="w-full"
                     />

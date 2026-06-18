@@ -28,11 +28,11 @@ const Header = () => {
         : 'bg-transparent py-4 md:py-6'
     }`}>
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
-        <Link to="/" onClick={handleLogoClick} className="group z-50">
-          <h1 className="font-display text-lg md:text-xl font-bold tracking-tight">
+        <Link to="/" onClick={handleLogoClick} className="group z-50" aria-label="DineroLab — на головну">
+          <span className="font-display text-lg md:text-xl font-bold tracking-tight inline-block">
             <span className="text-foreground">Dinero</span>
             <span className="text-primary">Lab</span>
-          </h1>
+          </span>
         </Link>
         
         {/* CTA Button */}

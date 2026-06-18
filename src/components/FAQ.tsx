@@ -62,40 +62,54 @@ const FAQ = () => {
             ref={faqAnimation.ref}
             className={`space-y-2 sm:space-y-3 md:space-y-4 transition-all duration-700 delay-150 ${faqAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
           >
-            {faqItems.map((item, index) => (
-              <div 
-                key={index} 
-                className={`glass-card rounded-lg sm:rounded-xl overflow-hidden transition-all duration-300 ${
-                  openIndex === index ? 'border-primary/40 shadow-lg shadow-primary/5' : ''
-                }`}
-              >
-                <button
-                  className="w-full text-left px-3 sm:px-4 md:px-6 py-3 sm:py-4 flex items-center gap-3 sm:gap-4 group"
-                  onClick={() => toggleFAQ(index)}
-                >
-                  <span className={`faq-number transition-all duration-300 ${openIndex === index ? 'bg-primary/30 scale-110' : ''}`}>
-                    {index + 1}
-                  </span>
-                  <span className="font-medium text-xs sm:text-sm md:text-base text-foreground flex-1">{item.question}</span>
-                  <ChevronDown 
-                    size={16} 
-                    className={`sm:w-5 sm:h-5 text-primary flex-shrink-0 transition-transform duration-300 ${openIndex === index ? 'rotate-180' : ''}`} 
-                  />
-                </button>
-                
+            {faqItems.map((item, index) => {
+              const isOpen = openIndex === index;
+              const btnId = `faq-trigger-${index}`;
+              const panelId = `faq-panel-${index}`;
+              return (
                 <div 
-                  className={`px-3 sm:px-4 md:px-6 overflow-hidden transition-all duration-300 ${
-                    openIndex === index 
-                      ? 'max-h-96 pb-3 sm:pb-4 md:pb-6 opacity-100' 
-                      : 'max-h-0 pb-0 opacity-0'
+                  key={index} 
+                  className={`glass-card rounded-lg sm:rounded-xl overflow-hidden transition-all duration-300 ${
+                    isOpen ? 'border-primary/40 shadow-lg shadow-primary/5' : ''
                   }`}
                 >
-                  <div className="pl-9 sm:pl-11 md:pl-14">
-                    <p className="text-[10px] sm:text-xs md:text-sm text-muted-foreground leading-relaxed">{item.answer}</p>
+                  <button
+                    id={btnId}
+                    type="button"
+                    aria-expanded={isOpen}
+                    aria-controls={panelId}
+                    className="w-full text-left px-3 sm:px-4 md:px-6 py-3 sm:py-4 flex items-center gap-3 sm:gap-4 group min-h-11"
+                    onClick={() => toggleFAQ(index)}
+                  >
+                    <span aria-hidden="true" className={`faq-number transition-all duration-300 ${isOpen ? 'bg-primary/30 scale-110' : ''}`}>
+                      {index + 1}
+                    </span>
+                    <span className="font-medium text-xs sm:text-sm md:text-base text-foreground flex-1">{item.question}</span>
+                    <ChevronDown 
+                      size={16} 
+                      aria-hidden="true"
+                      className={`sm:w-5 sm:h-5 text-primary flex-shrink-0 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} 
+                    />
+                  </button>
+                  
+                  <div 
+                    id={panelId}
+                    role="region"
+                    aria-labelledby={btnId}
+                    hidden={!isOpen}
+                    className={`px-3 sm:px-4 md:px-6 overflow-hidden transition-all duration-300 ${
+                      isOpen 
+                        ? 'max-h-96 pb-3 sm:pb-4 md:pb-6 opacity-100' 
+                        : 'max-h-0 pb-0 opacity-0'
+                    }`}
+                  >
+                    <div className="pl-9 sm:pl-11 md:pl-14">
+                      <p className="text-[10px] sm:text-xs md:text-sm text-muted-foreground leading-relaxed">{item.answer}</p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </div>
