@@ -1,7 +1,7 @@
 import { useScrollAnimation } from '@/hooks/use-scroll-animation';
 import { Check } from 'lucide-react';
-import dineroLabImage1 from '@/assets/dinerolab-content-1.png';
-import dineroLabImage2 from '@/assets/dinerolab-content-2.png';
+import dineroLabImage1 from '@/assets/dinerolab-content-1.png.asset.json';
+import dineroLabImage2 from '@/assets/dinerolab-content-2.png.asset.json';
 import dineroLabImage3 from '@/assets/dinerolab-content-3.png.asset.json';
 
 type Point = { title: string; desc: string; isNew?: boolean };
@@ -105,7 +105,7 @@ const DineroLabContent = () => {
           <div className="w-full md:w-1/3 flex-shrink-0">
             <div className="glass-card p-2 sm:p-3 rounded-2xl group overflow-hidden max-w-xs mx-auto md:max-w-none">
               <img
-                src={dineroLabImage1}
+                src={dineroLabImage1.url}
                 alt="DineroLab Screenshot 1"
                 className="w-full h-auto rounded-xl transition-transform duration-500 group-hover:scale-[1.02]"
               />
@@ -126,7 +126,7 @@ const DineroLabContent = () => {
           <div className="w-full md:w-1/3 flex-shrink-0">
             <div className="glass-card p-2 sm:p-3 rounded-2xl group overflow-hidden max-w-xs mx-auto md:max-w-none">
               <img
-                src={dineroLabImage2}
+                src={dineroLabImage2.url}
                 alt="DineroLab Screenshot 2"
                 className="w-full h-auto rounded-xl transition-transform duration-500 group-hover:scale-[1.02]"
               />
