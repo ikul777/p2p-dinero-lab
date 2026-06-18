@@ -874,3 +874,170 @@ input[type="range"] {
   outline-offset: 2px;
   border-radius: 6px;
 }
+
+/* === v2 Polish layer === */
+
+/* Animated gradient text */
+.text-gradient-animated {
+  background: linear-gradient(
+    100deg,
+    hsl(0 0% 98%) 0%,
+    hsl(var(--primary)) 35%,
+    hsl(20 95% 60%) 50%,
+    hsl(var(--primary)) 65%,
+    hsl(0 0% 98%) 100%
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradient-pan 8s ease-in-out infinite;
+}
+
+@keyframes gradient-pan {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Shimmer sweep across text */
+.text-shimmer {
+  background: linear-gradient(
+    110deg,
+    hsl(var(--foreground)) 0%,
+    hsl(var(--foreground)) 40%,
+    hsl(0 0% 100%) 50%,
+    hsl(var(--foreground)) 60%,
+    hsl(var(--foreground)) 100%
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer-sweep 5s linear infinite;
+}
+
+@keyframes shimmer-sweep {
+  0% { background-position: 200% 50%; }
+  100% { background-position: -200% 50%; }
+}
+
+/* Aurora background blobs */
+.aurora-bg {
+  position: relative;
+  overflow: hidden;
+}
+
+.aurora-bg::before,
+.aurora-bg::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.35;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.aurora-bg::before {
+  width: 420px;
+  height: 420px;
+  top: -120px;
+  left: -120px;
+  background: radial-gradient(circle, hsl(var(--primary) / 0.9), transparent 70%);
+  animation: aurora-drift-a 16s ease-in-out infinite;
+}
+
+.aurora-bg::after {
+  width: 520px;
+  height: 520px;
+  bottom: -160px;
+  right: -160px;
+  background: radial-gradient(circle, hsl(20 90% 55% / 0.6), transparent 70%);
+  animation: aurora-drift-b 20s ease-in-out infinite;
+}
+
+@keyframes aurora-drift-a {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(60px, 80px) scale(1.15); }
+}
+
+@keyframes aurora-drift-b {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-70px, -50px) scale(1.1); }
+}
+
+@media (max-width: 640px) {
+  .aurora-bg::before { width: 240px; height: 240px; filter: blur(50px); }
+  .aurora-bg::after { width: 280px; height: 280px; filter: blur(60px); }
+}
+
+/* Hero display heading */
+.hero-display {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.02;
+}
+
+/* Magnetic lift on hover */
+.lift-hover {
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s ease;
+}
+.lift-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 50px -20px hsl(var(--primary) / 0.4);
+}
+
+/* Stat card polish */
+.stat-card {
+  position: relative;
+  border-radius: 1rem;
+  background: linear-gradient(180deg, hsl(var(--card) / 0.4) 0%, hsl(var(--card) / 0.1) 100%);
+  border: 1px solid hsl(var(--border) / 0.4);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+.stat-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top, hsl(var(--primary) / 0.08), transparent 60%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.stat-card:hover {
+  border-color: hsl(var(--primary) / 0.35);
+  transform: translateY(-3px);
+}
+.stat-card:hover::before { opacity: 1; }
+
+/* Reveal blur-in */
+@keyframes blur-in {
+  0% { opacity: 0; transform: translateY(20px); filter: blur(8px); }
+  100% { opacity: 1; transform: translateY(0); filter: blur(0); }
+}
+.animate-blur-in {
+  animation: blur-in 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* Inline accent underline (handdrawn-ish) */
+.accent-underline {
+  position: relative;
+  display: inline-block;
+}
+.accent-underline::after {
+  content: '';
+  position: absolute;
+  left: 4%;
+  right: 4%;
+  bottom: -0.15em;
+  height: 0.18em;
+  background: linear-gradient(90deg, hsl(var(--primary) / 0), hsl(var(--primary) / 0.9), hsl(20 90% 55% / 0.9), hsl(var(--primary) / 0));
+  border-radius: 999px;
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: underline-grow 1.4s 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+@keyframes underline-grow {
+  to { transform: scaleX(1); }
+}
