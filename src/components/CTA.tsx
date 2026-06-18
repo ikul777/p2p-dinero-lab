@@ -82,9 +82,9 @@ const CTA = () => {
                   <div className="relative animate-float-slow">
                     <div className="absolute inset-0 bg-primary/30 rounded-full blur-3xl animate-pulse-glow"></div>
                     <img 
-                      src="/lovable-uploads/40d7ae54-8f62-41c0-aa32-9f26100d352c.png" 
+                      src={logoRed.url} 
                       alt="DineroLab Logo" 
-                      className="relative w-20 h-20 sm:w-24 sm:h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 object-contain"
+                      className="relative w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 lg:w-56 lg:h-56 object-contain"
                     />
                   </div>
                 </div>
