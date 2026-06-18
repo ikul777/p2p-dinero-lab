@@ -294,6 +294,7 @@ const Testimonials = () => {
       {/* Lightbox */}
       {lightboxIndex !== null && createPortal(
         <div
+          ref={lightboxRef}
           className="fixed inset-0 z-[100] bg-background/95 backdrop-blur-md flex items-center justify-center p-4 sm:p-6 md:p-10 animate-in fade-in duration-200"
           onClick={close}
           role="dialog"
