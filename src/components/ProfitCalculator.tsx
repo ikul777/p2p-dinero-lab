@@ -181,23 +181,23 @@ const ProfitCalculator = () => {
                     Орієнтовний місячний дохід при бюджеті {formatNumber(budget)} USDT: мінімум ${formatNumber(minProfit)}, середній ${formatNumber(avgProfit)}, максимум ${formatNumber(maxProfit)}.
                   </p>
 
-                  {/* 3 columns on all screens */}
-                  <div className="grid grid-cols-3 gap-3 sm:gap-4 md:gap-5" aria-hidden="true">
-                    <div className="text-center p-2 sm:p-3 md:p-4 rounded-xl bg-background/30 border border-border/30">
+                  {/* 3 columns on all screens — equal typography so rows align */}
+                  <div className="grid grid-cols-3 gap-3 sm:gap-4 md:gap-5 items-stretch" aria-hidden="true">
+                    <div className="flex flex-col justify-between text-center p-2 sm:p-3 md:p-4 rounded-xl bg-background/30 border border-border/30">
                       <p className="text-[10px] sm:text-xs text-muted-foreground mb-1">Мінімум</p>
                       <p className="text-xs sm:text-base md:text-lg lg:text-xl font-display font-bold text-foreground/70 leading-tight whitespace-nowrap">
                         ${formatNumber(minProfit)}
                       </p>
                       <p className="text-[10px] sm:text-xs text-muted-foreground mt-1">4%/круг</p>
                     </div>
-                    <div className="text-center p-2 sm:p-3 md:p-4 rounded-xl bg-primary/10 border border-primary/30 profit-highlight">
+                    <div className="flex flex-col justify-between text-center p-2 sm:p-3 md:p-4 rounded-xl bg-primary/10 border border-primary/30 profit-highlight">
                       <p className="text-[10px] sm:text-xs text-primary mb-1">Середній</p>
-                      <p className="text-sm sm:text-lg md:text-xl lg:text-2xl font-display font-bold text-primary leading-tight whitespace-nowrap">
+                      <p className="text-xs sm:text-base md:text-lg lg:text-xl font-display font-bold text-primary leading-tight whitespace-nowrap">
                         ${formatNumber(displayedAvg)}
                       </p>
                       <p className="text-[10px] sm:text-xs text-primary mt-1">6%/круг</p>
                     </div>
-                    <div className="text-center p-2 sm:p-3 md:p-4 rounded-xl bg-background/30 border border-border/30">
+                    <div className="flex flex-col justify-between text-center p-2 sm:p-3 md:p-4 rounded-xl bg-background/30 border border-border/30">
                       <p className="text-[10px] sm:text-xs text-muted-foreground mb-1">Максимум</p>
                       <p className="text-xs sm:text-base md:text-lg lg:text-xl font-display font-bold text-foreground/70 leading-tight whitespace-nowrap">
                         ${formatNumber(maxProfit)}
