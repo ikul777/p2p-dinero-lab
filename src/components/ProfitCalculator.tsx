@@ -9,22 +9,22 @@ const ProfitCalculator = () => {
   const cardAnimation = useScrollAnimation({ threshold: 0.2 });
   const prevBudgetRef = useRef(budget);
   
-  // Логіка: 4-8% з кругу, оборот 1000-3000 USDT/день, 22 робочих дні
-  const workingDays = 22;
-  const maxDailyTurnover = 3000;
-  
-  // Денний оборот обмежений бюджетом та максимальним оборотом
-  const effectiveTurnover = Math.min(budget, maxDailyTurnover);
-  
-  // Денний прибуток: 4-8% від обороту
-  const minDailyProfit = effectiveTurnover * 0.04;
-  const maxDailyProfit = effectiveTurnover * 0.08;
-  const avgDailyProfit = effectiveTurnover * 0.06;
-  
+  // Логіка: 4-8% з кругу × 2 круги/день × 24 робочих дні
+  const roundsPerDay = 2;
+  const workingDays = 24;
+  const softCap = 5000; // USDT — поріг для нотатки про індивідуальний розрахунок
+
+  // Денний прибуток рахується лінійно від реального бюджету
+  const minDailyProfit = budget * 0.04 * roundsPerDay;
+  const avgDailyProfit = budget * 0.06 * roundsPerDay;
+  const maxDailyProfit = budget * 0.08 * roundsPerDay;
+
   // Місячний прибуток
   const minProfit = Math.round(minDailyProfit * workingDays);
-  const maxProfit = Math.round(maxDailyProfit * workingDays);
   const avgProfit = Math.round(avgDailyProfit * workingDays);
+  const maxProfit = Math.round(maxDailyProfit * workingDays);
+
+  const showSoftCapNote = budget > softCap;
 
   // Animate number changes
   useEffect(() => {
