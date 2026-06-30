@@ -75,7 +75,7 @@ const Footer = () => {
                 Умови вступу
               </Link>
               <Link to="/installments" className="text-[10px] sm:text-xs text-muted-foreground hover:text-primary transition-colors hover-underline">
-                Оплата частинами
+                Покупка частинами monobank
               </Link>
             </div>
             
