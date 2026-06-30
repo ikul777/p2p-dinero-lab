@@ -74,6 +74,9 @@ const Footer = () => {
               <Link to="/entry-terms" className="text-[10px] sm:text-xs text-muted-foreground hover:text-primary transition-colors hover-underline">
                 Умови вступу
               </Link>
+              <Link to="/installments" className="text-[10px] sm:text-xs text-muted-foreground hover:text-primary transition-colors hover-underline">
+                Оплата частинами
+              </Link>
             </div>
             
             {/* Copyright */}
