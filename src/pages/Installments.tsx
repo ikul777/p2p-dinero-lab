@@ -21,7 +21,7 @@ const Installments = () => {
             </Link>
 
             <h1 className="text-3xl md:text-4xl font-bold mb-6 text-center">
-              Оплата частинами
+              Покупка частинами monobank
             </h1>
 
             <div className="w-16 h-1 bg-dinero-red mx-auto mb-8"></div>
