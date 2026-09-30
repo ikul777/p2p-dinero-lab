@@ -12,9 +12,11 @@ import t4 from '@/assets/testimonials/testimonial-6755.png.asset.json';
 import t5 from '@/assets/testimonials/testimonial-6756.png.asset.json';
 import t6 from '@/assets/testimonials/testimonial-6757.png.asset.json';
 import t7 from '@/assets/testimonials/testimonial-6760.png.asset.json';
+import t8 from '@/assets/testimonials/testimonial-0930-1.png.asset.json';
+import t9 from '@/assets/testimonials/testimonial-0930-2.png.asset.json';
 
 const screenshots: string[] = [
-  t1.url, t2.url, t3.url, t4.url, t5.url, t6.url, t7.url,
+  t1.url, t2.url, t3.url, t4.url, t5.url, t6.url, t7.url, t8.url, t9.url,
 ];
 
 const Testimonials = () => {
