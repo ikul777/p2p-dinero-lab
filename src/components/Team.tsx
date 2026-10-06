@@ -1,7 +1,7 @@
 import { Crown, ShieldCheck, Headphones, Sparkles } from 'lucide-react';
 
 const team = [
-  { name: 'Ярослав', role: 'Founder DL · Lead', desc: 'Стратегія, інфраструктура та партнерства з біржами та розвиток комʼюніті', icon: Crown, lead: true },
+  { name: 'Ярослав', role: 'Founder DL · Lead', desc: 'Стратегія, інфраструктура, партнерства з біржами та розвиток комʼюніті так, щоб стабільно заробляв кожен учасник', icon: Crown, lead: true },
   { name: 'Дмитро', role: 'Головний сапорт', desc: 'Контроль якості підтримки та нестандартні кейси', icon: ShieldCheck },
   { name: 'Олег', role: 'Сапорт', desc: 'Оперативна допомога та супровід по ордерах', icon: Headphones },
   { name: 'Ігор', role: 'Сапорт', desc: 'Розбір звʼязок і супровід новачків', icon: Headphones },
