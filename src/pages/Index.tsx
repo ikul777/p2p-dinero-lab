@@ -9,6 +9,7 @@ import CTA from '../components/CTA';
 import Footer from '../components/Footer';
 import FloatingCTA from '../components/FloatingCTA';
 import ScrollProgress from '../components/ScrollProgress';
+import Team from '../components/Team';
 
 const Index = () => {
   return (
@@ -27,6 +28,7 @@ const Index = () => {
         <Solution />
         <DineroLabContent />
         <Testimonials />
+        <Team />
         <FAQ />
         <CTA />
       </main>
