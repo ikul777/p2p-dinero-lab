@@ -27,14 +27,14 @@ const CTA = () => {
             ref={headerAnimation.ref}
             className={`text-center mb-8 sm:mb-10 md:mb-12 transition-all duration-700 ${headerAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
           >
-            <span className="tag mb-2 sm:mb-3 md:mb-4 inline-block text-[10px] sm:text-xs">Приєднуйся зараз</span>
+            <span className="tag mb-2 sm:mb-3 md:mb-4 inline-block text-[10px] sm:text-xs">Підсумки проєкту</span>
             <h2 className="font-display text-[1.35rem] sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-2 sm:mb-3 md:mb-4 text-balance">
-              <span className="text-foreground">P2P без комʼюніті —</span>
+              <span className="text-foreground">DineroLab —</span>
               <br />
-              <span className="text-foreground/30">це злиті гроші</span>
+              <span className="text-foreground/30">кейс сильної P2P-екосистеми</span>
             </h2>
             <p className="text-xs sm:text-sm md:text-base text-muted-foreground max-w-xl mx-auto px-2 text-balance">
-              Отримай доступ до перевірених P2P-звʼязок, команди професіоналів і сильного комʼюніті
+              Активний набір закрито. Ця сторінка збережена як публічний кейс результатів команди та учасників. Нові проєкти та ідеї — у Telegram-каналі.
             </p>
           </div>
           
@@ -47,6 +47,7 @@ const CTA = () => {
               <div className="flex flex-col md:flex-row items-center gap-5 sm:gap-6 md:gap-8">
                 {/* Content */}
                 <div className="flex-1 text-center md:text-left">
+                  <p className="text-[11px] sm:text-xs uppercase tracking-wider text-primary font-semibold mb-3 text-left">Що було створено</p>
                   {/* Benefits */}
                   <div className="space-y-2 sm:space-y-3 mb-5 sm:mb-6 md:mb-8">
                     {benefits.map((benefit, index) => (
@@ -59,14 +60,13 @@ const CTA = () => {
                     ))}
                   </div>
                   
-                  {/* CTA button - larger with pulse */}
                   <a 
                     href="https://t.me/+iDCbfd3Bm8wxMzZi" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="btn-primary btn-pulse inline-flex items-center gap-2 px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-5 rounded-full text-sm sm:text-base md:text-xl font-semibold text-primary-foreground w-full md:w-auto justify-center"
+                    className="btn-primary inline-flex items-center gap-2 px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-5 rounded-full text-sm sm:text-base md:text-xl font-semibold text-primary-foreground w-full md:w-auto justify-center"
                   >
-                    ПРИЄДНАТИСЬ В КОМ'ЮНІТІ
+                    ЧИТАТИ TELEGRAM-КАНАЛ
                     <ArrowRight size={18} className="sm:w-5 sm:h-5 md:w-6 md:h-6" />
                   </a>
                 </div>

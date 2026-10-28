@@ -21,6 +21,11 @@ const Index = () => {
         Перейти до основного вмісту
       </a>
       <ScrollProgress />
+      <div role="status" className="relative z-40 border-b border-primary/25 bg-primary/10 backdrop-blur-md px-4 py-2 text-center text-[11px] sm:text-xs leading-snug text-foreground/85">
+        <span className="font-semibold text-primary">Публічний кейс</span>
+        <span className="mx-1.5 text-foreground/30">·</span>
+        Проєкт завершено, набір закрито. Сторінку збережено як демонстрацію результатів DineroLab.
+      </div>
       <main id="main-content">
         <Hero />
         <ProfitCalculator />

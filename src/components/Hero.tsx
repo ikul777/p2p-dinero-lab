@@ -59,6 +59,13 @@ const Hero = () => {
                 />
               </div>
             </div>
+            {/* Archive badge */}
+            <div className={`mb-4 sm:mb-6 transition-all duration-700 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
+              <span className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-primary">
+                <span className="h-1.5 w-1.5 rounded-full bg-primary" />
+                Проєкт завершено · Публічний кейс
+              </span>
+            </div>
             {/* Main heading */}
             <h1 className={`hero-display mx-auto max-w-[22rem] text-[clamp(20px,5.9vw,24px)] leading-[1.12] sm:max-w-none sm:text-4xl sm:leading-tight md:text-5xl lg:text-6xl mb-4 sm:mb-7 transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 translate-y-0 blur-0' : 'opacity-0 translate-y-10 blur-sm'}`}>
               <span className="block text-gradient-animated">P2P АРБІТРАЖ</span>
@@ -78,10 +85,12 @@ const Hero = () => {
             {/* CTA Button with pulse */}
             <div className={`transition-all duration-700 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
               <a 
-                href="#join" 
-                className="btn-primary btn-pulse inline-flex items-center gap-2 px-5 sm:px-6 md:px-8 py-3 sm:py-3.5 md:py-4 rounded-full text-sm sm:text-base md:text-lg font-medium text-primary-foreground"
+                href="https://t.me/+iDCbfd3Bm8wxMzZi"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary inline-flex items-center gap-2 px-5 sm:px-6 md:px-8 py-3 sm:py-3.5 md:py-4 rounded-full text-sm sm:text-base md:text-lg font-medium text-primary-foreground"
               >
-                Приєднатись до комʼюніті
+                Перейти в Telegram-канал
                 <ArrowRight size={16} className="sm:w-[18px] sm:h-[18px] md:w-5 md:h-5" />
               </a>
             </div>
