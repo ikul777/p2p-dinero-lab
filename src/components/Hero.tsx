@@ -41,9 +41,18 @@ const Hero = () => {
   return (
     <section className="relative flex min-h-[100svh] flex-col justify-center overflow-hidden animated-gradient-bg aurora-bg pt-16 pb-8 sm:pt-24 sm:pb-12 md:pt-28 md:pb-16">
       {/* Background - optimized for mobile */}
-      <div className="absolute inset-0 bg-grid opacity-20"></div>
-      <div className="absolute top-1/4 left-1/4 w-[150px] sm:w-[250px] md:w-[500px] h-[150px] sm:h-[250px] md:h-[500px] bg-primary/8 rounded-full filter blur-[60px] sm:blur-[80px] md:blur-[120px] animate-pulse-glow"></div>
-      <div className="absolute bottom-1/4 right-1/4 w-[100px] sm:w-[150px] md:w-[300px] h-[100px] sm:h-[150px] md:h-[300px] bg-primary/5 rounded-full filter blur-[40px] sm:blur-[60px] md:blur-[80px]"></div>
+      <div className="absolute inset-0 bg-grid opacity-10"></div>
+      {/* Spotlight behind logo & heading */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute left-1/2 top-[38%] -translate-x-1/2 -translate-y-1/2 w-[140vw] max-w-[1100px] aspect-square rounded-full animate-pulse-glow"
+        style={{ background: 'radial-gradient(circle, hsl(var(--primary) / 0.28) 0%, hsl(var(--primary) / 0.12) 30%, transparent 62%)' }}
+      ></div>
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0"
+        style={{ background: 'radial-gradient(ellipse at center, transparent 45%, hsl(var(--background) / 0.85) 100%)' }}
+      ></div>
       <div className="absolute inset-0 noise pointer-events-none hidden sm:block"></div>
       
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
