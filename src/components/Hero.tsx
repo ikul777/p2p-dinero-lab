@@ -41,29 +41,40 @@ const Hero = () => {
   return (
     <section className="relative flex min-h-[100svh] flex-col justify-center overflow-hidden animated-gradient-bg aurora-bg pt-16 pb-8 sm:pt-24 sm:pb-12 md:pt-28 md:pb-16">
       {/* Background - optimized for mobile */}
-      {/* Variant 4: concentric orbits + horizon glow (variant 2 = tech grid + center glow) */}
-      <div aria-hidden="true" className="pointer-events-none absolute left-1/2 top-[38%] -translate-x-1/2 -translate-y-1/2">
-        {[260, 420, 600, 800, 1020].map((size, i) => (
-          <div
-            key={size}
-            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-primary/20"
-            style={{ width: size, height: size, opacity: 1 - i * 0.17 }}
-          />
-        ))}
-        <div
-          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full animate-spin"
-          style={{
-            animationDuration: '18s',
-            background: 'conic-gradient(from 0deg, transparent 0deg, hsl(var(--primary) / 0.35) 40deg, transparent 80deg)',
-            WebkitMaskImage: 'radial-gradient(circle, transparent 298px, black 299px, black 300px, transparent 301px)',
-            maskImage: 'radial-gradient(circle, transparent 298px, black 299px, black 300px, transparent 301px)',
-          }}
-        />
-        <div
-          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[360px] h-[360px] rounded-full"
-          style={{ background: 'radial-gradient(circle, hsl(var(--primary) / 0.22) 0%, transparent 65%)' }}
-        />
-      </div>
+      {/* Variant 4: liquidity contour lines (variant 3 = concentric orbits, variant 2 = tech grid) */}
+      <svg
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 h-full w-full"
+        viewBox="0 0 1200 800"
+        preserveAspectRatio="xMidYMid slice"
+      >
+        <defs>
+          <linearGradient id="contourFade" x1="0" x2="1" y1="0" y2="0">
+            <stop offset="0%" stopColor="hsl(var(--primary))" stopOpacity="0" />
+            <stop offset="50%" stopColor="hsl(var(--primary))" stopOpacity="0.55" />
+            <stop offset="100%" stopColor="hsl(var(--primary))" stopOpacity="0" />
+          </linearGradient>
+        </defs>
+        {Array.from({ length: 14 }).map((_, i) => {
+          const y = 120 + i * 42;
+          const amp = 60 - Math.abs(i - 7) * 6;
+          return (
+            <path
+              key={i}
+              d={`M -50 ${y} C 250 ${y - amp}, 450 ${y + amp}, 600 ${y} S 950 ${y - amp}, 1250 ${y}`}
+              fill="none"
+              stroke="url(#contourFade)"
+              strokeWidth={i === 7 ? 1.6 : 1}
+              opacity={1 - Math.abs(i - 7) * 0.11}
+            />
+          );
+        })}
+      </svg>
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute left-1/2 top-[40%] -translate-x-1/2 -translate-y-1/2 w-[420px] h-[300px] rounded-full"
+        style={{ background: 'radial-gradient(ellipse, hsl(var(--primary) / 0.2) 0%, transparent 70%)' }}
+      />
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0"
