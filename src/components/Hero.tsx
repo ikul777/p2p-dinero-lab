@@ -45,8 +45,8 @@ const Hero = () => {
       {/* Spotlight behind logo & heading */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute left-1/2 top-[38%] -translate-x-1/2 -translate-y-1/2 w-[140vw] max-w-[1100px] aspect-square rounded-full animate-pulse-glow"
-        style={{ background: 'radial-gradient(circle, hsl(var(--primary) / 0.28) 0%, hsl(var(--primary) / 0.12) 30%, transparent 62%)' }}
+        className="pointer-events-none absolute left-1/2 top-[38%] -translate-x-1/2 -translate-y-1/2 w-[140vw] max-w-[1100px] aspect-square rounded-full"
+        style={{ background: 'radial-gradient(circle, hsl(var(--primary) / 0.45) 0%, hsl(var(--primary) / 0.2) 28%, transparent 60%)' }}
       ></div>
       <div
         aria-hidden="true"
