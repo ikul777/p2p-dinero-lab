@@ -41,22 +41,38 @@ const Hero = () => {
   return (
     <section className="relative flex min-h-[100svh] flex-col justify-center overflow-hidden animated-gradient-bg aurora-bg pt-16 pb-8 sm:pt-24 sm:pb-12 md:pt-28 md:pb-16">
       {/* Background - optimized for mobile */}
-      {/* Variant 3: soft light beam from the top (variant 2 = tech grid + center glow) */}
+      {/* Variant 4: concentric orbits + horizon glow (variant 2 = tech grid + center glow) */}
+      <div aria-hidden="true" className="pointer-events-none absolute left-1/2 top-[38%] -translate-x-1/2 -translate-y-1/2">
+        {[260, 420, 600, 800, 1020].map((size, i) => (
+          <div
+            key={size}
+            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-primary/20"
+            style={{ width: size, height: size, opacity: 1 - i * 0.17 }}
+          />
+        ))}
+        <div
+          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full animate-spin"
+          style={{
+            animationDuration: '18s',
+            background: 'conic-gradient(from 0deg, transparent 0deg, hsl(var(--primary) / 0.35) 40deg, transparent 80deg)',
+            WebkitMaskImage: 'radial-gradient(circle, transparent 298px, black 299px, black 300px, transparent 301px)',
+            maskImage: 'radial-gradient(circle, transparent 298px, black 299px, black 300px, transparent 301px)',
+          }}
+        />
+        <div
+          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[360px] h-[360px] rounded-full"
+          style={{ background: 'radial-gradient(circle, hsl(var(--primary) / 0.22) 0%, transparent 65%)' }}
+        />
+      </div>
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute left-1/2 top-0 -translate-x-1/2 w-[140vw] max-w-[1100px] h-[75%]"
-        style={{
-          background:
-            'conic-gradient(from 180deg at 50% 0%, transparent 155deg, hsl(var(--primary) / 0.16) 175deg, hsl(var(--primary) / 0.22) 180deg, hsl(var(--primary) / 0.16) 185deg, transparent 205deg)',
-          WebkitMaskImage: 'linear-gradient(to bottom, black 0%, black 35%, transparent 100%)',
-          maskImage: 'linear-gradient(to bottom, black 0%, black 35%, transparent 100%)',
-          filter: 'blur(24px)',
-        }}
+        className="pointer-events-none absolute inset-0"
+        style={{ background: 'radial-gradient(ellipse 75% 60% at 50% 40%, transparent 40%, hsl(var(--background)) 100%)' }}
       ></div>
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 w-[80vw] max-w-[640px] h-[260px] rounded-full"
-        style={{ background: 'radial-gradient(ellipse, hsl(var(--primary) / 0.35) 0%, transparent 70%)' }}
+        className="pointer-events-none absolute left-1/2 bottom-0 -translate-x-1/2 w-[120vw] h-[180px]"
+        style={{ background: 'radial-gradient(ellipse 50% 100% at 50% 100%, hsl(var(--primary) / 0.25) 0%, transparent 70%)' }}
       ></div>
       <div
         aria-hidden="true"
