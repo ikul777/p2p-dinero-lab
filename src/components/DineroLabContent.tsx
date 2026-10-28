@@ -195,9 +195,6 @@ const DineroLabContent = () => {
             <h3 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4">
               Ордери — постійна <span className="text-gradient">ліквідність</span>
             </h3>
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/25 text-primary text-xs sm:text-sm font-semibold">
-              Середній профіт по внутрішній торгівлі між учасниками 4%
-            </div>
           </div>
 
           {/* Glow wrapper */}
