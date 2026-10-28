@@ -134,7 +134,7 @@ const DineroLabContent = () => {
         >
             <div className="glass-card rounded-2xl sm:rounded-3xl p-4 sm:p-7 md:p-10">
             <div className="md:hidden text-center">
-              <BlockBadge num="01" label="Основа" />
+              <BlockBadge num="01" label="ЧАСТИНА" />
             </div>
             <div className="flex flex-col md:flex-row items-center gap-6 md:gap-10 lg:gap-14">
               <div className="w-full md:w-1/3 flex-shrink-0">
@@ -142,7 +142,7 @@ const DineroLabContent = () => {
               </div>
               <div className="w-full md:flex-1 md:border-l md:border-primary/15 md:pl-8">
                 <div className="hidden md:block">
-                  <BlockBadge num="01" label="Основа" />
+                  <BlockBadge num="01" label="ЧАСТИНА" />
                 </div>
                 <PointsList points={block1Points} isVisible={block1Animation.isVisible} />
               </div>
