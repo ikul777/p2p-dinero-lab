@@ -79,7 +79,7 @@ const Hero = () => {
             
             {/* Subheading */}
             <p className={`text-[12px] sm:text-sm md:text-base text-muted-foreground/80 max-w-[21rem] sm:max-w-xl mx-auto mt-2 mb-6 sm:mb-10 leading-[1.65] sm:text-balance transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-              Авторські P2P-звʼязки, регулярні оновлення, досвідчені сапорти, партнерства з топ крипто біржами та доступ до сильного комʼюніті однодумців.
+              Авторські P2P-звʼязки, регулярні оновлення, досвідчені сапорти, партнерства з топовими криптобіржами та доступ до сильного комʼюніті однодумців.
             </p>
             
             {/* CTA Button with pulse */}
