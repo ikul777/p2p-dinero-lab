@@ -49,23 +49,24 @@ const Hero = () => {
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
         <div className="max-w-5xl mx-auto">
           <div className="text-center">
+            {/* Logo with glow */}
+            <div className={`transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+              <div className="inline-block logo-glow">
+                <img
+                  src={logoWhite.url}
+                  alt="DineroLab"
+                  className="h-16 sm:h-20 md:h-24 lg:h-28 w-auto mx-auto object-contain"
+                />
+              </div>
+            </div>
             {/* Archive badge */}
-            <div className={`mb-5 sm:mb-8 transition-all duration-700 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
+            <div className={`mt-3 sm:mt-5 mb-5 sm:mb-8 transition-all duration-700 delay-100 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
               <span className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-primary">
                 <span className="h-1.5 w-1.5 rounded-full bg-primary" />
                 Проєкт завершено · Публічний кейс
               </span>
             </div>
-            {/* Logo with glow */}
-            <div className={`mb-4 sm:mb-6 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-              <div className="inline-block logo-glow">
-                <img
-                  src={logoWhite.url}
-                  alt="DineroLab"
-                  className="h-14 sm:h-16 md:h-20 lg:h-24 w-auto mx-auto object-contain"
-                />
-              </div>
-            </div>
+
             {/* Main heading */}
             <h1 className={`hero-display mx-auto max-w-[22rem] text-[clamp(24px,7vw,30px)] leading-[1.12] sm:max-w-none sm:text-4xl sm:leading-tight md:text-5xl lg:text-6xl mb-4 sm:mb-7 transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 translate-y-0 blur-0' : 'opacity-0 translate-y-10 blur-sm'}`}>
               <span className="sr-only">DineroLab — </span>
