@@ -121,7 +121,7 @@ const DineroLabContent = () => {
             НАПОВНЕННЯ <span className="text-gradient whitespace-nowrap">DINEROLAB</span>
           </h2>
           <p className="text-muted-foreground text-sm sm:text-base md:text-lg max-w-2xl mx-auto text-balance">
-            Детальний огляд усіх можливостей та інструментів, які ви отримаєте
+            Детальний огляд усіх можливостей та інструментів, які отримували учасники
           </p>
         </div>
 
