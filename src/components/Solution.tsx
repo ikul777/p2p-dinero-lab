@@ -4,30 +4,30 @@ import { useScrollAnimation } from '@/hooks/use-scroll-animation';
 const features = [
   {
     icon: Zap,
-    tag: 'Перевірено',
-    title: 'Авторські P2P-звʼязки',
-    desc: 'Перевірені звʼязки від нашої команди для стабільної та профітної торгівлі. Кожна спочатку проходить тест.',
+    tag: 'Власні розробки',
+    title: 'Авторські звʼязки',
+    desc: 'Ліквідні коридори, протестовані на власному капіталі команди перед передачею учасникам.',
     isNew: false
   },
   {
     icon: RefreshCw,
-    tag: 'Live',
-    title: 'Постійні оновлення',
-    desc: 'Ринок P2P змінюється. Ми стабільно перевіряємо всі методи робота та рішення по банках та оновлюємо інформацію.',
-    isNew: true
+    tag: 'Ордербук',
+    title: 'Власний ринок ліквідності',
+    desc: 'Внутрішній ордербук, де мерчанти торгували всередині комʼюніті з мінімальним ризиком.',
+    isNew: false
   },
   {
     icon: Headphones,
-    tag: '24/7',
-    title: 'Досвідчені саппорти',
-    desc: 'Наші сапорти з досвідом 5+ років щодня роблять реальні транзакції і знають всі нюанси першими.',
+    tag: 'Експертиза',
+    title: 'Практикуюча команда',
+    desc: 'Сапорти з 5+ роками активної торгівлі щодня супроводжували учасників.',
     isNew: false
   },
   {
     icon: Lock,
-    tag: 'Закрите',
-    title: 'Закрите комʼюніті',
-    desc: 'Ми цінуємо довіру та безпеку. Доступ отримують далеко не всі.',
+    tag: 'Визнання',
+    title: 'Офіційні партнерства',
+    desc: 'Статус офіційних P2P-шкіл Bybit та OKX і пряма взаємодія з біржами.',
     isNew: false
   }
 ];
@@ -49,14 +49,13 @@ const Solution = () => {
             ref={headerAnimation.ref}
             className={`text-center mb-10 sm:mb-12 md:mb-16 transition-all duration-700 ${headerAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
           >
-            <span className="tag mb-2 sm:mb-3 md:mb-4 inline-block text-[10px] sm:text-xs">Рішення</span>
+            <span className="tag mb-2 sm:mb-3 md:mb-4 inline-block text-[10px] sm:text-xs">Екосистема</span>
             <h2 className="font-display text-[1.35rem] sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-2 sm:mb-3 md:mb-4 text-balance">
-              <span className="text-foreground">Що таке </span>
+              <span className="text-foreground">Архітектура рішень </span>
               <span className="text-gradient">DineroLab</span>
-              <span className="text-foreground">?</span>
             </h2>
             <p className="text-sm sm:text-base text-muted-foreground max-w-xl mx-auto px-2 text-balance">
-              Тут отримують робочі P2P-звʼязки, які реально працюють
+              Як DineroLab вирішив ці виклики
             </p>
           </div>
           
