@@ -92,7 +92,7 @@ const Problems = () => {
               <div className="absolute -inset-px rounded-2xl bg-gradient-to-r from-destructive/40 via-primary/40 to-destructive/40 opacity-70 md:animate-pulse-glow md:blur-sm"></div>
               <div className="relative glass-card px-5 py-4 sm:px-6 sm:py-5 md:px-8 md:py-6 rounded-2xl border-l-2 border-primary">
                 <p className="text-sm sm:text-base text-foreground font-medium">
-                  DineroLab створили, щоб дати трейдерам захист, інфраструктуру та стабільний дохід
+                  DineroLab створили, щоб дати P2P трейдерам захист, інфраструктуру та стабільний дохід
                 </p>
               </div>
             </div>
