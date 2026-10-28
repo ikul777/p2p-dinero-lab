@@ -41,17 +41,22 @@ const Hero = () => {
   return (
     <section className="relative flex min-h-[100svh] flex-col justify-center overflow-hidden animated-gradient-bg aurora-bg pt-16 pb-8 sm:pt-24 sm:pb-12 md:pt-28 md:pb-16">
       {/* Background - optimized for mobile */}
-      <div className="absolute inset-0 bg-grid opacity-10"></div>
-      {/* Spotlight behind logo & heading */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute left-1/2 top-[38%] -translate-x-1/2 -translate-y-1/2 w-[140vw] max-w-[1100px] aspect-square rounded-full"
-        style={{ background: 'radial-gradient(circle, hsl(var(--primary) / 0.45) 0%, hsl(var(--primary) / 0.2) 28%, transparent 60%)' }}
-      ></div>
+      {/* Tech grid revealed by center light */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0"
-        style={{ background: 'radial-gradient(ellipse at center, transparent 45%, hsl(var(--background) / 0.85) 100%)' }}
+        style={{
+          backgroundImage:
+            'linear-gradient(to right, hsl(var(--primary) / 0.22) 1px, transparent 1px), linear-gradient(to bottom, hsl(var(--primary) / 0.22) 1px, transparent 1px)',
+          backgroundSize: '44px 44px',
+          WebkitMaskImage: 'radial-gradient(ellipse 70% 55% at 50% 40%, black 0%, transparent 75%)',
+          maskImage: 'radial-gradient(ellipse 70% 55% at 50% 40%, black 0%, transparent 75%)',
+        }}
+      ></div>
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute left-1/2 top-[40%] -translate-x-1/2 -translate-y-1/2 w-[90vw] max-w-[700px] aspect-square rounded-full"
+        style={{ background: 'radial-gradient(circle, hsl(var(--primary) / 0.18) 0%, transparent 60%)' }}
       ></div>
       <div className="absolute inset-0 noise pointer-events-none hidden sm:block"></div>
       
