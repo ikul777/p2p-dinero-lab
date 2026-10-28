@@ -49,8 +49,15 @@ const Hero = () => {
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
         <div className="max-w-5xl mx-auto">
           <div className="text-center">
+            {/* Archive badge */}
+            <div className={`mb-5 sm:mb-7 transition-all duration-700 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
+              <span className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-primary">
+                <span className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse" />
+                Проєкт завершено · Публічний кейс
+              </span>
+            </div>
             {/* Logo with glow */}
-            <div className={`transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+            <div className={`mb-4 sm:mb-6 transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
               <div className="inline-block logo-glow">
                 <img
                   src={logoWhite.url}
@@ -58,13 +65,6 @@ const Hero = () => {
                   className="h-16 sm:h-20 md:h-24 lg:h-28 w-auto mx-auto object-contain"
                 />
               </div>
-            </div>
-            {/* Archive badge */}
-            <div className={`mt-3 sm:mt-5 mb-5 sm:mb-8 transition-all duration-700 delay-100 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
-              <span className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-primary">
-                <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-                Проєкт завершено · Публічний кейс
-              </span>
             </div>
 
             {/* Main heading */}
