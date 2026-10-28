@@ -4,23 +4,23 @@ import { useScrollAnimation } from '@/hooks/use-scroll-animation';
 const problems = [
   {
     icon: AlertTriangle,
-    title: 'Купують хламові звʼязки',
-    desc: 'Більшість витрачають гроші на неперевірені або застарілі звʼязки, які не працюють.'
+    title: 'Ненадійні звʼязки',
+    desc: 'Ринок продавав застарілі та неробочі схеми без реальної перевірки.'
   },
   {
     icon: Users,
     title: 'Відсутність підтримки',
-    desc: 'Купили звʼязку — і залишились самі. Щось не працює, а допомоги немає.'
+    desc: 'Трейдерів лишали сам на сам із блокуваннями карток, збоями та лімітами.'
   },
   {
     icon: DollarSign,
-    title: 'Нереалістичні очікування',
-    desc: 'P2P — це не кнопка "заробити мільйон", а системна робота.'
+    title: 'Хаотичний підхід',
+    desc: 'P2P сприймали як швидку схему, а не системну роботу з ліквідністю та дисципліною.'
   },
   {
     icon: Shield,
-    title: 'Потрапляють на скам',
-    desc: 'Ринок переповнений шахраями з "золотими схемами", які не працюють.'
+    title: 'Шахрайство на ринку',
+    desc: 'Сумнівні контрагенти та «золоті схеми» спалювали депозити новачків.'
   }
 ];
 
@@ -42,14 +42,13 @@ const Problems = () => {
             ref={headerAnimation.ref}
             className={`text-center mb-10 sm:mb-12 md:mb-16 transition-all duration-700 ${headerAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
           >
-            <span className="tag mb-2 sm:mb-3 md:mb-4 inline-block text-[10px] sm:text-xs">Проблеми</span>
+            <span className="tag mb-2 sm:mb-3 md:mb-4 inline-block text-[10px] sm:text-xs">Ретроспектива</span>
             <h2 className="font-display text-[1.35rem] sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-2 sm:mb-3 md:mb-4 text-balance">
-              <span className="text-foreground">Чому більшість </span>
-              <span className="text-foreground/30">зливають</span>
-              <span className="text-foreground"> у P2P?</span>
+              <span className="text-foreground">Виклики </span>
+              <span className="text-foreground/30">P2P-ринку</span>
             </h2>
             <p className="text-sm sm:text-base text-muted-foreground max-w-xl mx-auto px-2 text-balance">
-              Без правильного підходу P2P-арбітраж = злиті гроші
+              З чим стикалися трейдери до появи DineroLab
             </p>
           </div>
           
@@ -93,7 +92,7 @@ const Problems = () => {
               <div className="absolute -inset-px rounded-2xl bg-gradient-to-r from-destructive/40 via-primary/40 to-destructive/40 opacity-70 md:animate-pulse-glow md:blur-sm"></div>
               <div className="relative glass-card px-5 py-4 sm:px-6 sm:py-5 md:px-8 md:py-6 rounded-2xl border-l-2 border-primary">
                 <p className="text-sm sm:text-base text-foreground font-medium">
-                  Без перевірених звʼязок та підтримки — твій бюджет просто згорить 🔥
+                  DineroLab створили, щоб дати трейдерам захист, інфраструктуру та стабільний дохід
                 </p>
               </div>
             </div>
