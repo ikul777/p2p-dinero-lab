@@ -48,7 +48,7 @@ const Problems = () => {
               <span className="text-foreground/30">P2P-ринку</span>
             </h2>
             <p className="text-sm sm:text-base text-muted-foreground max-w-xl mx-auto px-2 text-balance">
-              З чим стикалися трейдери до появи DineroLab
+              З чим стикалися P2P трейдери до участі в DineroLab
             </p>
           </div>
           
