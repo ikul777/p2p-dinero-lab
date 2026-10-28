@@ -73,7 +73,7 @@ const Hero = () => {
                 P2P комʼюніті, що задало стандарт
               </span>
               <span className="block mt-1 sm:mt-0 text-gradient text-balance">
-                українського P2P-ринку
+                {"\n"}
               </span>
             </h1>
             
