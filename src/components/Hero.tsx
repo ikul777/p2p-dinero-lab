@@ -68,12 +68,12 @@ const Hero = () => {
             </div>
             {/* Main heading */}
             <h1 className={`hero-display mx-auto max-w-[22rem] text-[clamp(20px,5.9vw,24px)] leading-[1.12] sm:max-w-none sm:text-4xl sm:leading-tight md:text-5xl lg:text-6xl mb-4 sm:mb-7 transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 translate-y-0 blur-0' : 'opacity-0 translate-y-10 blur-sm'}`}>
-              <span className="block text-gradient-animated">P2P АРБІТРАЖ</span>
-              <span className="block mt-1 sm:mt-2 text-foreground/95">
-                твій інструмент для
+              <span className="block text-gradient-animated">DineroLab</span>
+              <span className="block mt-1 sm:mt-2 text-foreground/95 text-balance">
+                комʼюніті, що задало стандарт
               </span>
-              <span className="block mt-1 sm:mt-0 text-gradient sm:accent-underline whitespace-nowrap text-[clamp(18.5px,5.45vw,22px)] sm:text-4xl md:text-5xl lg:text-6xl">
-                стабільного заробітку
+              <span className="block mt-1 sm:mt-0 text-gradient text-balance">
+                українського P2P-ринку
               </span>
             </h1>
             
