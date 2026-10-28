@@ -63,21 +63,6 @@ const Footer = () => {
               </a>
             </div>
             
-            {/* Legal links */}
-            <div className="flex flex-wrap items-center justify-center md:justify-end gap-2 sm:gap-3 md:gap-4">
-              <Link to="/terms" className="text-[10px] sm:text-xs text-muted-foreground hover:text-primary transition-colors hover-underline">
-                Договір оферти
-              </Link>
-              <Link to="/privacy" className="text-[10px] sm:text-xs text-muted-foreground hover:text-primary transition-colors hover-underline">
-                Політика конфіденційності
-              </Link>
-              <Link to="/entry-terms" className="text-[10px] sm:text-xs text-muted-foreground hover:text-primary transition-colors hover-underline">
-                Умови вступу
-              </Link>
-              <Link to="/installments" className="text-[10px] sm:text-xs text-muted-foreground hover:text-primary transition-colors hover-underline">
-                Покупка частинами monobank
-              </Link>
-            </div>
             
             {/* Copyright */}
             <p className="text-[9px] sm:text-xs text-muted-foreground/60">
