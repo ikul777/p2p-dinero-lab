@@ -71,7 +71,7 @@ const Hero = () => {
             <h1 className={`hero-display mx-auto max-w-[22rem] text-[clamp(24px,7vw,30px)] leading-[1.12] sm:max-w-none sm:text-4xl sm:leading-tight md:text-5xl lg:text-6xl mb-4 sm:mb-7 transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 translate-y-0 blur-0' : 'opacity-0 translate-y-10 blur-sm'}`}>
               <span className="sr-only">DineroLab — </span>
               <span className="block text-gradient-animated text-balance">
-                Закрите P2P комʼюніті
+                Професійне P2P комʼюніті
               </span>
             </h1>
             
