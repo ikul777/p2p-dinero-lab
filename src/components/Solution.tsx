@@ -91,18 +91,6 @@ const Solution = () => {
                     <p className="text-[13px] sm:text-sm md:text-base text-muted-foreground leading-[1.55] flex-1">
                       {feature.desc}
                     </p>
-                    
-                    <div className="mt-4 pt-3 border-t border-border/30">
-                      <a 
-                        href="https://t.me/ikul777" 
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center text-xs sm:text-sm text-primary hover:underline min-h-11"
-                      >
-                        Дізнатися більше
-                        <ArrowRight size={14} className="sm:w-4 sm:h-4 ml-1 group-hover:translate-x-1 transition-transform" />
-                      </a>
-                    </div>
                   </div>
                 </div>
               </div>
