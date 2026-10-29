@@ -40,38 +40,11 @@ const Hero = () => {
   
   return (
     <section className="relative flex min-h-[100svh] flex-col justify-center overflow-hidden animated-gradient-bg aurora-bg pt-16 pb-8 sm:pt-24 sm:pb-12 md:pt-28 md:pb-16">
-      {/* Background - optimized for mobile */}
-      {/* Variant 6: P2P constellation (5 = aurora, 4 = contour lines, 3 = orbits, 2 = tech grid) */}
-      <style>{`
-        @keyframes nodePulse { 0%,100% { opacity: .35; } 50% { opacity: 1; } }
-        @keyframes linkFlow { to { stroke-dashoffset: -40; } }
-        @media (prefers-reduced-motion: reduce) { .p2p-node, .p2p-link { animation: none !important; } }
-      `}</style>
-      <svg aria-hidden="true" className="pointer-events-none absolute inset-0 h-full w-full" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice">
-        {(() => {
-          const nodes = [[8,12],[22,6],[38,15],[55,8],[72,14],[90,7],[14,30],[30,34],[50,28],[68,32],[86,26],[6,50],[24,55],[44,48],[60,52],[78,47],[94,55],[12,72],[32,76],[52,70],[70,74],[88,70],[20,92],[42,90],[62,94],[82,90]];
-          const links: [number, number][] = [];
-          nodes.forEach((a, i) => nodes.forEach((b, j) => { if (j > i && Math.hypot(a[0]-b[0], a[1]-b[1]) < 22) links.push([i, j]); }));
-          return (
-            <g>
-              {links.map(([i, j], k) => (
-                <line key={k} className={k % 4 === 0 ? 'p2p-link' : ''} x1={nodes[i][0]} y1={nodes[i][1]} x2={nodes[j][0]} y2={nodes[j][1]}
-                  stroke="hsl(var(--primary))" strokeOpacity={k % 4 === 0 ? 0.55 : 0.18} strokeWidth={0.12} vectorEffect="non-scaling-stroke"
-                  strokeDasharray={k % 4 === 0 ? '2 6' : undefined}
-                  style={k % 4 === 0 ? { animation: `linkFlow ${3 + (k % 5)}s linear infinite` } : undefined} />
-              ))}
-              {nodes.map(([x, y], i) => (
-                <circle key={i} className="p2p-node" cx={x} cy={y} r={i % 3 === 0 ? 0.6 : 0.35} fill="hsl(var(--primary))"
-                  style={{ animation: `nodePulse ${2.5 + (i % 4)}s ease-in-out ${i * 0.2}s infinite`, filter: 'drop-shadow(0 0 1.5px hsl(var(--primary)))' }} />
-              ))}
-            </g>
-          );
-        })()}
-      </svg>
+      {/* Variant 7: glass pedestal — clean deep background with soft center focus */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0"
-        style={{ background: 'radial-gradient(ellipse 80% 70% at 50% 45%, transparent 30%, hsl(var(--background) / 0.85) 100%)' }}
+        style={{ background: 'radial-gradient(ellipse 60% 45% at 50% 35%, hsl(var(--primary) / 0.12), transparent 70%), radial-gradient(ellipse 90% 80% at 50% 50%, transparent 40%, hsl(var(--background) / 0.9) 100%)' }}
       ></div>
       <div className="absolute inset-0 noise pointer-events-none hidden sm:block"></div>
       
@@ -85,16 +58,30 @@ const Hero = () => {
                 Проєкт завершено · Публічний кейс
               </span>
             </div>
-            {/* Logo with glow */}
-            <div className={`mb-4 sm:mb-6 transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-              <div className="inline-block logo-glow">
-                <img
-                  src={logoWhite.url}
-                  alt="DineroLab"
-                  className="h-16 sm:h-20 md:h-24 lg:h-28 w-auto mx-auto object-contain"
-                />
+            {/* Logo on glass pedestal */}
+            <div className={`mb-5 sm:mb-7 transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+              <div className="relative inline-block">
+                <div
+                  className="relative rounded-[28px] p-[1px]"
+                  style={{ background: 'linear-gradient(160deg, hsl(var(--primary) / 0.7), hsl(var(--foreground) / 0.08) 40%, hsl(var(--foreground) / 0.04) 60%, hsl(var(--primary) / 0.5))' }}
+                >
+                  <div
+                    className="relative overflow-hidden rounded-[27px] px-8 py-6 sm:px-12 sm:py-8 md:px-14 md:py-9 backdrop-blur-xl"
+                    style={{ background: 'linear-gradient(180deg, hsl(var(--foreground) / 0.06), hsl(var(--background) / 0.7))', boxShadow: 'inset 0 1px 0 hsl(var(--foreground) / 0.12), 0 30px 60px -20px hsl(var(--primary) / 0.45)' }}
+                  >
+                    <div aria-hidden="true" className="pointer-events-none absolute inset-x-6 top-0 h-px" style={{ background: 'linear-gradient(90deg, transparent, hsl(var(--foreground) / 0.5), transparent)' }} />
+                    <img
+                      src={logoWhite.url}
+                      alt="DineroLab"
+                      className="relative h-14 sm:h-20 md:h-24 w-auto mx-auto object-contain"
+                    />
+                  </div>
+                </div>
+                {/* Reflection */}
+                <div aria-hidden="true" className="pointer-events-none absolute left-1/2 top-full mt-2 h-6 w-4/5 -translate-x-1/2 rounded-[50%] blur-xl" style={{ background: 'hsl(var(--primary) / 0.45)' }} />
               </div>
             </div>
+
 
             {/* Main heading */}
             <h1 className={`hero-display mx-auto max-w-[22rem] text-[clamp(24px,7vw,30px)] leading-[1.12] sm:max-w-none sm:text-4xl sm:leading-tight md:text-5xl lg:text-6xl mb-4 sm:mb-7 transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 translate-y-0 blur-0' : 'opacity-0 translate-y-10 blur-sm'}`}>
