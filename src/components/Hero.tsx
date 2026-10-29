@@ -40,14 +40,10 @@ const Hero = () => {
   
   return (
     <section className="relative flex min-h-[100svh] flex-col justify-center overflow-hidden animated-gradient-bg aurora-bg pt-16 pb-8 sm:pt-24 sm:pb-12 md:pt-28 md:pb-16">
-      {/* Variant 7: glass pedestal — clean deep background with soft center focus */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0"
-        style={{ background: 'radial-gradient(ellipse 60% 45% at 50% 35%, hsl(var(--primary) / 0.12), transparent 70%), radial-gradient(ellipse 90% 80% at 50% 50%, transparent 40%, hsl(var(--background) / 0.9) 100%)' }}
-      ></div>
+      {/* Variant 8: anamorphic lens flare behind logo */}
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0" style={{ background: 'radial-gradient(ellipse 90% 80% at 50% 50%, transparent 40%, hsl(var(--background)) 100%)' }} />
       <div className="absolute inset-0 noise pointer-events-none hidden sm:block"></div>
-      
+
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
         <div className="max-w-5xl mx-auto">
           <div className="text-center">
@@ -58,29 +54,18 @@ const Hero = () => {
                 Проєкт завершено · Публічний кейс
               </span>
             </div>
-            {/* Logo on glass pedestal */}
-            <div className={`mb-5 sm:mb-7 transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-              <div className="relative inline-block">
-                <div
-                  className="relative rounded-[28px] p-[1px]"
-                  style={{ background: 'linear-gradient(160deg, hsl(var(--primary) / 0.7), hsl(var(--foreground) / 0.08) 40%, hsl(var(--foreground) / 0.04) 60%, hsl(var(--primary) / 0.5))' }}
-                >
-                  <div
-                    className="relative overflow-hidden rounded-[27px] px-8 py-6 sm:px-12 sm:py-8 md:px-14 md:py-9 backdrop-blur-xl"
-                    style={{ background: 'linear-gradient(180deg, hsl(var(--foreground) / 0.06), hsl(var(--background) / 0.7))', boxShadow: 'inset 0 1px 0 hsl(var(--foreground) / 0.12), 0 30px 60px -20px hsl(var(--primary) / 0.45)' }}
-                  >
-                    <div aria-hidden="true" className="pointer-events-none absolute inset-x-6 top-0 h-px" style={{ background: 'linear-gradient(90deg, transparent, hsl(var(--foreground) / 0.5), transparent)' }} />
-                    <img
-                      src={logoWhite.url}
-                      alt="DineroLab"
-                      className="relative h-14 sm:h-20 md:h-24 w-auto mx-auto object-contain"
-                    />
-                  </div>
-                </div>
-                {/* Reflection */}
-                <div aria-hidden="true" className="pointer-events-none absolute left-1/2 top-full mt-2 h-6 w-4/5 -translate-x-1/2 rounded-[50%] blur-xl" style={{ background: 'hsl(var(--primary) / 0.45)' }} />
-              </div>
+            {/* Logo with anamorphic flare */}
+            <div className={`relative mb-6 sm:mb-8 transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+              <div aria-hidden="true" className="pointer-events-none absolute left-1/2 top-1/2 h-[2px] w-[140vw] max-w-[1400px] -translate-x-1/2 -translate-y-1/2 animate-pulse" style={{ background: 'linear-gradient(90deg, transparent, hsl(var(--primary) / 0.15) 20%, hsl(var(--primary) / 0.9) 45%, hsl(var(--foreground) / 0.95) 50%, hsl(var(--primary) / 0.9) 55%, hsl(var(--primary) / 0.15) 80%, transparent)', animationDuration: '4s' }} />
+              <div aria-hidden="true" className="pointer-events-none absolute left-1/2 top-1/2 h-10 w-[110vw] max-w-[1100px] -translate-x-1/2 -translate-y-1/2 blur-2xl" style={{ background: 'radial-gradient(ellipse 50% 50% at 50% 50%, hsl(var(--primary) / 0.45), transparent 70%)' }} />
+              <div aria-hidden="true" className="pointer-events-none absolute left-1/2 top-1/2 h-32 w-32 sm:h-48 sm:w-48 -translate-x-1/2 -translate-y-1/2 rounded-full blur-3xl" style={{ background: 'hsl(var(--primary) / 0.35)' }} />
+              <img
+                src={logoWhite.url}
+                alt="DineroLab"
+                className="relative h-16 sm:h-24 md:h-28 w-auto mx-auto object-contain"
+              />
             </div>
+
 
 
             {/* Main heading */}
