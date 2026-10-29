@@ -46,9 +46,15 @@ const Hero = () => {
         {Array.from({ length: 10 }).map((_, c) => {
           const rows = Array.from({ length: 40 }).map((_, r) => {
             const s = (c * 37 + r * 13) % 97;
-            const kinds = ['USDT/UAH', 'BUY', 'SELL', 'SPREAD', 'VOL'];
-            const k = kinds[s % 5];
-            const v = k === 'USDT/UAH' ? (41.2 + (s % 40) / 100).toFixed(2) : k === 'SPREAD' ? `+${(4 + (s % 40) / 10).toFixed(1)}%` : k === 'VOL' ? `${(s * 53) % 9000 + 500}$` : (41 + (s % 60) / 100).toFixed(2);
+            const kinds = ['USDT/UAH', 'EUR/USDT', 'BUY', 'GBP/USDT', 'SELL', 'SPREAD', 'VOL'];
+            const k = kinds[s % 7];
+            const v =
+              k === 'USDT/UAH' ? (45.2 + (s % 65) / 100).toFixed(2)
+              : k === 'EUR/USDT' ? (1.11 + (s % 10) / 1000).toFixed(3)
+              : k === 'GBP/USDT' ? (1.32 + (s % 20) / 1000).toFixed(3)
+              : k === 'SPREAD' ? `+${(3.5 + (s % 37) / 10).toFixed(1)}%`
+              : k === 'VOL' ? `${(s * 131) % 11500 + 500}$`
+              : (45.2 + (s % 65) / 100).toFixed(2);
             return { k, v, hot: s % 7 === 0 };
           });
           return (
