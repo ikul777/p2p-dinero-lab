@@ -82,10 +82,10 @@ const ProfitCalculator = () => {
             ref={headerAnimation.ref}
             className={`text-center mb-10 sm:mb-12 md:mb-16 transition-all duration-700 ${headerAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
           >
-            <span className="tag mb-3 sm:mb-4 inline-block text-[10px] sm:text-xs">Методика</span>
+            <span className="tag mb-3 sm:mb-4 inline-block text-[10px] sm:text-xs">Як рахувався дохід</span>
             <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6 text-balance">
-              <span className="text-foreground">Як рахувався </span>
-              <span className="text-gradient">дохід</span>
+              <span className="text-foreground">Профіти зі </span>
+              <span className="text-gradient">звʼязок</span>
             </h2>
             <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-xl mx-auto px-2 text-balance">
               Прозора математика моделі: бюджет × спред 4–8% × 22 робочих дні
