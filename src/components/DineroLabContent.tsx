@@ -66,7 +66,8 @@ const PointsList = ({ points, isVisible, reverse }: { points: Point[]; isVisible
 const Screenshot = ({ src, alt }: { src: string; alt: string }) => (
   <div className="mx-auto max-w-[300px] sm:max-w-[320px] md:max-w-[380px]">
     <div className="p-2 sm:p-3 rounded-3xl bg-gradient-to-b from-primary/30 via-primary/10 to-transparent">
-      <div className="rounded-[20px] overflow-hidden bg-background/40 ring-1 ring-border/40 group">
+      <div className="relative rounded-[20px] overflow-hidden bg-background/40 ring-1 ring-primary/20 shadow-[0_20px_60px_-20px_hsl(var(--primary)/0.45)] group">
+        <span aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 z-10 h-px bg-gradient-to-r from-transparent via-primary/70 to-transparent" />
         <img
           src={src}
           alt={alt}

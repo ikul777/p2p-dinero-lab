@@ -43,7 +43,7 @@ const CTA = () => {
             ref={cardAnimation.ref}
             className={`transition-all duration-700 delay-150 ${cardAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
           >
-            <div className="animated-border p-4 sm:p-6 md:p-10 rounded-xl sm:rounded-2xl">
+            <div className="animated-border relative p-4 sm:p-6 md:p-10 rounded-xl sm:rounded-2xl shadow-[0_0_60px_-15px_hsl(var(--primary)/0.45)]">
               <div className="flex flex-col md:flex-row items-center gap-5 sm:gap-6 md:gap-8">
                 {/* Content */}
                 <div className="flex-1 text-center md:text-left">

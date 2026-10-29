@@ -28,13 +28,19 @@ const Index = () => {
       </div>
       <main id="main-content">
         <Hero />
+        <div aria-hidden="true" className="glow-divider" />
         <ProfitCalculator />
         <Problems />
+        <div aria-hidden="true" className="glow-divider" />
         <Solution />
+        <div aria-hidden="true" className="glow-divider" />
         <DineroLabContent />
+        <div aria-hidden="true" className="glow-divider" />
         <Testimonials />
         <Team />
+        <div aria-hidden="true" className="glow-divider" />
         <FAQ />
+        <div aria-hidden="true" className="glow-divider" />
         <CTA />
       </main>
       <Footer />
