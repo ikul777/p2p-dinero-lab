@@ -1,6 +1,5 @@
 import { ArrowRight } from 'lucide-react';
 import { useScrollAnimation } from '@/hooks/use-scroll-animation';
-import logoRed from '@/assets/dinerolab-logo-red.png.asset.json';
 
 const CTA = () => {
   const headerAnimation = useScrollAnimation();
@@ -31,32 +30,19 @@ const CTA = () => {
             </p>
           </div>
           
-          {/* Main CTA card with animated border */}
-          <div 
+          <div
             ref={cardAnimation.ref}
-            className={`transition-all duration-700 delay-150 ${cardAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+            className={`flex justify-center transition-all duration-700 delay-150 ${cardAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
           >
-            <div className="animated-border relative px-5 py-8 sm:px-8 sm:py-10 md:px-12 md:py-12 rounded-xl sm:rounded-2xl shadow-[0_0_60px_-15px_hsl(var(--primary)/0.45)]">
-              <div className="flex flex-col items-center text-center gap-6 sm:gap-8">
-                <div className="relative animate-float-slow">
-                  <div className="absolute inset-0 bg-primary/30 rounded-full blur-3xl animate-pulse-glow"></div>
-                  <img
-                    src={logoRed.url}
-                    alt="DineroLab Logo"
-                    className="relative w-28 h-28 sm:w-36 sm:h-36 md:w-44 md:h-44 object-contain"
-                  />
-                </div>
-                <a
-                  href="https://t.me/+iDCbfd3Bm8wxMzZi"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-primary inline-flex items-center gap-2 px-6 sm:px-10 py-3 sm:py-4 rounded-full text-sm sm:text-base md:text-lg font-semibold text-primary-foreground w-full sm:w-auto justify-center"
-                >
-                  ЧИТАТИ TELEGRAM-КАНАЛ
-                  <ArrowRight size={18} className="sm:w-5 sm:h-5" />
-                </a>
-              </div>
-            </div>
+            <a
+              href="https://t.me/+iDCbfd3Bm8wxMzZi"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary inline-flex items-center gap-2 px-6 sm:px-10 py-3 sm:py-4 rounded-full text-sm sm:text-base md:text-lg font-semibold text-primary-foreground w-full sm:w-auto justify-center"
+            >
+              ЧИТАТИ TELEGRAM-КАНАЛ
+              <ArrowRight size={18} className="sm:w-5 sm:h-5" />
+            </a>
           </div>
         </div>
       </div>
