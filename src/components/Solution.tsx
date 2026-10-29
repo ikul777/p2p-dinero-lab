@@ -1,4 +1,4 @@
-import { ArrowRight, Zap, RefreshCw, Headphones, Lock } from 'lucide-react';
+import { Zap, RefreshCw, Headphones, Lock } from 'lucide-react';
 import { useScrollAnimation } from '@/hooks/use-scroll-animation';
 
 const features = [
