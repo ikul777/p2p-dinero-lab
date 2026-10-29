@@ -5,12 +5,12 @@ const problems = [
   {
     icon: AlertTriangle,
     title: 'Ненадійні звʼязки',
-    desc: "Ринок продавав застарілі та неробочі зв'язки без реальної перспективи. Пуста теорія без доходу."
+    desc: "Ринок продавав застарілі та неробочі звʼязки без реальної перспективи. Пуста теорія без доходу."
   },
   {
     icon: Users,
     title: 'Відсутність підтримки',
-    desc: 'Трейдерів лишали сам на сам із заблокованими рахунками, змінами правил торгівлі та відсутністю актуальної інформації.'
+    desc: 'Трейдерів лишали сам на сам із заблокованими рахунками, змінами правил торгівлі та браком актуальної інформації.'
   },
   {
     icon: DollarSign,
@@ -48,7 +48,7 @@ const Problems = () => {
               <span className="text-foreground/30">P2P-ринку</span>
             </h2>
             <p className="text-sm sm:text-base text-muted-foreground max-w-xl mx-auto px-2 text-balance">
-              З чим стикалися P2P трейдери до участі в DineroLab
+              З чим стикалися P2P-трейдери до участі в DineroLab
             </p>
           </div>
           
@@ -92,7 +92,7 @@ const Problems = () => {
               <div className="absolute -inset-px rounded-2xl bg-gradient-to-r from-destructive/40 via-primary/40 to-destructive/40 opacity-70 md:animate-pulse-glow md:blur-sm"></div>
               <div className="relative glass-card px-5 py-4 sm:px-6 sm:py-5 md:px-8 md:py-6 rounded-2xl border-l-2 border-primary">
                 <p className="text-sm sm:text-base text-foreground font-medium">
-                  DineroLab створювали, щоб дати P2P трейдерам захист, інфраструктуру та стабільний дохід
+                  DineroLab створювали, щоб дати P2P-трейдерам захист, інфраструктуру та стабільний дохід
                 </p>
               </div>
             </div>
