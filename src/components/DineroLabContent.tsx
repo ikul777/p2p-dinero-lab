@@ -1,5 +1,5 @@
 import { useScrollAnimation } from '@/hooks/use-scroll-animation';
-import { Check } from 'lucide-react';
+import { Landmark, Link2, ShieldCheck, Video, Zap, BadgeCheck, Wrench, Info, BookOpen, MessageCircle, Lock, Pin, type LucideIcon } from 'lucide-react';
 import dineroLabImage1 from '@/assets/dinerolab-content-1.png.asset.json';
 import dineroLabImage2 from '@/assets/dinerolab-content-2.png.asset.json';
 import dineroLabImage3 from '@/assets/dinerolab-content-3.png.asset.json';
@@ -28,25 +28,38 @@ const block3Points: Point[] = [
   { title: "ОРДЕР ВІДКУП", isNew: true, desc: "Гілка для швидкого відкупу USDT інших учасників без очікування в стакані чи депозитів через прокладки/біржі." },
 ];
 
+const iconFor = (title: string): LucideIcon => {
+  const t = title.toUpperCase();
+  if (t.includes('БАНК')) return Landmark;
+  if (t.includes('ЗВʼЯЗ')) return Link2;
+  if (t.includes('БЕЗПЕК')) return ShieldCheck;
+  if (t.includes('ДЗВІН')) return Video;
+  if (t.includes('ОРДЕР')) return Zap;
+  if (t.includes('МЕЙКЕР')) return BadgeCheck;
+  if (t.includes('СЕРВІС')) return Wrench;
+  if (t.includes('ЗАГАЛЬН')) return Info;
+  if (t.includes('ДОДАТК')) return BookOpen;
+  return MessageCircle;
+};
+
 const PointsList = ({ points, isVisible, reverse }: { points: Point[]; isVisible: boolean; reverse?: boolean }) => (
-  <ul className="divide-y divide-border/30 -my-2">
-    {points.map((point, index) => (
-      <li
-        key={index}
-        className={`flex items-start gap-3 sm:gap-4 py-3 sm:py-4 transition-all duration-500 ${
-          isVisible
-            ? 'opacity-100 translate-x-0'
-            : reverse
-              ? 'opacity-0 -translate-x-6'
-              : 'opacity-0 translate-x-6'
-        }`}
-        style={{ transitionDelay: `${index * 80 + 150}ms` }}
-      >
-        <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-primary/15 ring-1 ring-primary/25 flex items-center justify-center mt-0.5">
-          <Check className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-primary" />
-        </div>
-        <div className="min-w-0 flex-1">
-          <p className="text-sm sm:text-base font-semibold text-foreground mb-1 flex flex-wrap items-center gap-2">
+  <ul className="space-y-4 sm:space-y-5">
+    {points.map((point, index) => {
+      const Icon = iconFor(point.title);
+      return (
+        <li
+          key={index}
+          className={`relative rounded-2xl bg-gradient-to-b from-secondary/70 to-card/80 ring-1 ring-border/60 shadow-[0_18px_40px_-20px_hsl(var(--primary)/0.35)] backdrop-blur-sm px-4 sm:px-5 pt-5 pb-4 transition-all duration-500 ${
+            isVisible
+              ? 'opacity-100 translate-x-0'
+              : reverse
+                ? 'opacity-0 -translate-x-6'
+                : 'opacity-0 translate-x-6'
+          }`}
+          style={{ transitionDelay: `${index * 80 + 150}ms` }}
+        >
+          <span aria-hidden="true" className="absolute left-1/2 -translate-x-1/2 -top-[3px] h-1.5 w-14 sm:w-16 rounded-full bg-primary shadow-[0_0_12px_hsl(var(--primary)/0.8)]" />
+          <p className="text-center font-black uppercase tracking-wide text-foreground text-base sm:text-lg leading-tight mb-3 flex flex-wrap items-center justify-center gap-2">
             <span>{point.title}</span>
             {point.isNew && (
               <span className="inline-block text-[9px] sm:text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-primary text-primary-foreground">
@@ -54,12 +67,24 @@ const PointsList = ({ points, isVisible, reverse }: { points: Point[]; isVisible
               </span>
             )}
           </p>
-          <p className="text-[13px] sm:text-sm text-muted-foreground leading-relaxed">
-            {point.desc}
-          </p>
-        </div>
-      </li>
-    ))}
+          <div className="flex items-start gap-3">
+            <div className="flex-shrink-0 w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-primary flex items-center justify-center shadow-[0_0_14px_hsl(var(--primary)/0.5)]">
+              <Icon className="w-4 h-4 text-primary-foreground" />
+            </div>
+            <div className="min-w-0 flex-1">
+              <div className="flex items-center justify-between gap-2 mb-1">
+                <span className="text-[11px] sm:text-xs font-semibold uppercase tracking-wide text-muted-foreground truncate">{point.title}</span>
+                <span className="flex items-center gap-1.5 text-muted-foreground/70 flex-shrink-0">
+                  <Lock className="w-3 h-3" />
+                  <Pin className="w-3 h-3" />
+                </span>
+              </div>
+              <p className="text-[13px] sm:text-sm text-muted-foreground leading-relaxed">{point.desc}</p>
+            </div>
+          </div>
+        </li>
+      );
+    })}
   </ul>
 );
 
