@@ -227,11 +227,11 @@ const ProfitCalculator = () => {
               {/* CTA */}
               <div className="mt-6 sm:mt-8 pt-6 sm:pt-8 border-t border-border/30 text-center">
                 <a 
-                  href="#join" 
+                  href="#testimonials" 
                   className="btn-primary inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 rounded-full text-sm sm:text-base font-medium"
                 >
                   <Calculator className="w-4 h-4 sm:w-5 sm:h-5" />
-                  Почати заробляти
+                  Дивитися відгуки учасників
                 </a>
               </div>
             </div>
