@@ -41,21 +41,33 @@ const Hero = () => {
   return (
     <section className="relative flex min-h-[100svh] flex-col justify-center overflow-hidden animated-gradient-bg aurora-bg pt-16 pb-8 sm:pt-24 sm:pb-12 md:pt-28 md:pb-16">
       {/* Background - optimized for mobile */}
-      {/* Variant 5: liquid aurora (variant 4 = contour lines, 3 = orbits, 2 = tech grid) */}
+      {/* Variant 6: P2P constellation (5 = aurora, 4 = contour lines, 3 = orbits, 2 = tech grid) */}
       <style>{`
-        @keyframes auroraA { 0%,100% { transform: translate(-10%, -5%) scale(1); } 50% { transform: translate(15%, 10%) scale(1.25); } }
-        @keyframes auroraB { 0%,100% { transform: translate(10%, 5%) scale(1.1); } 50% { transform: translate(-15%, -10%) scale(0.9); } }
-        @keyframes auroraC { 0%,100% { transform: translate(0, 10%) scale(1); } 50% { transform: translate(5%, -15%) scale(1.3); } }
-        @media (prefers-reduced-motion: reduce) { .aurora-blob { animation: none !important; } }
+        @keyframes nodePulse { 0%,100% { opacity: .35; } 50% { opacity: 1; } }
+        @keyframes linkFlow { to { stroke-dashoffset: -40; } }
+        @media (prefers-reduced-motion: reduce) { .p2p-node, .p2p-link { animation: none !important; } }
       `}</style>
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="aurora-blob absolute left-[-20%] top-[5%] h-[60vh] w-[80vw] rounded-full blur-3xl"
-          style={{ background: 'radial-gradient(circle, hsl(var(--primary) / 0.45), transparent 65%)', animation: 'auroraA 14s ease-in-out infinite' }} />
-        <div className="aurora-blob absolute right-[-25%] top-[25%] h-[55vh] w-[75vw] rounded-full blur-3xl"
-          style={{ background: 'radial-gradient(circle, hsl(var(--primary-glow, var(--primary)) / 0.35), transparent 65%)', animation: 'auroraB 18s ease-in-out infinite' }} />
-        <div className="aurora-blob absolute left-[15%] bottom-[-15%] h-[50vh] w-[70vw] rounded-full blur-3xl"
-          style={{ background: 'radial-gradient(circle, hsl(var(--primary) / 0.3), transparent 65%)', animation: 'auroraC 16s ease-in-out infinite' }} />
-      </div>
+      <svg aria-hidden="true" className="pointer-events-none absolute inset-0 h-full w-full" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice">
+        {(() => {
+          const nodes = [[8,12],[22,6],[38,15],[55,8],[72,14],[90,7],[14,30],[30,34],[50,28],[68,32],[86,26],[6,50],[24,55],[44,48],[60,52],[78,47],[94,55],[12,72],[32,76],[52,70],[70,74],[88,70],[20,92],[42,90],[62,94],[82,90]];
+          const links: [number, number][] = [];
+          nodes.forEach((a, i) => nodes.forEach((b, j) => { if (j > i && Math.hypot(a[0]-b[0], a[1]-b[1]) < 22) links.push([i, j]); }));
+          return (
+            <g>
+              {links.map(([i, j], k) => (
+                <line key={k} className={k % 4 === 0 ? 'p2p-link' : ''} x1={nodes[i][0]} y1={nodes[i][1]} x2={nodes[j][0]} y2={nodes[j][1]}
+                  stroke="hsl(var(--primary))" strokeOpacity={k % 4 === 0 ? 0.55 : 0.18} strokeWidth={0.12} vectorEffect="non-scaling-stroke"
+                  strokeDasharray={k % 4 === 0 ? '2 6' : undefined}
+                  style={k % 4 === 0 ? { animation: `linkFlow ${3 + (k % 5)}s linear infinite` } : undefined} />
+              ))}
+              {nodes.map(([x, y], i) => (
+                <circle key={i} className="p2p-node" cx={x} cy={y} r={i % 3 === 0 ? 0.6 : 0.35} fill="hsl(var(--primary))"
+                  style={{ animation: `nodePulse ${2.5 + (i % 4)}s ease-in-out ${i * 0.2}s infinite`, filter: 'drop-shadow(0 0 1.5px hsl(var(--primary)))' }} />
+              ))}
+            </g>
+          );
+        })()}
+      </svg>
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0"
