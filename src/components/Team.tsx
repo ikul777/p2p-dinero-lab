@@ -21,17 +21,22 @@ const Team = () => (
           return (
             <div
               key={i}
-              className={`group relative rounded-2xl border bg-card/40 backdrop-blur-md p-5 md:p-6 text-center transition-all duration-300 hover:-translate-y-1 hover:border-primary/60 hover:shadow-[0_0_30px_hsl(var(--primary)/0.25)] ${m.lead ? 'border-primary/50 sm:col-span-2 lg:col-span-1' : 'border-primary/15'}`}
+              className={`group relative overflow-hidden rounded-2xl border bg-gradient-to-b from-card/60 to-card/10 backdrop-blur-md p-5 md:p-6 text-center transition-all duration-300 hover:-translate-y-1 hover:border-primary/60 hover:shadow-[0_0_30px_hsl(var(--primary)/0.25)] ${m.lead ? 'border-primary/50 sm:col-span-2 lg:col-span-1 shadow-[0_0_40px_-10px_hsl(var(--primary)/0.5)]' : 'border-primary/15'}`}
             >
-              <div className="relative mx-auto mb-4 w-16 h-16 md:w-20 md:h-20 rounded-full bg-gradient-to-br from-primary/30 to-background border border-primary/40 flex items-center justify-center shadow-[0_0_20px_hsl(var(--primary)/0.3)]">
-                <span className="text-2xl md:text-3xl font-black text-foreground">{m.name[0]}</span>
+              <span aria-hidden="true" className="pointer-events-none absolute inset-x-[15%] top-0 h-px bg-gradient-to-r from-transparent via-primary/80 to-transparent" />
+              {m.lead && <span aria-hidden="true" className="pointer-events-none absolute left-1/2 top-0 h-32 w-48 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/25 blur-3xl" />}
+              <span aria-hidden="true" className="absolute right-3 top-3 font-mono text-[10px] tracking-wider text-muted-foreground/40">DL·0{i + 1}</span>
+              <div className="relative mx-auto mb-4 w-16 h-16 md:w-20 md:h-20 rounded-full p-[1.5px] bg-gradient-to-br from-primary via-primary/20 to-primary/60 shadow-[0_0_24px_hsl(var(--primary)/0.35)]">
+                <div className="w-full h-full rounded-full bg-gradient-to-br from-card to-background flex items-center justify-center">
+                  <span className="text-2xl md:text-3xl font-black text-gradient">{m.name.trim()[0]}</span>
+                </div>
                 <span className="absolute -bottom-1 -right-1 w-7 h-7 rounded-full bg-primary flex items-center justify-center border-2 border-background">
                   <Icon className="w-3.5 h-3.5 text-primary-foreground" />
                 </span>
               </div>
-              <h3 className="text-lg md:text-xl font-bold">{m.name}</h3>
-              <p className="text-primary text-sm font-semibold mb-2">{m.role}</p>
-              <p className="text-muted-foreground text-sm leading-relaxed">{m.desc}</p>
+              <h3 className="relative text-lg md:text-xl font-bold">{m.name}</h3>
+              <p className="relative text-primary text-xs font-semibold uppercase tracking-wider mb-3">{m.role}</p>
+              <p className="relative text-muted-foreground text-sm leading-relaxed">{m.desc}</p>
             </div>
           );
         })}
