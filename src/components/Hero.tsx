@@ -41,54 +41,25 @@ const Hero = () => {
   return (
     <section className="relative flex min-h-[100svh] flex-col justify-center overflow-hidden animated-gradient-bg aurora-bg pt-16 pb-8 sm:pt-24 sm:pb-12 md:pt-28 md:pb-16">
       {/* Background - optimized for mobile */}
-      {/* Variant 4: liquidity contour lines (variant 3 = concentric orbits, variant 2 = tech grid) */}
-      <svg
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 h-full w-full"
-        viewBox="0 0 1200 800"
-        preserveAspectRatio="xMidYMid slice"
-      >
-        <defs>
-          <linearGradient id="contourFade" x1="0" x2="1" y1="0" y2="0">
-            <stop offset="0%" stopColor="hsl(var(--primary))" stopOpacity="0" />
-            <stop offset="50%" stopColor="hsl(var(--primary))" stopOpacity="0.55" />
-            <stop offset="100%" stopColor="hsl(var(--primary))" stopOpacity="0" />
-          </linearGradient>
-        </defs>
-        {Array.from({ length: 14 }).map((_, i) => {
-          const y = 120 + i * 42;
-          const amp = 60 - Math.abs(i - 7) * 6;
-          return (
-            <path
-              key={i}
-              d={`M -50 ${y} C 250 ${y - amp}, 450 ${y + amp}, 600 ${y} S 950 ${y - amp}, 1250 ${y}`}
-              fill="none"
-              stroke="url(#contourFade)"
-              strokeWidth={i === 7 ? 1.6 : 1}
-              opacity={1 - Math.abs(i - 7) * 0.11}
-            />
-          );
-        })}
-      </svg>
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute left-1/2 top-[40%] -translate-x-1/2 -translate-y-1/2 w-[420px] h-[300px] rounded-full"
-        style={{ background: 'radial-gradient(ellipse, hsl(var(--primary) / 0.2) 0%, transparent 70%)' }}
-      />
+      {/* Variant 5: liquid aurora (variant 4 = contour lines, 3 = orbits, 2 = tech grid) */}
+      <style>{`
+        @keyframes auroraA { 0%,100% { transform: translate(-10%, -5%) scale(1); } 50% { transform: translate(15%, 10%) scale(1.25); } }
+        @keyframes auroraB { 0%,100% { transform: translate(10%, 5%) scale(1.1); } 50% { transform: translate(-15%, -10%) scale(0.9); } }
+        @keyframes auroraC { 0%,100% { transform: translate(0, 10%) scale(1); } 50% { transform: translate(5%, -15%) scale(1.3); } }
+        @media (prefers-reduced-motion: reduce) { .aurora-blob { animation: none !important; } }
+      `}</style>
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden">
+        <div className="aurora-blob absolute left-[-20%] top-[5%] h-[60vh] w-[80vw] rounded-full blur-3xl"
+          style={{ background: 'radial-gradient(circle, hsl(var(--primary) / 0.45), transparent 65%)', animation: 'auroraA 14s ease-in-out infinite' }} />
+        <div className="aurora-blob absolute right-[-25%] top-[25%] h-[55vh] w-[75vw] rounded-full blur-3xl"
+          style={{ background: 'radial-gradient(circle, hsl(var(--primary-glow, var(--primary)) / 0.35), transparent 65%)', animation: 'auroraB 18s ease-in-out infinite' }} />
+        <div className="aurora-blob absolute left-[15%] bottom-[-15%] h-[50vh] w-[70vw] rounded-full blur-3xl"
+          style={{ background: 'radial-gradient(circle, hsl(var(--primary) / 0.3), transparent 65%)', animation: 'auroraC 16s ease-in-out infinite' }} />
+      </div>
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0"
-        style={{ background: 'radial-gradient(ellipse 75% 60% at 50% 40%, transparent 40%, hsl(var(--background)) 100%)' }}
-      ></div>
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute left-1/2 bottom-0 -translate-x-1/2 w-[120vw] h-[180px]"
-        style={{ background: 'radial-gradient(ellipse 50% 100% at 50% 100%, hsl(var(--primary) / 0.25) 0%, transparent 70%)' }}
-      ></div>
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute left-1/2 top-0 -translate-x-1/2 w-[60%] max-w-[520px] h-px"
-        style={{ background: 'linear-gradient(to right, transparent, hsl(var(--primary) / 0.8), transparent)' }}
+        style={{ background: 'radial-gradient(ellipse 80% 70% at 50% 45%, transparent 30%, hsl(var(--background) / 0.85) 100%)' }}
       ></div>
       <div className="absolute inset-0 noise pointer-events-none hidden sm:block"></div>
       
