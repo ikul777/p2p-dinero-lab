@@ -40,8 +40,31 @@ const Hero = () => {
   
   return (
     <section className="relative flex min-h-[100svh] flex-col justify-center overflow-hidden animated-gradient-bg aurora-bg pt-16 pb-8 sm:pt-24 sm:pb-12 md:pt-28 md:pb-16">
-      {/* Variant 8: anamorphic lens flare behind logo */}
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0" style={{ background: 'radial-gradient(ellipse 90% 80% at 50% 50%, transparent 40%, hsl(var(--background)) 100%)' }} />
+      {/* Variant 9: P2P terminal data stream */}
+      <style>{`@keyframes dl-stream{from{transform:translateY(0)}to{transform:translateY(-50%)}}`}</style>
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 flex justify-between gap-3 px-2 font-mono text-[9px] sm:text-[11px] leading-[1.9] select-none" style={{ maskImage: 'radial-gradient(ellipse 75% 70% at 50% 50%, transparent 18%, black 55%, transparent 100%)', WebkitMaskImage: 'radial-gradient(ellipse 75% 70% at 50% 50%, transparent 18%, black 55%, transparent 100%)' }}>
+        {Array.from({ length: 10 }).map((_, c) => {
+          const rows = Array.from({ length: 40 }).map((_, r) => {
+            const s = (c * 37 + r * 13) % 97;
+            const kinds = ['USDT/UAH', 'BUY', 'SELL', 'SPREAD', 'VOL'];
+            const k = kinds[s % 5];
+            const v = k === 'USDT/UAH' ? (41.2 + (s % 40) / 100).toFixed(2) : k === 'SPREAD' ? `+${(4 + (s % 40) / 10).toFixed(1)}%` : k === 'VOL' ? `${(s * 53) % 9000 + 500}$` : (41 + (s % 60) / 100).toFixed(2);
+            return { k, v, hot: s % 7 === 0 };
+          });
+          return (
+            <div key={c} className={`flex-1 overflow-hidden ${c % 2 ? 'hidden sm:block' : ''}`}>
+              <div style={{ animation: `dl-stream ${28 + (c % 4) * 8}s linear infinite`, animationDirection: c % 3 === 0 ? 'reverse' : 'normal' }}>
+                {[...rows, ...rows].map((row, i) => (
+                  <div key={i} className={row.hot ? 'text-primary/70' : 'text-muted-foreground/25'}>
+                    {row.k} <span className={row.k === 'SELL' ? 'text-primary/50' : ''}>{row.v}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+      <div aria-hidden="true" className="pointer-events-none absolute left-1/2 top-[38%] h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full blur-3xl" style={{ background: 'hsl(var(--primary) / 0.18)' }} />
       <div className="absolute inset-0 noise pointer-events-none hidden sm:block"></div>
 
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
@@ -54,11 +77,7 @@ const Hero = () => {
                 Проєкт завершено · Публічний кейс
               </span>
             </div>
-            {/* Logo with anamorphic flare */}
             <div className={`relative mb-6 sm:mb-8 transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-              <div aria-hidden="true" className="pointer-events-none absolute left-1/2 top-1/2 h-[2px] w-[140vw] max-w-[1400px] -translate-x-1/2 -translate-y-1/2 animate-pulse" style={{ background: 'linear-gradient(90deg, transparent, hsl(var(--primary) / 0.15) 20%, hsl(var(--primary) / 0.9) 45%, hsl(var(--foreground) / 0.95) 50%, hsl(var(--primary) / 0.9) 55%, hsl(var(--primary) / 0.15) 80%, transparent)', animationDuration: '4s' }} />
-              <div aria-hidden="true" className="pointer-events-none absolute left-1/2 top-1/2 h-10 w-[110vw] max-w-[1100px] -translate-x-1/2 -translate-y-1/2 blur-2xl" style={{ background: 'radial-gradient(ellipse 50% 50% at 50% 50%, hsl(var(--primary) / 0.45), transparent 70%)' }} />
-              <div aria-hidden="true" className="pointer-events-none absolute left-1/2 top-1/2 h-32 w-32 sm:h-48 sm:w-48 -translate-x-1/2 -translate-y-1/2 rounded-full blur-3xl" style={{ background: 'hsl(var(--primary) / 0.35)' }} />
               <img
                 src={logoWhite.url}
                 alt="DineroLab"
