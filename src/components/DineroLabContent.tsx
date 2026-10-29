@@ -1,5 +1,5 @@
 import { useScrollAnimation } from '@/hooks/use-scroll-animation';
-import { Landmark, Link2, ShieldCheck, Video, Zap, BadgeCheck, Wrench, Info, BookOpen, MessageCircle, Lock, Pin, type LucideIcon } from 'lucide-react';
+import { Check, Landmark, Link2, ShieldCheck, Video, Zap, BadgeCheck, Wrench, Info, BookOpen, MessageCircle, Lock, Pin, type LucideIcon } from 'lucide-react';
 import dineroLabImage1 from '@/assets/dinerolab-content-1.png.asset.json';
 import dineroLabImage2 from '@/assets/dinerolab-content-2.png.asset.json';
 import dineroLabImage3 from '@/assets/dinerolab-content-3.png.asset.json';
